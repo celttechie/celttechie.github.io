@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>virtualization - Celttechie</title>
+    <title>Installing Xen 4.4 on Ubuntu Server - Celttechie</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,10 +11,10 @@
     
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="Celttechie"/>
-            <meta property="og:url" content="http://celttechie.github.io"/>
-            <meta property="og:description" content="Celttechie"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Installing Xen 4.4 on Ubuntu Server"/>
+            <meta property="og:url" content="http://celttechie.github.io/xen-4.4-on-ubuntu-14.04.html"/>
+            <meta property="og:description" content="My installation notes."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://celttechie.github.io/theme/css/bootstrap.min.css" type="text/css"/>
@@ -41,7 +41,7 @@ Celttechie            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="http://celttechie.github.io/category/article.html">Article</a>
                         </li>
                         <li >
@@ -66,27 +66,95 @@ Celttechie            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="http://celttechie.github.io/configuring-pv-grub.html">Installing/Configuring PV-Grub</a></h2>
-                <div class="summary">How to configure a Xen VM to use PV-Grub
-                    <a class="btn btn-default btn-xs" href="http://celttechie.github.io/configuring-pv-grub.html">more ...</a>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://celttechie.github.io/xen-4.4-on-ubuntu-14.04.html"
+                       rel="bookmark"
+                       title="Permalink to Installing Xen 4.4 on Ubuntu Server">
+                        Installing Xen 4.4 on Ubuntu Server
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-04-17T00:00:00"> Thu 17 April 2014</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://celttechie.github.io/tag/ubuntu-1404.html">Ubuntu 14.04</a>
+        /
+	<a href="http://celttechie.github.io/tag/xen-44.html">Xen 4.4</a>
+        /
+	<a href="http://celttechie.github.io/tag/virtualization.html">virtualization</a>
+        /
+	<a href="http://celttechie.github.io/tag/install.html">install</a>
+    
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://celttechie.github.io/xen-4.4-on-ubuntu-14.04.html">Installing Xen 4.4 on Ubuntu Server</a></h2>
-                <div class="summary">My installation notes.
-                    <a class="btn btn-default btn-xs" href="http://celttechie.github.io/xen-4.4-on-ubuntu-14.04.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://celttechie.github.io/installing-guest-additions-on-ubuntu.html">Installing VirtualBox Guest Additions on Ubuntu 14.04 Server</a></h2>
-                <div class="summary">My notes for installing the guest additions.
-                    <a class="btn btn-default btn-xs" href="http://celttechie.github.io/installing-guest-additions-on-ubuntu.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+                <p>Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.</p>
+
+<h2>Installing Xen (Xen Project) Hypervisor</h2>
+<p>I installed Xen:  <tt>apt-get install xen-hypervisor-4.4</tt></p>
+
+<p>Then I double-checked <strong>/boot/grub/grub.cfg</strong> to verify the label given to the boot option for Xen.  It was still "Ubuntu GNU/Linux, with Xen hypervisor", so I changed the grub default to use Xen in <strong>/etc/default/grub</strong>:</p>
+<pre>
+GRUB_DEFAULT="Ubuntu GNU/Linux, with Xen hypervisor"
+</pre>
+
+<p>Saved that file and ran:  <tt>update-grub</tt></p>
+
+<p>Got this warning:</p>
+<pre>
+Including Xen overrides from /etc/default/grub.d/xen.cfg
+WARNING: GRUB_DEFAULT changed to boot into Xen by default!
+         Edit /etc/default/grub.d/xen.cfg to avoid this warning.
+</pre>
+<p>Nice!  So I was ready to reboot into the Xen kernel:<tt>shutdown -r now</tt></p>
+
+<p>Once the server came back up, I ran <tt>xl list</tt> as root to check if Xen was ready to go.</p>
+<pre>
+Name                                        ID   Mem VCPUs	State	Time(s)
+Domain-0                                     0 16066     8     r-----      17.2
+</pre>
+<p>Dom0 was set up, so that was good!</p>
+
+<h2>Setting up the Networking</h2>
+<p>I needed to reconfigure networking so I could bridge Virtual Machines (VMs) with the physical network of the host.  I edited <strong>/etc/network/interfaces</strong> to show:</p>
+<pre>
+auto lo
+iface lo inet loopback
+
+auto xenbr0
+iface xenbr0 inet static
+        bridge-ports eth0
+        address 10.1.1.66
+        netmask 255.255.255.192
+        network 10.1.1.64
+        broadcast 10.1.1.127
+        gateway 10.1.1.65
+        dns-nameservers 8.8.4.4 8.8.8.8
+
+# The primary network interface
+#auto eth0
+iface eth0 inet manual
+</pre>
+
+<h2>Setting up VM Storage</h2>
+<p>Storage for the VMs can be setup to use a file, or a block device that will hold the entire file system.  Using block devices allows for faster IO, so I used LVM instead of a disk image.  (see <a href="http://wiki.xen.org/wiki/Storage_options">http://wiki.xen.org/wiki/Storage_options</a>)</p>
+
+<p>I already had a LVM volume group set up from the initial server install, so <tt>vgdisplay</tt> gave me the name of the volume group, "Host-A-vg".  (If I didn't already have a volume group, I would have had to use pvcreate and vgcreate to set it up.)  </p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Celttechie</title><link href="http://celttechie.github.io/" rel="alternate"></link><link href="http://celttechie.github.io/feeds/brian-jarrett.atom.xml" rel="self"></link><id>http://celttechie.github.io/</id><updated>2014-05-10T00:00:00-06:00</updated><entry><title>Installing/Configuring PV-Grub</title><link href="http://celttechie.github.io/configuring-pv-grub.html" rel="alternate"></link><updated>2014-05-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-05-05:configuring-pv-grub.html</id><summary type="html">&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Celttechie</title><link href="http://celttechie.github.io/" rel="alternate"></link><link href="http://celttechie.github.io/feeds/brian-jarrett.atom.xml" rel="self"></link><id>http://celttechie.github.io/</id><updated>2014-07-01T00:00:00-06:00</updated><entry><title>Installing/Configuring PV-Grub</title><link href="http://celttechie.github.io/configuring-pv-grub.html" rel="alternate"></link><updated>2014-05-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-05-05:configuring-pv-grub.html</id><summary type="html">&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Had to install git, get prerequisites for &lt;i&gt;configure&lt;/i&gt; to run it's checks, and clone the repository:&lt;/p&gt;
 &lt;pre&gt;
@@ -63,5 +63,70 @@ kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
 extra = "(hd0,0)/boot/grub/menu.lst"
 &lt;/pre&gt;
 
-&lt;p&gt;Now when I boot the VM, it uses pv-grub.&lt;/p&gt;</summary><category term="Xen"></category><category term="Ubuntu 14.04"></category><category term="PV-Grub"></category><category term="virtualization"></category></entry><entry><title>Test Page</title><link href="http://celttechie.github.io/my-test-page.html" rel="alternate"></link><updated>1971-01-01T12:00:00-07:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,1971-01-01:my-test-page.html</id><summary type="html">&lt;p&gt;This is a test page&lt;/p&gt;
+&lt;p&gt;Now when I boot the VM, it uses pv-grub.&lt;/p&gt;</summary><category term="Xen"></category><category term="Ubuntu 14.04"></category><category term="PV-Grub"></category><category term="virtualization"></category></entry><entry><title>Installing Xen 4.4 on Ubuntu Server</title><link href="http://celttechie.github.io/xen-4.4-on-ubuntu-14.04.html" rel="alternate"></link><updated>2014-05-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-04-17:xen-4.4-on-ubuntu-14.04.html</id><summary type="html">&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
+
+&lt;h2&gt;Installing Xen (Xen Project) Hypervisor&lt;/h2&gt;
+&lt;p&gt;I installed Xen:  &lt;tt&gt;apt-get install xen-hypervisor-4.4&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I double-checked &lt;strong&gt;/boot/grub/grub.cfg&lt;/strong&gt; to verify the label given to the boot option for Xen.  It was still "Ubuntu GNU/Linux, with Xen hypervisor", so I changed the grub default to use Xen in &lt;strong&gt;/etc/default/grub&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;
+GRUB_DEFAULT="Ubuntu GNU/Linux, with Xen hypervisor"
+&lt;/pre&gt;
+
+&lt;p&gt;Saved that file and ran:  &lt;tt&gt;update-grub&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;Got this warning:&lt;/p&gt;
+&lt;pre&gt;
+Including Xen overrides from /etc/default/grub.d/xen.cfg
+WARNING: GRUB_DEFAULT changed to boot into Xen by default!
+         Edit /etc/default/grub.d/xen.cfg to avoid this warning.
+&lt;/pre&gt;
+&lt;p&gt;Nice!  So I was ready to reboot into the Xen kernel:&lt;tt&gt;shutdown -r now&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the server came back up, I ran &lt;tt&gt;xl list&lt;/tt&gt; as root to check if Xen was ready to go.&lt;/p&gt;
+&lt;pre&gt;
+Name                                        ID   Mem VCPUs	State	Time(s)
+Domain-0                                     0 16066     8     r-----      17.2
+&lt;/pre&gt;
+&lt;p&gt;Dom0 was set up, so that was good!&lt;/p&gt;
+
+&lt;h2&gt;Setting up the Networking&lt;/h2&gt;
+&lt;p&gt;I needed to reconfigure networking so I could bridge Virtual Machines (VMs) with the physical network of the host.  I edited &lt;strong&gt;/etc/network/interfaces&lt;/strong&gt; to show:&lt;/p&gt;
+&lt;pre&gt;
+auto lo
+iface lo inet loopback
+
+auto xenbr0
+iface xenbr0 inet static
+        bridge-ports eth0
+        address 10.1.1.66
+        netmask 255.255.255.192
+        network 10.1.1.64
+        broadcast 10.1.1.127
+        gateway 10.1.1.65
+        dns-nameservers 8.8.4.4 8.8.8.8
+
+# The primary network interface
+#auto eth0
+iface eth0 inet manual
+&lt;/pre&gt;
+
+&lt;h2&gt;Setting up VM Storage&lt;/h2&gt;
+&lt;p&gt;Storage for the VMs can be setup to use a file, or a block device that will hold the entire file system.  Using block devices allows for faster IO, so I used LVM instead of a disk image.  (see &lt;a href="http://wiki.xen.org/wiki/Storage_options"&gt;http://wiki.xen.org/wiki/Storage_options&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;I already had a LVM volume group set up from the initial server install, so &lt;tt&gt;vgdisplay&lt;/tt&gt; gave me the name of the volume group, "Host-A-vg".  (If I didn't already have a volume group, I would have had to use pvcreate and vgcreate to set it up.)  &lt;/p&gt;</summary><category term="Ubuntu 14.04"></category><category term="Xen 4.4"></category><category term="virtualization"></category><category term="install"></category></entry><entry><title>Installing VirtualBox Guest Additions on Ubuntu 14.04 Server</title><link href="http://celttechie.github.io/installing-guest-additions-on-ubuntu.html" rel="alternate"></link><updated>2014-07-01T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-04-10:installing-guest-additions-on-ubuntu.html</id><summary type="html">&lt;p&gt;Installing the Guest Additions for VirtualBox on an Ubuntu 14.04 server guest is the same as for previous versions:&lt;/p&gt;
+
+&lt;p&gt;The Guest Additions install will need to build kernel modules so we need&lt;/p&gt;
+
+&lt;p&gt;&lt;tt&gt;sudo apt-get install -y dkms build-essential linux-headers-generic linux-headers-$(uname -r)&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;In the VMs "&lt;strong&gt;Devices&lt;/strong&gt;" menu, select the "&lt;strong&gt;Insert Guest Additions CD Image...&lt;/strong&gt;" or hit Host+D  (&lt;i&gt;Host is the right CTRL key by default&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;Now that the CD is "inserted" into the VMs virtual optical drive, mount it:&lt;/p&gt;
+
+&lt;p&gt;&lt;tt&gt;sudo mount /dev/cdrom /media/cdrom&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;And finally run the install script:&lt;/p&gt;
+
+&lt;p&gt;&lt;tt&gt;sudo /media/cdrom/VBoxLinuxAdditions.run&lt;/tt&gt;&lt;/p&gt;</summary><category term="VirtualBox"></category><category term="virtualization"></category><category term="Ubuntu 14.04"></category><category term="VM guest"></category></entry><entry><title>Test Page</title><link href="http://celttechie.github.io/my-test-page.html" rel="alternate"></link><updated>1971-01-01T12:00:00-07:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,1971-01-01:my-test-page.html</id><summary type="html">&lt;p&gt;This is a test page&lt;/p&gt;
 </summary><category term="one"></category><category term="two"></category></entry></feed>
