@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Celttechie</title><link href="file:///home/bjarrett/projects/blog/site_root/output/" rel="alternate"></link><link href="file:///home/bjarrett/projects/blog/site_root/output/feeds/brian-jarrett.atom.xml" rel="self"></link><id>file:///home/bjarrett/projects/blog/site_root/output/</id><updated>2014-05-10T00:00:00-06:00</updated><entry><title>Installing/Configuring PV-Grub</title><link href="file:///home/bjarrett/projects/blog/site_root/output/configuring-pv-grub.html" rel="alternate"></link><updated>2014-05-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:,2014-05-05:home/bjarrett/projects/blog/site_root/output/configuring-pv-grub.html</id><summary type="html">&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Had to install git, get prerequisites for &lt;i&gt;configure&lt;/i&gt; to run it's checks, and clone the repository:&lt;/p&gt;
+&lt;pre&gt;
+apt-get install git
+apt-get install python-dev gettext bin86 bcc iasl uuid-dev libncurses5-dev pkg-config libglib2.0-dev libyajl-dev
+apt-get install libpixman-1-dev bzip2
+git clone git://xenbits.xen.org/xen
+&lt;/pre&gt;
+
+&lt;p&gt;The first time I went into the repository and ran configure, libcrypto wasn't found, so it failed. &lt;br /&gt;
+After searching, and doing a &lt;tt&gt;locate libcrypto&lt;/tt&gt;, I finally found that I needed to create a symlink to libcrypto.so.1.0.0:&lt;/p&gt;
+&lt;pre&gt;
+ln -s /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /lib/x86_64-linux-gnu/libcrypto.so
+&lt;/pre&gt;
+
+&lt;p&gt;Then I had to install texinfo (&lt;tt&gt;apt-get install texinfo&lt;/tt&gt;) to get past an error with makeinfo.  Finally I was able to:&lt;/p&gt;
+&lt;pre&gt;
+cd xen
+./configure
+make
+&lt;/pre&gt;
+&lt;p&gt;and have it complete.&lt;/p&gt;
+
+&lt;p&gt;I didn't find the pv-grub boot files in the location given in the documents, but a quick &lt;tt&gt;find ./ | grep pv-grub&lt;/tt&gt; pointed me to the right location:  &lt;strong&gt;./dist/install/usr/local/lib/xen/boot/&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, I copied the pv-grub files to a generally-used location:&lt;/p&gt;
+&lt;pre&gt;
+cd dist/install/usr/local/lib/xen/boot/
+mkdir -p /usr/lib/xen/boot
+cp pv-grub-x86_* /usr/lib/xen/boot/
+&lt;/pre&gt;
+
+&lt;p&gt;Edited &lt;strong&gt;/boot/grub/menu.lst&lt;/strong&gt; in the guest (DomU):&lt;/p&gt;
+&lt;pre&gt;
+default 0
+timeout 5
+
+title vmlinuz-3.13.0-24-generic
+  root (hd0,0)
+  kernel /boot/vmlinuz-3.13.0-24-generic root=/dev/xvda1
+  initrd /boot/initrd.img-3.13.0-24-generic
+&lt;/pre&gt;
+&lt;p&gt;then shut it down.&lt;/p&gt;
+
+&lt;p&gt;Edited &lt;strong&gt;/etc/xen/Guest-A1.cfg&lt;/strong&gt; on the host (Dom0):&lt;/p&gt;
+&lt;pre&gt;
+name = "Guest-A1"
+
+memory = 512
+
+disk = ['phy:/dev/Host-A-vg/GuestA1-root,xvda,w']
+vif = [' ']
+
+#bootloader = "pygrub"
+
+#kernel = "/var/lib/xen/images/ubuntu-netboot/vmlinuz"
+#ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
+#extra = "debian-installer/exit/always_halt=true -- console=hvc0"
+
+kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
+extra = "(hd0,0)/boot/grub/menu.lst"
+&lt;/pre&gt;
+
+&lt;p&gt;Now when I boot the VM, it uses pv-grub.&lt;/p&gt;</summary><category term="Xen"></category><category term="Ubuntu 14.04"></category><category term="PV-Grub"></category><category term="virtualization"></category></entry><entry><title>Test Page</title><link href="file:///home/bjarrett/projects/blog/site_root/output/my-test-page.html" rel="alternate"></link><updated>1971-01-01T12:00:00-07:00</updated><author><name>Brian Jarrett</name></author><id>tag:,1971-01-01:home/bjarrett/projects/blog/site_root/output/my-test-page.html</id><summary type="html">&lt;p&gt;This is a test page&lt;/p&gt;
+</summary><category term="one"></category><category term="two"></category></entry></feed>
