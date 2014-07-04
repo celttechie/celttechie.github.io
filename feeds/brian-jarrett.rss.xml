@@ -152,71 +152,7 @@ vif = [' ']
 
 kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
 extra = "(hd0,0)/grub/menu.lst"
-&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Mon, 26 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-09:pv-grub-with-domu-lvm-root.html</guid><category></category></item><item><title>Installing/Configuring PV-Grub</title><link>http://celttechie.github.io/configuring-pv-grub.html</link><description>&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Had to install git, get prerequisites for &lt;i&gt;configure&lt;/i&gt; to run it's checks, and clone the repository:&lt;/p&gt;
-&lt;pre&gt;
-apt-get install git
-apt-get install python-dev gettext bin86 bcc iasl uuid-dev libncurses5-dev pkg-config libglib2.0-dev libyajl-dev
-apt-get install libpixman-1-dev bzip2
-git clone git://xenbits.xen.org/xen
-&lt;/pre&gt;
-
-&lt;p&gt;The first time I went into the repository and ran configure, libcrypto wasn't found, so it failed. &lt;br /&gt;
-After searching, and doing a &lt;tt&gt;locate libcrypto&lt;/tt&gt;, I finally found that I needed to create a symlink to libcrypto.so.1.0.0:&lt;/p&gt;
-&lt;pre&gt;
-ln -s /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /lib/x86_64-linux-gnu/libcrypto.so
-&lt;/pre&gt;
-
-&lt;p&gt;Then I had to install texinfo (&lt;tt&gt;apt-get install texinfo&lt;/tt&gt;) to get past an error with makeinfo.  Finally I was able to:&lt;/p&gt;
-&lt;pre&gt;
-cd xen
-./configure
-make
-&lt;/pre&gt;
-&lt;p&gt;and have it complete.&lt;/p&gt;
-
-&lt;p&gt;I didn't find the pv-grub boot files in the location given in the documents, but a quick &lt;tt&gt;find ./ | grep pv-grub&lt;/tt&gt; pointed me to the right location:  &lt;strong&gt;./dist/install/usr/local/lib/xen/boot/&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, I copied the pv-grub files to a generally-used location:&lt;/p&gt;
-&lt;pre&gt;
-cd dist/install/usr/local/lib/xen/boot/
-mkdir -p /usr/lib/xen/boot
-cp pv-grub-x86_* /usr/lib/xen/boot/
-&lt;/pre&gt;
-
-&lt;p&gt;Edited &lt;strong&gt;/boot/grub/menu.lst&lt;/strong&gt; in the guest (DomU):&lt;/p&gt;
-&lt;pre&gt;
-default 0
-timeout 5
-
-title vmlinuz-3.13.0-24-generic
-  root (hd0,0)
-  kernel /boot/vmlinuz-3.13.0-24-generic root=/dev/xvda1
-  initrd /boot/initrd.img-3.13.0-24-generic
-&lt;/pre&gt;
-&lt;p&gt;then shut it down.&lt;/p&gt;
-
-&lt;p&gt;Edited &lt;strong&gt;/etc/xen/Guest-A1.cfg&lt;/strong&gt; on the host (Dom0):&lt;/p&gt;
-&lt;pre&gt;
-name = "Guest-A1"
-
-memory = 512
-
-disk = ['phy:/dev/Host-A-vg/GuestA1-root,xvda,w']
-vif = [' ']
-
-#bootloader = "pygrub"
-
-#kernel = "/var/lib/xen/images/ubuntu-netboot/vmlinuz"
-#ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
-#extra = "debian-installer/exit/always_halt=true -- console=hvc0"
-
-kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
-extra = "(hd0,0)/boot/grub/menu.lst"
-&lt;/pre&gt;
-
-&lt;p&gt;Now when I boot the VM, it uses pv-grub.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-05:configuring-pv-grub.html</guid><category>Xen</category><category>Ubuntu 14.04</category><category>PV-Grub</category><category>virtualization</category></item><item><title>Installing/configuring PV-Grub</title><link>http://celttechie.github.io/installing-configuring-pv-grub.html</link><description>&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
+&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Mon, 26 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-09:pv-grub-with-domu-lvm-root.html</guid><category></category></item><item><title>Installing/configuring PV-Grub</title><link>http://celttechie.github.io/installing-configuring-pv-grub.html</link><description>&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Had to install git, get prerequisites for &lt;i&gt;configure&lt;/i&gt; to run it's checks, and clone the repository:&lt;/p&gt;
 &lt;pre&gt;
@@ -332,58 +268,7 @@ ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
 extra = "debian-installer/exit/always_halt=true -- console=hvc0"
 &lt;/pre&gt;
 
-&lt;p&gt;Then running &lt;tt&gt;xl create /etc/xen/GuestA1.cfg -c&lt;/tt&gt; again used pygrub to load the kernel and allowed the system to boot and give me a console.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 07 Jun 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-23:creating-xen-vms.html</guid><category></category></item><item><title>Installing Xen 4.4 on Ubuntu Server</title><link>http://celttechie.github.io/xen-4.4-on-ubuntu-14.04.html</link><description>&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
-
-&lt;h2&gt;Installing Xen (Xen Project) Hypervisor&lt;/h2&gt;
-&lt;p&gt;I installed Xen:  &lt;tt&gt;apt-get install xen-hypervisor-4.4&lt;/tt&gt;&lt;/p&gt;
-
-&lt;p&gt;Then I double-checked &lt;strong&gt;/boot/grub/grub.cfg&lt;/strong&gt; to verify the label given to the boot option for Xen.  It was still "Ubuntu GNU/Linux, with Xen hypervisor", so I changed the grub default to use Xen in &lt;strong&gt;/etc/default/grub&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;
-GRUB_DEFAULT="Ubuntu GNU/Linux, with Xen hypervisor"
-&lt;/pre&gt;
-
-&lt;p&gt;Saved that file and ran:  &lt;tt&gt;update-grub&lt;/tt&gt;&lt;/p&gt;
-
-&lt;p&gt;Got this warning:&lt;/p&gt;
-&lt;pre&gt;
-Including Xen overrides from /etc/default/grub.d/xen.cfg
-WARNING: GRUB_DEFAULT changed to boot into Xen by default!
-         Edit /etc/default/grub.d/xen.cfg to avoid this warning.
-&lt;/pre&gt;
-&lt;p&gt;Nice!  So I was ready to reboot into the Xen kernel:&lt;tt&gt;shutdown -r now&lt;/tt&gt;&lt;/p&gt;
-
-&lt;p&gt;Once the server came back up, I ran &lt;tt&gt;xl list&lt;/tt&gt; as root to check if Xen was ready to go.&lt;/p&gt;
-&lt;pre&gt;
-Name                                        ID   Mem VCPUs	State	Time(s)
-Domain-0                                     0 16066     8     r-----      17.2
-&lt;/pre&gt;
-&lt;p&gt;Dom0 was set up, so that was good!&lt;/p&gt;
-
-&lt;h2&gt;Setting up the Networking&lt;/h2&gt;
-&lt;p&gt;I needed to reconfigure networking so I could bridge Virtual Machines (VMs) with the physical network of the host.  I edited &lt;strong&gt;/etc/network/interfaces&lt;/strong&gt; to show:&lt;/p&gt;
-&lt;pre&gt;
-auto lo
-iface lo inet loopback
-
-auto xenbr0
-iface xenbr0 inet static
-        bridge-ports eth0
-        address 10.1.1.66
-        netmask 255.255.255.192
-        network 10.1.1.64
-        broadcast 10.1.1.127
-        gateway 10.1.1.65
-        dns-nameservers 8.8.4.4 8.8.8.8
-
-# The primary network interface
-#auto eth0
-iface eth0 inet manual
-&lt;/pre&gt;
-
-&lt;h2&gt;Setting up VM Storage&lt;/h2&gt;
-&lt;p&gt;Storage for the VMs can be setup to use a file, or a block device that will hold the entire file system.  Using block devices allows for faster IO, so I used LVM instead of a disk image.  (see &lt;a href="http://wiki.xen.org/wiki/Storage_options"&gt;http://wiki.xen.org/wiki/Storage_options&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;I already had a LVM volume group set up from the initial server install, so &lt;tt&gt;vgdisplay&lt;/tt&gt; gave me the name of the volume group, "Host-A-vg".  (If I didn't already have a volume group, I would have had to use pvcreate and vgcreate to set it up.)  &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-17:xen-4.4-on-ubuntu-14.04.html</guid><category>Ubuntu 14.04</category><category>Xen 4.4</category><category>virtualization</category><category>install</category></item><item><title>Installing Xen 4.4 on Ubuntu Server 14.04</title><link>http://celttechie.github.io/xen-4.4-on-ubuntu-server-14.04.html</link><description>&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
+&lt;p&gt;Then running &lt;tt&gt;xl create /etc/xen/GuestA1.cfg -c&lt;/tt&gt; again used pygrub to load the kernel and allowed the system to boot and give me a console.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 07 Jun 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-23:creating-xen-vms.html</guid><category></category></item><item><title>Installing Xen 4.4 on Ubuntu Server 14.04</title><link>http://celttechie.github.io/xen-4.4-on-ubuntu-server-14.04.html</link><description>&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
 
 &lt;h2&gt;Installing Xen (Xen Project) Hypervisor&lt;/h2&gt;
 &lt;p&gt;I installed Xen:  &lt;tt&gt;apt-get install xen-hypervisor-4.4&lt;/tt&gt;&lt;/p&gt;
