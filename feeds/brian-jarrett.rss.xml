@@ -1,5 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Celttechie</title><link>http://celttechie.github.io/</link><description></description><atom:link href="http://celttechie.github.io/feeds/brian-jarrett.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Jul 2014 00:00:00 -0600</lastBuildDate><item><title>Installing/Configuring PV-Grub</title><link>http://celttechie.github.io/configuring-pv-grub.html</link><description>&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Celttechie</title><link>http://celttechie.github.io/</link><description></description><atom:link href="http://celttechie.github.io/feeds/brian-jarrett.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Jul 2014 00:00:00 -0600</lastBuildDate><item><title>Installing OpenStack Icehouse Lab</title><link>http://celttechie.github.io/installing-openstack-icehouse-lab.html</link><description>&lt;p&gt;NOTE:  These are my notes as I'm installing OpenStack.  I'll come back later and re-write it to make it more understandable.&lt;/p&gt;
+
+&lt;h2&gt;VirtualBox Setup&lt;/h2&gt;
+&lt;h3&gt;Network Layout&lt;/h3&gt;
+&lt;p&gt;Management network (every OS Node needs an interface on this network):&lt;br /&gt;
+10.10.10.0/24&lt;br /&gt;
+Data network (for the virtual nodes to do their work):&lt;br /&gt;
+10.20.20.0/24&lt;br /&gt;
+API Network (for external control):&lt;br /&gt;
+192.168.100.0&lt;/p&gt;
+
+&lt;h3&gt;Global network settings for virtualbox&lt;/h3&gt;
+&lt;p&gt;  Management:  vboxnet0, 10.10.10.1&lt;br /&gt;
+  Data:  vboxnet1, 10.20.20.1&lt;br /&gt;
+  API:  vboxnet2, 192.168.100.1&lt;/p&gt;
+
+&lt;h3&gt;Controller setup&lt;/h3&gt;
+&lt;p&gt;  Name:  OSControl0&lt;/p&gt;
+&lt;pre&gt;
+echo "OSControl0" &amp;gt; /etc/hostname
+hostname -F /etc/hostname
+&lt;/pre&gt;
+&lt;p&gt;  eth0: vboxnet0/10.10.10.11, eth1: vboxnet2/192.168.100.11, eth2: NAT (portforward 2211 to 22)&lt;br /&gt;
+edited &lt;strong&gt;/etc/network/interfaces&lt;/strong&gt;:  see the sample at &lt;a href="https://bitbucket.org/celttechie/openstacklab/raw/default/controller/interfaces"&gt;https://bitbucket.org/celttechie/openstacklab/raw/default/controller/interfaces&lt;/a&gt;&lt;br /&gt;
+edited &lt;strong&gt;/etc/hosts&lt;/strong&gt;:  see the sample at &lt;a href="https://bitbucket.org/celttechie/openstacklab/raw/default/controller/hosts"&gt;https://bitbucket.org/celttechie/openstacklab/raw/default/controller/hosts&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Neutron setup&lt;/h3&gt;
+&lt;p&gt;  Name: OSNet0&lt;/p&gt;
+&lt;pre&gt;
+echo "OSNet0" &amp;gt; /etc/hostname
+hostname -F /etc/hostname
+&lt;/pre&gt;
+&lt;p&gt;  eth0:  vboxnet0/10.10.10.21, eth1: vboxnet1/10.20.20.21, eth2: vboxnet2/192.168.100.21, eth3: NAT (portforward 2221 to 22)&lt;br /&gt;
+  edited &lt;strong&gt;/etc/network/interfaces&lt;/strong&gt;:  see the sample at &lt;a href="https://bitbucket.org/celttechie/openstacklab/raw/default/network/interfaces"&gt;https://bitbucket.org/celttechie/openstacklab/raw/default/network/interfaces&lt;/a&gt;&lt;br /&gt;
+edited &lt;strong&gt;/etc/hosts&lt;/strong&gt;:  see the sample at &lt;a href="https://bitbucket.org/celttechie/openstacklab/raw/default/network/hosts"&gt;https://bitbucket.org/celttechie/openstacklab/raw/default/network/hosts&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Nova setup&lt;/h3&gt;
+&lt;p&gt;  Name: OSNova0&lt;/p&gt;
+&lt;pre&gt;
+echo "OSNova0" &amp;gt; /etc/hostname
+hostname -F /etc/hostname
+&lt;/pre&gt;
+&lt;p&gt;  eth0:  vboxnet0/10.10.10.101, eth1: vboxnet1/10.20.20.101, eth2: NAT (portforward 22101 to 22)&lt;br /&gt;
+edited &lt;strong&gt;/etc/network/interfaces&lt;/strong&gt;:  see the sample at &lt;a href="https://bitbucket.org/celttechie/openstacklab/raw/default/compute/interfaces"&gt;https://bitbucket.org/celttechie/openstacklab/raw/default/compute/interfaces&lt;/a&gt;&lt;br /&gt;
+edited &lt;strong&gt;/etc/hosts&lt;/strong&gt;:  see the sample at &lt;a href="https://bitbucket.org/celttechie/openstacklab/raw/default/compute/hosts"&gt;https://bitbucket.org/celttechie/openstacklab/raw/default/compute/hosts&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Node prerequisite setup&lt;/h2&gt;
+&lt;h3&gt;NTP&lt;/h3&gt;
+&lt;p&gt;  installed NTP on all nodes: &lt;img src="{ apt-get install ntp" title="{ apt-get install ntp" alt="{ apt-get install ntp" /&gt;&lt;br /&gt;
+  On Network and Nova nodes, removed all server references and added a single reference to the controller node in /etc/ntp.conf:&lt;/p&gt;
+&lt;pre&gt;
+server OSControl0.management iburst
+&lt;/pre&gt;
+&lt;p&gt;  restarted the NTP service with &lt;tt&gt;service ntp restart &lt;/tt&gt; then tested to make sure the nodes referenced the controller &lt;tt&gt;ntpq -c peers&lt;/tt&gt;&lt;/p&gt;
+
+&lt;h3&gt;MySQL&lt;/h3&gt;
+&lt;p&gt;  On the controller, ran &lt;tt&gt; apt-get install python-mysqldb mysql-server &lt;/tt&gt; and gave a mysql root password.&lt;br /&gt;
+  edited &lt;strong&gt;/etc/mysql/my.cnf&lt;/strong&gt; and replaced &lt;tt&gt; bind-address = 127.0.0.1 &lt;/tt&gt; with&lt;/p&gt;
+&lt;pre&gt;
+ bind-address            = 10.10.10.11
+
+#added for openstack
+default-storage-engine = innodb
+innodb_file_per_table
+collation-server = utf8_general_ci
+init-connect = 'SET NAMES utf8'
+character-set-server = utf8
+&lt;/pre&gt;
+
+&lt;p&gt;then, &lt;tt&gt; service mysql restart &lt;/tt&gt; and &lt;tt&gt; mysql_secure_installation &lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;On the other nodes, installed: &lt;tt&gt; apt-get install python-mysqld &lt;/tt&gt; so they will be able to access the database.&lt;/p&gt;
+
+&lt;h3&gt;RabbitMQ&lt;/h3&gt;
+&lt;p&gt;installed on the controller: &lt;tt&gt; apt-get install rabbitmq-server &lt;/tt&gt;&lt;br /&gt;
+Then, changed the "guest" password:  &lt;tt&gt; rabbitmqctl change_password guest SOMEPASSWORD &lt;/tt&gt;&lt;/p&gt;
+
+&lt;h2&gt;Keystone Install&lt;/h2&gt;
+&lt;p&gt;Installed keystone following the instructions here:  &lt;a href=" http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_keystone.html"&gt; http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_keystone.html&lt;/a&gt;  Just had to change &lt;strong&gt;controller&lt;/strong&gt; to &lt;strong&gt;OSControl0&lt;/strong&gt; when using urls.&lt;/p&gt;
+
+&lt;h2&gt;OpenStack Clients Install&lt;/h2&gt;
+&lt;p&gt;Installed the clients on my Ubuntu laptop (the VirtualBox host) using the information here:  &lt;a href="http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_clients.html"&gt;http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_clients.html&lt;/a&gt;&lt;br /&gt;
+Added entries to the &lt;strong&gt;/etc/hosts&lt;/strong&gt; file to the management interfaces of each of the nodes.&lt;br /&gt;
+created admin-openrc.sh and demo-openrc.sh files.&lt;/p&gt;
+
+&lt;p&gt;( I found that I had had used the wrong password when I set up the demo user in keystone.  The command to fix that was &lt;tt&gt;  source ~/admin-openrc.sh; keystone user-password-update --pass somedemopass123 demo &lt;/tt&gt;&lt;/p&gt;
+
+&lt;h2&gt;Installing Image Service (Glance)&lt;/h2&gt;
+&lt;p&gt;running through the install guide for installing glance.  When I got to &lt;tt&gt; su -s /bin/sh -c "glance-manage db_sync" glance &lt;/tt&gt;&lt;br /&gt;
+I got an error:  &lt;/p&gt;
+&lt;pre&gt;
+2014-06-02 20:19:09.939 10335 CRITICAL glance [-] ValueError: invalid literal for int() with base 10: ''
+&lt;/pre&gt;
+&lt;p&gt;when I did &lt;tt&gt; glance-manage db_sync &lt;/tt&gt; on its own I got the same error.  I ran glance-manage --help and saw that there was a verbose switch, so I tried that:  &lt;tt&gt; glance-manage -v db_sync &lt;/tt&gt;&lt;br /&gt;
+This gave me a stack trace, and I found that the empty int() was given a variable name "port".  SQLAlchemy was trying to set up a connection to the mysql server and had an empty port variable.  I thought this was odd and went back to look at my settings for the database connection string just in case I missed something.  It turns out I had accidentally added a colon after the server name in the connection string, then followed it with the forward slash.  This is what gave me an empty port.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Mon, 02 Jun 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-06-02:installing-openstack-icehouse-lab.html</guid><category>OpenStack</category><category>Icehouse</category><category>Lab</category><category>Ubuntu 14.04</category></item><item><title>About</title><link>http://celttechie.github.io/about.html</link><description>&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;I've always enjoyed fixing things, troubleshooting, solving problems and designing solutions.  I approach situations in a logical manner.  I ask lots of questions and look at situations from as many angles as I can.  I like to research and fully understand the problem and as many variables as I can to come up with a superior solution.  I am very detail oriented.  I enjoy challenging projects that require me to learn something new along the way.  I make a point to deep dive on each new technology I learn so I can properly troubleshoot when things go wrong.  I make it a point to know where to get the information I need and to know how to apply it.  I don't try to memorize a fix for each problem.&lt;/p&gt;
+
+&lt;h2&gt;Problem Solving/Troubleshooting&lt;/h2&gt;
+&lt;p&gt;When I was in High School I wrote down the things I liked to do and what I was good at, and a career in engineering seemed to be a good fit.  I got my first taste of solving real-world problems when going through the introductory classes in engineering at Colorado School of Mines.&lt;/p&gt;
+
+&lt;h2&gt;Interests/Hobbies&lt;/h2&gt;
+&lt;p&gt;Technology.  Obviously.&lt;br /&gt;
+Music.  I can sing and have played several instruments over the years.  &lt;br /&gt;
+Cooking.  &lt;/p&gt;
+
+&lt;h2&gt;Goals&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;Get into IaaS architecture&lt;/li&gt;
+	&lt;li&gt;Work from home (telecommute)&lt;/li&gt;
+	&lt;li&gt;Learn new technologies&lt;/li&gt;
+	&lt;li&gt;Design my own home and have it built on some acreage.&lt;/li&gt;
+	&lt;li&gt;Learn welding so I can design and build my own outdoor oven/smoker/grill.&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 27 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-27:about.html</guid><category></category></item><item><title>Initial OpenStack Installation</title><link>http://celttechie.github.io/initial-openstack-installation.html</link><description>&lt;p&gt;I'm using 14.04 which has the "icehouse" version, but if we're using an earlier server version we need to add the icehouse repository:&lt;/p&gt;
+&lt;pre&gt;
+apt-get install python-software-properties
+add-apt-repository cloud-archive:icehouse
+
+apt-get update
+apt-get dist-upgrade
+&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Mon, 12 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-09:initial-openstack-installation.html</guid><category></category></item><item><title>Using pv-grub with a DomU using an LVM root</title><link>http://celttechie.github.io/pv-grub-with-domu-lvm-root.html</link><description>&lt;p&gt;My first VM in Xen was installed using LVM, so I had a DomU running LVM for the root and swap partitions.  This is not the way most VMs are installed, but I thought I'd document how I got pv-grub to load.&lt;/p&gt;
+
+&lt;p&gt;When in the DomU, you can take a look at &lt;strong&gt;/etc/fstab&lt;/strong&gt; to get the required value for &lt;i&gt;root=&lt;/i&gt; in the kernel line.&lt;/p&gt;
+
+&lt;p&gt;Edited &lt;strong&gt;/boot/grub/menu.lst&lt;/strong&gt; in the guest (DomU) with the appropriate path for &lt;i&gt;root=&lt;/i&gt;:&lt;/p&gt;
+&lt;pre&gt;
+default 0
+timeout 5
+
+title vmlinuz-3.13.0-24-generic
+
+root (hd0,0)
+kernel /vmlinuz-3.13.0-24-generic root=/dev/mapper/GuestA1--vg-root
+initrd /initrd.img-3.13.0-24-generic quiet
+&lt;/pre&gt;
+&lt;p&gt;then shut it down.&lt;/p&gt;
+
+&lt;p&gt;Edited &lt;strong&gt;/etc/xen/Guest-A1.cfg&lt;/strong&gt; on the host (Dom0), removing &lt;i&gt; /boot &lt;/i&gt; from the grub configuration path in &lt;i&gt;extra =&lt;/i&gt;:&lt;/p&gt;
+&lt;pre&gt;
+name = "Guest-A1-pv"
+
+memory = 512
+
+disk = ['phy:/dev/Host-A-vg/GuestA1-root,xvda,w']
+vif = [' ']
+
+#bootloader = "pygrub"
+
+#kernel = "/var/lib/xen/images/ubuntu-netboot/vmlinuz"
+#ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
+#extra = "debian-installer/exit/always_halt=true -- console=hvc0"
+
+kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
+extra = "(hd0,0)/grub/menu.lst"
+&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Mon, 26 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-09:pv-grub-with-domu-lvm-root.html</guid><category></category></item><item><title>Installing/Configuring PV-Grub</title><link>http://celttechie.github.io/configuring-pv-grub.html</link><description>&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Had to install git, get prerequisites for &lt;i&gt;configure&lt;/i&gt; to run it's checks, and clone the repository:&lt;/p&gt;
 &lt;pre&gt;
@@ -63,7 +216,123 @@ kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
 extra = "(hd0,0)/boot/grub/menu.lst"
 &lt;/pre&gt;
 
-&lt;p&gt;Now when I boot the VM, it uses pv-grub.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-05:configuring-pv-grub.html</guid><category>Xen</category><category>Ubuntu 14.04</category><category>PV-Grub</category><category>virtualization</category></item><item><title>Installing Xen 4.4 on Ubuntu Server</title><link>http://celttechie.github.io/xen-4.4-on-ubuntu-14.04.html</link><description>&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
+&lt;p&gt;Now when I boot the VM, it uses pv-grub.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-05:configuring-pv-grub.html</guid><category>Xen</category><category>Ubuntu 14.04</category><category>PV-Grub</category><category>virtualization</category></item><item><title>Installing/configuring PV-Grub</title><link>http://celttechie.github.io/installing-configuring-pv-grub.html</link><description>&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Had to install git, get prerequisites for &lt;i&gt;configure&lt;/i&gt; to run it's checks, and clone the repository:&lt;/p&gt;
+&lt;pre&gt;
+apt-get install git
+apt-get install python-dev gettext bin86 bcc iasl uuid-dev libncurses5-dev pkg-config libglib2.0-dev libyajl-dev
+apt-get install libpixman-1-dev bzip2
+git clone git://xenbits.xen.org/xen
+&lt;/pre&gt;
+
+&lt;p&gt;The first time I went into the repository and ran configure, libcrypto wasn't found, so it failed. &lt;br /&gt;
+After searching, and doing a &lt;tt&gt;locate libcrypto&lt;/tt&gt;, I finally found that I needed to create a symlink to libcrypto.so.1.0.0:&lt;/p&gt;
+&lt;pre&gt;
+ln -s /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /lib/x86_64-linux-gnu/libcrypto.so
+&lt;/pre&gt;
+
+&lt;p&gt;Then I had to install texinfo (&lt;tt&gt;apt-get install texinfo&lt;/tt&gt;) to get past an error with makeinfo.  Finally I was able to:&lt;/p&gt;
+&lt;pre&gt;
+cd xen
+./configure
+make
+&lt;/pre&gt;
+&lt;p&gt;and have it complete.&lt;/p&gt;
+
+&lt;p&gt;I didn't find the pv-grub boot files in the location given in the documents, but a quick &lt;tt&gt;find ./ | grep pv-grub&lt;/tt&gt; pointed me to the right location:  &lt;strong&gt;./dist/install/usr/local/lib/xen/boot/&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, I copied the pv-grub files to a generally-used location:&lt;/p&gt;
+&lt;pre&gt;
+cd dist/install/usr/local/lib/xen/boot/
+mkdir -p /usr/lib/xen/boot
+cp pv-grub-x86_* /usr/lib/xen/boot/
+&lt;/pre&gt;
+
+&lt;p&gt;Edited &lt;strong&gt;/boot/grub/menu.lst&lt;/strong&gt; in the guest (DomU):&lt;/p&gt;
+&lt;pre&gt;
+default 0
+timeout 5
+
+title vmlinuz-3.13.0-24-generic
+  root (hd0,0)
+  kernel /boot/vmlinuz-3.13.0-24-generic root=/dev/xvda1
+  initrd /boot/initrd.img-3.13.0-24-generic
+&lt;/pre&gt;
+&lt;p&gt;then shut it down.&lt;/p&gt;
+
+&lt;p&gt;Edited &lt;strong&gt;/etc/xen/Guest-A1.cfg&lt;/strong&gt; on the host (Dom0):&lt;/p&gt;
+&lt;pre&gt;
+name = "Guest-A1"
+
+memory = 512
+
+disk = ['phy:/dev/Host-A-vg/GuestA1-root,xvda,w']
+vif = [' ']
+
+#bootloader = "pygrub"
+
+#kernel = "/var/lib/xen/images/ubuntu-netboot/vmlinuz"
+#ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
+#extra = "debian-installer/exit/always_halt=true -- console=hvc0"
+
+kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
+extra = "(hd0,0)/boot/grub/menu.lst"
+&lt;/pre&gt;
+
+&lt;p&gt;Now when I boot the VM, it uses pv-grub.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-05-05:installing-configuring-pv-grub.html</guid><category>Xen</category><category>Ubuntu 14.04</category><category>PV-Grub</category><category>virtualization</category></item><item><title>Creating Xen DomU VMs</title><link>http://celttechie.github.io/creating-xen-vms.html</link><description>&lt;p&gt;With Xen installed, network bridging setup, and an LVM volume group ready, I created my first virtual machine.&lt;br /&gt;
+Using &lt;a href="https://help.ubuntu.com/community/Xen#Manually_creating_a_PV_Guest_VM"&gt;https://help.ubuntu.com/community/Xen#Manually_creating_a_PV_Guest_VM&lt;/a&gt; as a guide:&lt;/p&gt;
+
+&lt;h2&gt;Creating the Drive&lt;/h2&gt;
+&lt;p&gt;I created a logical volume for the first VM:&lt;br /&gt;
+&lt;tt&gt;lvcreate -nGuestA1-root -L100G Host-A-vg&lt;/tt&gt;&lt;/p&gt;
+
+&lt;h2&gt;Getting the Netboot Files&lt;/h2&gt;
+&lt;p&gt;I needed something for the initial boot of the VM to run so we can install our OS.  Ubuntu Netboot is an easy way to get a working OS installed.&lt;/p&gt;
+
+&lt;pre&gt;
+mkdir -p /var/lib/xen/images/ubuntu-netboot
+cd /var/lib/xen/images/ubuntu-netboot/
+wget ftp://ftp.utexas.edu/pub/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/xen/initrd.gz
+wget ftp://ftp.utexas.edu/pub/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/xen/vmlinuz
+&lt;/pre&gt;
+&lt;h2&gt;Creating the Configuration File for the VM&lt;/h2&gt;
+&lt;p&gt;&lt;tt&gt;vim /etc/xen/GuestA1.cfg&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;Added the following:&lt;/p&gt;
+&lt;pre&gt;
+name = "GuestA1"
+
+memory = 512
+
+disk = ['phy:/dev/Host-A-vg/GuestA1-root,xvda,w']
+vif = [' ']
+
+kernel = "/var/lib/xen/images/ubuntu-netboot/vmlinuz"
+ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
+extra = "debian-installer/exit/always_halt=true -- console=hvc0"
+&lt;/pre&gt;
+
+&lt;h2&gt;Initial Run of the VM&lt;/h2&gt;
+&lt;p&gt;Ran the VM to start the netboot install:  &lt;tt&gt;xl create /etc/xen/GuestA1.cfg -c&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;At this point, the console changed to show the install choices for netboot.  I just ran through the Ubuntu install.  At the end of the install, it gives the familiar message that the system needs to reboot.  The &lt;tt&gt;extra=&lt;/tt&gt; line tells the VM to halt instead.&lt;/p&gt;
+
+&lt;p&gt;The final step is to replace the netboot kernel and disable the ramdisk.  Initially I set it to boot with pygrub by changing &lt;strong&gt;/etc/xen/GuestA1.cfg&lt;/strong&gt; by adding&lt;/p&gt;
+
+&lt;pre&gt;
+bootloader = "pygrub"
+&lt;/pre&gt;
+
+&lt;p&gt;and commenting out or removing&lt;/p&gt;
+
+&lt;pre&gt;
+kernel = "/var/lib/xen/images/ubuntu-netboot/vmlinuz"
+ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
+extra = "debian-installer/exit/always_halt=true -- console=hvc0"
+&lt;/pre&gt;
+
+&lt;p&gt;Then running &lt;tt&gt;xl create /etc/xen/GuestA1.cfg -c&lt;/tt&gt; again used pygrub to load the kernel and allowed the system to boot and give me a console.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 07 Jun 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-23:creating-xen-vms.html</guid><category></category></item><item><title>Installing Xen 4.4 on Ubuntu Server</title><link>http://celttechie.github.io/xen-4.4-on-ubuntu-14.04.html</link><description>&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
 
 &lt;h2&gt;Installing Xen (Xen Project) Hypervisor&lt;/h2&gt;
 &lt;p&gt;I installed Xen:  &lt;tt&gt;apt-get install xen-hypervisor-4.4&lt;/tt&gt;&lt;/p&gt;
@@ -114,7 +383,58 @@ iface eth0 inet manual
 &lt;h2&gt;Setting up VM Storage&lt;/h2&gt;
 &lt;p&gt;Storage for the VMs can be setup to use a file, or a block device that will hold the entire file system.  Using block devices allows for faster IO, so I used LVM instead of a disk image.  (see &lt;a href="http://wiki.xen.org/wiki/Storage_options"&gt;http://wiki.xen.org/wiki/Storage_options&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;I already had a LVM volume group set up from the initial server install, so &lt;tt&gt;vgdisplay&lt;/tt&gt; gave me the name of the volume group, "Host-A-vg".  (If I didn't already have a volume group, I would have had to use pvcreate and vgcreate to set it up.)  &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-17:xen-4.4-on-ubuntu-14.04.html</guid><category>Ubuntu 14.04</category><category>Xen 4.4</category><category>virtualization</category><category>install</category></item><item><title>Installing VirtualBox Guest Additions on Ubuntu 14.04 Server</title><link>http://celttechie.github.io/installing-guest-additions-on-ubuntu.html</link><description>&lt;p&gt;Installing the Guest Additions for VirtualBox on an Ubuntu 14.04 server guest is the same as for previous versions:&lt;/p&gt;
+&lt;p&gt;I already had a LVM volume group set up from the initial server install, so &lt;tt&gt;vgdisplay&lt;/tt&gt; gave me the name of the volume group, "Host-A-vg".  (If I didn't already have a volume group, I would have had to use pvcreate and vgcreate to set it up.)  &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-17:xen-4.4-on-ubuntu-14.04.html</guid><category>Ubuntu 14.04</category><category>Xen 4.4</category><category>virtualization</category><category>install</category></item><item><title>Installing Xen 4.4 on Ubuntu Server 14.04</title><link>http://celttechie.github.io/xen-4.4-on-ubuntu-server-14.04.html</link><description>&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
+
+&lt;h2&gt;Installing Xen (Xen Project) Hypervisor&lt;/h2&gt;
+&lt;p&gt;I installed Xen:  &lt;tt&gt;apt-get install xen-hypervisor-4.4&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I double-checked &lt;strong&gt;/boot/grub/grub.cfg&lt;/strong&gt; to verify the label given to the boot option for Xen.  It was still "Ubuntu GNU/Linux, with Xen hypervisor", so I changed the grub default to use Xen in &lt;strong&gt;/etc/default/grub&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;
+GRUB_DEFAULT="Ubuntu GNU/Linux, with Xen hypervisor"
+&lt;/pre&gt;
+
+&lt;p&gt;Saved that file and ran:  &lt;tt&gt;update-grub&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;Got this warning:&lt;/p&gt;
+&lt;pre&gt;
+Including Xen overrides from /etc/default/grub.d/xen.cfg
+WARNING: GRUB_DEFAULT changed to boot into Xen by default!
+         Edit /etc/default/grub.d/xen.cfg to avoid this warning.
+&lt;/pre&gt;
+&lt;p&gt;Nice!  So I was ready to reboot into the Xen kernel:&lt;tt&gt;shutdown -r now&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the server came back up, I ran &lt;tt&gt;xl list&lt;/tt&gt; as root to check if Xen was ready to go.&lt;/p&gt;
+&lt;pre&gt;
+Name                                        ID   Mem VCPUs	State	Time(s)
+Domain-0                                     0 16066     8     r-----      17.2
+&lt;/pre&gt;
+&lt;p&gt;Dom0 was set up, so that was good!&lt;/p&gt;
+
+&lt;h2&gt;Setting up the Networking&lt;/h2&gt;
+&lt;p&gt;I needed to reconfigure networking so I could bridge Virtual Machines (VMs) with the physical network of the host.  I edited &lt;strong&gt;/etc/network/interfaces&lt;/strong&gt; to show:&lt;/p&gt;
+&lt;pre&gt;
+auto lo
+iface lo inet loopback
+
+auto xenbr0
+iface xenbr0 inet static
+        bridge-ports eth0
+        address 10.1.1.66
+        netmask 255.255.255.192
+        network 10.1.1.64
+        broadcast 10.1.1.127
+        gateway 10.1.1.65
+        dns-nameservers 8.8.4.4 8.8.8.8
+
+# The primary network interface
+#auto eth0
+iface eth0 inet manual
+&lt;/pre&gt;
+
+&lt;h2&gt;Setting up VM Storage&lt;/h2&gt;
+&lt;p&gt;Storage for the VMs can be setup to use a file, or a block device that will hold the entire file system.  Using block devices allows for faster IO, so I used LVM instead of a disk image.  (see &lt;a href="http://wiki.xen.org/wiki/Storage_options"&gt;http://wiki.xen.org/wiki/Storage_options&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;I already had a LVM volume group set up from the initial server install, so &lt;tt&gt;vgdisplay&lt;/tt&gt; gave me the name of the volume group, "Host-A-vg".  (If I didn't already have a volume group, I would have had to use pvcreate and vgcreate to set it up.)  &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-17:xen-4.4-on-ubuntu-server-14.04.html</guid><category>Ubuntu 14.04</category><category>Xen 4.4</category><category>virtualization</category><category>install</category></item><item><title>Installing VirtualBox Guest Additions on Ubuntu 14.04 Server</title><link>http://celttechie.github.io/installing-guest-additions-on-ubuntu-server-14.04.html</link><description>&lt;p&gt;Installing the Guest Additions for VirtualBox on an Ubuntu 14.04 server guest is the same as for previous versions:&lt;/p&gt;
 
 &lt;p&gt;The Guest Additions install will need to build kernel modules so we need&lt;/p&gt;
 
@@ -128,5 +448,208 @@ iface eth0 inet manual
 
 &lt;p&gt;And finally run the install script:&lt;/p&gt;
 
-&lt;p&gt;&lt;tt&gt;sudo /media/cdrom/VBoxLinuxAdditions.run&lt;/tt&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 01 Jul 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-10:installing-guest-additions-on-ubuntu.html</guid><category>VirtualBox</category><category>virtualization</category><category>Ubuntu 14.04</category><category>VM guest</category></item><item><title>Test Page</title><link>http://celttechie.github.io/my-test-page.html</link><description>&lt;p&gt;This is a test page&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Fri, 01 Jan 1971 12:00:00 -0700</pubDate><guid>tag:celttechie.github.io,1971-01-01:my-test-page.html</guid><category>one</category><category>two</category></item></channel></rss>
+&lt;p&gt;&lt;tt&gt;sudo /media/cdrom/VBoxLinuxAdditions.run&lt;/tt&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 01 Jul 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-10:installing-guest-additions-on-ubuntu-server-14.04.html</guid><category>VirtualBox</category><category>virtualization</category><category>guest</category><category>Ubuntu 14.04</category></item><item><title>Configuring Ruckus bridges to automatically reconnect</title><link>http://celttechie.github.io/configuring-ruckus-to-automatically-reconnect.html</link><description>&lt;p&gt;We use Ruckus wireless bridges and access points at my current job.  Every once in a while (like once every few months), a wireless bridge radio will lose its connection to the other side.  There are several rooftops that encroach on the bridge's line of sight (LOS) and even though the Ruckus radios are great at adjusting their transmission for the environment, sometimes the signal gets lost.  Typically, a reboot of the root bridge solves the issue, but sometimes I have to reboot the non-root bridge as well.&lt;/p&gt;
+
+&lt;p&gt;These commands on Ruckus 7731 wireless bridge radios will reboot the radios to re-establish their association (connection) if it is lost.  The values are in seconds and are the Ruckus-recommended settings.  Waiting a generous 5 minutes (300 seconds) to allow for a reboot may be unnecessary, but you'd have to test lower values in your environment.&lt;/p&gt;
+
+&lt;p&gt;On the &lt;strong&gt;Root Bridge&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;
+set uplink-recovery sta-link-down-init-time 60
+set uplink-recovery sta-link-down-reboot-time 300
+set uplink-recovery no-sta-link-reboot-time 300
+set uplink-recovery ap-exp-assoc 1
+set uplink-recovery sta-mia-reboot-time 300
+&lt;/pre&gt;
+&lt;p&gt;On the &lt;strong&gt;Non-Root Bridge&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;
+set uplink-recovery sta-link-down-init-time 60
+set uplink-recovery sta-link-down-reboot-time 300
+set uplink-recovery no-sta-link-reboot-time 300
+&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Wed, 09 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-09:configuring-ruckus-to-automatically-reconnect.html</guid><category>Ruckus</category></item><item><title>Upgrade to Apache 2.4 requires new authorization configuration</title><link>http://celttechie.github.io/apache2.4-requires-new-configuration.html</link><description>&lt;p&gt;I've done several updates on servers where Apache get's upgraded to 2.4 and I start getting &lt;strong&gt;"Forbidden"&lt;/strong&gt; errors in the web browser.  In short, the configuration parameters have changed from&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt;Directory /path/to/www/files&amp;gt;
+    #...
+    Order allow,deny
+    Allow from all
+   #...
+&amp;lt;/Directory&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;to&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt;Directory /path/to/www/files&amp;gt;
+    #...
+    Require all granted
+    #...
+&amp;lt;/Directory&amp;gt;
+&lt;/pre&gt;
+
+&lt;p&gt;More information &lt;a href="http://httpd.apache.org/docs/2.4/upgrading.html"&gt;here&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 08 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-08:apache2.4-requires-new-configuration.html</guid><category>Apache 2.4</category><category>authorization</category><category>configuration</category></item><item><title>PHP missing mycrypt.ini file in Ubuntu 13.10</title><link>http://celttechie.github.io/ubuntu-13.10-missing-mcrypt.html</link><description>&lt;p&gt;So doing a &lt;strong&gt;dist-upgrade&lt;/strong&gt; to Ubuntu 13.10 resulted in &lt;i&gt;mcrypt&lt;/i&gt; no longer being loaded in PHP.  The fix?&lt;/p&gt;
+&lt;pre&gt;
+ln -s /etc/php5/conf.d/mcrypt.ini /etc/php5/apache2/conf.d/20-mcrypt.ini
+service apache2 restart
+&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Mon, 26 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-08:ubuntu-13.10-missing-mcrypt.html</guid><category>Ubuntu</category><category>13.10</category><category>mcrypt</category><category>PHP</category></item><item><title>Installed packages on new Ubuntu laptop</title><link>http://celttechie.github.io/installed-packages-on-new-laptop.html</link><description>&lt;pre&gt;
+apt-get install vim
+apt-get install aptitude
+aptitude install flashplugin-installer
+aptitude install l2tp-ipsec-vpn
+aptitude install git
+aptitude install mecurial
+aptitude install zsh
+wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+aptitude install build-essential python-dev
+aptitude install python-pip
+pip install virtualenv
+aptitude install python3 python3-dev
+aptitude install iperf
+aptitude install synergy
+aptitude install keepass2
+aptitude install mono-complete
+aptitude install nautilus-dropbox
+(added keefox plugin to firefox, copied the KeePassRPC.plgx extension to /usr/lib/keepass2/plugin, set keepass installation location to /usr/lib/keepass2)
+
+add-apt-repository ppa:tuxpoldo/btsync
+aptitude update
+aptitude install btsync-gui
+&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 24 Jun 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-06:installed-packages-on-new-laptop.html</guid><category></category></item><item><title>Setting up new Dell Laptop with Ubuntu 14.04</title><link>http://celttechie.github.io/setting-up-laptop-with-ubuntu.html</link><description>&lt;p&gt;So I got a good price on a Dell Inspiron with a Haswell i7, 8Gb of RAM, and a 1600x900 display (which is better than most of the laptops in the $500 - $800 range).  I didn't feel that I needed a touchscreen, preferring to keep my hands on the keyboard as much as possible.&lt;/p&gt;
+
+&lt;p&gt;The Dell Inspiron 17r (5737) came with Windows 8, but since I'm using this as my "dev/ops" machine, I'm going to start from scratch with Ubuntu.  Ubuntu 14.04 is due out in a few weeks, so I decided to load the Beta 2 build.&lt;/p&gt;
+
+&lt;p&gt;I actually spent a few weeks messing around with 13.10, SmartBoot, UEFI, Legacy Boot, Dual booting with Windows 8.1, etc.  I wasn't happy with any of the outcomes, so I finally decided to wipe the drive and start over.&lt;/p&gt;
+
+&lt;p&gt;The biggest problem with Ubuntu and the Intel Haswell integrated graphics is the Kernel Mode Setting (KMS).  The KMS does not set the display properly, so you end up with a screen that shows red as green, green as magenta, and blue as a tan.  Working through this problem using 13.10 and even 14.04, I found that using "nomodeset" or "i915.modeset=0" as a grub boot option would give me a properly-colored desktop, but I lost features of KMS that were important to me, like automatic detecting of HDMI displays.&lt;/p&gt;
+
+&lt;p&gt;So here's what I did to get the correct display going on Ubuntu 14.04B2:&lt;/p&gt;
+
+&lt;p&gt;Since the KMS wasn't working properly, I loaded a newer kernel that what was installed (3.13.0.22-generic) by Beta 2.  I just picked the nightly build to see if the latest worked.  I downloaded the .deb files for the headers and kernel from &lt;a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/drm-intel-nightly/2014-04-05-trusty"&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline/drm-intel-nightly/2014-04-05-trusty&lt;/a&gt;.  Then:&lt;/p&gt;
+&lt;pre&gt;
+dpkg -i linux*.deb
+&lt;/pre&gt;
+
+&lt;p&gt;The kernel loaded with correct KMS configuration (no strange coloring) and nothing extra in the grub options.  So I started testing other features.  I checked the function keys and found that the brightness setting wasn't changing.  I also tested the SD card slot, and other ports.  The HDMI port was working as well.  So it looks like KMS is finally working like it should.&lt;/p&gt;
+
+&lt;p&gt;I then found that the laptop wouldn't recover from suspend.  I would get a black screen.  So I spent some more time digging and decided I needed to try newer graphics drivers.  I found this &lt;a href="http://www.phoronix.com/scan.php?page=news_item&amp;amp;px=MTY1NTU"&gt;post&lt;/a&gt; and decided to give the oibaf PPA a try.&lt;/p&gt;
+
+&lt;p&gt;All it required to get the latest xorg and mesa drivers was:&lt;/p&gt;
+&lt;pre&gt;
+sudo apt-add-repository ppa:oibaf/graphics-drivers
+sudo apt-get update
+sudo apt-get dist-upgrade
+&lt;/pre&gt;
+
+&lt;p&gt;The newest drivers have actually fixed the suspend problem.  So at this time, the only thing I haven't fixed is the brightness control functions from the keyboard.  Since I can just &lt;/p&gt;
+&lt;pre&gt;
+sudo echo 720 &amp;gt; /sys/class/backlight/intel_backlight/brightness
+&lt;/pre&gt;
+
+&lt;p&gt;I'm not too concerned about it.  Now I can go about setting up the laptop's dev environment for Python and PHP (primarily).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 08 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-04-06:setting-up-laptop-with-ubuntu.html</guid><category>Ubuntu</category><category>laptop</category><category>14.04</category></item><item><title>Basic HTTP Authentication</title><link>http://celttechie.github.io/basic-http-authentication.html</link><description>&lt;p&gt;For Apache basic authentication the following configuration must be present:&lt;/p&gt;
+
+&lt;p&gt;Make sure Apache loads these modules (this should be in your &lt;i&gt;httpd.conf&lt;/i&gt;):&lt;/p&gt;
+&lt;pre&gt;
+    LoadModule auth_basic_module modules/mod_auth_basic.so
+    LoadModule authn_file_module modules/mod_authn_file.so
+    LoadModule authz_user_module modules/mod_authz_user.so
+&lt;/pre&gt;
+&lt;p&gt;In your virtualhosts, where ever you need to protect a URL path, you need a configuration like this:&lt;/p&gt;
+&lt;pre&gt;
+    &amp;lt;Location /protected/url&amp;gt;
+        AuthType Basic
+        AuthName "Authentication Required"
+        AuthUserFile "/path/to/.htpasswd"
+        Require valid-user
+    &amp;lt;/Location&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;The &lt;i&gt;.htpasswd&lt;/i&gt; file can be created in the directory using a command like this:&lt;/p&gt;
+&lt;pre&gt;
+    htpasswd -c .htpasswd &amp;lt;username&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;You will be asked to provide and confirm a password for user &amp;lt;username&amp;gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 08 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-03-30:basic-http-authentication.html</guid><category>Apache</category><category>authentication</category><category>htpasswd</category></item><item><title>Passing CSS classes when rendering Jinja2 template</title><link>http://celttechie.github.io/passing-css-classes-to-jinja2.html</link><description>&lt;p&gt;After reading the article I posted about &lt;a href="/posts/dont-embed-bootstrap-in-html"&gt;here&lt;/a&gt;, the way I was working with Jinja2 templates, HTML, and Markdown was beginning to bother me.&lt;br /&gt;
+I really want the "how it looks" to be in the CSS.  If I can get the layout and everything else about how the site looks into CSS, then all the Jinja2 templating needs to do is specify what data I'm working with, and what classes should be applied.&lt;br /&gt;
+So here's what I'm thinking:&lt;/p&gt;
+
+&lt;p&gt;I'm already passing data fields and possibly forms to Jinja2, then telling Jinja when to use them in the HTML structure of the page.  I'm also using Markdown, so I can write blog posts like this, then have a Jinja filter parse the output, with the result being HTML structure and data.  (As an aside, I'm thinking about switching to Creole, but it will still parse to HTML structure.)  The end result is always HTML(duh) and the HTML can specify CSS classes to use.&lt;/p&gt;
+
+&lt;p&gt;So when I pass data fields to Jinja, I can also pass variables that indicate what CSS classes I want to use.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;when passing data to a template I can pass something like this:&lt;/p&gt;
+&lt;pre&gt;
+    context = {
+        "page": {"title":"Some Title", "subtitle":"Some SubTitle", "body":"Markdown TEXT"}
+        "form": comment_form,
+        "classes": {"page_div":"blog"}
+    }
+    ...
+    return render_template('/page.html', **context)
+&lt;/pre&gt;
+&lt;p&gt;Then in my Jinja2 template, the page_div gets inserted at the appropriate place:&lt;/p&gt;
+&lt;pre&gt;
+    &amp;lt;div class="{{ classes.page_div }}"&amp;gt;
+        &amp;lt;h1 class="title"&amp;gt;{{ page.title }}&amp;lt;/h1&amp;gt;
+        &amp;lt;h3 class="subtitle"&amp;gt;{{ page.subtitle}}&amp;lt;/h3&amp;gt;
+        &amp;lt;p class="body"&amp;gt;{{ page.body|markdown }}&amp;lt;p&amp;gt;
+   &amp;lt;/div&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Of course that's a real basic example, but I think it'll work.  I'll have to try it out.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 08 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-03-27:passing-css-classes-to-jinja2.html</guid><category>Jinja2</category><category>HTML</category><category>CSS</category></item><item><title>Redesigning the CareerLog app</title><link>http://celttechie.github.io/redesigning-careerlog.html</link><description>&lt;p&gt;So after thinking about the CSS and HTML design, I've realized all of the posts could be streamlined in to a few simpler views.  While thinking about all of this, I was making notes like:&lt;/p&gt;
+&lt;pre&gt;
+thinking of refactoring...
+
+URL routing should be?
+1.  /&amp;lt;category&amp;gt;/&amp;lt;post-slug/id/whatever&amp;gt;
+where &amp;lt;category&amp;gt; could be anything, but would be things like:
+article, note, link, post, research
+(if category is something like 'employment' (for the resume) then we'd need a way to order them.
+maybe category_order?)
+2. /category would list categories, /tag would list tags /201402 could list what was posted in that month?
+so &amp;lt;category&amp;gt;/unique-slug is the main reference for a post, at /tag/ /date/ /category/ create lists of articles. 
+So each post needs, at a minimum a category (categories?) and tags.
+&lt;/pre&gt;
+&lt;p&gt;So here's what I'm going to do.  Merge the Page and BlogPost db models into one Post(?) model.  Add a category field to it.  The main reference to a post will be the /&amp;lt;category&amp;gt;/&amp;lt;slug&amp;gt; URL with other ways to find posts via /categories/ /tags/ and /dates/&lt;/p&gt;
+
+&lt;p&gt;I'll still keep/expand the special models and routes for the resume section of the website.  &lt;/p&gt;
+
+&lt;p&gt;For CSS/design, I'll use levels of &lt;/p&gt;
+&lt;pre&gt;
+    &amp;lt;site&amp;gt;
+      &amp;lt;header&amp;gt;
+      &amp;lt;site-nav&amp;gt;
+      &amp;lt;page&amp;gt;
+        &amp;lt;page-nav&amp;gt;
+        &amp;lt;post&amp;gt;
+          &amp;lt;post-header&amp;gt;
+          &amp;lt;post-body&amp;gt;
+          &amp;lt;post-comments&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;in place of &amp;lt;post&amp;gt; there would be lists when trying to browse for a post using /categories/, /tags/, etc.&lt;/p&gt;
+
+&lt;p&gt;or something similar.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 08 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-03-27:redesigning-careerlog.html</guid><category>CareerLog</category></item><item><title>Setting up Ubuntu display when running as a Hyper-V guest</title><link>http://celttechie.github.io/ubuntu-hyperv-guest.html</link><description>&lt;p&gt;After installing Ubuntu 13.10 on Windows 8.1 running Hyper-V the guest's screen resolution is fixed at &lt;br /&gt;
+1152x864.  I found out that Ubuntu needed some services to run optimized as a virtual guest.&lt;/p&gt;
+
+&lt;p&gt;To fix this, I ran&lt;/p&gt;
+&lt;pre&gt;
+    sudo apt-get install linux-image-extra-virtual
+&lt;/pre&gt;
+&lt;p&gt;which installed everything Ubuntu needs to run as a virtual guest.&lt;/p&gt;
+
+&lt;p&gt;edited &lt;i&gt;/etc/default/grub&lt;/i&gt; so the &lt;strong&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/strong&gt; line reads:&lt;/p&gt;
+&lt;pre&gt;
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1600x900"
+&lt;/pre&gt;
+&lt;p&gt;then ran&lt;/p&gt;
+&lt;pre&gt;
+    sudo update-grub
+&lt;/pre&gt;
+&lt;p&gt;a reboot, and we're there.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 08 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-03-27:ubuntu-hyperv-guest.html</guid><category>Ubuntu</category><category>Hyper-V</category><category>virtualization</category></item><item><title>Another tutorial for building your own blog application</title><link>http://celttechie.github.io/another-tutorial-for-blog-application.html</link><description>&lt;p&gt;&lt;a href="http://www.brettdangerfield.com/post/creating_a_blog_with_pyramid_mongdb_bootstrap/|"&gt;http://www.brettdangerfield.com/post/creating_a_blog_with_pyramid_mongdb_bootstrap/|&lt;/a&gt; is another tutorial for building your own blog application.  I was considering using Pyramid instead of Flask for my framework, but decided to delve more into Flask and use MongoDB for the backend.  At some point I may try Pyramid out and do something similar to what I've done with this CareerLog application.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 08 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-03-26:another-tutorial-for-blog-application.html</guid><category>Pyramid</category><category>MongoDB</category><category>Bootstrap</category></item><item><title>Don't embed Bootstrap in HTML</title><link>http://celttechie.github.io/dont-embed-bootstrap-in-html.html</link><description>&lt;p&gt;An &lt;a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html"&gt;interesting article&lt;/a&gt; on keeping Twitter's &lt;a href="http://getbootstrap.com"&gt;Bootstrap&lt;/a&gt; code out of your HTML.  I came across it while designing the CareerLog website.  I especially liked his second point:&lt;br /&gt;
+&lt;tt&gt;by hard-coding Bootstrap's class names into your HTML, you're marrying your code to Bootstrap.&lt;/tt&gt;&lt;/p&gt;
+
+&lt;p&gt;In something as small as my CareerLog project, it may not be that big of a deal to go through and refactor a few template pages to use something else, but on larger projects, keeping the design and code separate will pay off in the long run.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 08 Apr 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-03-26:dont-embed-bootstrap-in-html.html</guid><category>Bootstrap</category><category>HTML</category></item><item><title>Home</title><link>http://celttechie.github.io/home.html</link><description>&lt;h2&gt;Why this site?&lt;/h2&gt;
+&lt;p&gt;I created this website to document anything I wanted to keep for future reference, and to give potential employers a little insight into how I think and operate.&lt;/p&gt;
+&lt;h2&gt;Why now?&lt;/h2&gt;
+&lt;p&gt;A few months ago, I made the decision to start out on a new path in my IT career.  I have been doing Systems and Network Administration for well over 15 years and been troubleshooting and testing electronics for over 20 years.  I always like to learn new things, but opportunities to do that in my current job were drying up.  I started looking for something else I could get into that would be interesting and challenging to learn.&lt;br /&gt;
+I'm excited to say that I finally found something that I think I'm especially well suited for:  IaaS (Infrastructure as a Service) Architecture.  Specifically, I want to get into using tools like OpenStack to design and build clusters of virtual servers and storage that is fault tolerant and resilient to changing demands.&lt;br /&gt;
+So, I decided to resign from my position and not renew my contract for another year.  I'm now in the process of setting up a lab environment where I can learn to use the tools in this relatively new IT field.&lt;/p&gt;
+
+&lt;h2&gt;What's here?&lt;/h2&gt;
+&lt;p&gt;If you want to know more about me, and especially my career history, you can look through my &lt;a href="/resume"&gt;resume&lt;/a&gt;.  I'm also working on an "About" page that will be available soon.&lt;/p&gt;
+
+&lt;p&gt;You can also browse my &lt;a href="/posts"&gt;posts&lt;/a&gt; which are classified with &lt;a href="/tags"&gt;tags&lt;/a&gt; and &lt;a href="/categories"&gt;categories&lt;/a&gt; to make things easier to find.   I will be documenting what I learn and find as I get up to speed on using IaaS technologies.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Jarrett</dc:creator><pubDate>Tue, 27 May 2014 00:00:00 -0600</pubDate><guid>tag:celttechie.github.io,2014-03-24:home.html</guid><category></category></item></channel></rss>
