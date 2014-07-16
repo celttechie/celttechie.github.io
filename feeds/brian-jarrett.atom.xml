@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Celttechie</title><link href="http://celttechie.github.io/" rel="alternate"></link><link href="http://celttechie.github.io/feeds/brian-jarrett.atom.xml" rel="self"></link><id>http://celttechie.github.io/</id><updated>2014-07-01T00:00:00-06:00</updated><entry><title>Installing OpenStack Icehouse Lab</title><link href="http://celttechie.github.io/installing-openstack-icehouse-lab.html" rel="alternate"></link><updated>2014-06-02T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-06-02:installing-openstack-icehouse-lab.html</id><summary type="html">&lt;p&gt;NOTE:  These are my notes as I'm installing OpenStack.  I'll come back later and re-write it to make it more understandable.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Celttechie</title><link href="http://celttechie.github.io/" rel="alternate"></link><link href="http://celttechie.github.io/feeds/brian-jarrett.atom.xml" rel="self"></link><id>http://celttechie.github.io/</id><updated>2014-07-10T00:00:00-06:00</updated><entry><title>Git Management Notes</title><link href="http://celttechie.github.io/git-management-notes.html" rel="alternate"></link><updated>2014-07-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-07-10:git-management-notes.html</id><summary type="html">&lt;p&gt;I originally cloned the SQLAlchemy repo directly from the original source.  Once I started making changes that I wanted to contribute with pull requests, I forked the repository and had to change origin on my local git clone:&lt;/p&gt;
+&lt;pre&gt;
+git remote -v
+git remote rm origin
+git remote add origin https://github.com/celttechie/sqlalchemy.git
+git remote add upstream https://github.com/zzzeek/sqlalchemy.git
+&lt;/pre&gt;</summary><category term="git"></category></entry><entry><title>Installing OpenStack Icehouse Lab</title><link href="http://celttechie.github.io/installing-openstack-icehouse-lab.html" rel="alternate"></link><updated>2014-06-02T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-06-02:installing-openstack-icehouse-lab.html</id><summary type="html">&lt;p&gt;NOTE:  These are my notes as I'm installing OpenStack.  I'll come back later and re-write it to make it more understandable.&lt;/p&gt;
 
 &lt;h2&gt;VirtualBox Setup&lt;/h2&gt;
 &lt;h3&gt;Network Layout&lt;/h3&gt;
@@ -93,25 +99,7 @@ I got an error:  &lt;/p&gt;
 2014-06-02 20:19:09.939 10335 CRITICAL glance [-] ValueError: invalid literal for int() with base 10: ''
 &lt;/pre&gt;
 &lt;p&gt;when I did &lt;tt&gt; glance-manage db_sync &lt;/tt&gt; on its own I got the same error.  I ran glance-manage --help and saw that there was a verbose switch, so I tried that:  &lt;tt&gt; glance-manage -v db_sync &lt;/tt&gt;&lt;br /&gt;
-This gave me a stack trace, and I found that the empty int() was given a variable name "port".  SQLAlchemy was trying to set up a connection to the mysql server and had an empty port variable.  I thought this was odd and went back to look at my settings for the database connection string just in case I missed something.  It turns out I had accidentally added a colon after the server name in the connection string, then followed it with the forward slash.  This is what gave me an empty port.&lt;/p&gt;</summary><category term="OpenStack"></category><category term="Icehouse"></category><category term="Lab"></category><category term="Ubuntu 14.04"></category></entry><entry><title>About</title><link href="http://celttechie.github.io/about.html" rel="alternate"></link><updated>2014-05-27T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-05-27:about.html</id><summary type="html">&lt;h2&gt;Overview&lt;/h2&gt;
-&lt;p&gt;I've always enjoyed fixing things, troubleshooting, solving problems and designing solutions.  I approach situations in a logical manner.  I ask lots of questions and look at situations from as many angles as I can.  I like to research and fully understand the problem and as many variables as I can to come up with a superior solution.  I am very detail oriented.  I enjoy challenging projects that require me to learn something new along the way.  I make a point to deep dive on each new technology I learn so I can properly troubleshoot when things go wrong.  I make it a point to know where to get the information I need and to know how to apply it.  I don't try to memorize a fix for each problem.&lt;/p&gt;
-
-&lt;h2&gt;Problem Solving/Troubleshooting&lt;/h2&gt;
-&lt;p&gt;When I was in High School I wrote down the things I liked to do and what I was good at, and a career in engineering seemed to be a good fit.  I got my first taste of solving real-world problems when going through the introductory classes in engineering at Colorado School of Mines.&lt;/p&gt;
-
-&lt;h2&gt;Interests/Hobbies&lt;/h2&gt;
-&lt;p&gt;Technology.  Obviously.&lt;br /&gt;
-Music.  I can sing and have played several instruments over the years.  &lt;br /&gt;
-Cooking.  &lt;/p&gt;
-
-&lt;h2&gt;Goals&lt;/h2&gt;
-&lt;ul&gt;
-	&lt;li&gt;Get into IaaS architecture&lt;/li&gt;
-	&lt;li&gt;Work from home (telecommute)&lt;/li&gt;
-	&lt;li&gt;Learn new technologies&lt;/li&gt;
-	&lt;li&gt;Design my own home and have it built on some acreage.&lt;/li&gt;
-	&lt;li&gt;Learn welding so I can design and build my own outdoor oven/smoker/grill.&lt;/li&gt;
-&lt;/ul&gt;</summary><category term=""></category></entry><entry><title>Initial OpenStack Installation</title><link href="http://celttechie.github.io/initial-openstack-installation.html" rel="alternate"></link><updated>2014-05-12T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-05-09:initial-openstack-installation.html</id><summary type="html">&lt;p&gt;I'm using 14.04 which has the "icehouse" version, but if we're using an earlier server version we need to add the icehouse repository:&lt;/p&gt;
+This gave me a stack trace, and I found that the empty int() was given a variable name "port".  SQLAlchemy was trying to set up a connection to the mysql server and had an empty port variable.  I thought this was odd and went back to look at my settings for the database connection string just in case I missed something.  It turns out I had accidentally added a colon after the server name in the connection string, then followed it with the forward slash.  This is what gave me an empty port.&lt;/p&gt;</summary><category term="OpenStack"></category><category term="Icehouse"></category><category term="Lab"></category><category term="Ubuntu 14.04"></category></entry><entry><title>Initial OpenStack Installation</title><link href="http://celttechie.github.io/initial-openstack-installation.html" rel="alternate"></link><updated>2014-05-12T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-05-09:initial-openstack-installation.html</id><summary type="html">&lt;p&gt;I'm using 14.04 which has the "icehouse" version, but if we're using an earlier server version we need to add the icehouse repository:&lt;/p&gt;
 &lt;pre&gt;
 apt-get install python-software-properties
 add-apt-repository cloud-archive:icehouse
