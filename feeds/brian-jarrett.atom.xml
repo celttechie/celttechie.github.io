@@ -2,9 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Celttechie</title><link href="http://celttechie.github.io/" rel="alternate"></link><link href="http://celttechie.github.io/feeds/brian-jarrett.atom.xml" rel="self"></link><id>http://celttechie.github.io/</id><updated>2014-07-28T12:00:00-06:00</updated><entry><title>OpenStack Testing Automation Notes</title><link href="http://celttechie.github.io/openstack-testing-automation.html" rel="alternate"></link><updated>2014-07-28T12:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-07-28:openstack-testing-automation.html</id><summary type="html">&lt;div class="section" id="testing-the-taskflow-project"&gt;
 &lt;h2&gt;Testing the TaskFlow project&lt;/h2&gt;
 &lt;p&gt;I'm currently working on the tests used by TaskFlow to test sql persistence.
-Here are some examples of running the tests with various commands::
+Here are some examples of running the tests with various commands:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
 % tox -e py27-sa9-pymysql -- taskflow.tests.unit.persistence.test_sql_persistence
-% python setup.py testr --slowest --testr-args=taskflow.tests.unit.persistence.test_sql_persistence&lt;/p&gt;
+% python setup.py testr --slowest --testr-args=taskflow.tests.unit.persistence.test_sql_persistence
+&lt;/pre&gt;
 &lt;/div&gt;
 </summary><category term="OpenStack"></category><category term="testing"></category><category term="automation"></category></entry><entry><title>Git Management Notes</title><link href="http://celttechie.github.io/git-management-notes.html" rel="alternate"></link><updated>2014-07-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-07-10:git-management-notes.html</id><summary type="html">&lt;p&gt;I originally cloned the SQLAlchemy repo directly from the original source.  Once I started making changes that I wanted to contribute with pull requests, I forked the repository and had to change origin on my local git clone:&lt;/p&gt;
 &lt;pre&gt;
