@@ -8,7 +8,41 @@ Here are some examples of running the tests with various commands:&lt;/p&gt;
 % python setup.py testr --slowest --testr-args=taskflow.tests.unit.persistence.test_sql_persistence
 &lt;/pre&gt;
 &lt;/div&gt;
-</summary><category term="OpenStack"></category><category term="testing"></category><category term="automation"></category></entry><entry><title>Git Management Notes</title><link href="http://celttechie.github.io/git-management-notes.html" rel="alternate"></link><updated>2014-07-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-07-10:git-management-notes.html</id><summary type="html">&lt;p&gt;I originally cloned the SQLAlchemy repo directly from the original source.  Once I started making changes that I wanted to contribute with pull requests, I forked the repository and had to change origin on my local git clone:&lt;/p&gt;
+</summary><category term="OpenStack"></category><category term="testing"></category><category term="automation"></category></entry><entry><title>Using pv-grub with a DomU using an LVM root</title><link href="http://celttechie.github.io/pv-grub-with-domu-lvm-root.html" rel="alternate"></link><updated>2014-05-26T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-07-22:pv-grub-with-domu-lvm-root.html</id><summary type="html">&lt;p&gt;My first VM in Xen was installed using LVM, so I had a DomU running LVM for the root and swap partitions.  This is not the way most VMs are installed, but I thought I'd document how I got pv-grub to load.&lt;/p&gt;
+
+&lt;p&gt;When in the DomU, you can take a look at &lt;strong&gt;/etc/fstab&lt;/strong&gt; to get the required value for &lt;i&gt;root=&lt;/i&gt; in the kernel line.&lt;/p&gt;
+
+&lt;p&gt;Edited &lt;strong&gt;/boot/grub/menu.lst&lt;/strong&gt; in the guest (DomU) with the appropriate path for &lt;i&gt;root=&lt;/i&gt;:&lt;/p&gt;
+&lt;pre&gt;
+default 0
+timeout 5
+
+title vmlinuz-3.13.0-24-generic
+
+root (hd0,0)
+kernel /vmlinuz-3.13.0-24-generic root=/dev/mapper/GuestA1--vg-root
+initrd /initrd.img-3.13.0-24-generic quiet
+&lt;/pre&gt;
+&lt;p&gt;then shut it down.&lt;/p&gt;
+
+&lt;p&gt;Edited &lt;strong&gt;/etc/xen/Guest-A1.cfg&lt;/strong&gt; on the host (Dom0), removing &lt;i&gt; /boot &lt;/i&gt; from the grub configuration path in &lt;i&gt;extra =&lt;/i&gt;:&lt;/p&gt;
+&lt;pre&gt;
+name = "Guest-A1-pv"
+
+memory = 512
+
+disk = ['phy:/dev/Host-A-vg/GuestA1-root,xvda,w']
+vif = [' ']
+
+#bootloader = "pygrub"
+
+#kernel = "/var/lib/xen/images/ubuntu-netboot/vmlinuz"
+#ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
+#extra = "debian-installer/exit/always_halt=true -- console=hvc0"
+
+kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
+extra = "(hd0,0)/grub/menu.lst"
+&lt;/pre&gt;</summary><category term=""></category></entry><entry><title>Git Management Notes</title><link href="http://celttechie.github.io/git-management-notes.html" rel="alternate"></link><updated>2014-07-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-07-10:git-management-notes.html</id><summary type="html">&lt;p&gt;I originally cloned the SQLAlchemy repo directly from the original source.  Once I started making changes that I wanted to contribute with pull requests, I forked the repository and had to change origin on my local git clone:&lt;/p&gt;
 &lt;pre&gt;
 git remote -v
 git remote rm origin
@@ -115,41 +149,7 @@ add-apt-repository cloud-archive:icehouse
 
 apt-get update
 apt-get dist-upgrade
-&lt;/pre&gt;</summary><category term=""></category></entry><entry><title>Using pv-grub with a DomU using an LVM root</title><link href="http://celttechie.github.io/pv-grub-with-domu-lvm-root.html" rel="alternate"></link><updated>2014-05-26T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-05-09:pv-grub-with-domu-lvm-root.html</id><summary type="html">&lt;p&gt;My first VM in Xen was installed using LVM, so I had a DomU running LVM for the root and swap partitions.  This is not the way most VMs are installed, but I thought I'd document how I got pv-grub to load.&lt;/p&gt;
-
-&lt;p&gt;When in the DomU, you can take a look at &lt;strong&gt;/etc/fstab&lt;/strong&gt; to get the required value for &lt;i&gt;root=&lt;/i&gt; in the kernel line.&lt;/p&gt;
-
-&lt;p&gt;Edited &lt;strong&gt;/boot/grub/menu.lst&lt;/strong&gt; in the guest (DomU) with the appropriate path for &lt;i&gt;root=&lt;/i&gt;:&lt;/p&gt;
-&lt;pre&gt;
-default 0
-timeout 5
-
-title vmlinuz-3.13.0-24-generic
-
-root (hd0,0)
-kernel /vmlinuz-3.13.0-24-generic root=/dev/mapper/GuestA1--vg-root
-initrd /initrd.img-3.13.0-24-generic quiet
-&lt;/pre&gt;
-&lt;p&gt;then shut it down.&lt;/p&gt;
-
-&lt;p&gt;Edited &lt;strong&gt;/etc/xen/Guest-A1.cfg&lt;/strong&gt; on the host (Dom0), removing &lt;i&gt; /boot &lt;/i&gt; from the grub configuration path in &lt;i&gt;extra =&lt;/i&gt;:&lt;/p&gt;
-&lt;pre&gt;
-name = "Guest-A1-pv"
-
-memory = 512
-
-disk = ['phy:/dev/Host-A-vg/GuestA1-root,xvda,w']
-vif = [' ']
-
-#bootloader = "pygrub"
-
-#kernel = "/var/lib/xen/images/ubuntu-netboot/vmlinuz"
-#ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
-#extra = "debian-installer/exit/always_halt=true -- console=hvc0"
-
-kernel = "/usr/lib/xen/boot/pv-grub-x86_64.gz"
-extra = "(hd0,0)/grub/menu.lst"
-&lt;/pre&gt;</summary><category term=""></category></entry><entry><title>Installing/configuring PV-Grub</title><link href="http://celttechie.github.io/installing-configuring-pv-grub.html" rel="alternate"></link><updated>2014-05-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-05-05:installing-configuring-pv-grub.html</id><summary type="html">&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
+&lt;/pre&gt;</summary><category term=""></category></entry><entry><title>Installing/configuring PV-Grub</title><link href="http://celttechie.github.io/installing-configuring-pv-grub.html" rel="alternate"></link><updated>2014-06-02T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-05-05:installing-configuring-pv-grub.html</id><summary type="html">&lt;p&gt;I didn't see any Ubuntu repository specifically for using PV-Grub, so I turned to the instructions on Xen's website:  &lt;a href="http://wiki.xen.org/wiki/PvGrub"&gt;http://wiki.xen.org/wiki/PvGrub&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Had to install git, get prerequisites for &lt;i&gt;configure&lt;/i&gt; to run it's checks, and clone the repository:&lt;/p&gt;
 &lt;pre&gt;
@@ -265,7 +265,7 @@ ramdisk = "/var/lib/xen/images/ubuntu-netboot/initrd.gz"
 extra = "debian-installer/exit/always_halt=true -- console=hvc0"
 &lt;/pre&gt;
 
-&lt;p&gt;Then running &lt;tt&gt;xl create /etc/xen/GuestA1.cfg -c&lt;/tt&gt; again used pygrub to load the kernel and allowed the system to boot and give me a console.&lt;/p&gt;</summary><category term=""></category></entry><entry><title>Installing Xen 4.4 on Ubuntu Server 14.04</title><link href="http://celttechie.github.io/xen-4.4-on-ubuntu-server-14.04.html" rel="alternate"></link><updated>2014-05-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-04-17:xen-4.4-on-ubuntu-server-14.04.html</id><summary type="html">&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
+&lt;p&gt;Then running &lt;tt&gt;xl create /etc/xen/GuestA1.cfg -c&lt;/tt&gt; again used pygrub to load the kernel and allowed the system to boot and give me a console.&lt;/p&gt;</summary><category term="Xen"></category><category term="virtualization"></category></entry><entry><title>Installing Xen 4.4 on Ubuntu Server 14.04</title><link href="http://celttechie.github.io/xen-4.4-on-ubuntu-server-14.04.html" rel="alternate"></link><updated>2014-05-10T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-04-17:xen-4.4-on-ubuntu-server-14.04.html</id><summary type="html">&lt;p&gt;Today Ubuntu Server 14.04 was released and I downloaded the ISO to work with the latest from Canonical.  I've used Citrix XenSever for several years on servers that I manage, but I'm teaching myself how to work with OpenStack and other "cloud" and virtualization technologies.  I have a free server so I'm starting with a Xen (Xen Project) install.&lt;/p&gt;
 
 &lt;h2&gt;Installing Xen (Xen Project) Hypervisor&lt;/h2&gt;
 &lt;p&gt;I installed Xen:  &lt;tt&gt;apt-get install xen-hypervisor-4.4&lt;/tt&gt;&lt;/p&gt;
@@ -365,7 +365,7 @@ set uplink-recovery no-sta-link-reboot-time 300
 &amp;lt;/Directory&amp;gt;
 &lt;/pre&gt;
 
-&lt;p&gt;More information &lt;a href="http://httpd.apache.org/docs/2.4/upgrading.html"&gt;here&lt;/a&gt;.&lt;/p&gt;</summary><category term="Apache 2.4"></category><category term="authorization"></category><category term="configuration"></category></entry><entry><title>PHP missing mycrypt.ini file in Ubuntu 13.10</title><link href="http://celttechie.github.io/ubuntu-13.10-missing-mcrypt.html" rel="alternate"></link><updated>2014-05-26T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-04-08:ubuntu-13.10-missing-mcrypt.html</id><summary type="html">&lt;p&gt;So doing a &lt;strong&gt;dist-upgrade&lt;/strong&gt; to Ubuntu 13.10 resulted in &lt;i&gt;mcrypt&lt;/i&gt; no longer being loaded in PHP.  The fix?&lt;/p&gt;
+&lt;p&gt;More information &lt;a href="http://httpd.apache.org/docs/2.4/upgrading.html"&gt;here&lt;/a&gt;.&lt;/p&gt;</summary><category term="Apache 2.4"></category><category term="authorization"></category><category term="configuration"></category></entry><entry><title>PHP missing mcrypt.ini file in Ubuntu 13.10</title><link href="http://celttechie.github.io/ubuntu-13.10-missing-mcrypt.html" rel="alternate"></link><updated>2014-05-26T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-04-08:ubuntu-13.10-missing-mcrypt.html</id><summary type="html">&lt;p&gt;So doing a &lt;strong&gt;dist-upgrade&lt;/strong&gt; to Ubuntu 13.10 resulted in &lt;i&gt;mcrypt&lt;/i&gt; no longer being loaded in PHP.  The fix?&lt;/p&gt;
 &lt;pre&gt;
 ln -s /etc/php5/conf.d/mcrypt.ini /etc/php5/apache2/conf.d/20-mcrypt.ini
 service apache2 restart
@@ -392,7 +392,7 @@ aptitude install nautilus-dropbox
 add-apt-repository ppa:tuxpoldo/btsync
 aptitude update
 aptitude install btsync-gui
-&lt;/pre&gt;</summary><category term=""></category></entry><entry><title>Setting up new Dell Laptop with Ubuntu 14.04</title><link href="http://celttechie.github.io/setting-up-laptop-with-ubuntu.html" rel="alternate"></link><updated>2014-04-08T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-04-06:setting-up-laptop-with-ubuntu.html</id><summary type="html">&lt;p&gt;So I got a good price on a Dell Inspiron with a Haswell i7, 8Gb of RAM, and a 1600x900 display (which is better than most of the laptops in the $500 - $800 range).  I didn't feel that I needed a touchscreen, preferring to keep my hands on the keyboard as much as possible.&lt;/p&gt;
+&lt;/pre&gt;</summary><category term="Ubuntu"></category><category term="packages"></category><category term="laptop"></category></entry><entry><title>Setting up new Dell Laptop with Ubuntu 14.04</title><link href="http://celttechie.github.io/setting-up-laptop-with-ubuntu.html" rel="alternate"></link><updated>2014-04-08T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-04-06:setting-up-laptop-with-ubuntu.html</id><summary type="html">&lt;p&gt;So I got a good price on a Dell Inspiron with a Haswell i7, 8Gb of RAM, and a 1600x900 display (which is better than most of the laptops in the $500 - $800 range).  I didn't feel that I needed a touchscreen, preferring to keep my hands on the keyboard as much as possible.&lt;/p&gt;
 
 &lt;p&gt;The Dell Inspiron 17r (5737) came with Windows 8, but since I'm using this as my "dev/ops" machine, I'm going to start from scratch with Ubuntu.  Ubuntu 14.04 is due out in a few weeks, so I decided to load the Beta 2 build.&lt;/p&gt;
 
@@ -521,7 +521,7 @@ So each post needs, at a minimum a category (categories?) and tags.
 &lt;pre&gt;
     sudo update-grub
 &lt;/pre&gt;
-&lt;p&gt;a reboot, and we're there.&lt;/p&gt;</summary><category term="Ubuntu"></category><category term="Hyper-V"></category><category term="virtualization"></category></entry><entry><title>Another tutorial for building your own blog application</title><link href="http://celttechie.github.io/another-tutorial-for-blog-application.html" rel="alternate"></link><updated>2014-04-08T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-03-26:another-tutorial-for-blog-application.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.brettdangerfield.com/post/creating_a_blog_with_pyramid_mongdb_bootstrap/|"&gt;http://www.brettdangerfield.com/post/creating_a_blog_with_pyramid_mongdb_bootstrap/|&lt;/a&gt; is another tutorial for building your own blog application.  I was considering using Pyramid instead of Flask for my framework, but decided to delve more into Flask and use MongoDB for the backend.  At some point I may try Pyramid out and do something similar to what I've done with this CareerLog application.&lt;/p&gt;</summary><category term="Pyramid"></category><category term="MongoDB"></category><category term="Bootstrap"></category></entry><entry><title>Don't embed Bootstrap in HTML</title><link href="http://celttechie.github.io/dont-embed-bootstrap-in-html.html" rel="alternate"></link><updated>2014-04-08T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-03-26:dont-embed-bootstrap-in-html.html</id><summary type="html">&lt;p&gt;An &lt;a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html"&gt;interesting article&lt;/a&gt; on keeping Twitter's &lt;a href="http://getbootstrap.com"&gt;Bootstrap&lt;/a&gt; code out of your HTML.  I came across it while designing the CareerLog website.  I especially liked his second point:&lt;br /&gt;
+&lt;p&gt;a reboot, and we're there.&lt;/p&gt;</summary><category term="Ubuntu"></category><category term="Hyper-V"></category><category term="virtualization"></category></entry><entry><title>Another tutorial for building your own blog application</title><link href="http://celttechie.github.io/another-tutorial-for-blog-application.html" rel="alternate"></link><updated>2014-03-26T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-03-26:another-tutorial-for-blog-application.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.brettdangerfield.com/post/creating_a_blog_with_pyramid_mongdb_bootstrap/|"&gt;http://www.brettdangerfield.com/post/creating_a_blog_with_pyramid_mongdb_bootstrap/|&lt;/a&gt; is another tutorial for building your own blog application.  I was considering using Pyramid instead of Flask for my framework, but decided to delve more into Flask and use MongoDB for the backend.  At some point I may try Pyramid out and do something similar to what I've done with this CareerLog application.&lt;/p&gt;</summary><category term="Pyramid"></category><category term="MongoDB"></category><category term="Bootstrap"></category></entry><entry><title>Don't embed Bootstrap in HTML</title><link href="http://celttechie.github.io/dont-embed-bootstrap-in-html.html" rel="alternate"></link><updated>2014-04-08T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-03-26:dont-embed-bootstrap-in-html.html</id><summary type="html">&lt;p&gt;An &lt;a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html"&gt;interesting article&lt;/a&gt; on keeping Twitter's &lt;a href="http://getbootstrap.com"&gt;Bootstrap&lt;/a&gt; code out of your HTML.  I came across it while designing the CareerLog website.  I especially liked his second point:&lt;br /&gt;
 &lt;tt&gt;by hard-coding Bootstrap's class names into your HTML, you're marrying your code to Bootstrap.&lt;/tt&gt;&lt;/p&gt;
 
 &lt;p&gt;In something as small as my CareerLog project, it may not be that big of a deal to go through and refactor a few template pages to use something else, but on larger projects, keeping the design and code separate will pay off in the long run.&lt;/p&gt;</summary><category term="Bootstrap"></category><category term="HTML"></category></entry><entry><title>Home</title><link href="http://celttechie.github.io/home.html" rel="alternate"></link><updated>2014-05-27T00:00:00-06:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,2014-03-24:home.html</id><summary type="html">&lt;h2&gt;Why this site?&lt;/h2&gt;
@@ -534,5 +534,4 @@ So, I decided to resign from my position and not renew my contract for another y
 &lt;h2&gt;What's here?&lt;/h2&gt;
 &lt;p&gt;If you want to know more about me, and especially my career history, you can look through my &lt;a href="/resume"&gt;resume&lt;/a&gt;.  I'm also working on an "About" page that will be available soon.&lt;/p&gt;
 
-&lt;p&gt;You can also browse my &lt;a href="/posts"&gt;posts&lt;/a&gt; which are classified with &lt;a href="/tags"&gt;tags&lt;/a&gt; and &lt;a href="/categories"&gt;categories&lt;/a&gt; to make things easier to find.   I will be documenting what I learn and find as I get up to speed on using IaaS technologies.&lt;/p&gt;</summary><category term=""></category></entry><entry><title>Projects</title><link href="http://celttechie.github.io/my-test-page.html" rel="alternate"></link><updated>1971-01-01T12:00:00-07:00</updated><author><name>Brian Jarrett</name></author><id>tag:celttechie.github.io,1971-01-01:my-test-page.html</id><summary type="html">&lt;p&gt;This is a test page&lt;/p&gt;
-</summary><category term="one"></category><category term="two"></category></entry></feed>
+&lt;p&gt;You can also browse my &lt;a href="/posts"&gt;posts&lt;/a&gt; which are classified with &lt;a href="/tags"&gt;tags&lt;/a&gt; and &lt;a href="/categories"&gt;categories&lt;/a&gt; to make things easier to find.   I will be documenting what I learn and find as I get up to speed on using IaaS technologies.&lt;/p&gt;</summary><category term=""></category></entry></feed>

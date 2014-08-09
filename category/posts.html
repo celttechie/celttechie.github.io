@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Setting up Ubuntu display when running as a Hyper-V guest - Celttechie</title>
+    <title>Posts - Celttechie</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,10 +11,10 @@
     
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Setting up Ubuntu display when running as a Hyper-V guest"/>
-            <meta property="og:url" content="http://celttechie.github.io/ubuntu-hyperv-guest.html"/>
-            <meta property="og:description" content=""/>
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="Celttechie"/>
+            <meta property="og:url" content="http://celttechie.github.io"/>
+            <meta property="og:description" content="Celttechie"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://celttechie.github.io/theme/css/bootstrap.min.css" type="text/css"/>
@@ -44,13 +44,13 @@ Celttechie            </a>
                          <li><a href="http://celttechie.github.io/pages/resume.html">
                              Resume
                           </a></li>
-                        <li class="active">
+                        <li >
                             <a href="http://celttechie.github.io/category/notes.html">Notes</a>
                         </li>
                         <li >
                             <a href="http://celttechie.github.io/category/openstack.html">Openstack</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://celttechie.github.io/category/posts.html">Posts</a>
                         </li>
             </ul>
@@ -66,60 +66,51 @@ Celttechie            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="http://celttechie.github.io/ubuntu-hyperv-guest.html"
-                       rel="bookmark"
-                       title="Permalink to Setting up Ubuntu display when running as a Hyper-V guest">
-                        Setting up Ubuntu display when running as a Hyper-V guest
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-03-27T00:00:00"> Thu 27 March 2014</time>
-    </span>
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="http://celttechie.github.io/tag/ubuntu.html">Ubuntu</a>
-        /
-	<a href="http://celttechie.github.io/tag/hyper-v.html">Hyper-V</a>
-        /
-	<a href="http://celttechie.github.io/tag/virtualization.html">virtualization</a>
-    
-</footer><!-- /.post-info -->                    </div>
+            <article>
+                <h2><a href="http://celttechie.github.io/pv-grub-with-domu-lvm-root.html">Using pv-grub with a DomU using an LVM root</a></h2>
+                <div class="summary">
+                    <a class="btn btn-default btn-xs" href="http://celttechie.github.io/pv-grub-with-domu-lvm-root.html">more ...</a>
                 </div>
-                <p>After installing Ubuntu 13.10 on Windows 8.1 running Hyper-V the guest's screen resolution is fixed at <br />
-1152x864.  I found out that Ubuntu needed some services to run optimized as a virtual guest.</p>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://celttechie.github.io/installing-openstack-icehouse-lab.html">Installing OpenStack Icehouse Lab</a></h2>
+                <div class="summary">using VirtualBox and Ubuntu 14.04 guests
+                    <a class="btn btn-default btn-xs" href="http://celttechie.github.io/installing-openstack-icehouse-lab.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://celttechie.github.io/installing-configuring-pv-grub.html">Installing/configuring PV-Grub</a></h2>
+                <div class="summary">Making the transition to PV-Grub from pygrub
+                    <a class="btn btn-default btn-xs" href="http://celttechie.github.io/installing-configuring-pv-grub.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://celttechie.github.io/creating-xen-vms.html">Creating Xen DomU VMs</a></h2>
+                <div class="summary">
+                    <a class="btn btn-default btn-xs" href="http://celttechie.github.io/creating-xen-vms.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://celttechie.github.io/xen-4.4-on-ubuntu-server-14.04.html">Installing Xen 4.4 on Ubuntu Server 14.04</a></h2>
+                <div class="summary">Installing Xen 4.4 on Ubuntu Server 14.04
+                    <a class="btn btn-default btn-xs" href="http://celttechie.github.io/xen-4.4-on-ubuntu-server-14.04.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
-<p>To fix this, I ran</p>
-<pre>
-    sudo apt-get install linux-image-extra-virtual
-</pre>
-<p>which installed everything Ubuntu needs to run as a virtual guest.</p>
-
-<p>edited <i>/etc/default/grub</i> so the <strong>GRUB_CMDLINE_LINUX_DEFAULT</strong> line reads:</p>
-<pre>
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1600x900"
-</pre>
-<p>then ran</p>
-<pre>
-    sudo update-grub
-</pre>
-<p>a reboot, and we're there.</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
+    <ul class="pagination">
+            <li class="prev disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a
+                        href="http://celttechie.github.io/category/posts.html">1</a></li>
+                <li class=""><a
+                        href="http://celttechie.github.io/category/posts2.html">2</a></li>
+            <li class="next"><a
+                    href="http://celttechie.github.io/category/posts2.html">&raquo;</a></li>
+    </ul>
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 

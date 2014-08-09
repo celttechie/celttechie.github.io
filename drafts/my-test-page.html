@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Setting up Ubuntu display when running as a Hyper-V guest - Celttechie</title>
+    <title>Projects - Celttechie</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,9 +12,9 @@
 
     <!-- Open Graph tags -->
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Setting up Ubuntu display when running as a Hyper-V guest"/>
-            <meta property="og:url" content="http://celttechie.github.io/ubuntu-hyperv-guest.html"/>
-            <meta property="og:description" content=""/>
+            <meta property="og:title" content="Projects"/>
+            <meta property="og:url" content="http://celttechie.github.io/drafts/my-test-page.html"/>
+            <meta property="og:description" content="Test page for new blog"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://celttechie.github.io/theme/css/bootstrap.min.css" type="text/css"/>
@@ -44,7 +44,7 @@ Celttechie            </a>
                          <li><a href="http://celttechie.github.io/pages/resume.html">
                              Resume
                           </a></li>
-                        <li class="active">
+                        <li >
                             <a href="http://celttechie.github.io/category/notes.html">Notes</a>
                         </li>
                         <li >
@@ -70,10 +70,10 @@ Celttechie            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://celttechie.github.io/ubuntu-hyperv-guest.html"
+                    <a href="http://celttechie.github.io/drafts/my-test-page.html"
                        rel="bookmark"
-                       title="Permalink to Setting up Ubuntu display when running as a Hyper-V guest">
-                        Setting up Ubuntu display when running as a Hyper-V guest
+                       title="Permalink to Projects">
+                        Projects
                     </a>
                 </h1>
             </header>
@@ -83,38 +83,20 @@ Celttechie            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-03-27T00:00:00"> Thu 27 March 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="1971-01-01T12:00:00"> Fri 01 January 1971</time>
     </span>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://celttechie.github.io/tag/ubuntu.html">Ubuntu</a>
+	<a href="http://celttechie.github.io/tag/one.html">one</a>
         /
-	<a href="http://celttechie.github.io/tag/hyper-v.html">Hyper-V</a>
-        /
-	<a href="http://celttechie.github.io/tag/virtualization.html">virtualization</a>
+	<a href="http://celttechie.github.io/tag/two.html">two</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>After installing Ubuntu 13.10 on Windows 8.1 running Hyper-V the guest's screen resolution is fixed at <br />
-1152x864.  I found out that Ubuntu needed some services to run optimized as a virtual guest.</p>
+                <p>This is a test page</p>
 
-<p>To fix this, I ran</p>
-<pre>
-    sudo apt-get install linux-image-extra-virtual
-</pre>
-<p>which installed everything Ubuntu needs to run as a virtual guest.</p>
-
-<p>edited <i>/etc/default/grub</i> so the <strong>GRUB_CMDLINE_LINUX_DEFAULT</strong> line reads:</p>
-<pre>
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1600x900"
-</pre>
-<p>then ran</p>
-<pre>
-    sudo update-grub
-</pre>
-<p>a reboot, and we're there.</p>
             </div>
             <!-- /.entry-content -->
         </article>
