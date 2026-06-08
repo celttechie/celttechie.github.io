@@ -1,0 +1,48 @@
+site_name: Brian Jarrett | Senior MLOps & Systems Architect
+site_description: Personal portfolio and technical blog of Brian Jarrett.
+site_author: Brian Jarrett
+site_url: https://celttechie.github.io/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Experience: 
+      - Professional History: index.md#3-professional-experience-the-deep-vault
+  - Projects:
+      - SecondBrian: index.md#4a-secondbrian-multi-agent-ai-orchestration
+      - Metabolic Analytics: index.md#4b-metabolic-health-analytics
+  - Archive (2014):
+      - Legacy Site: archive/index.html
