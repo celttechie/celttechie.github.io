@@ -31,6 +31,5 @@
 
 ## Education & Certifications
 <div class="education-section">
-    <div class="education-entry"><strong>U.S. Air Force:</strong> Electronics Technician / RADAR Specialist (AWACS)</div>
-    <div class="education-entry"><strong>Colorado School of Mines:</strong> 2 Years (Chemistry focus)</div>
+--8<-- "docs/sections/education.md"
 </div>

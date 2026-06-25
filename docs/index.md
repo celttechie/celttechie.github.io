@@ -31,6 +31,7 @@
 
 ---
 
+## 5. Education & Certifications
 --8<-- "docs/sections/education.md"
 
 ---

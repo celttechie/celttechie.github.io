@@ -129,11 +129,20 @@ strong {
 }
 
 .education-section {
-    display: flex;
-    justify-content: space-between;
     page-break-inside: avoid;
 }
 
-.education-entry {
+.education-section ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.education-section li {
+    margin: 0;
     font-size: 9.5pt;
+    color: #2d3748;
 }
