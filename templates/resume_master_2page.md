@@ -1,8 +1,8 @@
 <div class="resume-header">
     <h1>Brian Jarrett</h1>
-    <div class="subtitle">Systems Engineer</div>
+    <div class="subtitle">Senior Systems Engineer</div>
     <div class="contact-info">
-        <span>📍 Grand Junction, CO</span>
+        <span>📍 Grove, OK</span>
         <span>📧 <a href="mailto:celttechie@gmail.com">celttechie@gmail.com</a></span>
         <span>🔗 <a href="https://celttechie.github.io/">celttechie.github.io</a></span>
         <span>🐱 <a href="https://github.com/celttechie">github.com/celttechie</a></span>
@@ -10,7 +10,7 @@
 </div>
 
 ## Professional Summary
-Highly analytical engineering professional with a 30-year foundation in complex system validation, data integrity, and autonomous technology adaptation. Proven track record of entering unfamiliar technical ecosystems, rapidly mastering complex architectures, and evolving into an organizational Subject Matter Expert (SME). Expert in diagnosing legacy infrastructure, validating data quality at the source to eliminate "garbage in, garbage out" variables, and architecting robust ETL pipelines that merge disparate inputs into high-integrity sources of truth. An objective, narrative-free troubleshooter who translates intricate system data into actionable executive metrics, applying pragmatic innovation—including targeted AI/LLM workflows—strictly where it maximizes operational value.
+Highly analytical engineering professional with a 30-year foundation in complex system validation, data integrity, and autonomous technology adaptation. Proven track record of entering unfamiliar technical ecosystems, rapidly mastering complex architectures, and becoming a Subject Matter Expert (SME) for the organization's technology stack. Expert in diagnosing legacy infrastructure, validating data quality at the source to eliminate "garbage in, garbage out" variables, and architecting robust ETL pipelines that merge disparate inputs into high-integrity sources of truth. An objective, narrative-free troubleshooter who translates intricate system data into actionable executive metrics, applying pragmatic innovation—including targeted AI/LLM workflows—strictly where it maximizes operational value.
 
 ## Technical Skills
 <div class="skills-section">
