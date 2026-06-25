@@ -1,6 +1,6 @@
 <div class="resume-header">
     <h1>Brian Jarrett</h1>
-    <div class="subtitle">Senior MLOps Engineer & Systems Architect</div>
+    <div class="subtitle">Systems Engineer</div>
     <div class="contact-info">
         <span>📍 Grand Junction, CO</span>
         <span>📧 <a href="mailto:celttechie@gmail.com">celttechie@gmail.com</a></span>

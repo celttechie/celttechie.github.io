@@ -1,6 +1,6 @@
 <div class="resume-header">
     <h1>Brian Jarrett</h1>
-    <div class="subtitle">Senior MLOps & AI Systems Engineer</div>
+    <div class="subtitle">Systems Engineer</div>
     <div class="contact-info">
         <span>📍 Grand Junction, CO</span>
         <span>📧 <a href="mailto:celttechie@gmail.com">celttechie@gmail.com</a></span>
@@ -15,13 +15,12 @@ Highly analytical engineering professional with a 30-year foundation in complex 
 ## Technical Skills
 <div class="skills-section">
     <div class="skills-column">
-        <strong>AI & Data Engineering:</strong>
+        <strong>Data & Systems Engineering:</strong>
         <ul>
             <li>Python (Pandas, NumPy, SQLAlchemy)</li>
-            <li>ETL Pipeline Engineering</li>
-            <li>Data Quality Validation (Anti-GIGO)</li>
-            <li>PostgreSQL, MySQL, Redis, Qdrant</li>
-            <li>LiteLLM & Hermes Frameworks</li>
+            <li>ETL Pipeline & Data Quality (Anti-GIGO)</li>
+            <li>PostgreSQL, MySQL, Redis</li>
+            <li>Emerging AI: LiteLLM, Hermes, Qdrant</li>
         </ul>
     </div>
     <div class="skills-column">
