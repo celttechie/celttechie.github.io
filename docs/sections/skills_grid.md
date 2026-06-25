@@ -3,7 +3,7 @@
         <strong>Data & Systems Engineering:</strong>
         <ul>
             <li>Python (Pandas, NumPy, SQLAlchemy)</li>
-            <li>ETL Pipeline & Data Quality (Anti-GIGO)</li>
+            <li>ETL Pipeline & Data Validation</li>
             <li>PostgreSQL, MySQL, Redis</li>
             <li>Emerging AI: LiteLLM, Hermes, Qdrant</li>
         </ul>

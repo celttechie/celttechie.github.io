@@ -7,7 +7,7 @@
 
 ### **B. Data Engineering & Analysis**
 *   **Python Stack:** **Pandas (Primary)**, NumPy, Matplotlib, SQLAlchemy.
-*   **Data Integrity:** Data Quality Validation (Anti-GIGO), ETL Pipeline Engineering, Data Normalization, High-Integrity Sources of Truth.
+*   **Data Integrity:** ETL Pipeline Engineering & Data Validation, Data Normalization, High-Integrity Sources of Truth.
 *   **Databases:** PostgreSQL, MySQL, Redis.
 *   **Tools:** Jupyter Notebooks, Data Visualization, Complex API Data Extraction, Executive Dashboard Reporting (Tableau/Flask).
 
