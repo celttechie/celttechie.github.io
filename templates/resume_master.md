@@ -10,7 +10,7 @@
 </div>
 
 ## Professional Summary
-Senior Systems & Data Engineer with 30+ years of expertise in high-stakes infrastructure, automation, and data platform analysis. Proven track record of architecting scalable, automated solutions within rigorous regulatory frameworks (including FedRAMP for Webex Gov). Transitioning deep experience in DevOps and Data Engineering into MLOps, focusing on the orchestration of robust pipelines and AI-driven infrastructure.
+--8<-- "docs/sections/summary_executive.md"
 
 --8<-- "docs/sections/skills.md"
 

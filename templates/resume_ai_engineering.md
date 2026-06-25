@@ -10,13 +10,10 @@
 </div>
 
 ## Professional Summary
-Senior Systems and Data Engineer with 30+ years of expertise in high-stakes infrastructure, systems architecture, and complex database engineering. Deeply skilled in Python, Pandas, and custom ETL pipelines, with a proven track record of automating complex data orchestration and security systems under strict compliance frameworks (such as FedRAMP for Cisco Webex Gov). Exceptional problem-solving abilities ranging from low-level bit debugging (AWACS radar systems) to high-level cloud resource scheduling optimization. Transitioning this extensive data platform and distributed systems foundation into **AI Engineering**, focusing on the ingestion pipelines, data validation, scalability, and robust systems engineering required to productionize AI workloads.
+--8<-- "docs/sections/summary_ai_engineering.md"
 
 ## Technical Skills
-*   **AI & Data Engineering:** Python (Pandas, NumPy, SQLAlchemy), ETL Pipeline Engineering, API Data Extraction, Data Ingestion, PostgreSQL, MySQL.
-*   **Systems & Distributed Infrastructure:** Cisco UCS Servers, OpenStack, vSphere virtualization, High-Availability Clusters, Ceph storage.
-*   **Automation & DevOps:** Ansible (Advanced), CI/CD (GitHub Actions, Jenkins, Gerrit), Bash scripting, SaltStack.
-*   **Security & Compliance:** FreeIPA/LDAP, RBAC/HBAC, Qualys Security Intelligence, FedRAMP, STIG/XCCDF XML parsing.
+--8<-- "docs/sections/skills_ai_engineering.md"
 
 ## Professional Experience
 
