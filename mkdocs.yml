@@ -46,3 +46,6 @@ nav:
       - Metabolic Analytics: index.md#4b-metabolic-health-analytics
   - Archive (2014):
       - Legacy Site: archive/index.html
+
+extra_css:
+  - stylesheets/extra.css
