@@ -1,6 +1,6 @@
 ### **Cisco | Cloud Engineering Technical Leader**
 **Aug 2019 – Present (Remote)**
-*   **Infrastructure Lead:** Lead operations of critical identity and security systems for the Webex for Government (FedRAMP) cloud. Serve as escalations lead for Root Cause Analysis (RCA) and team technical mentoring.
-*   **Data Platform Engineering:** Engineered a vulnerability management system using **Python (Pandas/SQLAlchemy)** and **PostgreSQL**. Built custom ETL pipelines to synchronize **Jira API** data, feeding executive Tableau dashboards.
-*   **Compliance Automation:** Developed Python reporting tools using the **Qualys API** to parse raw **STIG XCCDF (XML)** rules, generating automated, audit-ready compliance checklists to streamline federal audits.
-*   **Skills:** Python (Pandas, SQLAlchemy), PostgreSQL, Jira/Qualys APIs, Tableau, Ansible, FreeIPA, RHEL, FedRAMP, STIG.
+*   **Infrastructure Lead:** Lead operations of critical compute and storage systems for the Webex for Government (FedRAMP) cloud. Served as instrastructure team lead, assisting service owners with vulnerability remediation and false positive assessment and SLA management.
+*   **Data Platform Engineering:** Designed and operated a vulnerability management system using custom ETL pipeline to extract data from **Jira API** and synchronize to a **PostgreSQL** database. Built a **Python (Pandas/SQLAlchemy)** web frontend for service owners.  Connected tableau dashboards for executives to show the current SLA metrics and state of vulnerability remediation.
+*   **Compliance Automation:** Developed Python reporting tools extracting data from **STIG SCCDF (XML)** files and merging with compliance data using the **Qualys API** to generate automated, audit-ready compliance checklists.
+*   **Skills:** Python (Pandas, SQLAlchemy), PostgreSQL, Jira/Qualys APIs, Tableau, Ansible, FreeIPA, RHEL/Ubuntu, FedRAMP, STIG.
