@@ -1,7 +1,7 @@
 ### **Cisco Systems | Cloud Engineer - Webex**
 **Jan 2017 – Aug 2019 (Remote)**
 
-Managed and optimized mission-critical compute infrastructure for Webex Commercial and FedRAMP environments. Collaborated across cross-functional Networking and Storage teams to ensure high availability and security of global services.
+Managed and optimized mission-critical compute infrastructure for Webex Commercial and FedRAMP environments. Collaborated with Networking and Storage teams to ensure high availability and security of global services.
 
 *   **Identity & Access Management:** Architected and deployed a **High-Availability (HA) FreeIPA cluster** to replace a legacy 389ds environment. Automated VM deployment in **OpenStack** using **Ansible**, enabling centralized RBAC and HBAC for 2,000+ Linux/Windows servers and infrastructure devices across multiple datacenters.
 *   **Infrastructure Operations:** Managed large-scale compute services using **vSphere** on **Cisco UCS** hardware. Administered critical infrastructure including bastion hosts, LDAP/FTP servers, and antivirus solutions, ensuring consistent service delivery.
