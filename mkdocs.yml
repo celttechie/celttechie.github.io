@@ -43,7 +43,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Resumes: resumes.md
-  - 2014 Archive: legacy_archive.md
+  - 2014 Site Archive: legacy_archive.md
 
 extra_css:
   - stylesheets/extra.css
