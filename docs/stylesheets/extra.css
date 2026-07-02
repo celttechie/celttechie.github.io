@@ -1,0 +1,49 @@
+:root {
+  /* Light Mode Palette: Slate & Nordic Teal */
+  --md-primary-fg-color: #1e293b;
+  --md-primary-fg-color--dark: #0f172a;
+  --md-accent-fg-color: #0d9488;
+  --md-accent-fg-color--transparent: rgba(13, 148, 136, 0.1);
+  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-md-color-scheme="slate"] {
+  /* Dark Mode Palette: Slate & Nordic Teal */
+  --md-primary-fg-color: #0f172a;
+  --md-primary-fg-color--dark: #020617;
+  --md-accent-fg-color: #0d9488;
+  --md-accent-fg-color--transparent: rgba(13, 148, 136, 0.15);
+  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Custom premium styling tweaks */
+.md-header {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom rounded corners for code blocks */
+.highlight {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-md-color-scheme="slate"] .highlight {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Make links look clean and smooth */
+.md-content a {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.2s, color 0.2s;
+}
+
+.md-content a:hover {
+  border-bottom-color: var(--md-accent-fg-color);
+}
