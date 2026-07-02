@@ -1,10 +1,13 @@
-site_name: Brian Jarrett | Senior MLOps & Systems Architect
+site_name: Brian Jarrett | Senior Systems Engineer
 site_description: Personal portfolio and technical blog of Brian Jarrett.
 site_author: Brian Jarrett
 site_url: https://celttechie.github.io/
 
 theme:
   name: material
+  font:
+    text: Inter
+    code: Roboto Mono
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -39,13 +42,8 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Experience: 
-      - Professional History: index.md#3-professional-experience-the-deep-vault
-  - Projects:
-      - SecondBrian: index.md#4a-secondbrian-multi-agent-ai-orchestration
-      - Metabolic Analytics: index.md#4b-metabolic-health-analytics
-  - Archive (2014):
-      - Legacy Site: archive/index.html
+  - Resumes: resumes.md
+  - 2014 Archive: legacy_archive.md
 
 extra_css:
   - stylesheets/extra.css

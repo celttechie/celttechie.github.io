@@ -1,4 +1,5 @@
-### **Foundational Experience (1991 – 2002)**
+### **Foundational Experience**
+**1991 – 2002**
 
 Established a lifelong technical foundation by developing a deep, low-level understanding of hardware, networking, and software systems. By learning systems from the ground up to test complex software, capture and monitor network traffic, and build networks and servers, developed a rigorous methodology for root-cause analysis, system diagnostics, and performance optimization at every layer of the stack.
 *   **Sales Engineering & Systems Integration:** Tested **ImageCast** software integrations with systems management suites including **SMS**, **CA Unicenter**, and **Desktop DNA**. Defined customer software requirements, submitted feature change requests, and conducted technical product demonstrations and training for enterprise clients such as **HP**, **Target**, and **NEC**.  Helped answer technical questions at trade shows.

@@ -1,5 +1,6 @@
-# Master Professional Profile (MPP): Brian Jarrett
-## Role Target: Senior MLOps Engineer / Data Platform Architect / Systems Lead
+# Professional Profile
+## Brian Jarrett
+### Principal Systems Engineer | Data & AI Platform Lead
 
 ---
 
@@ -11,7 +12,7 @@
 
 ---
 
-## 3. Professional Experience (The Deep Vault)
+## Professional Experience
 
 --8<-- "docs/sections/exp_01_cisco_tl.md"
 
@@ -27,7 +28,7 @@
 
 ---
 
-## 5. Education & Certifications
+## Education & Certifications
 --8<-- "docs/sections/education.md"
 
 ---
