@@ -1,7 +1,7 @@
 ## Categorized Skill Matrix
 
 ### **Data Engineering & Analysis**
-*   **Python Stack:** **Pandas**, NumPy, Flask, SQLAlchemy, XLSWriter, Openpyxl.
+*   **Python Stack:** **Pandas**, NumPy, Flask, SQLAlchemy, XlsxWriter, openpyxl.
 *   **Data Integrity:** ETL Pipeline Engineering & Data Validation, Data Normalization.
 *   **Databases:** PostgreSQL, MySQL, Redis, MongoDB.
 
@@ -13,5 +13,5 @@
 
 ### **Leadership & Methodology**
 *   **Ecosystem Mastery:** Rapid Technical Adaptation, SME Leadership, Technical Mentoring.
-*   **Problem Solving:** Root Cause Analysis (RCA), Complex System Validation & QA Testing, Monitoring
-*   **Community:** **FIRST Robotics Mentor** Teaching electronics, programming, and methodical troubleshooting and systems design.
+*   **Problem Solving:** Root Cause Analysis (RCA), Complex System Validation & QA Testing, Monitoring.
+*   **Community:** **FIRST Robotics Mentor:** Teaching electronics, programming, and methodical troubleshooting and systems design.
