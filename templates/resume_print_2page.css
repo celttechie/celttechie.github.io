@@ -88,6 +88,10 @@ h2 {
     padding-left: 12px;
 }
 
+.skills-column li {
+    text-align: left;
+}
+
 /* Experience Layout */
 h3 {
     font-size: 10.5pt;
@@ -99,10 +103,10 @@ h3 {
 
 h3 + p {
     font-size: 9pt;
-    font-weight: 600;
-    color: #718096;
+    font-weight: normal !important;
+    font-style: italic;
+    color: #4a5568;
     margin: 0 0 4px 0;
-    text-transform: uppercase;
     letter-spacing: 0.3px;
     page-break-after: avoid;
 }
