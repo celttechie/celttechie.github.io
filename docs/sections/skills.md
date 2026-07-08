@@ -1,4 +1,4 @@
-## Categorized Skill Matrix
+## Technical Skills
 
 ### **Data Engineering & Analysis**
 *   **Python Stack:** Pandas, NumPy, Flask, SQLAlchemy, XlsxWriter, openpyxl.
@@ -13,5 +13,5 @@
 
 ### **Leadership & Methodology**
 *   **Ecosystem Mastery:** Rapid Technical Adaptation, SME Leadership, Technical Mentoring.
-*   **Problem Solving:** Root Cause Analysis (RCA), Complex System Validation & QA Testing, Monitoring.
+*   **Problem Solving:** Advanced System Diagnostics & Troubleshooting, Validation & QA Testing, Monitoring.
 *   **Community:** **FIRST Robotics Mentor:** Teaching electronics, programming, and methodical troubleshooting and systems design.

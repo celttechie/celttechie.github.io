@@ -1,6 +1,6 @@
 # Professional Profile
 ## Brian Jarrett
-### Principal Systems Engineer | Data & AI Platform Lead
+### Senior Systems Engineer
 
 ---
 
