@@ -3,7 +3,7 @@
 ## Professional Summary
 --8<-- "docs/sections/summary_executive.md"
 
-## Technical Skills
+## Skills
 --8<-- "docs/sections/skills_grid.md"
 
 ## Professional Experience

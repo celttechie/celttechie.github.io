@@ -40,7 +40,7 @@ def build_pdf(template_path, output_path, css_path):
     # Clean up section numbers from headers to make them resume-standard
     resolved_markdown = re.sub(
         r'^##\s+\d+\.\s+Categorized Skill Matrix', 
-        '## Technical Skills', 
+        '## Skills', 
         resolved_markdown, 
         flags=re.MULTILINE
     )
