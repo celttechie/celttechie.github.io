@@ -1,10 +1,10 @@
-# Professional Profile
-## Brian Jarrett
-### Senior Systems Engineer
+--8<-- "docs/sections/contact.md"
 
 ---
 
---8<-- "docs/sections/summary.md"
+## Professional Summary
+
+--8<-- "docs/sections/summary_executive.md"
 
 ---
 
@@ -34,3 +34,4 @@
 ---
 
 --8<-- "docs/sections/keywords.md"
+
