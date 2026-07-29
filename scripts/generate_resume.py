@@ -59,7 +59,7 @@ def build_pdf(template_path, output_path, css_path):
     
     # Convert Markdown to HTML
     # Using 'extra' extension for tables, attributes, definition lists, etc.
-    html_body = markdown.markdown(resolved_markdown, extensions=['extra', 'admonition', 'meta'])
+    html_body = markdown.markdown(resolved_markdown, extensions=['extra', 'sane_lists', 'md_in_html', 'admonition', 'meta'])
     
     # Wrap in HTML document structure
     html_document = f"""<!DOCTYPE html>

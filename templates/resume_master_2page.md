@@ -21,6 +21,4 @@
 --8<-- "docs/sections/exp_06_foundational_short.md"
 
 ## Education & Certifications
-<div class="education-section">
 --8<-- "docs/sections/education.md"
-</div>
