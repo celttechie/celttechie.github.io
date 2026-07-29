@@ -1,4 +1,4 @@
-## Technical Skills
+## Skills
 
 ### **Data Engineering & Analysis**
 *   **Python Stack:** Pandas, NumPy, Flask, SQLAlchemy, XlsxWriter, openpyxl.

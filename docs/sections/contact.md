@@ -1,6 +1,6 @@
 <div class="resume-header">
     <h1>Brian Jarrett</h1>
-    <div class="subtitle">Senior Systems Engineer</div>
+    <div class="subtitle">Senior Systems/Platform Engineer</div>
     <div class="contact-info">
         <span>Grove, OK</span>
         <span><a href="mailto:celttechie@gmail.com">celttechie@gmail.com</a></span>
