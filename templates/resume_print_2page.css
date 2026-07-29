@@ -141,16 +141,13 @@ strong {
 }
 
 .education-section ul {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    margin: 4px 0 10px 0;
+    padding-left: 16px;
+    list-style-type: disc;
 }
 
 .education-section li {
-    margin: 0;
-    font-size: 9.5pt;
+    margin-bottom: 3px;
+    font-size: 9pt;
     color: #2d3748;
 }
