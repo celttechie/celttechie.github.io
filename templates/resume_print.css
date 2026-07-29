@@ -59,6 +59,10 @@ body {
     text-decoration: none;
 }
 
+.web-only {
+    display: none !important;
+}
+
 /* Headings */
 h2 {
     font-size: 13pt;
