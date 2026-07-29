@@ -1,7 +1,7 @@
-### **Cisco | Cloud Engineering Technical Leader**
+### **Cisco Systems | Cloud Engineering Technical Leader (FedRAMP)**
 **Aug 2019 – July 2026 (Remote)**
-*   **Infrastructure Lead:** Lead operations of critical compute and storage systems for the Webex for Government (FedRAMP) cloud. Served as infrastructure team lead, managing system availability, platform uptime, and SLA tracking.
-*   **Data Platform Engineering:** Designed and operated a vulnerability management system using a custom ETL pipeline to extract data from **Jira API** and synchronize it to a **PostgreSQL** database. Built a **Python (Pandas/SQLAlchemy)** web frontend for service owners. Connected Tableau dashboards for executives to show current SLA metrics and the state of vulnerability remediation.
-*   **Compliance Automation:** Developed Python reporting tools extracting data from **STIG XCCDF (XML)** files and merging it with compliance data using the **Qualys API** to generate automated, audit-ready compliance checklists.
-*   **Technical Guidance:** Provided technical guidance for the Webex for Government environment, mentoring engineering teams in troubleshooting methodologies and collaborating on the resolution of complex vulnerability remediation issues to maintain service stability.
-*   **Skills:** Python (Pandas, SQLAlchemy), PostgreSQL, Jira/Qualys APIs, ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG Compliance, FedRAMP.
+*   **Infrastructure & Operations Lead:** Led operations of critical compute and storage systems on **Cisco UCS** hardware for the Webex for Government (FedRAMP) cloud, maintaining high platform availability and strict SLA tracking.
+*   **Data Platform Engineering:** Designed and operated a vulnerability management system using a custom ETL pipeline to extract data from **Jira API** and synchronize it to a **PostgreSQL** database. Built a **Python (Pandas, SQLAlchemy)** web frontend and connected **Tableau** dashboards to display executive-level SLA metrics and real-time remediation progress.
+*   **Compliance Automation:** Engineered Python reporting tools to parse raw **STIG XCCDF (XML)** files and merge them with security data using the **Qualys API**, generating automated, audit-ready compliance checklists.
+*   **Technical Mentorship:** Provided technical guidance across federal cloud environments, mentoring multi-tier engineering teams in root-cause analysis and troubleshooting complex compliance and system performance issues.
+*   **Skills:** Python (Pandas, SQLAlchemy), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Compliance.
