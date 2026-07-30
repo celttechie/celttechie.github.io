@@ -1,4 +1,4 @@
-### **Cisco Systems | Cloud Engineering Technical Leader (FedRAMP)**
+### **Cisco Systems | Cloud Engineering Technical Leader**
 **Aug 2019 – July 2026 (Remote)**
 
 Managed FedRAMP operations and critical compute/storage infrastructure for the Webex for Government platform. Responsible for driving technical strategy, mentoring cross-functional engineering teams, and building automated tooling to enhance security posture, ensure SLA compliance, and streamline federal audit readiness.

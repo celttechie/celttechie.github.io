@@ -1,4 +1,4 @@
-### **Cisco Systems | Cloud Systems Engineer – Identity & Platform**
+### **Cisco Systems | Cloud Systems Engineer**
 **Jan 2017 – Aug 2019 (Remote)**
 
 Managed and optimized mission-critical compute infrastructure for Webex Commercial and FedRAMP environments. Collaborated with Networking and Storage teams to ensure zero-downtime availability, robust identity access control, and high security across US data centers.
