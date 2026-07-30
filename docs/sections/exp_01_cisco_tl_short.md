@@ -1,4 +1,4 @@
-### **Cisco Systems | Cloud Engineering Technical Leader (FedRAMP)**
+### **Cisco Systems | Cloud Engineering Technical Leader**
 **Aug 2019 – July 2026 (Remote)**
 *   **Infrastructure & Operations Lead:** Led operations of critical compute and storage systems on **Cisco UCS** hardware for the Webex for Government (FedRAMP) cloud, maintaining high platform availability and strict SLA tracking.
 *   **Data Platform Engineering:** Designed, deployed, and operated a vulnerability management system using a custom ETL pipeline to extract data from **Jira API** and synchronize it to a **PostgreSQL** database. Built a **Python (Pandas, SQLAlchemy)** web frontend and connected **Tableau** dashboards to display executive-level SLA metrics and real-time remediation progress.
