@@ -4,7 +4,8 @@
         <ul>
             <li>Python (Pandas, NumPy, Flask, SQLAlchemy)</li>
             <li>ETL Pipeline & Data Validation</li>
-            <li>PostgreSQL, MySQL, Redis, MongoDB</li>
+            <li>PostgreSQL, MySQL, MSSQL</li>
+            <li>Validation and QA Testing</li>
             <li>Systems/Robotics Design</li>
         </ul>
     </div>
@@ -24,10 +25,9 @@
             <li>Ansible, SaltStack</li>
             <li>CI/CD (GitHub Actions, Jenkins)</li>
             <li>FreeIPA/LDAP, RBAC/HBAC</li>
-            <li>FedRAMP Compliance</li>
-            <li>Qualys Vulnerability/Compliance</li>
+            <li>FedRAMP Compliance, Qualys</li>
+            <li>Monitoring, Diagnostics, Troubleshooting</li>
             <li>Technical Leadership & Mentoring</li>
-            <li>Advanced Diagnostics & Troubleshooting</li>
         </ul>
     </div>
 </div>
