@@ -8,5 +8,5 @@
     <li><strong>Air Force Technical Training School - Keesler AFB, MS</strong> Electronics and AWACS RADAR Courses - Honor Graduate (99% Test Average)</li>
     <li><strong>Colorado School of Mines:</strong> 2 Years - Electrical Engineering/Physics</li>
   </ul>
-  For certifications, see <a href="https://www.linkedin.com/in/bjarrett">linkedin.com/in/bjarrett</a>
+  For a list of legacy certifications, see <a href="https://www.linkedin.com/in/bjarrett/details/certifications/">linkedin.com/in/bjarrett/details/certifications/</a>
 </div>
