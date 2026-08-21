@@ -1,7 +1,7 @@
 ### **Cisco Systems | Cloud Engineering Technical Leader**
 **Aug 2019 – July 2026 (Remote)**
-*   **Infrastructure & Operations Lead:** Led operations of critical compute and storage systems on **Cisco UCS** hardware for the Webex for Government (FedRAMP) cloud, maintaining high platform availability and strict SLA tracking.
-*   **Data Platform Engineering:** Designed, deployed, and operated a vulnerability management system using a custom ETL pipeline to extract data from **Jira API** and synchronize it to a **PostgreSQL** database. Built a **Python (Pandas, SQLAlchemy)** web frontend and connected **Tableau** dashboards to display executive-level SLA metrics and real-time remediation progress.
-*   **Compliance Automation:** Engineered Python reporting tools to parse raw **STIG XCCDF (XML)** files and merge them with security data using the **Qualys API**, generating automated, audit-ready compliance checklists.
-*   **Technical Mentorship:** Provided technical guidance across federal cloud environments, mentoring multi-tier engineering teams in analysis and troubleshooting of complex compliance and system performance issues.
-*   **Skills:** Python (Pandas, SQLAlchemy), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Compliance.
+*   **Infrastructure & Operations Lead:** Led compute and storage operations for the Webex for Government (FedRAMP Moderate) cloud, transitioning in 2024 to SecOps to expand vulnerability management across corporate Webex systems.
+*   **Data Platform Engineering:** Designed, deployed, and operated a vulnerability management system using a custom ETL pipeline to extract data from **Jira API** and synchronize it to a **PostgreSQL** database. Built a **Python (Pandas, SQLAlchemy)** web frontend and connected **Tableau** dashboards to display real-time SLA metrics.
+*   **Compliance Automation & Incident Response:** Engineered Python tools parsing raw **STIG XCCDF (XML)** data with the **Qualys API** for automated audits. Authored enterprise **Ansible** playbooks during the 2021 Log4j event to audit and verify 100% remediation across all server fleets.
+*   **Technical Mentorship:** Provided technical guidance across federal cloud environments, mentoring multi-tier engineering teams in methodical troubleshooting and complex vulnerability remediation under strict SLAs.
+*   **Skills:** Python (Pandas, SQLAlchemy), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate Compliance.
