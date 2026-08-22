@@ -6,9 +6,7 @@
   start_date: "2019-08"
   end_date: "2026-07"
   summary: >-
-    Managed FedRAMP Moderate operations, backend data systems, and critical infrastructure
-    for the Webex for Government platform, before transitioning in 2024 to the central
-    SecOps engineering team to expand vulnerability management, automated tooling,
+    Managed FedRAMP Moderate operations, backend data systems, and critical infrastructure for the Webex for Government platform, before transitioning in 2024 to SecOps providing vulnerability management, automated tooling,
     and technical leadership across corporate Webex systems.
   skills_display: "Python (Pandas, SQLAlchemy), PostgreSQL, Jira API, Qualys API, STIG Compliance (XCCDF/XML), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, FedRAMP Moderate."
   skills_display_short: "Python (Pandas, SQLAlchemy), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate Compliance."

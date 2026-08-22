@@ -1,7 +1,7 @@
 ### **Cisco Systems | Cloud Engineering Technical Leader**
 **Aug 2019 – July 2026 (Remote)**
 
-Managed FedRAMP Moderate operations, backend data systems, and critical infrastructure for the Webex for Government platform, before transitioning in 2024 to the central SecOps engineering team to expand vulnerability management, automated tooling, and technical leadership across corporate Webex systems.
+Managed FedRAMP Moderate operations, backend data systems, and critical infrastructure for the Webex for Government platform, before transitioning in 2024 to SecOps providing vulnerability management, automated tooling, and technical leadership across corporate Webex systems.
 
 * <a id="bullet-cisco_tl_devsecops"></a>**DevSecOps & Compliance Automation:** Developed automated reporting tools using the **Qualys API** to extract compliance metrics. Engineered Python scripts to parse raw **STIG XCCDF (XML)** data and map it to compliance results, enabling the automated generation of audit-ready STIG checklists. This compliance-as-code bridge eliminated hundreds of manual audit hours.
   <span class="skill-tags"><a href="#skill-qualys_secops">Qualys Security Intelligence</a> <a href="#skill-fedramp_stig">FedRAMP & STIG Compliance</a> <a href="#skill-python">Python (Pandas, SQLAlchemy)</a> <a href="#skill-ansible_salt">Ansible, SaltStack</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>
