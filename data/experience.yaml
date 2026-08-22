@@ -24,12 +24,6 @@
     - technical_leadership
     - rapid_adaptation_sme
   bullets:
-    - id: cisco_tl_lead_short
-      title: "Infrastructure & Operations Lead"
-      long_text: null
-      short_text: "Led compute and storage operations for the Webex for Government (FedRAMP Moderate) cloud, transitioning in 2024 to SecOps to expand vulnerability management across corporate Webex systems."
-      skills: ["fedramp_stig", "qualys_secops", "cisco_ucs", "technical_leadership"]
-
     - id: cisco_tl_devsecops
       title: "DevSecOps & Compliance Automation"
       long_text: "Developed automated reporting tools using the **Qualys API** to extract compliance metrics. Engineered Python scripts to parse raw **STIG XCCDF (XML)** data and map it to compliance results, enabling the automated generation of audit-ready STIG checklists. This compliance-as-code bridge eliminated hundreds of manual audit hours."
