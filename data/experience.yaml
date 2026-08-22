@@ -1,0 +1,351 @@
+- id: cisco_tl
+  company: "Cisco Systems"
+  role: "Cloud Engineering Technical Leader"
+  location: "Remote"
+  dates_display: "Aug 2019 – July 2026"
+  start_date: "2019-08"
+  end_date: "2026-07"
+  summary: >-
+    Managed FedRAMP Moderate operations, backend data systems, and critical infrastructure
+    for the Webex for Government platform, before transitioning in 2024 to the central
+    SecOps engineering team to expand vulnerability management, automated tooling,
+    and technical leadership across corporate Webex systems.
+  skills_display: "Python (Pandas, SQLAlchemy), PostgreSQL, Jira API, Qualys API, STIG Compliance (XCCDF/XML), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, FedRAMP Moderate."
+  skills_display_short: "Python (Pandas, SQLAlchemy), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate Compliance."
+  skills:
+    - python
+    - etl_pipelines
+    - databases
+    - qualys_secops
+    - fedramp_stig
+    - ansible_salt
+    - linux_systems
+    - cisco_ucs
+    - technical_leadership
+    - rapid_adaptation_sme
+  bullets:
+    - id: cisco_tl_lead_short
+      title: "Infrastructure & Operations Lead"
+      long_text: null
+      short_text: "Led compute and storage operations for the Webex for Government (FedRAMP Moderate) cloud, transitioning in 2024 to SecOps to expand vulnerability management across corporate Webex systems."
+      skills: ["fedramp_stig", "qualys_secops", "cisco_ucs", "technical_leadership"]
+
+    - id: cisco_tl_devsecops
+      title: "DevSecOps & Compliance Automation"
+      long_text: "Developed automated reporting tools using the **Qualys API** to extract compliance metrics. Engineered Python scripts to parse raw **STIG XCCDF (XML)** data and map it to compliance results, enabling the automated generation of audit-ready STIG checklists. This compliance-as-code bridge eliminated hundreds of manual audit hours."
+      short_text: "Engineered Python tools parsing raw **STIG XCCDF (XML)** data with the **Qualys API** for automated audits. Authored enterprise **Ansible** playbooks during the 2021 Log4j event to audit and verify 100% remediation across all server fleets."
+      linkedin_text: "Developed automated reporting tools with the Qualys API to extract compliance metrics. Engineered Python scripts parsing raw STIG XCCDF (XML) data to automate audit-ready checklists, eliminating hundreds of manual audit hours."
+      skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt"]
+
+    - id: cisco_tl_data_platform
+      title: "Data Platform Engineering"
+      long_text: "Designed, deployed, and operated a vulnerability management platform using **Python (Pandas, SQLAlchemy)** and **PostgreSQL**. Built custom ETL pipelines to ingest and synchronize data from the **Jira API**, providing teams with high-fidelity dashboards for severity tracking and SLA compliance. Integrated data with **Tableau** to enable executive-level visibility into remediation progress."
+      short_text: "Designed, deployed, and operated a vulnerability management system using a custom ETL pipeline to extract data from **Jira API** and synchronize it to a **PostgreSQL** database. Built a **Python (Pandas, SQLAlchemy)** web frontend and connected **Tableau** dashboards to display real-time SLA metrics."
+      linkedin_text: "Designed and operated a vulnerability management platform with Python (Pandas, SQLAlchemy) and PostgreSQL. Built ETL pipelines syncing Jira API data with Tableau dashboards for executive visibility and SLA tracking."
+      skills: ["python", "etl_pipelines", "databases", "qualys_secops"]
+
+    - id: cisco_tl_inventory
+      title: "Inventory Analytics & Infrastructure Operations"
+      long_text: "Leveraged **Pandas** for large-scale data manipulation, merging disparate inventory reports and datasets into actionable operational insights across **Cisco UCS** bare-metal hardware and cloud compute. Transformed manual Excel-based tracking into automated trend analysis for monthly executive reporting."
+      short_text: null
+      linkedin_text: "Leveraged Pandas for large-scale data manipulation, merging disparate inventory reports across Cisco UCS bare-metal and cloud compute into automated trend analysis for executive reporting."
+      skills: ["python", "cisco_ucs"]
+
+    - id: cisco_tl_log4j
+      title: "Zero-Day Incident Response (Log4j)"
+      long_text: "Engineered and executed enterprise-wide **Ansible** playbooks during the 2021 Log4j vulnerability to perform deep filesystem audits across all running server fleets. Located dormant instances embedded in nested packages and non-standard directories that bypassed standard **Qualys** scans, auditing 100% remediation across the platform."
+      short_text: null
+      linkedin_text: "Authored enterprise Ansible playbooks during the 2021 Log4j event to perform deep filesystem audits across server fleets, locating dormant nested instances and auditing 100% remediation."
+      skills: ["ansible_salt", "qualys_secops", "linux_systems", "root_cause_diagnostics"]
+
+    - id: cisco_tl_mentorship
+      title: "Technical Guidance & Mentorship"
+      long_text: "Served as infrastructure team lead, providing technical direction across the Webex for Government environment. Mentored engineering teams in methodical troubleshooting and supported the analysis and resolution of complex vulnerability and compliance remediation issues, ensuring continuous service stability under strict SLAs."
+      short_text: "Provided technical guidance across federal cloud environments, mentoring multi-tier engineering teams in methodical troubleshooting and complex vulnerability remediation under strict SLAs."
+      linkedin_text: "Led infrastructure engineering for Webex for Government. Mentored multi-tier teams in methodical troubleshooting and complex vulnerability remediation under strict SLAs."
+      skills: ["technical_leadership", "root_cause_diagnostics"]
+
+- id: cisco_ce
+  company: "Cisco Systems"
+  role: "Cloud Systems Engineer"
+  location: "Remote"
+  dates_display: "Jan 2017 – Aug 2019"
+  start_date: "2017-01"
+  end_date: "2019-08"
+  summary: >-
+    Managed and optimized mission-critical compute infrastructure for Webex Commercial
+    and FedRAMP environments. Collaborated with Networking and Storage teams to ensure
+    zero-downtime availability, robust identity access control, and high security across
+    US data centers.
+  skills_display: "Ansible, FreeIPA, OpenStack, VMware vSphere, Cisco UCS, RHEL/CentOS, Windows Server, RBAC/HBAC, Qualys, FedRAMP Compliance."
+  skills_display_short: "Ansible, FreeIPA, OpenStack, VMware vSphere, Cisco UCS, RHEL/CentOS, Windows Server, RBAC/HBAC, Qualys, FedRAMP Compliance."
+  skills:
+    - ansible_salt
+    - identity_rbac
+    - openstack
+    - virtualization
+    - cisco_ucs
+    - linux_systems
+    - qualys_secops
+    - fedramp_stig
+    - ha_clustering
+  bullets:
+    - id: cisco_ce_freeipa
+      title: "Enterprise Identity Architecture"
+      long_text: "Architected and deployed a **High-Availability (HA) FreeIPA cluster** to replace a legacy, high-overhead 389 Directory Server environment. Automated VM deployment in **OpenStack** using **Ansible**, enabling centralized RBAC and HBAC for 2,000+ Linux/Windows servers and infrastructure devices across multiple data centers."
+      short_text: "Designed and deployed a **High-Availability (HA) FreeIPA cluster** using **Ansible** to implement RBAC/HBAC across **2,000+ servers, storage nodes, and network devices**, replacing an aging 389-ds directory framework."
+      skills: ["identity_rbac", "ha_clustering", "openstack", "ansible_salt", "linux_systems"]
+
+    - id: cisco_ce_compute_ops
+      title: "Virtualized Infrastructure Operations"
+      long_text: "Managed large-scale compute services using **vSphere** on **Cisco UCS** hardware. Administered critical infrastructure including bastion hosts, LDAP/FTP servers, and antivirus solutions, ensuring consistent high availability."
+      short_text: "Administered large-scale compute environments using **vSphere** on **Cisco UCS** hardware. Orchestrated **Qualys** vulnerability scanning and patch remediation across commercial and FedRAMP sites while maintaining core bastion and identity services."
+      skills: ["virtualization", "cisco_ucs", "qualys_secops", "fedramp_stig"]
+
+    - id: cisco_ce_vuln_mgmt
+      title: "Vulnerability Management"
+      long_text: "Led security patch remediation efforts for compute services in highly regulated federal environments. Researched and implemented system security patches, advised engineering teams on remediation strategies, and managed **Qualys** vulnerability scanners to maintain strict compliance."
+      short_text: null
+      skills: ["qualys_secops", "fedramp_stig", "linux_systems"]
+
+- id: cisco_contract1
+  company: "Select Group @ Cisco"
+  role: "Cloud DevOps/QA Engineer (Contract)"
+  location: "Remote"
+  dates_display: "Feb 2016 – Jan 2017"
+  start_date: "2016-02"
+  end_date: "2017-01"
+  summary: >-
+    Provided specialized DevOps and QA engineering support for Cisco's OpenStack-based
+    Public Cloud (InterCloud Services). Focused on performance optimization, automated
+    configuration management, and stability engineering for large-scale cloud deployments.
+  skills_display: "OpenStack (Nova, Heat, Neutron, Glance), Ansible, Python, Bash, RHUI, Proxmox, Linux/Windows Administration, Performance Tuning, Cloud QA."
+  skills_display_short: "OpenStack, Ansible, Python, Bash, RHUI, Proxmox, CentOS/RHEL/Windows, Performance Tuning, Cloud QA."
+  skills:
+    - openstack
+    - ansible_salt
+    - python
+    - virtualization
+    - linux_systems
+    - validation_qa
+    - root_cause_diagnostics
+    - rapid_adaptation_sme
+  bullets:
+    - id: cisco_contract_perf
+      title: "Performance Optimization"
+      long_text: "Identified and removed redundant **Nova Scheduler** filters, reducing instance scheduling time for 700 nodes from 20 seconds to 5 seconds—a **75% improvement** in orchestration speed."
+      short_text: "Identified and removed redundant **Nova Scheduler** filters in **OpenStack**, reducing instance scheduling time for 700 nodes from 20 seconds to 5 seconds (a **75% improvement** in orchestration speed)."
+      skills: ["openstack", "root_cause_diagnostics"]
+
+    - id: cisco_contract_iac
+      title: "Infrastructure-as-Code at Scale"
+      long_text: "Engineered and executed **Ansible** playbooks to manage complex bare-metal configurations through **lights-out management (LOM)** interfaces and automated cron jobs across hundreds of production servers simultaneously."
+      short_text: "Configured and evaluated **RHUI (Red Hat Update Infrastructure)** and **Proxmox** clusters for InterCloud Services. Automated bare-metal server configuration using **Ansible** via lights-out management (LOM) interfaces. Troubleshot and resolved a critical OpenStack **cloudbase-init** race condition on Windows images that was causing constant reboots."
+      skills: ["ansible_salt", "linux_systems", "virtualization", "openstack"]
+
+    - id: cisco_contract_eval
+      title: "Cloud Infrastructure Evaluation"
+      long_text: "Stood up **RHUI (Red Hat Update Infrastructure)** and **Proxmox** clusters for **Proof-of-Concept (PoC)** assessments to determine viability for integration with Cisco InterCloud Services."
+      short_text: null
+      skills: ["virtualization", "linux_systems"]
+
+    - id: cisco_contract_stability
+      title: "Stability Engineering"
+      long_text: "Diagnosed and resolved a critical race condition involving cloudbase-init on Windows 2008/2012 images within **OpenStack**, eliminating intermittent reboots during initial instance setup."
+      short_text: null
+      skills: ["openstack", "root_cause_diagnostics"]
+
+    - id: cisco_contract_qa
+      title: "Cloud QA & Orchestration"
+      long_text: "Managed global test cycles for Compute and Heat components during major cloud upgrades. Developed **Python** and **Bash** scripts coupled with Ansible to perform comprehensive orchestration tests."
+      short_text: "Managed global test cycles for Compute and Heat components during cloud upgrades. Developed **Python**, **Bash**, and **Ansible** scripts to perform comprehensive automated orchestration tests."
+      skills: ["validation_qa", "python", "ansible_salt", "openstack"]
+
+- id: als
+  company: "Australian Laboratory Services"
+  role: "Senior Systems & Storage Administrator"
+  location: "Grand Junction, CO"
+  dates_display: "Sep 2014 – Jan 2016"
+  start_date: "2014-09"
+  end_date: "2016-01"
+  summary: >-
+    Managed, modernized, and optimized enterprise storage, virtualization, database,
+    and network infrastructure. Engineered high-availability distributed storage clusters,
+    automated server provisioning, and implemented comprehensive monitoring to ensure
+    maximum uptime, data integrity, and network performance.
+  skills_display: "Ubuntu/CentOS, VMware ESXi, Ceph RBD, iSCSI, SaltStack, Python (SQLAlchemy), MySQL, Nagios, Observium, Asterisk VoIP, Cisco/HP Routers & Switches, Sophos UTM, VLANs, IPsec VPN."
+  skills_display_short: "Ubuntu, Ceph RBD, VMware ESXi, SaltStack, Python, SQLAlchemy, Nagios, Observium, MySQL, Asterisk, VPN Routing."
+  skills:
+    - distributed_storage
+    - virtualization
+    - ansible_salt
+    - python
+    - etl_pipelines
+    - databases
+    - root_cause_diagnostics
+    - network_security
+    - rapid_adaptation_sme
+  bullets:
+    - id: als_storage
+      title: "Distributed Storage & Virtualization"
+      long_text: "Engineered an Ubuntu-based **Ceph cluster** for **VMware ESXi** hosts, benchmarking iSCSI vs. RBD performance to optimize block storage access. Leveraged **Ceph RBD snapshots** to manage automated database schema testing, enabling a major production database upgrade with zero errors."
+      short_text: "Engineered an Ubuntu-based **Ceph cluster** for **VMware ESXi** hosts, benchmarking iSCSI vs. RBD performance. Used **Ceph RBD snapshots** for automated schema migration testing with zero errors."
+      skills: ["distributed_storage", "virtualization", "databases", "validation_qa"]
+
+    - id: als_automation
+      title: "Infrastructure Automation"
+      long_text: "Implemented **SaltStack** to manage Linux virtual environments and automate the configuration and rapid provisioning of new **Ceph** storage nodes and virtual machine resources."
+      short_text: "Wrote custom **Python (SQLAlchemy)** verification scripts to audit SQL foreign keys during data migration. Implemented **SaltStack** to automate Linux VM and Ceph node provisioning."
+      skills: ["ansible_salt", "distributed_storage", "linux_systems"]
+
+    - id: als_data_integrity
+      title: "Database & Data Integrity"
+      long_text: "Wrote custom **Python (SQLAlchemy)** verification scripts to check for missing SQL foreign keys and ensure data integrity during major migrations. Configured replication and backups of production **MySQL** databases using **LVM snapshots** and **rsync**."
+      short_text: null
+      skills: ["python", "etl_pipelines", "databases"]
+
+    - id: als_monitoring
+      title: "System Stability & Monitoring"
+      long_text: "Installed **Observium** for performance telemetry and integrated proactive checks into **Nagios** to monitor production systems, decreasing service restarts from weekly to quarterly."
+      short_text: "Integrated **Nagios** and **Observium** to monitor network operations, reducing service restarts. Diagnosed WAN/VPN bottlenecks and upgraded gateway hardware to double network throughput."
+      skills: ["root_cause_diagnostics", "network_security"]
+
+    - id: als_networking
+      title: "Network Hardware Engineering"
+      long_text: "Troubleshot and resolved a complex routing issue where **Asterisk** VoIP traffic was throttled by backup data tunnels; replaced overloaded gateway hardware, doubling available network bandwidth."
+      short_text: null
+      skills: ["network_security", "root_cause_diagnostics"]
+
+- id: garfield
+  company: "Garfield County School District 16"
+  role: "Senior Systems/Network Administrator"
+  location: "Parachute, CO"
+  dates_display: "Oct 2002 – Jun 2014"
+  start_date: "2002-10"
+  end_date: "2014-06"
+  summary: >-
+    Managed and modernized the district-wide enterprise network, systems, and core
+    educational platform infrastructure. Led high-impact IT modernization projects,
+    automated administrative processes, and engineered cost-effective systems that
+    dramatically reduced operational costs and IT support overhead.
+  skills_display: "Python, Flask, SQLAlchemy, PHP, PostgreSQL, Ubuntu, Windows Terminal Server, Windows AD, Citrix XenServer, VirtualBox, Cisco CallManager/Unity, Cisco Routers & Switches, PIX, Ruckus Wireless Bridges/APs, HP Thin Clients, Google Apps, Smoothwall, Active Directory."
+  skills_display_short: "Python, Flask, SQLAlchemy, PHP, PostgreSQL, XenServer, VirtualBox, Cisco Routers/Switches/PIX, Cisco CallManager, Ruckus Wireless."
+  skills:
+    - python
+    - databases
+    - etl_pipelines
+    - virtualization
+    - identity_rbac
+    - network_security
+    - root_cause_diagnostics
+  bullets:
+    - id: garfield_integration
+      title: "Systems Integration & Automation"
+      long_text: "Developed a custom **Flask (SQLAlchemy)** web application that synchronized the centralized Student Information System (SIS) with **Active Directory** and **Google Apps**. Built self-service password reset and status tools for teachers, resulting in a **97% reduction in recurring support calls** to the helpdesk."
+      short_text: "Programmed a custom **Flask (SQLAlchemy)** app syncing Student Info Systems with **Active Directory** and **Google Apps**, reducing account helpdesk tickets by **97%**."
+      linkedin_text: "Developed a custom Flask (SQLAlchemy) app syncing Student Info Systems with Active Directory and Google Apps, reducing recurring support calls by 97%."
+      skills: ["python", "databases", "identity_rbac", "etl_pipelines"]
+
+    - id: garfield_modernization
+      title: "Enterprise Modernization & Development"
+      long_text: "Spearheaded the replacement of a legacy, fragmented student information system with a web-based, centralized platform, eliminating manual data syncing between schools. Streamlined state compliance reporting by developing custom **PHP** generation scripts interfacing with the **PostgreSQL** database."
+      short_text: "Replaced legacy databases with centralized PostgreSQL platforms, and automated state compliance reporting via custom PHP scripts."
+      linkedin_text: "Spearheaded replacing legacy SIS with centralized platforms, automating state compliance reporting via custom PHP scripts and PostgreSQL."
+      skills: ["databases", "etl_pipelines"]
+
+    - id: garfield_virtualization
+      title: "Infrastructure & Systems Virtualization"
+      long_text: "Designed and administered virtualized host environments using **Citrix XenServer** and **VirtualBox** to run critical Windows Server 2008 and Ubuntu Linux servers. Supervised low-voltage cabling and hardware installation contractors for new facilities to ensure strict specification compliance."
+      short_text: "Centralized desktop computing with **Windows Terminal Servers** and **HP Thin Clients** for 6 labs, saving **$60k+** in CAPEX."
+      linkedin_text: "Administered virtualized host environments using Citrix XenServer and VirtualBox for Windows Server and Ubuntu. Supervised facility low-voltage cabling and hardware installation."
+      skills: ["virtualization", "linux_systems"]
+
+    - id: garfield_networking
+      title: "Network Engineering"
+      long_text: "Engineered a high-speed WAN connection between district buildings using **Ruckus wireless bridges**, increasing bandwidth by **6,500%** (1.5Mbps to 100+ Mbps) with zero ongoing monthly service costs. Managed core networking infrastructure including **Cisco Routers, Switches, PIX Firewalls**, and **Smoothwall** web filters."
+      short_text: "Designed a high-speed WAN using **Ruckus wireless bridges**, increasing bandwidth by **6,500%** (1.5Mbps to 100+ Mbps) with zero monthly service costs. Deployed district-wide Cisco CallManager."
+      linkedin_text: "Engineered high-speed WAN across district facilities using Ruckus wireless bridges (+6,500% bandwidth, $0 monthly carrier cost). Administered Cisco routers, switches, and PIX firewalls."
+      skills: ["network_security", "root_cause_diagnostics"]
+
+    - id: garfield_voip_desktop
+      title: "Unified Communications & End-User Compute"
+      long_text: "Deployed **Cisco CallManager** and **Cisco Unity** voice systems district-wide. Architected a centralized desktop computing solution using **Windows Terminal Servers** and **HP Thin Clients** for 6 computer labs, saving the district over **$60,000** in capital expenditure and simplifying end-user support."
+      short_text: null
+      linkedin_text: "Deployed district-wide Cisco CallManager and centralized desktop computing using Windows Terminal Servers and HP Thin Clients, saving over $60,000 in CAPEX."
+      skills: ["network_security", "identity_rbac"]
+
+- id: foundational
+  company: "Foundational Experience"
+  role: "Systems Engineering, Software QA & Avionics Foundations"
+  location: "Various"
+  dates_display: "1991 – 2002"
+  start_date: "1991"
+  end_date: "2002"
+  summary: >-
+    Established a lifelong technical foundation by translating a low-level understanding
+    of hardware, networking, and software into rigorous testing and validation methodologies.
+    This ground-up engineering approach ensures comprehensive diagnostics and root-cause
+    analysis at every layer of the stack.
+  skills_display: "Analog & Digital Electronics, Circuit Analysis, System Diagnostics (Binary/Hex), PC Architecture, Disk Cloning (ImageCast, DrivePro), Software QA & Test Automation, Bug-Tracking Systems, Network Design, Windows/Linux Lab Administration, Technical Training, Requirements Engineering, Systems Management (SMS, CA Unicenter, Desktop DNA)."
+  skills_display_short: "Analog & Digital Diagnostics, PC Architecture, Disk Cloning (ImageCast), Software QA, Network Design, Technical Training."
+  skills:
+    - validation_qa
+    - root_cause_diagnostics
+    - linux_systems
+    - network_security
+    - technical_leadership
+    - rapid_adaptation_sme
+  bullets:
+    - id: foundational_qa_lead_short
+      title: "Solutions Engineer/Software QA Lead (StorageSoft/Phoenix Tech)"
+      long_text: null
+      short_text: "Gathered requirements, deployed software, and provided training for customers. Managed testing and support departments. Structured QA testing workflows for **ImageCast** disk cloning tools and designed Windows/Linux/Networking test lab environments."
+      skills: ["validation_qa", "technical_leadership", "root_cause_diagnostics"]
+
+    - id: foundational_usaf_short
+      title: "Airborne Radar Journeyman (U.S. Air Force)"
+      long_text: null
+      short_text: "Repaired high-power microwave systems, high-voltage circuits, and analog/digital systems on AWACS aircraft."
+      skills: ["root_cause_diagnostics", "validation_qa"]
+
+    - id: foundational_sales_eng
+      title: "Sales Engineering & Systems Integration"
+      long_text: "Tested **ImageCast** software integrations with systems management suites including **SMS**, **CA Unicenter**, and **Desktop DNA**. Defined customer software requirements, submitted feature change requests, and conducted technical product demonstrations and training for enterprise clients such as **HP**, **Target**, and **NEC**. Helped answer technical questions at trade shows."
+      short_text: null
+      linkedin_text: "Tested ImageCast integrations with enterprise suites (SMS, CA Unicenter). Conducted technical demos and customer training for HP, Target, and NEC."
+      skills: ["validation_qa", "technical_leadership"]
+
+    - id: foundational_lab_mgmt
+      title: "Technical Services & Test Lab Management"
+      long_text: "Merged and managed QA testing with the technical support department. Designed test cases, executed testing plans, and managed the lab's **Windows** and **Linux** servers and test networks. Redesigned, built out, and managed the company's network, labs, and server infrastructure following a corporate split."
+      short_text: null
+      linkedin_text: "Merged and managed QA testing and tech support departments. Designed test plans and managed heterogeneous Windows/Linux server labs and network testbeds."
+      skills: ["validation_qa", "linux_systems", "technical_leadership"]
+
+    - id: foundational_qa_leadership
+      title: "Software QA & Testing Leadership"
+      long_text: "Promoted from contractor to QA Lead, managing all testing operations for **ImageCast** and **DrivePro** products. Structured software testing workflows by implementing the company's first bug-tracking system, drafting comprehensive test plans, and maintaining lab hardware and network infrastructure."
+      short_text: null
+      linkedin_text: "Promoted to QA Lead managing testing operations for ImageCast and DrivePro disk cloning utilities, implementing bug tracking and structured test workflows."
+      skills: ["validation_qa", "root_cause_diagnostics"]
+
+    - id: foundational_training
+      title: "Training & Team Optimization"
+      long_text: "Boosted support staff effectiveness and QA productivity by rotating tech support personnel through active lab testing scenarios. Trained technicians on networking topologies, testing methodologies, and product architecture to improve time-to-resolution for support issues."
+      short_text: null
+      linkedin_text: "Trained support technicians on network topologies and structured testing methodologies to improve issue resolution times."
+      skills: ["technical_leadership", "validation_qa"]
+
+    - id: foundational_hardware
+      title: "Hardware Assembly & Diagnostics"
+      long_text: "Built custom computers, performed component-level hardware and peripheral repairs, and conducted software troubleshooting. Developed quotes for client builds and mastered motherboard/component compatibility."
+      short_text: null
+      linkedin_text: "Built custom PC hardware, performed component-level diagnostics and board repairs, and resolved low-level software compatibility issues."
+      skills: ["root_cause_diagnostics"]
+
+    - id: foundational_awacs
+      title: "Airborne Radar & Electronics Engineering (U.S. Air Force)"
+      long_text: "Served as an Airborne Warning and Control Radar Journeyman (AWACS), repairing high-power microwave systems, high-voltage circuits, and analog/digital electronics."
+      short_text: null
+      linkedin_text: "Served as an Airborne Warning and Control Radar Journeyman (AWACS), repairing high-power microwave transmitters, high-voltage power supplies, and digital/analog electronics."
+      skills: ["root_cause_diagnostics", "validation_qa"]

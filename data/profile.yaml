@@ -1,0 +1,38 @@
+name: "Brian Jarrett"
+title: "Senior Systems/Platform Engineer"
+location: "Grove, OK"
+email: "celttechie@gmail.com"
+site_url: "https://celttechie.github.io/"
+github_url: "https://github.com/celttechie"
+linkedin_url: "https://www.linkedin.com/in/bjarrett"
+linkedin_certifications_url: "https://www.linkedin.com/in/bjarrett/details/certifications/"
+
+# Approved Executive Summary (Anchored to Traceability Rules)
+executive_summary: >-
+  Highly analytical engineering professional with a 30-year foundation in complex
+  system validation, data integrity, and autonomous technology adaptation. Proven
+  track record of entering unfamiliar technical ecosystems, rapidly mastering complex
+  architectures, and becoming a Subject Matter Expert (SME) for the organization's
+  technology stack. Expert in diagnosing legacy infrastructure, verifying data
+  quality at the source to prevent the propagation of bad data and ensure the integrity
+  of the final output, and architecting robust ETL pipelines that merge disparate
+  inputs into high-integrity sources of truth. An objective, narrative-free troubleshooter
+  who translates intricate system data into actionable executive metrics, applying
+  pragmatic innovation—including targeted AI/LLM workflows—strictly where it maximizes
+  operational value.
+
+# Strategic ATS / Recruiter Keywords
+keywords:
+  - "System Validation & Data Integrity"
+  - "ETL Pipeline Engineering & Data Validation"
+  - "Root Cause Analysis & Diagnostics"
+  - "FedRAMP Moderate & STIG Compliance"
+  - "Zero-Day Remediation (Log4j)"
+  - "Infrastructure-as-Code (Ansible, SaltStack)"
+  - "High Availability (HA) Clustering"
+  - "Multi-Agent AI Orchestration & RAG Pipelines"
+  - "Graph Analytics & Leiden Clustering"
+  - "Linux Systems (RHEL, Ubuntu, CentOS)"
+  - "Enterprise Identity (FreeIPA, RBAC/HBAC)"
+  - "Distributed Storage (Ceph RBD, iSCSI)"
+  - "FIRST Robotics Technical Mentorship"

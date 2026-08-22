@@ -1,6 +1,3 @@
-<details>
-  <summary style="font-size: 0.9em; color: gray; cursor: pointer; font-weight: 500;">ATS / Indeed Optimization Keywords</summary>
-  <p style="font-size: 0.8em; color: gray; margin-top: 8px;">
-    Data Engineering, Systems Architecture, Infrastructure as Code (IaC), Ansible, FedRAMP Compliance, Python, SQLAlchemy, PostgreSQL, OpenStack, CI/CD, Qualys, Linux Administration (RHEL/Ubuntu), Flask, MongoDB, Proxmox, VMware, Cisco UCS, STIG Compliance, High-Availability (HA) Clustering, Advanced Diagnostics.
-  </p>
-</details>
+## Strategic Core Competencies
+
+**System Validation & Data Integrity**, **ETL Pipeline Engineering & Data Validation**, **Root Cause Analysis & Diagnostics**, **FedRAMP Moderate & STIG Compliance**, **Zero-Day Remediation (Log4j)**, **Infrastructure-as-Code (Ansible, SaltStack)**, **High Availability (HA) Clustering**, **Multi-Agent AI Orchestration & RAG Pipelines**, **Graph Analytics & Leiden Clustering**, **Linux Systems (RHEL, Ubuntu, CentOS)**, **Enterprise Identity (FreeIPA, RBAC/HBAC)**, **Distributed Storage (Ceph RBD, iSCSI)**, **FIRST Robotics Technical Mentorship**

@@ -1,0 +1,22 @@
+formal_and_professional:
+  - institution: "Linux Academy / A Cloud Guru"
+    detail: "AWS & Red Hat Enterprise Linux Curriculum"
+  - institution: "Regis University"
+    detail: "C Programming & Unix Systems Courses"
+  - institution: "Lincoln Christian University"
+    detail: "Music Theory & Composition"
+  - institution: "Colorado School of Mines"
+    detail: "2 Years – Electrical Engineering & Applied Physics"
+
+military_and_technical_training:
+  - branch: "United States Air Force"
+    organization: "Community College of the Air Force"
+    role_or_course: "Avionics/Electronics Technician – RADAR Specialist (AWACS)"
+  - branch: "United States Air Force"
+    organization: "Field Training Detachment – Tinker AFB, OK"
+    role_or_course: "AWACS RADAR and IFF Systems Journeyman – Awarded Senior Airman Below-the-Zone"
+  - branch: "United States Air Force"
+    organization: "Air Force Technical Training School – Keesler AFB, MS"
+    role_or_course: "Electronics and AWACS RADAR Courses – Honor Graduate (99% Academic Test Average)"
+
+certifications_url: "https://www.linkedin.com/in/bjarrett/details/certifications/"

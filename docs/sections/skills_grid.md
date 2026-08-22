@@ -27,7 +27,7 @@
             <li>FreeIPA/LDAP, RBAC/HBAC</li>
             <li>FedRAMP Compliance, Qualys</li>
             <li>Monitoring, Diagnostics, Troubleshooting</li>
-            <li>Technical Leadership & Mentoring</li>
+            <li>FIRST Robotics Mentoring & Leadership</li>
         </ul>
     </div>
 </div>

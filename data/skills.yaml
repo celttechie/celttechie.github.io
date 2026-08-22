@@ -1,0 +1,100 @@
+categories:
+  - id: data_engineering
+    name: "Data & Systems Engineering"
+    skills:
+      - id: python
+        name: "Python (Pandas, NumPy, Flask, SQLAlchemy, XlsxWriter)"
+        short_name: "Python (Pandas, SQLAlchemy)"
+        description: "Large-scale data manipulation, automated reporting, ETL pipelines, and API integrations."
+      - id: etl_pipelines
+        name: "ETL Pipeline & Data Validation"
+        short_name: "ETL Pipelines"
+        description: "Architecting high-integrity data pipelines, database migrations, and schema validation."
+      - id: databases
+        name: "Databases (PostgreSQL, MySQL, MSSQL, Redis, MongoDB)"
+        short_name: "PostgreSQL, MySQL"
+        description: "Relational database operations, replication, schema migration, and performance query tuning."
+      - id: validation_qa
+        name: "Validation & QA Testing"
+        short_name: "Validation & QA Testing"
+        description: "Rigorous test case design, orchestration testing, and end-to-end verification methodologies."
+      - id: ai_rag_mlops
+        name: "AI Orchestration, MLOps & RAG"
+        short_name: "AI & RAG Orchestration"
+        description: "Local multi-agent LLM orchestration (LiteLLM, Hermes), vector databases (Qdrant), and graph analytics."
+
+  - id: cloud_infrastructure
+    name: "Systems & Distributed Scale"
+    skills:
+      - id: cisco_ucs
+        name: "Cisco UCS & Fabric Interconnect"
+        short_name: "Cisco UCS Hardware"
+        description: "Enterprise bare-metal compute and fabric interconnect administration."
+      - id: openstack
+        name: "OpenStack (Nova, Heat, Neutron, Glance)"
+        short_name: "OpenStack"
+        description: "Public/private cloud orchestration, scheduler tuning, and infrastructure verification."
+      - id: virtualization
+        name: "Virtualization (vSphere/ESXi, XenServer, Proxmox/KVM, VirtualBox)"
+        short_name: "vSphere / ESXi / Proxmox"
+        description: "High-density enterprise virtualization, clustering, and VM lifecycle automation."
+      - id: distributed_storage
+        name: "Distributed Storage (Ceph RBD, iSCSI)"
+        short_name: "Ceph Block Storage (RBD)"
+        description: "High-availability distributed storage clusters, snapshot management, and performance benchmarking."
+      - id: ha_clustering
+        name: "High-Availability (HA) Clustering"
+        short_name: "HA Clustering"
+        description: "Designing failover systems and fault-tolerant identity/compute clusters."
+      - id: linux_systems
+        name: "Linux Systems Administration (RHEL, CentOS, Ubuntu)"
+        short_name: "Linux (RHEL/Ubuntu)"
+        description: "Kernel tuning, package management, lights-out management (LOM), and shell automation."
+
+  - id: devops_security
+    name: "DevOps, Security & Compliance"
+    skills:
+      - id: ansible_salt
+        name: "Ansible & SaltStack (IaC & Automation)"
+        short_name: "Ansible, SaltStack"
+        description: "Automated configuration management, fleet audits, and rapid node provisioning."
+      - id: cicd
+        name: "CI/CD & Version Control (GitHub Actions, Jenkins, Git, Gerrit)"
+        short_name: "CI/CD (GitHub Actions, Jenkins)"
+        description: "Automated test execution, artifact generation, and deployment pipelines."
+      - id: identity_rbac
+        name: "Identity Architecture (FreeIPA/LDAP, RBAC/HBAC)"
+        short_name: "FreeIPA, RBAC/HBAC"
+        description: "Centralized authentication and role-based access control across thousands of heterogenous nodes."
+      - id: fedramp_stig
+        name: "FedRAMP Moderate & STIG Compliance (XCCDF/XML)"
+        short_name: "FedRAMP & STIG Compliance"
+        description: "Automated compliance-as-code extraction, auditing, and continuous security baseline enforcement."
+      - id: qualys_secops
+        name: "Qualys Security Intelligence & API"
+        short_name: "Qualys Security Intelligence"
+        description: "Automated vulnerability scanning, compliance metric extraction, and remediation tracking."
+      - id: network_security
+        name: "Network & Perimeter Security (Firewalls, VPNs, Routing, VoIP)"
+        short_name: "Network Engineering & Firewalls"
+        description: "Cisco routing/switching, IPsec VPNs, VLANs, Ruckus wireless bridges, and VoIP architecture."
+
+  - id: leadership_mentoring
+    name: "Leadership, Mentoring & Methodology"
+    skills:
+      - id: technical_leadership
+        name: "Technical Leadership & Mentoring"
+        short_name: "Technical Mentorship"
+        description: "Guiding multi-tier engineering teams, methodical troubleshooting, and stakeholder communication."
+      - id: robotics_mentoring
+        name: "FIRST Robotics Mentorship & STEM Leadership"
+        short_name: "Robotics & STEM Mentoring"
+        description: "Mentoring student teams in real-time embedded systems, electrical wiring, mechanisms, and troubleshooting."
+      - id: root_cause_diagnostics
+        name: "Root-Cause Diagnostics & Telemetry (Observium, Nagios)"
+        short_name: "Advanced Diagnostics & Monitoring"
+        description: "Low-level system diagnostics, proactive performance telemetry, and elimination of systemic issues."
+      - id: rapid_adaptation_sme
+        name: "Rapid Technical Adaptation & SME Authority"
+        short_name: "Rapid Adaptation / SME"
+        description: "Proven track record of mastering unfamiliar architectures quickly and becoming an organizational SME."

@@ -1,0 +1,70 @@
+- id: innovation_lab
+  category: "Personal R&D & Systems Architecture"
+  title: "The Innovation Lab (Personal R&D)"
+  dates_display: "Ongoing"
+  summary: >-
+    Continuous hands-on research and prototyping environment focusing on sovereign AI orchestration,
+    vector retrieval architectures, graph analytics, and data pipeline engineering on dedicated
+    workstation infrastructure.
+  skills:
+    - ai_rag_mlops
+    - python
+    - databases
+    - etl_pipelines
+    - linux_systems
+  projects:
+    - id: ai_orchestration
+      title: "Multi-Agent AI Orchestration & MLOps"
+      description: "Engineered a private, server-grade AI orchestration stack using **LiteLLM** and **Hermes** on a dedicated T5600 workstation (128GB RAM/RTX 3060)."
+      skills: ["ai_rag_mlops", "linux_systems"]
+
+    - id: rag_knowledge
+      title: "Knowledge Retrieval & Vector Search"
+      description: "Implemented a **RAG (Retrieval-Augmented Generation)** pipeline utilizing **Qdrant** as a vector database to enable natural language querying across a multi-terabyte technical knowledge base."
+      skills: ["ai_rag_mlops", "etl_pipelines"]
+
+    - id: graph_analytics
+      title: "Graph Analytics & Entity Mapping"
+      description: "Utilizing **Graphifyy** to engineer complex network graphs for relationship mapping, entity extraction, and knowledge discovery."
+      skills: ["ai_rag_mlops", "python"]
+
+    - id: clustering_research
+      title: "Statistical Research & Graph Clustering"
+      description: "Exploring advanced community detection and data clustering using the **Leiden algorithm** to derive structural insights from unstructured datasets."
+      skills: ["ai_rag_mlops", "python"]
+
+    - id: therapeutic_data
+      title: "Therapeutic Data Engineering (GKI)"
+      description: "Developed a Python-based data pipeline to automate **GKI (Glucose-Ketone Index)** calculation, utilizing **Pandas** and **Matplotlib** to visualize metabolic trends and therapeutic outcomes."
+      skills: ["python", "etl_pipelines", "databases"]
+
+- id: first_robotics
+  category: "Community Leadership & STEM Mentoring"
+  title: "FIRST Robotics Mentorship"
+  role: "Lead Technical Systems Mentor"
+  dates_display: "Ongoing"
+  summary: >-
+    Mentoring high school engineering students in mechanical/electrical design, real-time
+    embedded programming, and competitive robotics systems. Instilling rigorous diagnostic
+    and troubleshooting methodologies under high-pressure tournament conditions.
+  skills:
+    - robotics_mentoring
+    - technical_leadership
+    - root_cause_diagnostics
+    - python
+    - validation_qa
+  projects:
+    - id: robotics_systems
+      title: "Real-Time Embedded Systems & Controls"
+      description: "Mentoring student teams in electrical sensor integration, motor control loops, pneumatic systems, and autonomous/teleoperated robot programming."
+      skills: ["robotics_mentoring", "validation_qa"]
+
+    - id: robotics_diagnostics
+      title: "Methodical Diagnostic Methodology"
+      description: "Training students in systematic root-cause troubleshooting for electrical, software, and mechanical subsystems to rapidly diagnose and resolve failure points during active competition."
+      skills: ["robotics_mentoring", "root_cause_diagnostics"]
+
+    - id: robotics_leadership
+      title: "Engineering Collaboration & Leadership"
+      description: "Guiding students through the iterative engineering design process, technical documentation, design reviews, and collaborative problem solving."
+      skills: ["robotics_mentoring", "technical_leadership"]

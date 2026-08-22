@@ -1,19 +1,30 @@
 ## Skills
 
-### **Data Engineering & Analysis**
-*   **Python Stack:** Pandas, NumPy, Flask, SQLAlchemy, XlsxWriter, openpyxl.
-*   **Data Integrity:** ETL Pipeline Engineering & Data Validation, Data Normalization.
-*   **Databases:** PostgreSQL, MySQL, Redis, MongoDB.
+### **Data & Systems Engineering**
+*   **Python (Pandas, SQLAlchemy):** Large-scale data manipulation, automated reporting, ETL pipelines, and API integrations.
+*   **ETL Pipelines:** Architecting high-integrity data pipelines, database migrations, and schema validation.
+*   **PostgreSQL, MySQL:** Relational database operations, replication, schema migration, and performance query tuning.
+*   **Validation & QA Testing:** Rigorous test case design, orchestration testing, and end-to-end verification methodologies.
+*   **AI & RAG Orchestration:** Local multi-agent LLM orchestration (LiteLLM, Hermes), vector databases (Qdrant), and graph analytics.
 
-### **Cloud & Systems Infrastructure**
-*   **Compute & Networking:** Cisco UCS Servers, Cisco Fabric Interconnect, High-Availability Clusters, Ceph (Storage).
-*   **Virtualization:** OpenStack, VMware vSphere, KVM, Proxmox.
-*   **Automation:** Ansible, CI/CD (Jenkins, Gerrit, GitHub Actions), Bash/Python Scripting, SaltStack.
-*   **Identity & Security:** FreeIPA/LDAP, RBAC/HBAC, FedRAMP Compliance, Qualys Security Intelligence.
+### **Systems & Distributed Scale**
+*   **Cisco UCS Hardware:** Enterprise bare-metal compute and fabric interconnect administration.
+*   **OpenStack:** Public/private cloud orchestration, scheduler tuning, and infrastructure verification.
+*   **vSphere / ESXi / Proxmox:** High-density enterprise virtualization, clustering, and VM lifecycle automation.
+*   **Ceph Block Storage (RBD):** High-availability distributed storage clusters, snapshot management, and performance benchmarking.
+*   **HA Clustering:** Designing failover systems and fault-tolerant identity/compute clusters.
+*   **Linux (RHEL/Ubuntu):** Kernel tuning, package management, lights-out management (LOM), and shell automation.
 
-### **Leadership & Methodology**
-*   **Ecosystem Mastery:** Rapid Technical Adaptation, SME Leadership, Technical Mentoring.
-*   **Problem Solving:** Advanced System Diagnostics & Troubleshooting, Validation & QA Testing, Monitoring.
-*   **Community:** **FIRST Robotics Mentor:** Teaching electronics, programming, and methodical troubleshooting and systems design.
+### **DevOps, Security & Compliance**
+*   **Ansible, SaltStack:** Automated configuration management, fleet audits, and rapid node provisioning.
+*   **CI/CD (GitHub Actions, Jenkins):** Automated test execution, artifact generation, and deployment pipelines.
+*   **FreeIPA, RBAC/HBAC:** Centralized authentication and role-based access control across thousands of heterogenous nodes.
+*   **FedRAMP & STIG Compliance:** Automated compliance-as-code extraction, auditing, and continuous security baseline enforcement.
+*   **Qualys Security Intelligence:** Automated vulnerability scanning, compliance metric extraction, and remediation tracking.
+*   **Network Engineering & Firewalls:** Cisco routing/switching, IPsec VPNs, VLANs, Ruckus wireless bridges, and VoIP architecture.
 
-
+### **Leadership, Mentoring & Methodology**
+*   **Technical Mentorship:** Guiding multi-tier engineering teams, methodical troubleshooting, and stakeholder communication.
+*   **Robotics & STEM Mentoring:** Mentoring student teams in real-time embedded systems, electrical wiring, mechanisms, and troubleshooting.
+*   **Advanced Diagnostics & Monitoring:** Low-level system diagnostics, proactive performance telemetry, and elimination of systemic issues.
+*   **Rapid Adaptation / SME:** Proven track record of mastering unfamiliar architectures quickly and becoming an organizational SME.

@@ -26,6 +26,14 @@ def resolve_snippets(content, base_dir):
     return pattern.sub(replace_match, content)
 
 def build_pdf(template_path, output_path, css_path):
+    # If SSOT data directory exists, ensure markdown sections are synchronized
+    try:
+        from scripts.resume_tool import ResumeDatabase
+        db = ResumeDatabase()
+        db.generate_all_markdown_sections()
+    except Exception as e:
+        print(f"Note: Markdown auto-sync from YAML skipped or failed ({e}), proceeding with existing files.")
+
     print(f"Reading template from: {template_path}")
     if not os.path.exists(template_path):
         raise FileNotFoundError(f"Template file not found: {template_path}")
