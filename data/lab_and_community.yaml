@@ -33,11 +33,6 @@
       description: "Exploring advanced community detection and data clustering using the **Leiden algorithm** to derive structural insights from unstructured datasets."
       skills: ["ai_rag_mlops", "python"]
 
-    - id: therapeutic_data
-      title: "Therapeutic Data Engineering (GKI)"
-      description: "Developed a Python-based data pipeline to automate **GKI (Glucose-Ketone Index)** calculation, utilizing **Pandas** and **Matplotlib** to visualize metabolic trends and therapeutic outcomes."
-      skills: ["python", "etl_pipelines", "databases"]
-
 - id: first_robotics
   category: "Community Leadership & STEM Mentoring"
   title: "FIRST Robotics Mentorship"

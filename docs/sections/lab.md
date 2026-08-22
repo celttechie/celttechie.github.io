@@ -11,8 +11,6 @@ Continuous hands-on research and prototyping environment focusing on sovereign A
   <span class="skill-tags"><a href="#skill-ai_rag_mlops">AI & RAG Orchestration</a> <a href="#skill-python">Python (Pandas, SQLAlchemy)</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>
 * <a id="bullet-lab-clustering_research"></a>**Statistical Research & Graph Clustering:** Exploring advanced community detection and data clustering using the **Leiden algorithm** to derive structural insights from unstructured datasets.
   <span class="skill-tags"><a href="#skill-ai_rag_mlops">AI & RAG Orchestration</a> <a href="#skill-python">Python (Pandas, SQLAlchemy)</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>
-* <a id="bullet-lab-therapeutic_data"></a>**Therapeutic Data Engineering (GKI):** Developed a Python-based data pipeline to automate **GKI (Glucose-Ketone Index)** calculation, utilizing **Pandas** and **Matplotlib** to visualize metabolic trends and therapeutic outcomes.
-  <span class="skill-tags"><a href="#skill-python">Python (Pandas, SQLAlchemy)</a> <a href="#skill-etl_pipelines">ETL Pipelines</a> <a href="#skill-databases">PostgreSQL, MySQL</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>
 
 ### **FIRST Robotics Mentorship**
 **Role:** Lead Technical Systems Mentor | **Timeline:** Ongoing
