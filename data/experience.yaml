@@ -27,7 +27,7 @@
     - id: cisco_tl_devsecops
       title: "DevSecOps & Compliance Automation"
       long_text: "Developed automated reporting tools using the **Qualys API** to extract compliance metrics. Engineered Python scripts to parse raw **STIG XCCDF (XML)** data and map it to compliance results, enabling the automated generation of audit-ready STIG checklists. This compliance-as-code bridge eliminated hundreds of manual audit hours."
-      short_text: "Engineered Python tools parsing raw **STIG XCCDF (XML)** data with the **Qualys API** for automated audits. Authored enterprise **Ansible** playbooks during the 2021 Log4j event to audit and verify 100% remediation across all server fleets."
+      short_text: "Engineered Python tools parsing raw **STIG XCCDF (XML)** data with the **Qualys API** to generate audit-ready checklists, eliminating hundreds of manual audit hours."
       linkedin_text: "Developed automated reporting tools with the Qualys API to extract compliance metrics. Engineered Python scripts parsing raw STIG XCCDF (XML) data to automate audit-ready checklists, eliminating hundreds of manual audit hours."
       skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt"]
 
@@ -48,7 +48,7 @@
     - id: cisco_tl_log4j
       title: "Zero-Day Incident Response (Log4j)"
       long_text: "Engineered and executed enterprise-wide **Ansible** playbooks during the 2021 Log4j vulnerability to perform deep filesystem audits across all running server fleets. Located dormant instances embedded in nested packages and non-standard directories that bypassed standard **Qualys** scans, auditing 100% remediation across the platform."
-      short_text: null
+      short_text: "Authored enterprise **Ansible** playbooks during the 2021 Log4j event to perform deep filesystem audits across server fleets, locating dormant nested instances that bypassed standard **Qualys** scans and auditing 100% remediation."
       linkedin_text: "Authored enterprise Ansible playbooks during the 2021 Log4j event to perform deep filesystem audits across server fleets, locating dormant nested instances and auditing 100% remediation."
       skills: ["ansible_salt", "qualys_secops", "linux_systems", "root_cause_diagnostics"]
 
