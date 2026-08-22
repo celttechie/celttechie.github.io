@@ -137,3 +137,8 @@ hr {
     border-top: 1px solid #e2e8f0;
     margin: 20px 0;
 }
+
+/* Hide interactive web tags on print */
+.skill-tags, .back-to-matrix {
+    display: none !important;
+}

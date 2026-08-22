@@ -151,3 +151,8 @@ strong {
     font-size: 9pt;
     color: #2d3748;
 }
+
+/* Hide interactive web tags on print */
+.skill-tags, .back-to-matrix {
+    display: none !important;
+}

@@ -111,15 +111,17 @@ class ResumeDatabase:
             print("=" * 80 + "\n")
 
     def build_traceability_matrix_markdown(self):
-        """Generates an interactive markdown/HTML skill matrix table for the web portfolio."""
+        """Generates an interactive tabbed markdown/HTML skill matrix table for the web portfolio."""
         lines = []
-        lines.append("## Competency & Evidence Matrix\n")
-        lines.append("> [!NOTE]\n> Every technical competency is anchored directly to verified production deployments, infrastructure operations, and research milestones.\n\n")
+        lines.append('<a id="matrix-section"></a>')
+        lines.append("## Technical Competencies & Evidence Matrix\n")
+        lines.append('!!! tip "Verified Milestone Evidence"')
+        lines.append('    Every technical competency is anchored directly to verified production deployments, infrastructure operations, and research milestones. Click any **highlighted milestone link** to jump directly to its detailed evidence.\n\n')
 
         for cat in self.skills_data.get("categories", []):
-            lines.append(f"### **{cat['name']}**\n")
-            lines.append("| Core Competency | Demonstrated In / Milestone Proof |")
-            lines.append("| :--- | :--- |")
+            lines.append(f'=== "{cat["name"]}"\n')
+            lines.append('    | Core Competency | Verified Milestone Proof Points |')
+            lines.append('    | :--- | :--- |')
 
             for sk in cat.get("skills", []):
                 sk_id = sk.get("id")
@@ -132,8 +134,11 @@ class ResumeDatabase:
                         if sk_id in b.get("skills", [])
                     ]
                     if matching_bullets:
-                        b_titles = ", ".join([f"*{b.get('title')}*" for b in matching_bullets])
-                        proofs.append(f"**{exp['company']}** ({exp['dates_display']}): {b_titles}")
+                        b_links = ", ".join([
+                            f'<a href="#bullet-{b["id"]}" class="proof-link">{b.get("title")}</a>'
+                            for b in matching_bullets
+                        ])
+                        proofs.append(f"**{exp['company']}** ({exp['dates_display']}): {b_links}")
                     elif sk_id in exp.get("skills", []):
                         proofs.append(f"**{exp['company']}** ({exp['dates_display']})")
 
@@ -144,11 +149,14 @@ class ResumeDatabase:
                         if sk_id in p.get("skills", []) or sk_id in item.get("skills", [])
                     ]
                     if matching_projects:
-                        p_titles = ", ".join([f"*{p.get('title')}*" for p in matching_projects])
-                        proofs.append(f"**{item['title']}**: {p_titles}")
+                        p_links = ", ".join([
+                            f'<a href="#bullet-lab-{p["id"]}" class="proof-link">{p.get("title")}</a>'
+                            for p in matching_projects
+                        ])
+                        proofs.append(f"**{item['title']}**: {p_links}")
 
-                proof_str = "<br/>".join([f"• {p}" for p in proofs]) if proofs else "Foundation & Continuous Application"
-                lines.append(f"| **{sk['name']}**<br/><small style='color: #666;'>{sk.get('description', '')}</small> | {proof_str} |")
+                proof_str = "<br/>".join([f"• {p}" for p in proofs]) if proofs else "Foundation & Continuous Production Application"
+                lines.append(f'    | <a id="skill-{sk_id}"></a>**{sk["name"]}**<br/><small style="color: #64748b;">{sk.get("description", "")}</small> | {proof_str} |')
 
             lines.append("\n")
         return "\n".join(lines)
@@ -237,7 +245,7 @@ class ResumeDatabase:
             exp_id = exp["id"]
             prefix = f"exp_{i:02d}_{exp_id}"
 
-            # Full version
+            # Full version with deep-linking anchors and skill badges
             full_lines = [
                 f"### **{exp['company']} | {exp['role']}**",
                 f"**{exp['dates_display']} ({exp['location']})**\n",
@@ -245,8 +253,18 @@ class ResumeDatabase:
             ]
             for b in exp.get("bullets", []):
                 if b.get("long_text"):
-                    full_lines.append(f"*   **{b['title']}:** {b['long_text']}")
-            full_lines.append(f"*   **Skills:** {exp['skills_display']}\n")
+                    b_id = f"bullet-{b['id']}"
+                    tag_links = []
+                    for s_id in b.get("skills", []):
+                        s_info = self.skill_map.get(s_id)
+                        if s_info:
+                            tag_links.append(f'<a href="#skill-{s_id}">{s_info["short_name"]}</a>')
+                    tags_html = ""
+                    if tag_links:
+                        tags_html = f'\n  <span class="skill-tags">{" ".join(tag_links)} <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>'
+                    full_lines.append(f"* <a id=\"{b_id}\"></a>**{b['title']}:** {b['long_text']}{tags_html}")
+
+            full_lines.append(f"\n*   **Skills:** {exp['skills_display']}\n")
 
             with open(os.path.join(SECTIONS_DIR, f"{prefix}.md"), "w", encoding="utf-8") as f:
                 f.write("\n".join(full_lines))
@@ -273,7 +291,16 @@ class ResumeDatabase:
                 lab_lines.append(f"**Role:** {item['role']} | **Timeline:** {item['dates_display']}\n")
             lab_lines.append(f"{item['summary']}\n")
             for p in item.get("projects", []):
-                lab_lines.append(f"*   **{p['title']}:** {p['description']}")
+                p_id = f"bullet-lab-{p['id']}"
+                tag_links = []
+                for s_id in p.get("skills", []):
+                    s_info = self.skill_map.get(s_id)
+                    if s_info:
+                        tag_links.append(f'<a href="#skill-{s_id}">{s_info["short_name"]}</a>')
+                tags_html = ""
+                if tag_links:
+                    tags_html = f'\n  <span class="skill-tags">{" ".join(tag_links)} <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>'
+                lab_lines.append(f"* <a id=\"{p_id}\"></a>**{p['title']}:** {p['description']}{tags_html}")
             lab_lines.append("")
         with open(os.path.join(SECTIONS_DIR, "lab.md"), "w", encoding="utf-8") as f:
             f.write("\n".join(lab_lines))
@@ -302,10 +329,6 @@ class ResumeDatabase:
             '## Professional Summary',
             '',
             '--8<-- "docs/sections/summary_executive.md"',
-            '',
-            '---',
-            '',
-            '--8<-- "docs/sections/skills.md"',
             '',
             '---',
             '',
@@ -350,7 +373,7 @@ class ResumeDatabase:
         out.append("\n" + "#" * 40)
         out.append("1. HEADLINE (Limit: 220 chars)")
         out.append("#" * 40)
-        headline = "Senior Systems & Platform Engineer | FedRAMP & Cloud SecOps | Data Platforms (Python/Pandas/PostgreSQL) | Infrastructure-as-Code & Identity (Ansible/FreeIPA) | FIRST Robotics Mentor"
+        headline = "Senior Backend & Platform Engineer | FedRAMP & Cloud SecOps | Data Platforms (Python/Pandas/PostgreSQL) | Infrastructure-as-Code & Identity (Ansible/FreeIPA) | FIRST Robotics Mentor"
         out.append(f"{headline}  [{len(headline)} / 220 chars]\n")
 
         out.append("#" * 40)

@@ -95,3 +95,100 @@
   display: none !important;
 }
 
+/* Smooth scrolling for anchor jumps */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Pulse animation when jumping to any section or bullet anchor */
+:target,
+.target-pulse-active {
+  animation: target-pulse 2.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes target-pulse {
+  0% {
+    background-color: rgba(13, 148, 136, 0.28);
+    border-radius: 6px;
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
+  }
+  70% {
+    background-color: rgba(13, 148, 136, 0.12);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+/* Skill Tags in Experience and Lab Bullets */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.78rem;
+}
+
+.skill-tags a {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(13, 148, 136, 0.08);
+  color: var(--md-accent-fg-color);
+  padding: 2px 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.skill-tags a:hover {
+  background: var(--md-accent-fg-color);
+  color: #ffffff;
+  border-color: var(--md-accent-fg-color);
+  transform: translateY(-1px);
+}
+
+.skill-tags a.back-to-matrix {
+  background: rgba(30, 41, 59, 0.08);
+  color: #475569;
+  border-color: rgba(30, 41, 59, 0.25);
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .skill-tags a.back-to-matrix {
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-tags a.back-to-matrix:hover {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+}
+
+[data-md-color-scheme="slate"] .skill-tags a.back-to-matrix:hover {
+  background: #38bdf8;
+  color: #0f172a;
+  border-color: #38bdf8;
+}
+
+/* Matrix Table Enhancements */
+.matrix-table table {
+  width: 100%;
+}
+
+.matrix-table td a.proof-link {
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+  border-bottom: 1px dashed var(--md-accent-fg-color);
+}
+
+.matrix-table td a.proof-link:hover {
+  border-bottom-style: solid;
+}
+
