@@ -49,6 +49,11 @@ nav:
   - Resumes: resumes.md
   - 2014 Site Archive: legacy_archive.md
 
+extra:
+  analytics:
+    provider: google
+    property: G-X4214GV2B0
+
 extra_css:
   - stylesheets/extra.css
 
