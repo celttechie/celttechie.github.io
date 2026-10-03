@@ -1,33 +1,32 @@
 <div class="skills-section">
     <div class="skills-column">
-        <strong>Data & Systems Engineering:</strong>
+        <strong>Solutions & Data Engineering:</strong>
         <ul>
-            <li>Python (Pandas, NumPy, Flask, SQLAlchemy)</li>
-            <li>ETL Pipeline & Data Validation</li>
+            <li>Solutions Architecture & Prototyping</li>
+            <li>Python (Pandas, SQLAlchemy, Flask)</li>
+            <li>ETL Pipelines & Data Integrity</li>
             <li>PostgreSQL, MySQL, MSSQL</li>
             <li>Validation and QA Testing</li>
-            <li>Systems/Robotics Design</li>
         </ul>
     </div>
     <div class="skills-column">
         <strong>Systems & Distributed Scale:</strong>
         <ul>
-            <li>Cisco UCS & Fabric Interconnect</li>
+            <li>Cisco UCS & Bare-Metal Compute</li>
             <li>OpenStack (Nova, Heat)</li>
-            <li>vSphere/ESXi, XenServer, Proxmox/KVM</li>
+            <li>vSphere/ESXi, Proxmox/KVM, Xen</li>
             <li>Ceph Block Storage (RBD)</li>
-            <li>High-Availability (HA) Clustering</li>
+            <li>HA Clustering & Linux Systems</li>
         </ul>
     </div>
     <div class="skills-column">
         <strong>DevOps, Security & Leadership:</strong>
         <ul>
-            <li>Ansible, SaltStack</li>
-            <li>CI/CD (GitHub Actions, Jenkins)</li>
+            <li>FedRAMP Moderate & DoD STIGs</li>
+            <li>Ansible, SaltStack & IaC</li>
+            <li>Qualys API & Vulnerability Mgmt</li>
             <li>FreeIPA/LDAP, RBAC/HBAC</li>
-            <li>FedRAMP Compliance, Qualys</li>
-            <li>Monitoring, Diagnostics, Troubleshooting</li>
-            <li>FIRST Robotics Mentoring & Leadership</li>
+            <li>Technical Leadership & Mentoring</li>
         </ul>
     </div>
 </div>

@@ -3,8 +3,8 @@
   title: "The Innovation Lab (Personal R&D)"
   dates_display: "Ongoing"
   summary: >-
-    Continuous hands-on research and prototyping environment focusing on sovereign AI orchestration,
-    vector retrieval architectures, graph analytics, and data pipeline engineering on dedicated
+    Continuous hands-on research and prototyping environment focusing on cloud-native infrastructure,
+    air-gapped delivery platforms, sovereign AI orchestration, and data pipeline engineering on dedicated
     workstation infrastructure.
   skills:
     - ai_rag_mlops
@@ -12,7 +12,25 @@
     - databases
     - etl_pipelines
     - linux_systems
+    - fedramp_stig
+    - ha_clustering
+    - root_cause_diagnostics
   projects:
+    - id: airgap_defense_unicorns
+      title: "Air-Gapped Delivery & cATO Prototyping (Defense Unicorns Zarf/UDS/Lula)"
+      description: "Evaluated declarative air-gapped platform delivery using **Defense Unicorns' Zarf** and **UDS bundles**. Integrated **Lula** with **OSCAL** schemas to validate live Kubernetes resources against NIST SP 800-53 security controls, automating the generation of compliance artifacts and System Security Plans (SSPs)."
+      skills: ["fedramp_stig", "linux_systems"]
+
+    - id: immutable_k8s_talos
+      title: "Immutable Kubernetes Infrastructure (Talos Linux & eBPF Cilium)"
+      description: "Engineered an immutable, declarative Kubernetes control plane using **Talos Linux** (API-managed, read-only rootfs, zero-SSH attack surface). Configured **eBPF-powered Cilium** for high-performance socket routing, L2 BGP load balancing, and observability."
+      skills: ["linux_systems", "ha_clustering"]
+
+    - id: iac_sandboxing
+      title: "Automated Sandbox Substrates & Deterministic Security (OpenTofu & Libvirt)"
+      description: "Built automated multi-tier sandbox topologies replicating isolated network zones and jump hosts using **OpenTofu** on KVM/Libvirt. Authored architectural standards for deterministic SSH host key generation to eliminate security anti-patterns in ephemeral testing."
+      skills: ["linux_systems", "root_cause_diagnostics"]
+
     - id: ai_orchestration
       title: "Multi-Agent AI Orchestration & MLOps"
       description: "Engineered a private, server-grade AI orchestration stack using **LiteLLM** and **Hermes** on a dedicated T5600 workstation (128GB RAM/RTX 3060)."

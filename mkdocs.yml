@@ -1,4 +1,4 @@
-site_name: Brian Jarrett | Senior Backend & Platform Engineer
+site_name: Brian Jarrett | Solutions Architecture & Technical Leadership
 site_description: Personal portfolio and technical blog of Brian Jarrett.
 site_author: Brian Jarrett
 site_url: https://celttechie.github.io/
@@ -46,6 +46,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Articles: articles/technical_execution_and_rapid_learning.md
   - Resumes: resumes.md
   - 2014 Site Archive: legacy_archive.md
 

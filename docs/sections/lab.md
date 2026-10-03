@@ -1,8 +1,14 @@
 ## Innovation Lab & Community Leadership
 
 ### **The Innovation Lab (Personal R&D)**
-Continuous hands-on research and prototyping environment focusing on sovereign AI orchestration, vector retrieval architectures, graph analytics, and data pipeline engineering on dedicated workstation infrastructure.
+Continuous hands-on research and prototyping environment focusing on cloud-native infrastructure, air-gapped delivery platforms, sovereign AI orchestration, and data pipeline engineering on dedicated workstation infrastructure.
 
+* <a id="bullet-lab-airgap_defense_unicorns"></a>**Air-Gapped Delivery & cATO Prototyping (Defense Unicorns Zarf/UDS/Lula):** Evaluated declarative air-gapped platform delivery using **Defense Unicorns' Zarf** and **UDS bundles**. Integrated **Lula** with **OSCAL** schemas to validate live Kubernetes resources against NIST SP 800-53 security controls, automating the generation of compliance artifacts and System Security Plans (SSPs).
+  <span class="skill-tags"><a href="#skill-fedramp_stig">FedRAMP & STIG Compliance</a> <a href="#skill-linux_systems">Linux (RHEL/Ubuntu)</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>
+* <a id="bullet-lab-immutable_k8s_talos"></a>**Immutable Kubernetes Infrastructure (Talos Linux & eBPF Cilium):** Engineered an immutable, declarative Kubernetes control plane using **Talos Linux** (API-managed, read-only rootfs, zero-SSH attack surface). Configured **eBPF-powered Cilium** for high-performance socket routing, L2 BGP load balancing, and observability.
+  <span class="skill-tags"><a href="#skill-linux_systems">Linux (RHEL/Ubuntu)</a> <a href="#skill-ha_clustering">HA Clustering</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>
+* <a id="bullet-lab-iac_sandboxing"></a>**Automated Sandbox Substrates & Deterministic Security (OpenTofu & Libvirt):** Built automated multi-tier sandbox topologies replicating isolated network zones and jump hosts using **OpenTofu** on KVM/Libvirt. Authored architectural standards for deterministic SSH host key generation to eliminate security anti-patterns in ephemeral testing.
+  <span class="skill-tags"><a href="#skill-linux_systems">Linux (RHEL/Ubuntu)</a> <a href="#skill-root_cause_diagnostics">Advanced Diagnostics & Monitoring</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>
 * <a id="bullet-lab-ai_orchestration"></a>**Multi-Agent AI Orchestration & MLOps:** Engineered a private, server-grade AI orchestration stack using **LiteLLM** and **Hermes** on a dedicated T5600 workstation (128GB RAM/RTX 3060).
   <span class="skill-tags"><a href="#skill-ai_rag_mlops">AI & RAG Orchestration</a> <a href="#skill-linux_systems">Linux (RHEL/Ubuntu)</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>
 * <a id="bullet-lab-rag_knowledge"></a>**Knowledge Retrieval & Vector Search:** Implemented a **RAG (Retrieval-Augmented Generation)** pipeline utilizing **Qdrant** as a vector database to enable natural language querying across a multi-terabyte technical knowledge base.

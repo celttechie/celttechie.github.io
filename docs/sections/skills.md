@@ -24,6 +24,7 @@
 *   **Network Engineering & Firewalls:** Cisco routing/switching, IPsec VPNs, VLANs, Ruckus wireless bridges, and VoIP architecture.
 
 ### **Leadership, Mentoring & Methodology**
+*   **Solutions Architecture & Integration:** Translating enterprise and federal requirements into reliable data platforms, automated infrastructure, and operational workflows.
 *   **Technical Mentorship:** Guiding multi-tier engineering teams, methodical troubleshooting, and stakeholder communication.
 *   **Robotics & STEM Mentoring:** Mentoring student teams in real-time embedded systems, electrical wiring, mechanisms, and troubleshooting.
 *   **Advanced Diagnostics & Monitoring:** Low-level system diagnostics, proactive performance telemetry, and elimination of systemic issues.

@@ -82,6 +82,10 @@ categories:
   - id: leadership_mentoring
     name: "Leadership, Mentoring & Methodology"
     skills:
+      - id: solutions_architecture
+        name: "Solutions Architecture & Systems Integration"
+        short_name: "Solutions Architecture & Integration"
+        description: "Translating enterprise and federal requirements into reliable data platforms, automated infrastructure, and operational workflows."
       - id: technical_leadership
         name: "Technical Leadership & Mentoring"
         short_name: "Technical Mentorship"

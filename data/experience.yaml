@@ -20,6 +20,7 @@
     - linux_systems
     - cisco_ucs
     - technical_leadership
+    - solutions_architecture
     - rapid_adaptation_sme
   bullets:
     - id: cisco_tl_devsecops
@@ -27,14 +28,14 @@
       long_text: "Developed automated reporting tools using the **Qualys API** to extract compliance metrics. Engineered Python scripts to parse raw **STIG XCCDF (XML)** data and map it to compliance results, enabling the automated generation of audit-ready STIG checklists. This compliance-as-code bridge eliminated hundreds of manual audit hours."
       short_text: "Engineered Python tools parsing raw **STIG XCCDF (XML)** data with the **Qualys API** to generate audit-ready checklists, eliminating hundreds of manual audit hours."
       linkedin_text: "Developed automated reporting tools with the Qualys API to extract compliance metrics. Engineered Python scripts parsing raw STIG XCCDF (XML) data to automate audit-ready checklists, eliminating hundreds of manual audit hours."
-      skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt"]
+      skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt", "solutions_architecture"]
 
     - id: cisco_tl_data_platform
       title: "Data Platform Engineering"
       long_text: "Designed, deployed, and operated a vulnerability management platform using **Python (Pandas, SQLAlchemy)** and **PostgreSQL**. Built custom ETL pipelines to ingest and synchronize data from the **Jira API**, providing teams with high-fidelity dashboards for severity tracking and SLA compliance. Integrated data with **Tableau** to enable executive-level visibility into remediation progress."
       short_text: "Designed, deployed, and operated a vulnerability management system using a custom ETL pipeline to extract data from **Jira API** and synchronize it to a **PostgreSQL** database. Built a **Python (Pandas, SQLAlchemy)** web frontend and connected **Tableau** dashboards to display real-time SLA metrics."
       linkedin_text: "Designed and operated a vulnerability management platform with Python (Pandas, SQLAlchemy) and PostgreSQL. Built ETL pipelines syncing Jira API data with Tableau dashboards for executive visibility and SLA tracking."
-      skills: ["python", "etl_pipelines", "databases", "qualys_secops"]
+      skills: ["python", "etl_pipelines", "databases", "qualys_secops", "solutions_architecture"]
 
     - id: cisco_tl_inventory
       title: "Inventory Analytics & Infrastructure Operations"
@@ -292,7 +293,7 @@
       title: "Solutions Engineer/Software QA Lead (StorageSoft/Phoenix Tech)"
       long_text: null
       short_text: "Gathered requirements, deployed software, and provided training for customers. Managed testing and support departments. Structured QA testing workflows for **ImageCast** disk cloning tools and designed Windows/Linux/Networking test lab environments."
-      skills: ["validation_qa", "technical_leadership", "root_cause_diagnostics"]
+      skills: ["solutions_architecture", "validation_qa", "technical_leadership", "root_cause_diagnostics"]
 
     - id: foundational_usaf_short
       title: "Airborne Radar Journeyman (U.S. Air Force)"
@@ -305,7 +306,7 @@
       long_text: "Tested **ImageCast** software integrations with systems management suites including **SMS**, **CA Unicenter**, and **Desktop DNA**. Defined customer software requirements, submitted feature change requests, and conducted technical product demonstrations and training for enterprise clients such as **HP**, **Target**, and **NEC**. Helped answer technical questions at trade shows."
       short_text: null
       linkedin_text: "Tested ImageCast integrations with enterprise suites (SMS, CA Unicenter). Conducted technical demos and customer training for HP, Target, and NEC."
-      skills: ["validation_qa", "technical_leadership"]
+      skills: ["solutions_architecture", "validation_qa", "technical_leadership"]
 
     - id: foundational_lab_mgmt
       title: "Technical Services & Test Lab Management"
