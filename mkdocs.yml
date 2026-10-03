@@ -46,7 +46,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Articles: articles/technical_execution_and_rapid_learning.md
   - Resumes: resumes.md
   - 2014 Site Archive: legacy_archive.md
 
