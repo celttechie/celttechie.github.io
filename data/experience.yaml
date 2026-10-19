@@ -1,14 +1,13 @@
 - id: cisco_tl
   company: "Cisco Systems"
-  role: "Cloud Engineering Technical Leader & Infrastructure Lead"
+  role: "Cloud Engineering Technical Leader"
   location: "Remote"
   dates_display: "Aug 2019 – July 2026"
   start_date: "2019-08"
   end_date: "2026-07"
   summary: >-
-    Served as Infrastructure Team Lead and organizational source of authority for FedRAMP Moderate systems,
-    leading cross-functional engineering teams, federal ATO governance with the HHS PMO, and enterprise
-    vulnerability data platform architectures across Webex for Government and corporate footprints.
+    Managed FedRAMP Moderate operations, backend data systems, and compliance automation for the Webex for Government platform,
+    providing technical leadership across corporate Webex and SecOps systems.
   skills_display: "Python (FastAPI, Pandas, SQLAlchemy), PostgreSQL, Jira API ETL, Qualys API, Tableau, DISA STIGs (XCCDF/XML), Federal ATO Governance (HHS PMO), Ansible, RHEL/Ubuntu, Cisco UCS, FedRAMP Moderate."
   skills_display_short: "Python (FastAPI, Pandas), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate, Federal ATO Governance."
   skills:
@@ -26,17 +25,17 @@
     - rapid_adaptation_sme
   bullets:
     - id: cisco_tl_ato_log4j
-      title: "Federal ATO Governance & Enterprise Incident Leadership (Log4j / HHS PMO)"
-      long_text: "Under direct mandate from the Health and Human Services (HHS) PMO governing the Webex FedRAMP Authority to Operate (ATO), directed enterprise-wide incident response across 6,000+ operational bare-metal and cloud systems. When standard commercial scanners (Qualys) missed embedded/nested Java dependencies where development teams had deployed software in non-standard filesystem locations, engineered custom Ansible and Python deep-inspection engines to recursively audit the entire production fleet. Coordinated directly across 6 to 7 directorates and their underlying engineering teams to track and verify 100% remediation, arming the Director and executive leadership with proof-positive verification packages that successfully defended the platform's federal ATO."
-      short_text: "Directed enterprise Log4j incident response across 6,000+ systems for the HHS PMO (governing FedRAMP ATO). Engineered custom Ansible/Python audit engines detecting nested libraries missed by commercial scanners across 6–7 directorates, achieving 100% verified remediation to defend the ATO."
-      linkedin_text: "Directed enterprise Log4j incident response across 6,000+ systems under mandate from the HHS PMO governing FedRAMP ATO. Engineered custom Ansible/Python audit engines detecting nested libraries across 6-7 directorates, achieving 100% verified remediation."
+      title: "Federal ATO Governance & Enterprise Log4j Response (HHS PMO)"
+      long_text: "Played a central technical role in the enterprise Log4j response affecting 6,000+ operational bare-metal and cloud systems under the HHS PMO’s FedRAMP ATO governance. Built custom Ansible and Python deep-inspection tooling to locate nested/embedded Java libraries missed by commercial scanners, delivered actionable findings to engineering teams and directors, verified remediation, and helped compile the evidence packages used in PMO reporting that defended the platform’s ATO."
+      short_text: "Played a central technical role in the enterprise Log4j response across 6,000+ systems for the HHS PMO (governing FedRAMP ATO). Built custom Ansible/Python inspection tooling locating nested libraries missed by commercial scanners, verified remediation, and compiled PMO evidence packages defending the ATO."
+      linkedin_text: "Played a central technical role in the enterprise Log4j response across 6,000+ systems under mandate from the HHS PMO governing FedRAMP ATO. Built custom Ansible/Python audit tooling to detect nested libraries, verify remediation, and compile PMO evidence packages."
       skills: ["ansible_salt", "qualys_secops", "fedramp_stig", "linux_systems", "technical_leadership", "root_cause_diagnostics"]
 
     - id: cisco_tl_data_platform
       title: "Vulnerability Data Platform & Fleet UI Architecture (FastAPI, PostgreSQL, Tableau)"
-      long_text: "Resolved severe operational alert fatigue caused by a broken 1:1 server-to-ticket breakdown (where a single CVE across 2,000 servers generated 2,000 fragmented Jira tickets without fleet visibility). Proactively accessed the Jira REST API and engineered an automated Python ETL pipeline to extract, transform, and normalize vulnerability state into a centralized PostgreSQL database. Designed and deployed a custom FastAPI web service and interactive issue-browsing portal allowing engineering teams to search, condense, and triage vulnerabilities specific to their server fleets and software packages. Extended the platform to support Tableau integration, building executive dashboards segmented by Director, team, and SLA severity tiers—empowering the Webex Security Director to enforce accountability, prioritize engineering roadmaps, and systematically burn down vulnerability backlogs across all Webex baselines."
-      short_text: "Replaced a broken 1:1 server-to-ticket model (2,000+ tickets per CVE) by engineering an automated ETL pipeline (Jira REST API, Python, PostgreSQL) and interactive FastAPI web console. Built executive Tableau dashboards mapping vulnerability burndown and SLA compliance by Director and team, empowering leadership to drive organizational SLA adherence."
-      linkedin_text: "Engineered an automated vulnerability data platform (Python, PostgreSQL, FastAPI, Jira API ETL) and Tableau executive dashboards mapping SLA compliance across thousands of nodes, giving leadership visibility to drive systemic remediation."
+      long_text: "Designed and maintained an internal FastAPI + PostgreSQL vulnerability portal (fed by automated Jira ETL) used by multiple engineering teams to triage and plan remediation, and by leadership to track and report fleet-wide status across the Webex FedRAMP environment. Resolved operational alert fatigue caused by fragmented 1:1 server-to-ticket reporting by condensing issues into actionable fleet views. Extended the platform with Tableau dashboards segmented by team and SLA severity, empowering leadership to drive continuous SLA adherence."
+      short_text: "Designed and maintained an internal FastAPI + PostgreSQL vulnerability portal (fed by automated Jira ETL) used by engineering teams to triage issues and by leadership to track fleet status across the FedRAMP footprint. Extended platform with Tableau dashboards tracking SLA severity."
+      linkedin_text: "Designed and maintained an internal FastAPI + PostgreSQL vulnerability portal and Tableau dashboards tracking SLA compliance across thousands of nodes, giving engineering teams and leadership actionable visibility."
       skills: ["python", "etl_pipelines", "databases", "solutions_architecture", "qualys_secops", "technical_leadership"]
 
     - id: cisco_tl_cross_discipline
@@ -61,10 +60,10 @@
       skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt", "solutions_architecture"]
 
     - id: cisco_tl_mentorship
-      title: "Engineering Mentorship & Organizational Leadership"
-      long_text: "Promoted from Lead Compute Engineer to Infrastructure Team Lead during Cisco's organizational transition to cross-functional DevOps teams, serving as the central technical authority for infrastructure security and compliance. Mentored junior and mid-level DevOps engineers in Linux kernel diagnostics, methodical root-cause troubleshooting, ServiceNow operational dashboard configuration, and secure coding standards across distributed remote teams."
-      short_text: "Served as infrastructure team lead, mentoring junior and mid-level DevOps engineers in Linux kernel diagnostics, root-cause troubleshooting, and operational dashboard design across distributed teams."
-      linkedin_text: "Served as infrastructure team lead, mentoring junior and mid-level DevOps engineers in Linux kernel diagnostics, root-cause troubleshooting, and operational dashboard design."
+      title: "Engineering Mentorship & Technical Guidance"
+      long_text: "Mentored junior and mid-level engineers (up to three concurrent early in the role; later one-at-a-time onboarding) on Linux diagnostics, root-cause troubleshooting, and operational practices. Supported the hiring process through interviewing and structured onboarding of new team members across distributed remote teams, while providing ongoing technical guidance on complex remediation under federal SLAs."
+      short_text: "Mentored junior and mid-level engineers on Linux diagnostics, root-cause troubleshooting, and operational practices. Supported hiring through technical interviewing and structured onboarding across distributed remote teams."
+      linkedin_text: "Mentored junior and mid-level engineers on Linux diagnostics and root-cause troubleshooting. Supported hiring through interviewing and structured onboarding across distributed teams."
       skills: ["technical_leadership", "root_cause_diagnostics", "linux_systems"]
 
     - id: cisco_tl_inventory
