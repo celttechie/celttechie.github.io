@@ -1,15 +1,16 @@
 - id: cisco_tl
   company: "Cisco Systems"
-  role: "Cloud Engineering Technical Leader"
+  role: "Cloud Engineering Technical Leader & Infrastructure Lead"
   location: "Remote"
   dates_display: "Aug 2019 – July 2026"
   start_date: "2019-08"
   end_date: "2026-07"
   summary: >-
-    Managed FedRAMP Moderate operations, backend data systems, and critical infrastructure for the Webex for Government platform, before transitioning in 2024 to SecOps providing vulnerability management, automated tooling,
-    and technical leadership across corporate Webex systems.
-  skills_display: "Python (Pandas, SQLAlchemy), PostgreSQL, Jira API, Qualys API, STIG Compliance (XCCDF/XML), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, FedRAMP Moderate."
-  skills_display_short: "Python (Pandas, SQLAlchemy), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate Compliance."
+    Served as Infrastructure Team Lead and organizational source of authority for FedRAMP Moderate systems,
+    leading cross-functional engineering teams, federal ATO governance with the HHS PMO, and enterprise
+    vulnerability data platform architectures across Webex for Government and corporate footprints.
+  skills_display: "Python (FastAPI, Pandas, SQLAlchemy), PostgreSQL, Jira API ETL, Qualys API, Tableau, DISA STIGs (XCCDF/XML), Federal ATO Governance (HHS PMO), Ansible, RHEL/Ubuntu, Cisco UCS, FedRAMP Moderate."
+  skills_display_short: "Python (FastAPI, Pandas), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate, Federal ATO Governance."
   skills:
     - python
     - etl_pipelines
@@ -21,57 +22,71 @@
     - cisco_ucs
     - technical_leadership
     - solutions_architecture
+    - root_cause_diagnostics
     - rapid_adaptation_sme
   bullets:
+    - id: cisco_tl_ato_log4j
+      title: "Federal ATO Governance & Enterprise Incident Leadership (Log4j / HHS PMO)"
+      long_text: "Under direct mandate from the Health and Human Services (HHS) PMO governing the Webex FedRAMP Authority to Operate (ATO), directed enterprise-wide incident response across 6,000+ operational bare-metal and cloud systems. When standard commercial scanners (Qualys) missed embedded/nested Java dependencies where development teams had deployed software in non-standard filesystem locations, engineered custom Ansible and Python deep-inspection engines to recursively audit the entire production fleet. Coordinated directly across 6 to 7 directorates and their underlying engineering teams to track and verify 100% remediation, arming the Director and executive leadership with proof-positive verification packages that successfully defended the platform's federal ATO."
+      short_text: "Directed enterprise Log4j incident response across 6,000+ systems for the HHS PMO (governing FedRAMP ATO). Engineered custom Ansible/Python audit engines detecting nested libraries missed by commercial scanners across 6–7 directorates, achieving 100% verified remediation to defend the ATO."
+      linkedin_text: "Directed enterprise Log4j incident response across 6,000+ systems under mandate from the HHS PMO governing FedRAMP ATO. Engineered custom Ansible/Python audit engines detecting nested libraries across 6-7 directorates, achieving 100% verified remediation."
+      skills: ["ansible_salt", "qualys_secops", "fedramp_stig", "linux_systems", "technical_leadership", "root_cause_diagnostics"]
+
+    - id: cisco_tl_data_platform
+      title: "Vulnerability Data Platform & Fleet UI Architecture (FastAPI, PostgreSQL, Tableau)"
+      long_text: "Resolved severe operational alert fatigue caused by a broken 1:1 server-to-ticket breakdown (where a single CVE across 2,000 servers generated 2,000 fragmented Jira tickets without fleet visibility). Proactively accessed the Jira REST API and engineered an automated Python ETL pipeline to extract, transform, and normalize vulnerability state into a centralized PostgreSQL database. Designed and deployed a custom FastAPI web service and interactive issue-browsing portal allowing engineering teams to search, condense, and triage vulnerabilities specific to their server fleets and software packages. Extended the platform to support Tableau integration, building executive dashboards segmented by Director, team, and SLA severity tiers—empowering the Webex Security Director to enforce accountability, prioritize engineering roadmaps, and systematically burn down vulnerability backlogs across all Webex baselines."
+      short_text: "Replaced a broken 1:1 server-to-ticket model (2,000+ tickets per CVE) by engineering an automated ETL pipeline (Jira REST API, Python, PostgreSQL) and interactive FastAPI web console. Built executive Tableau dashboards mapping vulnerability burndown and SLA compliance by Director and team, empowering leadership to drive organizational SLA adherence."
+      linkedin_text: "Engineered an automated vulnerability data platform (Python, PostgreSQL, FastAPI, Jira API ETL) and Tableau executive dashboards mapping SLA compliance across thousands of nodes, giving leadership visibility to drive systemic remediation."
+      skills: ["python", "etl_pipelines", "databases", "solutions_architecture", "qualys_secops", "technical_leadership"]
+
+    - id: cisco_tl_cross_discipline
+      title: "Cross-Discipline Technical Translation & Federal Deviation Authority"
+      long_text: "Served as the technical bridge between software developers, storage engineers, and networking teams, demystifying abstract CVEs, kernel vulnerabilities, and DISA STIG benchmarks into actionable code and configuration remediation paths tailored to each stack. Researched root causes, evaluated production risk, and authored formal technical compliance deviation and risk justification packages submitted to the federal PMO for false positives and acceptable operational risks."
+      short_text: "Served as technical bridge across software, storage, and networking teams, translating complex CVEs and DISA STIGs into actionable remediation paths. Authored formal technical compliance deviation and risk justification packages submitted to the federal PMO."
+      linkedin_text: "Served as technical bridge across software, storage, and networking teams, translating complex CVEs and STIGs into actionable remediation paths and authoring formal compliance deviation packages for the federal PMO."
+      skills: ["fedramp_stig", "qualys_secops", "technical_leadership", "solutions_architecture", "root_cause_diagnostics"]
+
+    - id: cisco_tl_servicenow_modernization
+      title: "Enterprise Modernization & Qualys Grouping Taxonomy (ServiceNow Migration)"
+      long_text: "Served as lead technical consultant for the enterprise-wide modernization effort to retire the legacy Jira tracking system in favor of an automated ServiceNow integration. Partnered with the ServiceNow ETL engineering team to architect asset tagging taxonomies, dynamic grouping structures, and metadata classification rules inside Qualys, ensuring vulnerability and compliance findings were accurately classified and dynamically routed to the appropriate engineering owners."
+      short_text: "Architected Qualys asset grouping and tagging taxonomy for enterprise ETL migration to ServiceNow, ensuring automated classification and routing of compliance findings across engineering teams."
+      linkedin_text: "Architected Qualys asset grouping and tagging taxonomy for enterprise ETL migration to ServiceNow, ensuring automated classification and routing of compliance findings."
+      skills: ["qualys_secops", "solutions_architecture", "etl_pipelines"]
+
     - id: cisco_tl_devsecops
-      title: "DevSecOps & Compliance Automation"
-      long_text: "Developed automated reporting tools using the **Qualys API** to extract compliance metrics. Engineered Python scripts to parse raw **STIG XCCDF (XML)** data and map it to compliance results, enabling the automated generation of audit-ready STIG checklists. This compliance-as-code bridge eliminated hundreds of manual audit hours."
-      short_text: "Engineered Python tools parsing raw **STIG XCCDF (XML)** data with the **Qualys API** to generate audit-ready checklists, eliminating hundreds of manual audit hours."
+      title: "DevSecOps & Compliance Automation (STIG XCCDF/XML)"
+      long_text: "Built custom automation tooling in Python and REST APIs to ingest and parse raw DISA STIG XCCDF (XML) benchmark data, mapping running Linux server configurations directly to federal controls. Automated the continuous generation of audit-ready STIG checklists, slashing hundreds of engineering hours of manual compliance preparation and ensuring audit readiness across all Webex for Government footprints."
+      short_text: "Engineered Python tools parsing raw STIG XCCDF (XML) data with the Qualys API to generate audit-ready checklists, eliminating hundreds of manual audit hours."
       linkedin_text: "Developed automated reporting tools with the Qualys API to extract compliance metrics. Engineered Python scripts parsing raw STIG XCCDF (XML) data to automate audit-ready checklists, eliminating hundreds of manual audit hours."
       skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt", "solutions_architecture"]
 
-    - id: cisco_tl_data_platform
-      title: "Data Platform Engineering"
-      long_text: "Designed, deployed, and operated a vulnerability management platform using **Python (Pandas, SQLAlchemy)** and **PostgreSQL**. Built custom ETL pipelines to ingest and synchronize data from the **Jira API**, providing teams with high-fidelity dashboards for severity tracking and SLA compliance. Integrated data with **Tableau** to enable executive-level visibility into remediation progress."
-      short_text: "Designed, deployed, and operated a vulnerability management system using a custom ETL pipeline to extract data from **Jira API** and synchronize it to a **PostgreSQL** database. Built a **Python (Pandas, SQLAlchemy)** web frontend and connected **Tableau** dashboards to display real-time SLA metrics."
-      linkedin_text: "Designed and operated a vulnerability management platform with Python (Pandas, SQLAlchemy) and PostgreSQL. Built ETL pipelines syncing Jira API data with Tableau dashboards for executive visibility and SLA tracking."
-      skills: ["python", "etl_pipelines", "databases", "qualys_secops", "solutions_architecture"]
+    - id: cisco_tl_mentorship
+      title: "Engineering Mentorship & Organizational Leadership"
+      long_text: "Promoted from Lead Compute Engineer to Infrastructure Team Lead during Cisco's organizational transition to cross-functional DevOps teams, serving as the central technical authority for infrastructure security and compliance. Mentored junior and mid-level DevOps engineers in Linux kernel diagnostics, methodical root-cause troubleshooting, ServiceNow operational dashboard configuration, and secure coding standards across distributed remote teams."
+      short_text: "Served as infrastructure team lead, mentoring junior and mid-level DevOps engineers in Linux kernel diagnostics, root-cause troubleshooting, and operational dashboard design across distributed teams."
+      linkedin_text: "Served as infrastructure team lead, mentoring junior and mid-level DevOps engineers in Linux kernel diagnostics, root-cause troubleshooting, and operational dashboard design."
+      skills: ["technical_leadership", "root_cause_diagnostics", "linux_systems"]
 
     - id: cisco_tl_inventory
       title: "Inventory Analytics & Infrastructure Operations"
-      long_text: "Leveraged **Pandas** for large-scale data manipulation, merging disparate inventory reports and datasets into actionable operational insights across **Cisco UCS** bare-metal hardware and cloud compute. Transformed manual Excel-based tracking into automated trend analysis for monthly executive reporting."
+      long_text: "Leveraged Pandas for large-scale data manipulation, merging disparate inventory reports and datasets into actionable operational insights across Cisco UCS bare-metal hardware and cloud compute. Transformed manual Excel-based tracking into automated trend analysis for monthly executive reporting."
       short_text: null
       linkedin_text: "Leveraged Pandas for large-scale data manipulation, merging disparate inventory reports across Cisco UCS bare-metal and cloud compute into automated trend analysis for executive reporting."
       skills: ["python", "cisco_ucs"]
 
-    - id: cisco_tl_log4j
-      title: "Zero-Day Incident Response (Log4j)"
-      long_text: "Engineered and executed enterprise-wide **Ansible** playbooks during the 2021 Log4j vulnerability to perform deep filesystem audits across all running server fleets. Located dormant instances embedded in nested packages and non-standard directories that bypassed standard **Qualys** scans, auditing 100% remediation across the platform."
-      short_text: "Authored enterprise **Ansible** playbooks during the 2021 Log4j event to perform deep filesystem audits across server fleets, locating dormant nested instances that bypassed standard **Qualys** scans and auditing 100% remediation."
-      linkedin_text: "Authored enterprise Ansible playbooks during the 2021 Log4j event to perform deep filesystem audits across server fleets, locating dormant nested instances and auditing 100% remediation."
-      skills: ["ansible_salt", "qualys_secops", "linux_systems", "root_cause_diagnostics"]
-
-    - id: cisco_tl_mentorship
-      title: "Technical Guidance & Mentorship"
-      long_text: "Served as infrastructure team lead, providing technical direction across the Webex for Government environment. Mentored engineering teams in methodical troubleshooting and supported the analysis and resolution of complex vulnerability and compliance remediation issues, ensuring continuous service stability under strict SLAs."
-      short_text: "Provided technical guidance across federal cloud environments, mentoring multi-tier engineering teams in methodical troubleshooting and complex vulnerability remediation under strict SLAs."
-      linkedin_text: "Led infrastructure engineering for Webex for Government. Mentored multi-tier teams in methodical troubleshooting and complex vulnerability remediation under strict SLAs."
-      skills: ["technical_leadership", "root_cause_diagnostics"]
-
 - id: cisco_ce
   company: "Cisco Systems"
-  role: "Cloud Systems Engineer"
+  role: "Cloud Systems Engineer & Lead Compute Engineer"
   location: "Remote"
   dates_display: "Jan 2017 – Aug 2019"
   start_date: "2017-01"
   end_date: "2019-08"
   summary: >-
-    Managed and optimized mission-critical compute infrastructure for Webex Commercial
-    and FedRAMP environments. Collaborated with Networking and Storage teams to ensure
-    zero-downtime availability, robust identity access control, and high security across
-    US data centers.
-  skills_display: "Ansible, FreeIPA, OpenStack, VMware vSphere, Cisco UCS, RHEL/CentOS, Windows Server, RBAC/HBAC, Qualys, FedRAMP Compliance."
-  skills_display_short: "Ansible, FreeIPA, OpenStack, VMware vSphere, Cisco UCS, RHEL/CentOS, Windows Server, RBAC/HBAC, Qualys, FedRAMP Compliance."
+    Served as Lead Compute Engineer managing compute, identity, and bastion infrastructure across Webex Commercial
+    and FedRAMP Moderate footprints. Collaborated closely with Networking, Storage, and Security Operations Center (SOC)
+    teams to guarantee zero-downtime availability, fine-grained access control, and continuous security hardening.
+  skills_display: "Ansible, FreeIPA (HA/HBAC), OpenStack, VMware vSphere, Cisco UCS, RHEL/CentOS, Windows Server, RBAC/HBAC, Qualys, FedRAMP Compliance."
+  skills_display_short: "Ansible, FreeIPA (HA/HBAC), OpenStack, VMware vSphere, Cisco UCS, RHEL/CentOS, Windows Server, RBAC/HBAC, Qualys, FedRAMP Compliance."
   skills:
     - ansible_salt
     - identity_rbac
@@ -82,23 +97,24 @@
     - qualys_secops
     - fedramp_stig
     - ha_clustering
+    - technical_leadership
   bullets:
     - id: cisco_ce_freeipa
-      title: "Enterprise Identity Architecture"
-      long_text: "Architected and deployed a **High-Availability (HA) FreeIPA cluster** to replace a legacy, high-overhead 389 Directory Server environment. Automated VM deployment in **OpenStack** using **Ansible**, enabling centralized RBAC and HBAC for 2,000+ Linux/Windows servers and infrastructure devices across multiple data centers."
-      short_text: "Designed and deployed a **High-Availability (HA) FreeIPA cluster** using **Ansible** to implement RBAC/HBAC across **2,000+ servers, storage nodes, and network devices**, replacing an aging 389-ds directory framework."
-      skills: ["identity_rbac", "ha_clustering", "openstack", "ansible_salt", "linux_systems"]
+      title: "Enterprise Identity Architecture & SOC Collaboration (FreeIPA/HBAC)"
+      long_text: "Architected and deployed a High-Availability (HA) FreeIPA cluster in OpenStack using Ansible to replace a legacy, high-overhead 389 Directory Server environment. Partnered directly with the Security Operations Center (SOC) to architect and define Host-Based Access Control (HBAC) rule sets—introducing net-new zero-trust access control capabilities—while guiding disparate application engineering teams on service account permissions and access policies across 2,000+ Linux/Windows servers and network appliances."
+      short_text: "Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack via Ansible to replace legacy 389 DS. Partnered with the SOC to establish fine-grained Host-Based Access Control (HBAC) policies, guiding application teams on service permissions and standardizing access control across 2,000+ hosts."
+      skills: ["identity_rbac", "ha_clustering", "openstack", "ansible_salt", "linux_systems", "technical_leadership"]
 
     - id: cisco_ce_compute_ops
-      title: "Virtualized Infrastructure Operations"
-      long_text: "Managed large-scale compute services using **vSphere** on **Cisco UCS** hardware. Administered critical infrastructure including bastion hosts, LDAP/FTP servers, and antivirus solutions, ensuring consistent high availability."
-      short_text: "Administered large-scale compute environments using **vSphere** on **Cisco UCS** hardware. Orchestrated **Qualys** vulnerability scanning and patch remediation across commercial and FedRAMP sites while maintaining core bastion and identity services."
+      title: "Lead Compute Engineering & Virtualization Operations"
+      long_text: "Managed large-scale compute services and bastion host environments using VMware vSphere on Cisco UCS hardware across commercial and FedRAMP data centers. Served as lead compute engineer resolving complex virtualization performance bottlenecks, ensuring high availability, and maintaining strict adherence to federal uptime SLAs."
+      short_text: "Managed enterprise virtualization clusters on VMware vSphere and Cisco UCS bare metal, serving as lead compute engineer maintaining high availability and strict adherence to federal SLAs."
       skills: ["virtualization", "cisco_ucs", "qualys_secops", "fedramp_stig"]
 
     - id: cisco_ce_vuln_mgmt
-      title: "Vulnerability Management"
-      long_text: "Led security patch remediation efforts for compute services in highly regulated federal environments. Researched and implemented system security patches, advised engineering teams on remediation strategies, and managed **Qualys** vulnerability scanners to maintain strict compliance."
-      short_text: null
+      title: "Compute Security & Vulnerability Remediation"
+      long_text: "Led security patch remediation and hardening efforts for compute services and bastion hosts in highly regulated federal environments. Researched and validated system security patches, advised engineering teams on remediation strategies, and managed Qualys vulnerability scanners to ensure continuous FedRAMP compliance."
+      short_text: "Hardened VMware vSphere clusters, Cisco UCS bare metal, and FedRAMP bastion environments, driving continuous vulnerability remediation under strict federal uptime and security SLAs."
       skills: ["qualys_secops", "fedramp_stig", "linux_systems"]
 
 - id: cisco_contract1

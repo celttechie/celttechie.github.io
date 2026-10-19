@@ -16,6 +16,17 @@
     - ha_clustering
     - root_cause_diagnostics
   projects:
+    - id: tactical_edge_gateway
+      title: "Tactical Edge Telemetry Gateway (tactical-edge-gateway)"
+      description: "Architected an air-gapped telemetry translation and operator situational awareness gateway bridging autonomous robotics protocols (**MAVLink and ROS2/DDS**) to military C2 (**Cursor on Target / TAK Server**) over contested DDIL links. Authored Architecture Decision Records (ADRs) and threat models, packaging services as zero-dependency **Zarf OCI artifacts** with continuous **Lula (OSCAL)** compliance validation."
+      skills:
+        ["fedramp_stig", "linux_systems", "python", "solutions_architecture"]
+
+    - id: tactical_edge_sdn
+      title: "Tactical Edge Software-Defined Networking (tactical-edge-sdn)"
+      description: "Engineered a cloud-native software-defined networking reference architecture modernizing edge and shipboard tactical routing. Features an autonomous Python/C++ SD-WAN controller that evaluates latency and packet loss across simulated radio links, mutating Linux Netlink kernel routes dynamically with zero dropped sessions, packaged with containerized FRRouting and WireGuard as Zarf packages."
+      skills: ["network_security", "linux_systems", "ha_clustering", "python"]
+
     - id: airgap_defense_unicorns
       title: "Air-Gapped Delivery & cATO Prototyping (Defense Unicorns Zarf/UDS/Lula)"
       description: "Evaluated declarative air-gapped platform delivery using **Defense Unicorns' Zarf** and **UDS bundles**. Integrated **Lula** with **OSCAL** schemas to validate live Kubernetes resources against NIST SP 800-53 security controls, automating the generation of compliance artifacts and System Security Plans (SSPs)."
