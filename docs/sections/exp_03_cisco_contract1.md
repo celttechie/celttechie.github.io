@@ -1,7 +1,7 @@
 ### **Select Group @ Cisco | Cloud DevOps/QA Engineer (Contract)**
 **Feb 2016 – Jan 2017 (Remote)**
 
-Provided specialized DevOps and QA engineering support for Cisco's OpenStack-based Public Cloud (InterCloud Services). Focused on performance optimization, automated configuration management, and stability engineering for large-scale cloud deployments.
+Provided specialized DevOps and QA engineering support for Cisco's OpenStack-based Public Cloud (InterCloud Services) running an OpenStack-on-OpenStack environment on Cisco UCS bare metal. Focused on Nova scheduler performance optimization, automated configuration management, and stability engineering for large-scale cloud deployments.
 
 * <a id="bullet-cisco_contract_perf"></a>**Performance Optimization:** Identified and removed redundant **Nova Scheduler** filters, reducing instance scheduling time for 700 nodes from 20 seconds to 5 seconds—a **75% improvement** in orchestration speed.
   <span class="skill-tags"><a href="#skill-openstack">OpenStack</a> <a href="#skill-root_cause_diagnostics">Advanced Diagnostics & Monitoring</a> <a href="#matrix-section" class="back-to-matrix">↑ Evidence Matrix</a></span>

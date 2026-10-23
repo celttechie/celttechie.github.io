@@ -24,6 +24,11 @@ executive_summary: >-
 # Strategic ATS / Recruiter Keywords
 keywords:
   - "Solutions Architecture & Systems Integration"
+  - "Accelerated GPU Infrastructure & NVIDIA GPU Operator"
+  - "Red Hat OpenShift & Kubernetes Platforms"
+  - "PCIe VFIO Passthrough & IOMMU Isolation"
+  - "High-Throughput Model Serving (vLLM, PagedAttention)"
+  - "AI Systems SRE & GPU Failure Recovery"
   - "Technical Requirements & Systems Alignment"
   - "Technical Leadership & Engineering Mentorship"
   - "Federal ATO Governance (HHS PMO)"
@@ -34,8 +39,10 @@ keywords:
   - "Zero-Day Incident Leadership (Log4j)"
   - "FastAPI & Interactive Data Consoles"
   - "Tableau Executive Dashboards & SLA Governance"
-  - "Infrastructure-as-Code (Ansible, SaltStack)"
+  - "Infrastructure-as-Code (Ansible, OpenTofu, SaltStack)"
   - "High Availability (HA) Clustering"
+  - "RHCOS MachineConfigs & 1GB HugePages"
+  - "DCGM & Prometheus AI Telemetry"
   - "Defense Unicorns Zarf, UDS & Lula"
   - "Autonomous Edge Systems & Telemetry (MAVLink, ROS2, TAK/CoT)"
   - "Multi-Agent AI Orchestration & RAG Pipelines"

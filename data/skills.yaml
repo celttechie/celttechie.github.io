@@ -26,6 +26,18 @@ categories:
   - id: cloud_infrastructure
     name: "Systems & Distributed Scale"
     skills:
+      - id: gpu_ai_infra
+        name: "Accelerated GPU Infrastructure & Operator Lifecycle (NVIDIA GPU Operator, CDI, VFIO)"
+        short_name: "GPU Infrastructure & Operator"
+        description: "PCIe VFIO driver binding, IOMMU isolation, NVIDIA GPU Operator, CDI, time-slicing multi-tenancy, and DCGM telemetry."
+      - id: k8s_openshift_platform
+        name: "Red Hat OpenShift & Kubernetes Platforms (SNO, RHCOS MachineConfigs, KServe)"
+        short_name: "OpenShift & Kubernetes Platforms"
+        description: "Declarative platform engineering, RHCOS MachineConfigs, custom SCCs, SNO deployment automation, and KServe overlays."
+      - id: ai_serving_sre
+        name: "AI Workload Orchestration, vLLM Serving & Systems SRE"
+        short_name: "AI Serving & SRE Runbooks"
+        description: "High-throughput model serving (vLLM, continuous batching, PagedAttention), Prometheus telemetry, PCIe GPU recovery runbooks, and post-mortem RCAs."
       - id: cisco_ucs
         name: "Cisco UCS & Fabric Interconnect"
         short_name: "Cisco UCS Hardware"

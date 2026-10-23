@@ -8,6 +8,9 @@
 *   **AI & RAG Orchestration:** Local multi-agent LLM orchestration (LiteLLM, Hermes), vector databases (Qdrant), and graph analytics.
 
 ### **Systems & Distributed Scale**
+*   **GPU Infrastructure & Operator:** PCIe VFIO driver binding, IOMMU isolation, NVIDIA GPU Operator, CDI, time-slicing multi-tenancy, and DCGM telemetry.
+*   **OpenShift & Kubernetes Platforms:** Declarative platform engineering, RHCOS MachineConfigs, custom SCCs, SNO deployment automation, and KServe overlays.
+*   **AI Serving & SRE Runbooks:** High-throughput model serving (vLLM, continuous batching, PagedAttention), Prometheus telemetry, PCIe GPU recovery runbooks, and post-mortem RCAs.
 *   **Cisco UCS Hardware:** Enterprise bare-metal compute and fabric interconnect administration.
 *   **OpenStack:** Public/private cloud orchestration, scheduler tuning, and infrastructure verification.
 *   **vSphere / ESXi / Proxmox:** High-density enterprise virtualization, clustering, and VM lifecycle automation.

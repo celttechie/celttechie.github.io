@@ -106,8 +106,8 @@
 
     - id: cisco_ce_compute_ops
       title: "Lead Compute Engineering & Virtualization Operations"
-      long_text: "Managed large-scale compute services and bastion host environments using VMware vSphere on Cisco UCS hardware across commercial and FedRAMP data centers. Served as lead compute engineer resolving complex virtualization performance bottlenecks, ensuring high availability, and maintaining strict adherence to federal uptime SLAs."
-      short_text: "Managed enterprise virtualization clusters on VMware vSphere and Cisco UCS bare metal, serving as lead compute engineer maintaining high availability and strict adherence to federal SLAs."
+      long_text: "Managed large-scale compute services and bastion host environments using VMware vSphere on Cisco UCS bare-metal hardware across commercial and FedRAMP data centers. Served as lead compute engineer resolving complex virtualization performance bottlenecks, ensuring high availability, maintaining strict adherence to federal uptime SLAs, and supporting SAN storage fabric operations including Cisco MDS Fibre Channel switches and zoning."
+      short_text: "Managed enterprise virtualization clusters on VMware vSphere and Cisco UCS bare metal, serving as lead compute engineer maintaining high availability, strict federal SLAs, and supporting Cisco MDS Fibre Channel SAN switch fabrics."
       skills: ["virtualization", "cisco_ucs", "qualys_secops", "fedramp_stig"]
 
     - id: cisco_ce_vuln_mgmt
@@ -125,8 +125,9 @@
   end_date: "2017-01"
   summary: >-
     Provided specialized DevOps and QA engineering support for Cisco's OpenStack-based
-    Public Cloud (InterCloud Services). Focused on performance optimization, automated
-    configuration management, and stability engineering for large-scale cloud deployments.
+    Public Cloud (InterCloud Services) running an OpenStack-on-OpenStack environment on Cisco UCS bare metal.
+    Focused on Nova scheduler performance optimization, automated configuration management, and stability
+    engineering for large-scale cloud deployments.
   skills_display: "OpenStack (Nova, Heat, Neutron, Glance), Ansible, Python, Bash, RHUI, Proxmox, Linux/Windows Administration, Performance Tuning, Cloud QA."
   skills_display_short: "OpenStack, Ansible, Python, Bash, RHUI, Proxmox, CentOS/RHEL/Windows, Performance Tuning, Cloud QA."
   skills:
