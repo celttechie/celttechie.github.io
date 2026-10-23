@@ -16,7 +16,7 @@ tags:
 
 When entering an unfamiliar technology stack, what separates a superficial implementation from an enterprise-grade platform?
 
-Over the past several months, I immersed myself in modern systems and cloud-native technologies: **OpenTofu**, **Talos Linux**, **eBPF (Cilium)**, **GitOps (ArgoCD)**, **Air-Gapped Delivery (Defense Unicorns Zarf/UDS)**, and **Compliance-as-Code (Lula/OSCAL)**. 
+Over the past several months, I immersed myself in modern systems and cloud-native technologies: **OpenTofu**, **Talos Linux**, **eBPF (Cilium)**, **GitOps (ArgoCD)**, **Air-Gapped Delivery (Defense Unicorns Zarf/UDS)**, **Compliance-as-Code (Lula/OSCAL)**, **Red Hat OpenShift (SNO 4.16+)**, **PCIe VFIO GPU Passthrough**, **NVIDIA GPU Operator (CDI)**, and **high-throughput vLLM model serving**. 
 
 I didn’t just follow "getting started" guides. I built complete, verifiable, self-healing platforms from first principles.
 
@@ -52,12 +52,21 @@ I halted the sprawl and directed a full refactoring:
 ### Example: Refactoring Robotics Controls into `FROGlib`
 I applied this exact same engineering rigor to FIRST Robotics. When maintaining robot code across competitive seasons, I extracted shared swerve kinematics, AprilTag vision tracking, and motor controller wrappers into [`FROGlib`](https://github.com/celttechie/FROGlib)—an installable Python package with formal `pyproject.toml` dependency management.
 
+### Example: Enforcing Separation of Concerns Across Infrastructure Repositories
+When exploring enterprise OpenShift and AI infrastructure, the initial temptation is often to dump hypervisor provisioning, kernel drivers, cluster setup, and model workloads into a single monolithic repo.
+
+I rejected that anti-pattern and architected a strict separation of concerns:
+- **[`openshift-sno-lab`](https://github.com/celttechie/openshift-sno-lab)** handles the declarative platform substrate: OpenTofu, KVM/libvirt, isolated networking (`virbr-ocp`), and NVMe storage latency tuning (<10ms etcd fsync).
+- **[`openshift-ai-infrastructure`](https://github.com/celttechie/openshift-ai-infrastructure)** handles the accelerator and workload plane: host PCIe VFIO binding, the NVIDIA GPU Operator (CDI), and OpenAI-compatible vLLM inference serving.
+
+By isolating the substrate lifecycle from the workload lifecycle, either layer can be upgraded, tested, or rebuilt without destabilizing the other.
+
 ---
 
 ## 3. Principles That Guide My Design Decisions
 
 ### 1. Zero Trust & Cryptographic Determinism Over Convenient Shortcuts
-Never disable security to make automation work. Rather than using `-o StrictHostKeyChecking=no` to ignore SSH key changes on rebuilt VMs, I engineered deterministic host key generation and injected public keys into Cloud-Init, maintaining 100% strict verification.
+Never disable security to make automation work. Rather than using `-o StrictHostKeyChecking=no` to ignore SSH key changes on rebuilt VMs, I engineered deterministic host key generation and injected public keys into Cloud-Init, maintaining 100% strict verification. This pushes security left so we don't have to rely on reactive security patching after the fact.
 
 ### 2. Immutability Eliminates Drift
 General-purpose Linux on cluster nodes invites interactive SSH tweaks and silent configuration drift. Transitioning to **Talos Linux** gave us a headless, read-only rootfs with zero SSH daemons and declarative, API-managed machine configs.
@@ -66,7 +75,7 @@ General-purpose Linux on cluster nodes invites interactive SSH tweaks and silent
 Security compliance shouldn't be an annual scramble with spreadsheets. I implemented continuous compliance using **Lula** and **OSCAL**, validating NIST and DoD IL5 controls live against cluster state and automatically generating System Security Plans (SSPs) and SARs.
 
 ### 4. Failure Modes Must Be Engineered and Practiced
-A platform is only reliable if its failure modes are understood and tested. I designed automated fault-injection scripts simulating etcd split-brain, BGP routing loss, and storage quorum degradation, backed by step-by-step diagnostic runbooks.
+A platform is only reliable if its failure modes are understood and tested. I designed automated fault-injection scripts simulating etcd split-brain, BGP routing loss, and storage quorum degradation. When operating physical accelerators, I authored Day-2 runbooks to reset hung GPUs over the PCIe bus (`/sys/bus/pci/devices/.../reset`) without rebooting physical hosts, backed by blameless root-cause post-mortems analyzing transient hardware power delivery trips during heavy CUDA compilation.
 
 ---
 

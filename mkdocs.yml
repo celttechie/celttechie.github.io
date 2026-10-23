@@ -48,6 +48,7 @@ nav:
   - Home: index.md
   - Articles:
       - Technical Execution & Rapid Learning: articles/technical_execution_and_rapid_learning.md
+      - From Bare Metal to vLLM (OpenShift AI): articles/from_bare_metal_to_vllm_openshift_ai.md
   - Resumes: resumes.md
   - 2014 Site Archive: legacy_archive.md
 
