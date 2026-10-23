@@ -7,6 +7,9 @@
     air-gapped delivery platforms, sovereign AI orchestration, and data pipeline engineering on dedicated
     workstation infrastructure.
   skills:
+    - gpu_ai_infra
+    - k8s_openshift_platform
+    - ai_serving_sre
     - ai_rag_mlops
     - python
     - databases
@@ -16,6 +19,41 @@
     - ha_clustering
     - root_cause_diagnostics
   projects:
+    - id: openshift_ai_infra
+      title: "OpenShift & Kubernetes AI Infrastructure (openshift-ai-infrastructure)"
+      description: "Hands-on research and applied SRE platform for enterprise AI stacks, bridging bare-metal hardware and Kubernetes. Engineered host PCIe VFIO passthrough and IOMMU isolation for NVIDIA GPU acceleration, deployed the NVIDIA GPU Operator with CRI-O Container Device Interface (CDI) and time-slicing multi-tenancy, and orchestrated production OpenAI-compatible vLLM inference (PagedAttention, continuous batching) alongside KServe/RHOAI declarative overlays. Formulated Day-2 SRE operational runbooks (PCIe bus reset, node drain), DCGM/Prometheus alerting for KV-cache and P95 latency, and incident post-mortems."
+      skills:
+        [
+          "gpu_ai_infra",
+          "k8s_openshift_platform",
+          "ai_serving_sre",
+          "linux_systems",
+          "ha_clustering",
+          "root_cause_diagnostics",
+        ]
+
+    - id: openshift_sno_lab
+      title: "Single-Node OpenShift Platform Substrate (openshift-sno-lab)"
+      description: "Architected an automated, declarative infrastructure substrate deploying Single Node OpenShift (SNO 4.16+) via OpenTofu and KVM/libvirt, establishing strict separation of concerns between infrastructure provisioning and AI workloads. Implemented a flat peer-bastion topology (split-DNS, HAProxy ingress) and dedicated isolated bridge (virbr-ocp) ensuring zero host collision; tuned NVMe PCIe storage pools (cache=none, io=threads) to guarantee sub-10ms etcd fsync latency. Enforced zero-trust SSH with native OpenTofu Ed25519 deterministic key pinning and authored declarative RHCOS MachineConfigs for boot-time 1GB HugePages and kernel IOMMU passthrough."
+      skills:
+        [
+          "k8s_openshift_platform",
+          "linux_systems",
+          "ha_clustering",
+          "root_cause_diagnostics",
+        ]
+
+    - id: tactical_edge_gateway
+      title: "Tactical Edge Telemetry Gateway (tactical-edge-gateway)"
+      description: "Architected an air-gapped telemetry translation and operator situational awareness gateway bridging autonomous robotics protocols (**MAVLink and ROS2/DDS**) to military C2 (**Cursor on Target / TAK Server**) over contested DDIL links. Authored Architecture Decision Records (ADRs) and threat models, packaging services as zero-dependency **Zarf OCI artifacts** with continuous **Lula (OSCAL)** compliance validation."
+      skills:
+        ["fedramp_stig", "linux_systems", "python", "solutions_architecture"]
+
+    - id: tactical_edge_sdn
+      title: "Tactical Edge Software-Defined Networking (tactical-edge-sdn)"
+      description: "Engineered a cloud-native software-defined networking reference architecture modernizing edge and shipboard tactical routing. Features an autonomous Python/C++ SD-WAN controller that evaluates latency and packet loss across simulated radio links, mutating Linux Netlink kernel routes dynamically with zero dropped sessions, packaged with containerized FRRouting and WireGuard as Zarf packages."
+      skills: ["network_security", "linux_systems", "ha_clustering", "python"]
+
     - id: airgap_defense_unicorns
       title: "Air-Gapped Delivery & cATO Prototyping (Defense Unicorns Zarf/UDS/Lula)"
       description: "Evaluated declarative air-gapped platform delivery using **Defense Unicorns' Zarf** and **UDS bundles**. Integrated **Lula** with **OSCAL** schemas to validate live Kubernetes resources against NIST SP 800-53 security controls, automating the generation of compliance artifacts and System Security Plans (SSPs)."

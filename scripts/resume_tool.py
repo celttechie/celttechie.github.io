@@ -527,7 +527,7 @@ def main():
 
     # 4. build-pdf
     p_pdf = subparsers.add_parser("build-pdf", help="Compile WeasyPrint print-ready PDFs")
-    p_pdf.add_argument("--type", choices=["all", "2page", "master"], default="all", help="PDF variant to compile")
+    p_pdf.add_argument("--type", choices=["all", "2page", "master", "cisco_ai"], default="all", help="PDF variant to compile")
 
     # 5. build
     subparsers.add_parser("build", help="Full build: compile markdown sections, web index, and all PDFs")
@@ -578,6 +578,16 @@ def main():
             with open(os.path.join(DOCS_DIR, "resume_master_2page.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_master_2page.pdf"), "wb") as dst:
                 dst.write(src.read())
 
+        if args.type in ["all", "cisco_ai"]:
+            build_pdf_from_template(
+                os.path.join(TEMPLATES_DIR, "resume_cisco_ai_infra.md"),
+                os.path.join(DOCS_DIR, "resume_cisco_ai_infra.pdf"),
+                os.path.join(TEMPLATES_DIR, "resume_cisco_ai_infra.css")
+            )
+            # Copy to root
+            with open(os.path.join(DOCS_DIR, "resume_cisco_ai_infra.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_cisco_ai_infra.pdf"), "wb") as dst:
+                dst.write(src.read())
+
     elif args.command == "build" or args.command is None:
         print("Running complete SSOT build...")
         db.generate_all_markdown_sections()
@@ -591,9 +601,16 @@ def main():
             os.path.join(DOCS_DIR, "resume_master_2page.pdf"),
             os.path.join(TEMPLATES_DIR, "resume_print_2page.css")
         )
+        build_pdf_from_template(
+            os.path.join(TEMPLATES_DIR, "resume_cisco_ai_infra.md"),
+            os.path.join(DOCS_DIR, "resume_cisco_ai_infra.pdf"),
+            os.path.join(TEMPLATES_DIR, "resume_cisco_ai_infra.css")
+        )
         with open(os.path.join(DOCS_DIR, "resume_master.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_master.pdf"), "wb") as dst:
             dst.write(src.read())
         with open(os.path.join(DOCS_DIR, "resume_master_2page.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_master_2page.pdf"), "wb") as dst:
+            dst.write(src.read())
+        with open(os.path.join(DOCS_DIR, "resume_cisco_ai_infra.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_cisco_ai_infra.pdf"), "wb") as dst:
             dst.write(src.read())
         print("SSOT build completed successfully!")
 
