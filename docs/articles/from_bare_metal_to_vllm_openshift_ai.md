@@ -23,7 +23,7 @@ When models fail to serve, clusters lose quorum, or inference latencies spike, t
 - An IOMMU grouping conflict that leaks DMA between devices.
 - High `etcd` disk `fsync` latency that triggers a Kubernetes control-plane election loop.
 - Memory fragmentation in GPU VRAM (KV cache) causing out-of-memory cascades.
-- Severe electrical power delivery spikes during CUDA JIT compilation tripping host power supplies.
+- Host kernel mutex deadlocks during dynamic PCIe accelerator rebinding.
 
 To explore these technologies deeply and apply my 30-year foundation in bare-metal compute, hypervisors, and distributed systems to modern accelerator stacks, I designed and built an enterprise-grade AI infrastructure testbed from scratch.
 
@@ -174,17 +174,17 @@ Rather than using static batching (where an entire batch of user queries must fi
 
 ---
 
-## 5. SRE in Practice: Diagnosing Transient Power Trips & PCIe Bus Recovery
+## 5. SRE in Practice: Diagnosing Kernel Deadlocks & PCIe Bus Recovery
 
 The defining mark of Site Reliability Engineering is how you handle unexpected hardware failures and operational toil. Two real-world incidents in this testbed highlight the difference between superficial administration and first-principles SRE:
 
-### Incident 1: The Xeon PSU Power-Trip Post-Mortem
-During initial workload validation, running heavy CUDA JIT compilation caused the physical workstation host to suddenly shut down completely with zero kernel panic logs.
+### Incident 1: The Hypervisor Kernel Deadlock & Workload Scheduling Post-Mortem
+During initial accelerator lifecycle automation and model bring-up, the physical workstation host froze: the network card still responded to ICMP pings, but SSH sessions, systemd D-Bus RPCs, and terminal sessions hung indefinitely, requiring a manual hardware power cycle.
 
-Rather than dismissing it as a random glitch, I initiated a formal SRE Root Cause Analysis ([`Incident 001 Post-Mortem`](https://github.com/celttechie/openshift-ai-infrastructure/blob/main/docs/post-mortems/2026-10-21-cpu-jit-psu-deadlock.md)):
-1. **The Investigation:** Checked IPMI SEL (System Event Logs) and hardware telemetry. Discovered a power-supply overcurrent protection (OCP) trip on the 12V rail.
-2. **The Root Cause:** CUDA JIT compilation heavily loaded all 24 Xeon CPU threads simultaneously while the GPU initialized at full TDP. The combined electrical inrush current exceeded the single-rail power budget.
-3. **The SRE Resolution:** Configured CPU affinity and cgroup CPU quotas for CUDA compile jobs, capped compile parallelism to 12 cores, and scheduled heavy JIT compiles outside peak GPU inference cycles. Documented the failure mode in a blameless post-mortem with preventative monitoring alerts.
+Rather than dismissing it as a random glitch, I initiated a formal SRE Root Cause Analysis ([`Incident 001 Post-Mortem`](https://github.com/celttechie/openshift-ai-infrastructure/blob/main/docs/post-mortems/2026-10-21-kernel-lockup-gpu-scheduling-deadlock.md)):
+1. **The Investigation:** Inspected lingering process telemetry and `/proc/<pid>/wchan`. Identified worker processes (`modprobe nvidia-drm` and `sb_admin.py`) trapped in `TASK_UNINTERRUPTIBLE` (`D` state) blocked on `down_console_sem`.
+2. **The Root Cause:** An AB-BA mutex race occurred between sysfs virtual console unbinding (`/sys/class/vtconsole/vtcon*/bind`) and dynamic DRM driver initialization, locking `console_lock`. Because processes in `D` state ignore signals, systemd PID 1 console workers froze. Concurrently upon recovery, PyTorch Inductor spun up 32 unvectorized compilation threads across dual legacy Xeon CPUs lacking AVX2, and Kubernetes' default `RollingUpdate` deadlocked waiting for the single exclusive GPU (`nvidia.com/gpu: 1`) to release.
+3. **The SRE Resolution:** Sanitized the host prep script to eliminate hazardous `vtconsole` manipulation, injected `--enforce-eager` to bypass Inductor JIT on legacy CPUs (slashing startup CPU load from 3200% aggregate to <12% and stabilizing model initialization to 14s), and declared `strategy: { type: Recreate }` in Kubernetes manifests. Enforced all rules through automated CI unit test guardrails.
 
 ### Incident 2: Automated PCIe Bus Reset vs. Node Reboots
 When an accelerator hangs or throws an Xid error under corrupted memory or driver panics, the naive operational response is to reboot the physical host. In a multi-tenant cluster, rebooting a physical node evacuates all healthy workloads and causes significant service disruption.
