@@ -75,7 +75,7 @@ General-purpose Linux on cluster nodes invites interactive SSH tweaks and silent
 Security compliance shouldn't be an annual scramble with spreadsheets. I implemented continuous compliance using **Lula** and **OSCAL**, validating NIST and DoD IL5 controls live against cluster state and automatically generating System Security Plans (SSPs) and SARs.
 
 ### 4. Failure Modes Must Be Engineered and Practiced
-A platform is only reliable if its failure modes are understood and tested. I designed automated fault-injection scripts simulating etcd split-brain, BGP routing loss, and storage quorum degradation. When operating physical accelerators, I authored Day-2 runbooks to reset hung GPUs over the PCIe bus (`/sys/bus/pci/devices/.../reset`) without rebooting physical hosts, backed by blameless root-cause post-mortems analyzing transient hardware power delivery trips during heavy CUDA compilation.
+A platform is only reliable if its failure modes are understood and tested. I designed automated fault-injection scripts simulating etcd split-brain, BGP routing loss, and storage quorum degradation. When operating physical accelerators, I authored Day-2 runbooks to reset hung GPUs over the PCIe bus (`/sys/bus/pci/devices/.../reset`) without rebooting physical hosts, backed by blameless root-cause post-mortems analyzing kernel mutex deadlocks during dynamic driver rebinding and GPU scheduling contention.
 
 ---
 
