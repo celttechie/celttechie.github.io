@@ -1,8 +1,6 @@
-
-
 @page {
     size: letter;
-    margin: 0.45in 0.5in;
+    margin: 0.35in 0.45in;
     @bottom-right {
         content: counter(page) " of " counter(pages);
         font-family: 'DejaVu Sans', sans-serif;
@@ -14,21 +12,21 @@
 body {
     font-family: 'DejaVu Sans', sans-serif;
     color: #2d3748;
-    line-height: 1.35;
-    font-size: 9.5pt;
+    line-height: 1.28;
+    font-size: 8.8pt;
     margin: 0;
     padding: 0;
 }
 
 .resume-header {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     border-bottom: 1.5px solid #2b6cb0;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
 }
 
 .resume-header h1 {
-    font-size: 21pt;
+    font-size: 19pt;
     font-weight: 700;
     color: #1a365d;
     margin: 0 0 2px 0;
@@ -37,19 +35,19 @@ body {
 }
 
 .resume-header .subtitle {
-    font-size: 12pt;
+    font-size: 10.5pt;
     font-weight: 500;
     color: #4a5568;
-    margin: 0 0 5px 0;
+    margin: 0 0 3px 0;
     letter-spacing: 0.5px;
 }
 
 .resume-header .contact-info {
-    font-size: 9pt;
+    font-size: 8.3pt;
     color: #4a5568;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 14px;
 }
 
 .resume-header .contact-info a {
@@ -62,12 +60,12 @@ body {
 }
 
 h2 {
-    font-size: 12pt;
+    font-size: 10.5pt;
     font-weight: 700;
     color: #1a365d;
     border-bottom: 1px solid #cbd5e0;
     padding-bottom: 2px;
-    margin: 12px 0 6px 0;
+    margin: 8px 0 3px 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     page-break-after: avoid;
@@ -76,15 +74,15 @@ h2 {
 /* 3-Column Skills Section */
 .skills-section {
     display: flex;
-    gap: 15px;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 6px;
     page-break-inside: avoid;
 }
 
 .skills-column {
     flex: 1;
-    font-size: 9pt;
-    line-height: 1.35;
+    font-size: 8.3pt;
+    line-height: 1.25;
 }
 
 .skills-column ul {
@@ -94,35 +92,36 @@ h2 {
 
 .skills-column li {
     text-align: left;
+    margin-bottom: 1.5px;
 }
 
 /* Experience Layout */
 h3 {
-    font-size: 10.5pt;
+    font-size: 9.2pt;
     font-weight: 700;
     color: #2d3748;
-    margin: 10px 0 1px 0;
+    margin: 6px 0 1px 0;
     page-break-after: avoid;
 }
 
 h3 + p {
-    font-size: 9pt;
+    font-size: 8.3pt;
     font-weight: normal !important;
     font-style: italic;
     color: #4a5568;
-    margin: 0 0 4px 0;
+    margin: 0 0 2px 0;
     letter-spacing: 0.3px;
     page-break-after: avoid;
 }
 
 /* Experience Lists */
 ul {
-    margin: 0 0 10px 0;
-    padding-left: 16px;
+    margin: 0 0 5px 0;
+    padding-left: 15px;
 }
 
 li {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     color: #2d3748;
     text-align: justify;
 }
@@ -141,14 +140,14 @@ strong {
 }
 
 .education-section ul {
-    margin: 4px 0 10px 0;
-    padding-left: 16px;
+    margin: 2px 0 4px 0;
+    padding-left: 15px;
     list-style-type: disc;
 }
 
 .education-section li {
-    margin-bottom: 3px;
-    font-size: 9pt;
+    margin-bottom: 1.5px;
+    font-size: 8.3pt;
     color: #2d3748;
 }
 
