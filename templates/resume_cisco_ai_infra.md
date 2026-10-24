@@ -61,7 +61,7 @@ Proactively expanding on this deep systems foundation through hands-on technical
 *   **Hardware & Driver Exploration:** Configured host PCIe VFIO driver binding and IOMMU group isolation on dedicated Xeon hardware to explore bare-metal CUDA execution inside containers.
 *   **Operator Lifecycle:** Deployed NVIDIA GPU Operator with CRI-O Container Device Interface (CDI); evaluated time-slicing configuration to understand GPU sharing mechanisms.
 *   **Model Serving Evaluation:** Deployed an OpenAI-compatible vLLM serving engine to test continuous batching and PagedAttention behavior under load; explored declarative KServe/RHOAI overlays.
-*   **SRE Runbooks & Post-Mortems:** Authored operational runbooks for PCIe bus recovery and node evacuation, including documenting real hardware incident RCAs (diagnosing Xeon PSU trips under CUDA JIT compile spikes).
+*   **SRE Runbooks & Post-Mortems:** Authored operational runbooks for PCIe bus recovery and node evacuation, including documenting real hardware incident RCAs (diagnosing Linux kernel D-state mutex deadlocks and SNO single-GPU scheduling contention).
 
 ### **Single-Node OpenShift Platform Substrate (openshift-sno-lab)**
 **Automated OpenShift SNO Deployment Testbed (2026)**
