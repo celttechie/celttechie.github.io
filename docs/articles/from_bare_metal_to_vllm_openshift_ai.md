@@ -65,7 +65,7 @@ flowchart TD
         VLLM --> SRE
     end
 
-    SubstrateRepo ==>|"Provides Declarative K8s API"| WorkloadRepo
+    SNO ==>|"Provides Declarative K8s API"| OP
 ```
 
 1. **[`openshift-sno-lab`](https://github.com/celttechie/openshift-sno-lab): Declarative Platform Substrate**  
