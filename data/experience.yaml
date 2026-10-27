@@ -116,6 +116,12 @@
       short_text: "Hardened VMware vSphere clusters, Cisco UCS bare metal, and FedRAMP bastion environments, driving continuous vulnerability remediation under strict federal uptime and security SLAs."
       skills: ["qualys_secops", "fedramp_stig", "linux_systems"]
 
+    - id: cisco_ce_access_infra
+      title: "Secure Access & Bastion Infrastructure (Bastions, LDAP, Active Directory)"
+      long_text: "Architected and maintained the secure access infrastructure across Webex commercial and FedRAMP footprints, managing hardened Linux bastion hosts, Active Directory domain controllers, and LDAP directory services to enforce zero-trust access control and secure remote administrative access across 2,000+ systems."
+      short_text: "Architected and maintained secure access infrastructure across Webex commercial and FedRAMP footprints, managing hardened Linux bastion hosts, Active Directory domain controllers, and LDAP directory services across 2,000+ systems."
+      skills: ["identity_rbac", "linux_systems", "network_security", "technical_leadership"]
+
 - id: cisco_contract1
   company: "Select Group @ Cisco"
   role: "Cloud DevOps/QA Engineer (Contract)"
@@ -147,9 +153,9 @@
       skills: ["openstack", "root_cause_diagnostics"]
 
     - id: cisco_contract_iac
-      title: "Infrastructure-as-Code at Scale"
-      long_text: "Engineered and executed **Ansible** playbooks to manage complex bare-metal configurations through **lights-out management (LOM)** interfaces and automated cron jobs across hundreds of production servers simultaneously."
-      short_text: "Configured and evaluated **RHUI (Red Hat Update Infrastructure)** and **Proxmox** clusters for InterCloud Services. Automated bare-metal server configuration using **Ansible** via lights-out management (LOM) interfaces. Troubleshot and resolved a critical OpenStack **cloudbase-init** race condition on Windows images that was causing constant reboots."
+      title: "Bare-Metal PXE Provisioning & Automation at Scale"
+      long_text: "Engineered automated bare-metal deployment and provisioning workflows using **PXE boot** and **Ansible** playbooks across hundreds of production servers within Cisco's InterCloud Services. Automated ongoing configuration management and system maintenance via **lights-out management (LOM)** interfaces and scheduled orchestration tasks, eliminating manual intervention and ensuring consistent, repeatable hardware baselines across large-scale cloud footprints."
+      short_text: "Automated bare-metal server deployment and configuration via **PXE boot** and **Ansible** using lights-out management (LOM) interfaces across hundreds of production servers."
       skills: ["ansible_salt", "linux_systems", "virtualization", "openstack"]
 
     - id: cisco_contract_eval
@@ -306,9 +312,9 @@
     - rapid_adaptation_sme
   bullets:
     - id: foundational_qa_lead_short
-      title: "Solutions Engineer/Software QA Lead (StorageSoft/Phoenix Tech)"
+      title: "Manager of QA Testing & Solutions Engineering (StorageSoft/Phoenix Tech)"
       long_text: null
-      short_text: "Gathered requirements, deployed software, and provided training for customers. Managed testing and support departments. Structured QA testing workflows for **ImageCast** disk cloning tools and designed Windows/Linux/Networking test lab environments."
+      short_text: "Merged and managed QA testing with technical support for **ImageCast** disk cloning tools; hired and trained technicians, structured automated testing workflows across heterogeneous Windows/Linux labs, and acted as systems integration engineer for enterprise clients."
       skills: ["solutions_architecture", "validation_qa", "technical_leadership", "root_cause_diagnostics"]
 
     - id: foundational_usaf_short
@@ -326,7 +332,7 @@
 
     - id: foundational_lab_mgmt
       title: "Technical Services & Test Lab Management"
-      long_text: "Merged and managed QA testing with the technical support department. Designed test cases, executed testing plans, and managed the lab's **Windows** and **Linux** servers and test networks. Redesigned, built out, and managed the company's network, labs, and server infrastructure following a corporate split."
+      long_text: "Merged and managed QA testing with the technical support department, hiring and mentoring technicians on networking topologies and structured testing methodologies. Designed test cases, executed testing plans, and managed the lab's **Windows** and **Linux** servers and test networks across diverse hardware. Redesigned, built out, and managed the company's network, labs, and server infrastructure following a corporate split."
       short_text: null
       linkedin_text: "Merged and managed QA testing and tech support departments. Designed test plans and managed heterogeneous Windows/Linux server labs and network testbeds."
       skills: ["validation_qa", "linux_systems", "technical_leadership"]

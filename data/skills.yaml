@@ -18,6 +18,10 @@ categories:
         name: "Validation & QA Testing"
         short_name: "Validation & QA Testing"
         description: "Rigorous test case design, orchestration testing, and end-to-end verification methodologies."
+      - id: hil_testing
+        name: "Hardware-in-the-Loop (HIL) Testing & Subsystem Validation"
+        short_name: "Hardware-in-the-Loop (HIL)"
+        description: "Validating edge software and control loops against physical sensors, actuators, and motor controllers before full assembly."
       - id: ai_rag_mlops
         name: "AI Orchestration, MLOps & RAG"
         short_name: "AI & RAG Orchestration"
@@ -58,6 +62,10 @@ categories:
         name: "High-Availability (HA) Clustering"
         short_name: "HA Clustering"
         description: "Designing failover systems and fault-tolerant identity/compute clusters."
+      - id: edge_hardware
+        name: "Heterogeneous Edge Hardware & Low-SWaP Systems (ARM64, OrangePi 5)"
+        short_name: "Low-SWaP Edge Devices"
+        description: "Deploying and stress-testing containerized workloads across low-power ARM64 single-board computers and air-gapped testbeds."
       - id: linux_systems
         name: "Linux Systems Administration (RHEL, CentOS, Ubuntu)"
         short_name: "Linux (RHEL/Ubuntu)"
@@ -105,7 +113,7 @@ categories:
       - id: robotics_mentoring
         name: "FIRST Robotics Mentorship & STEM Leadership"
         short_name: "Robotics & STEM Mentoring"
-        description: "Mentoring student teams in real-time embedded systems, electrical wiring, mechanisms, and troubleshooting."
+        description: "Mentoring student teams in real-time embedded systems, Python control loops, sensor fusion, computer vision (AprilTags and ML object detection), and HIL testing."
       - id: root_cause_diagnostics
         name: "Root-Cause Diagnostics & Telemetry (Observium, Nagios)"
         short_name: "Advanced Diagnostics & Monitoring"

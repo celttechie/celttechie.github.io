@@ -104,11 +104,12 @@
     - root_cause_diagnostics
     - python
     - validation_qa
+    - hil_testing
   projects:
     - id: robotics_systems
-      title: "Real-Time Embedded Systems & Controls"
-      description: "Mentoring student teams in electrical sensor integration, motor control loops, pneumatic systems, and autonomous/teleoperated robot programming."
-      skills: ["robotics_mentoring", "validation_qa"]
+      title: "Real-Time Embedded Systems, Controls & HIL Subsystem Testing"
+      description: "Mentoring student teams in Python robot control architectures, sensor fusion, CAN bus communications, and camera-based computer vision (AprilTags and ML object detection). Executing hardware-in-the-loop (HIL) testing on physical subsystems (sensors, actuators, and motor controllers) before full robot assembly."
+      skills: ["robotics_mentoring", "validation_qa", "python", "hil_testing"]
 
     - id: robotics_diagnostics
       title: "Methodical Diagnostic Methodology"

@@ -5,6 +5,7 @@
 *   **ETL Pipelines:** Architecting high-integrity data pipelines, database migrations, and schema validation.
 *   **PostgreSQL, MySQL:** Relational database operations, replication, schema migration, and performance query tuning.
 *   **Validation & QA Testing:** Rigorous test case design, orchestration testing, and end-to-end verification methodologies.
+*   **Hardware-in-the-Loop (HIL):** Validating edge software and control loops against physical sensors, actuators, and motor controllers before full assembly.
 *   **AI & RAG Orchestration:** Local multi-agent LLM orchestration (LiteLLM, Hermes), vector databases (Qdrant), and graph analytics.
 
 ### **Systems & Distributed Scale**
@@ -16,6 +17,7 @@
 *   **vSphere / ESXi / Proxmox:** High-density enterprise virtualization, clustering, and VM lifecycle automation.
 *   **Ceph Block Storage (RBD):** High-availability distributed storage clusters, snapshot management, and performance benchmarking.
 *   **HA Clustering:** Designing failover systems and fault-tolerant identity/compute clusters.
+*   **Low-SWaP Edge Devices:** Deploying and stress-testing containerized workloads across low-power ARM64 single-board computers and air-gapped testbeds.
 *   **Linux (RHEL/Ubuntu):** Kernel tuning, package management, lights-out management (LOM), and shell automation.
 
 ### **DevOps, Security & Compliance**
@@ -29,6 +31,6 @@
 ### **Leadership, Mentoring & Methodology**
 *   **Solutions Architecture & Integration:** Translating enterprise and federal requirements into reliable data platforms, automated infrastructure, and operational workflows.
 *   **Technical Mentorship:** Guiding multi-tier engineering teams, methodical troubleshooting, and stakeholder communication.
-*   **Robotics & STEM Mentoring:** Mentoring student teams in real-time embedded systems, electrical wiring, mechanisms, and troubleshooting.
+*   **Robotics & STEM Mentoring:** Mentoring student teams in real-time embedded systems, Python control loops, sensor fusion, computer vision (AprilTags and ML object detection), and HIL testing.
 *   **Advanced Diagnostics & Monitoring:** Low-level system diagnostics, proactive performance telemetry, and elimination of systemic issues.
 *   **Rapid Adaptation / SME:** Proven track record of mastering unfamiliar architectures quickly and becoming an organizational SME.

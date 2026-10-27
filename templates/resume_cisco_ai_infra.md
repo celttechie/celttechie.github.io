@@ -11,7 +11,7 @@
 
 ## Professional Summary
 
-Systems Engineering Technical Leader and Solutions Architect with a 30-year foundational background in bare-metal compute, Linux systems administration, enterprise virtualization, and Site Reliability Engineering (SRE)—including 7+ years of technical leadership at Cisco across Cisco UCS, OpenStack InterCloud, and FedRAMP platforms. A methodical problem-solver who approaches infrastructure from first principles, favoring deterministic, consistent, and predictable automation to eliminate repetitive tasks, optimize distributed workload scheduling (reducing Nova scheduler times across 700 nodes by 75%), and lead high-visibility incident response across 6,000+ production systems.
+Systems Engineering Technical Leader and Solutions Architect with a 30-year foundational background in bare-metal compute, Linux systems administration, enterprise virtualization, and Site Reliability Engineering (SRE)—including 7+ years of technical leadership at Cisco in the Webex FedRAMP environment on Cisco UCS/FIC, VMWare and OpenStack platforms. A methodical problem-solver who approaches infrastructure from first principles, favoring deterministic, consistent, and predictable automation to eliminate repetitive tasks, ensuring secure and stable platform operations across 6,000+ production systems.
 
 Proactively expanding on this deep systems foundation through hands-on technical research and lab engineering: built dedicated testbeds exploring Single-Node OpenShift (SNO 4.16+), host PCIe VFIO GPU passthrough, the NVIDIA GPU Operator lifecycle, high-throughput vLLM model serving, and Day-2 SRE operational recovery runbooks. Combines proven enterprise compute operations with an active drive to understand, explore, and operationalize emerging accelerated AI infrastructure.
 
@@ -61,7 +61,7 @@ Proactively expanding on this deep systems foundation through hands-on technical
 *   **Hardware & Driver Exploration:** Configured host PCIe VFIO driver binding and IOMMU group isolation on dedicated Xeon hardware to explore bare-metal CUDA execution inside containers.
 *   **Operator Lifecycle:** Deployed NVIDIA GPU Operator with CRI-O Container Device Interface (CDI); evaluated time-slicing configuration to understand GPU sharing mechanisms.
 *   **Model Serving Evaluation:** Deployed an OpenAI-compatible vLLM serving engine to test continuous batching and PagedAttention behavior under load; explored declarative KServe/RHOAI overlays.
-*   **SRE Runbooks & Post-Mortems:** Authored operational runbooks for PCIe bus recovery and node evacuation, including documenting real hardware incident RCAs (diagnosing Xeon PSU trips under CUDA JIT compile spikes).
+*   **SRE Runbooks & Post-Mortems:** Authored operational runbooks for PCIe bus recovery and node evacuation, including documenting real hardware incident RCAs (diagnosing Linux kernel D-state mutex deadlocks and SNO single-GPU scheduling contention).
 
 ### **Single-Node OpenShift Platform Substrate (openshift-sno-lab)**
 **Automated OpenShift SNO Deployment Testbed (2026)**
