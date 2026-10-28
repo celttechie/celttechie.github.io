@@ -1,6 +1,6 @@
 <div class="resume-header">
     <h1>Brian Jarrett</h1>
-    <div class="subtitle">Solutions Architecture & Technical Leadership | Cloud, Autonomous & Platform Infrastructure</div>
+    <div class="subtitle">Solutions Architecture & Technical Leadership | Systems Automation, Robotics Design & Subsystem Testing</div>
     <div class="contact-info">
         <span>Grove, OK</span>
         <span><a href="mailto:celttechie@gmail.com">celttechie@gmail.com</a></span>

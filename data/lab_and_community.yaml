@@ -93,11 +93,11 @@
   category: "Community Leadership & STEM Mentoring"
   title: "FIRST Robotics Mentorship"
   role: "Lead Technical Systems Mentor"
-  dates_display: "Ongoing"
+  dates_display: "2016 – Present (10+ Years)"
   summary: >-
     Mentoring high school engineering students in mechanical/electrical design, real-time
-    embedded programming, and competitive robotics systems. Instilling rigorous diagnostic
-    and troubleshooting methodologies under high-pressure tournament conditions.
+    Python embedded controls, mechanism automation, and competitive robotics systems. Instilling
+    rigorous diagnostic, test automation, and troubleshooting methodologies under high-pressure tournament conditions.
   skills:
     - robotics_mentoring
     - technical_leadership
@@ -105,14 +105,20 @@
     - python
     - validation_qa
     - hil_testing
+    - solutions_architecture
   projects:
     - id: robotics_systems
-      title: "Real-Time Embedded Systems, Controls & HIL Subsystem Testing"
+      title: "Real-Time Embedded Controls, Mechanism Automation & HIL Testing"
       description: "Mentoring student teams in Python robot control architectures, sensor fusion, CAN bus communications, and camera-based computer vision (AprilTags and ML object detection). Executing hardware-in-the-loop (HIL) testing on physical subsystems (sensors, actuators, and motor controllers) before full robot assembly."
       skills: ["robotics_mentoring", "validation_qa", "python", "hil_testing"]
 
+    - id: froglib_package
+      title: "FROGlib: Open-Source Python Hardware Abstraction & Kinematics Library"
+      description: "Architected and maintain [`FROGlib`](https://github.com/celttechie/FROGlib), an installable Python package (`pyproject.toml`) modularizing swerve drive kinematics, motor controller wrappers, PID closed-loop control, and vision targeting to guarantee code reuse, modularity, and deterministic testing across competition seasons."
+      skills: ["robotics_mentoring", "python", "validation_qa", "solutions_architecture"]
+
     - id: robotics_diagnostics
-      title: "Methodical Diagnostic Methodology"
+      title: "Methodical Diagnostic Methodology & Tournament Troubleshooting"
       description: "Training students in systematic root-cause troubleshooting for electrical, software, and mechanical subsystems to rapidly diagnose and resolve failure points during active competition."
       skills: ["robotics_mentoring", "root_cause_diagnostics"]
 

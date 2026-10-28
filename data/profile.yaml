@@ -1,5 +1,5 @@
 name: "Brian Jarrett"
-title: "Solutions Architecture & Technical Leadership | Cloud, Autonomous & Platform Infrastructure"
+title: "Solutions Architecture & Technical Leadership | Systems Automation, Robotics Design & Subsystem Testing"
 location: "Grove, OK"
 email: "celttechie@gmail.com"
 site_url: "https://celttechie.github.io/"
@@ -10,20 +10,28 @@ linkedin_certifications_url: "https://www.linkedin.com/in/bjarrett/details/certi
 # Approved Executive Summary (Anchored to Traceability Rules)
 executive_summary: >-
   Hands-on Technical Leader and Solutions Architect with a 30-year systems engineering
-  foundation spanning bare-metal compute, private cloud infrastructure, DevSecOps automation,
-  and federal compliance. A practical problem-solver who understands systems from the ground
-  up, verifies data directly at the source, and designs automated tools, data platforms, and
-  ETL pipelines that eliminate manual error and resolve complex operational challenges. Proven
+  foundation spanning enterprise bare-metal compute, private cloud infrastructure, and federal
+  compliance, alongside over a decade designing competitive robotic systems and authoring
+  real-time Python software controlling swerve drive kinematics, articulated mechanisms, and vision
+  targeting. A practical problem-solver who understands systems from the ground up, verifies
+  data directly at the source, and approaches platforms with rigorous testing and automation
+  discipline—from early career software QA leadership and enterprise cloud orchestration
+  testing to Hardware-in-the-Loop (HIL) subsystem validation and tournament diagnostics. Proven
   track record of entering unfamiliar technical ecosystems, rapidly deconstructing complex
   architectures, and translating intricate enterprise and federal requirements (FedRAMP / STIGs)
-  into reliable, maintainable platforms. Demonstrated leadership directing enterprise zero-day
+  into reliable, automated platforms. Demonstrated leadership directing enterprise zero-day
   incident response across 6,000+ nodes to defend FedRAMP ATO with the HHS PMO, building
-  custom vulnerability data platforms and executive dashboards, and serving as the technical
-  bridge across multidisciplinary software, networking, and platform teams.
+  custom vulnerability data platforms, and serving as the technical bridge across multidisciplinary
+  software, networking, and platform teams.
 
 # Strategic ATS / Recruiter Keywords
 keywords:
   - "Solutions Architecture & Systems Integration"
+  - "Robotics Design & Subsystem Testing"
+  - "Real-Time Embedded Controls & HIL Testing"
+  - "Swerve Drive Kinematics & Vision Tracking (FROGlib)"
+  - "Software QA Leadership & Automated Verification"
+  - "Platform & Infrastructure Automation"
   - "Accelerated GPU Infrastructure & NVIDIA GPU Operator"
   - "Red Hat OpenShift & Kubernetes Platforms"
   - "PCIe VFIO Passthrough & IOMMU Isolation"
