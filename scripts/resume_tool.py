@@ -465,6 +465,17 @@ class ResumeDatabase:
                     lines.append(f"  * {b['title']}: {clean_b}")
             lines.append(f"  * Core Technologies: {exp['skills_display']}\n")
 
+        lines.extend(["=" * 70, "\nAPPLIED RESEARCH, LAB PROJECTS & COMMUNITY LEADERSHIP\n"])
+        for item in self.lab_and_community:
+            lines.append(f"{item['title'].upper()}")
+            if "role" in item:
+                lines.append(f"Role: {item['role']} | Timeline: {item['dates_display']}")
+            lines.append(f"{item['summary']}\n")
+            for p in item.get("projects", []):
+                clean_p = re.sub(r'\*\*(.*?)\*\*', r'\1', p['description'])
+                lines.append(f"  * {p['title']}: {clean_p}")
+            lines.append("")
+
         lines.extend(["=" * 70, "\nEDUCATION & TRAINING\n"])
         for item in self.education.get("formal_and_professional", []):
             lines.append(f"• {item['institution']}: {item['detail']}")

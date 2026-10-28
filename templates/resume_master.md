@@ -19,5 +19,7 @@
 
 --8<-- "docs/sections/exp_06_foundational.md"
 
+--8<-- "docs/sections/lab.md"
+
 ## Education & Certifications
 --8<-- "docs/sections/education.md"
