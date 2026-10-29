@@ -114,7 +114,7 @@
 
     - id: froglib_package
       title: "FROGlib: Open-Source Python Hardware Abstraction & Kinematics Library"
-      description: "Architected and maintain [`FROGlib`](https://github.com/celttechie/FROGlib), an installable Python package (`pyproject.toml`) modularizing swerve drive kinematics, motor controller wrappers, PID closed-loop control, and vision targeting to guarantee code reuse, modularity, and deterministic testing across competition seasons."
+      description: "Architected and maintain [`FROGlib`](https://github.com/FROG3160/FROGLib), an installable Python package (`pyproject.toml`) modularizing swerve drive kinematics, motor controller wrappers, PID closed-loop control, and vision targeting to guarantee code reuse, modularity, and deterministic testing across competition seasons."
       skills: ["robotics_mentoring", "python", "validation_qa", "solutions_architecture"]
 
     - id: robotics_diagnostics

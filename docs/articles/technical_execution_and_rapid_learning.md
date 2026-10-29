@@ -50,7 +50,7 @@ I halted the sprawl and directed a full refactoring:
 - Wrote dedicated unit tests (`test_common.py`) to guarantee reliability.
 
 ### Example: Refactoring Robotics Controls into `FROGlib`
-I applied this exact same engineering rigor to FIRST Robotics. When maintaining robot code across competitive seasons, I extracted shared swerve kinematics, AprilTag vision tracking, and motor controller wrappers into [`FROGlib`](https://github.com/celttechie/FROGlib)—an installable Python package with formal `pyproject.toml` dependency management.
+I applied this exact same engineering rigor to FIRST Robotics. When maintaining robot code across competitive seasons, I extracted shared swerve kinematics, AprilTag vision tracking, and motor controller wrappers into [`FROGlib`](https://github.com/FROG3160/FROGLib)—an installable Python package with formal `pyproject.toml` dependency management.
 
 ### Example: Enforcing Separation of Concerns Across Infrastructure Repositories
 When exploring enterprise OpenShift and AI infrastructure, the initial temptation is often to dump hypervisor provisioning, kernel drivers, cluster setup, and model workloads into a single monolithic repo.
