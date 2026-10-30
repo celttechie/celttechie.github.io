@@ -575,60 +575,20 @@ def main():
 
     elif args.command == "build-pdf":
         db.generate_all_markdown_sections()
-        if args.type in ["all", "master"]:
-            build_pdf_from_template(
-                os.path.join(TEMPLATES_DIR, "resume_master.md"),
-                os.path.join(DOCS_DIR, "resume_master.pdf"),
-                os.path.join(TEMPLATES_DIR, "resume_print.css")
-            )
-            # Copy to root
-            with open(os.path.join(DOCS_DIR, "resume_master.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_master.pdf"), "wb") as dst:
-                dst.write(src.read())
-
-        if args.type in ["all", "2page"]:
-            build_pdf_from_template(
-                os.path.join(TEMPLATES_DIR, "resume_master_2page.md"),
-                os.path.join(DOCS_DIR, "resume_master_2page.pdf"),
-                os.path.join(TEMPLATES_DIR, "resume_print_2page.css")
-            )
-            # Copy to root
-            with open(os.path.join(DOCS_DIR, "resume_master_2page.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_master_2page.pdf"), "wb") as dst:
-                dst.write(src.read())
-
-        if args.type in ["all", "cisco_ai"]:
-            build_pdf_from_template(
-                os.path.join(TEMPLATES_DIR, "resume_cisco_ai_infra.md"),
-                os.path.join(DOCS_DIR, "resume_cisco_ai_infra.pdf"),
-                os.path.join(TEMPLATES_DIR, "resume_cisco_ai_infra.css")
-            )
-            # Copy to root
-            with open(os.path.join(DOCS_DIR, "resume_cisco_ai_infra.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_cisco_ai_infra.pdf"), "wb") as dst:
-                dst.write(src.read())
+        build_pdf_from_template(
+            os.path.join(TEMPLATES_DIR, "resume_master.md"),
+            os.path.join(DOCS_DIR, "resume.pdf"),
+            os.path.join(TEMPLATES_DIR, "resume_print.css")
+        )
 
     elif args.command == "build" or args.command is None:
         print("Running complete SSOT build...")
         db.generate_all_markdown_sections()
         build_pdf_from_template(
             os.path.join(TEMPLATES_DIR, "resume_master.md"),
-            os.path.join(DOCS_DIR, "resume_master.pdf"),
+            os.path.join(DOCS_DIR, "resume.pdf"),
             os.path.join(TEMPLATES_DIR, "resume_print.css")
         )
-        build_pdf_from_template(
-            os.path.join(TEMPLATES_DIR, "resume_master_2page.md"),
-            os.path.join(DOCS_DIR, "resume_master_2page.pdf"),
-            os.path.join(TEMPLATES_DIR, "resume_print_2page.css")
-        )
-        build_pdf_from_template(
-            os.path.join(TEMPLATES_DIR, "resume_cisco_ai_infra.md"),
-            os.path.join(DOCS_DIR, "resume_cisco_ai_infra.pdf"),
-            os.path.join(TEMPLATES_DIR, "resume_cisco_ai_infra.css")
-        )
-        with open(os.path.join(DOCS_DIR, "resume_master.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_master.pdf"), "wb") as dst:
-            dst.write(src.read())
-        with open(os.path.join(DOCS_DIR, "resume_master_2page.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_master_2page.pdf"), "wb") as dst:
-            dst.write(src.read())
-        with open(os.path.join(DOCS_DIR, "resume_cisco_ai_infra.pdf"), "rb") as src, open(os.path.join(BASE_DIR, "resume_cisco_ai_infra.pdf"), "wb") as dst:
-            dst.write(src.read())
         print("SSOT build completed successfully!")
 
 if __name__ == "__main__":

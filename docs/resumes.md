@@ -1,8 +1,6 @@
 # Resume Downloads
 
-Download my official PDF resumes:
+Download my official PDF resume:
 
-*   **[Executive Summary Resume (2-Page PDF)](resume_master_2page.pdf)**
-    *   An executive summary of my background, core technical competencies, and professional history.
-*   **[Comprehensive Master Curriculum Vitae (PDF)](resume_master.pdf)**
-    *   Complete multi-page technical CV detailing all career milestones, technical proof points, and lab research.
+*   **[Staff DevOps & Platform Engineer Resume (PDF)](resume.pdf)**
+    *   Official resume covering 15+ years of enterprise systems leadership, infrastructure automation, federal compliance, and open-source systems architecture.

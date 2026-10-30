@@ -53,10 +53,10 @@
       skills: ["qualys_secops", "solutions_architecture", "etl_pipelines"]
 
     - id: cisco_tl_devsecops
-      title: "DevSecOps & Compliance Automation (STIG XCCDF/XML)"
-      long_text: "Built custom automation tooling in Python and REST APIs to ingest and parse raw DISA STIG XCCDF (XML) benchmark data, mapping running Linux server configurations directly to federal controls. Automated the continuous generation of audit-ready STIG checklists, slashing hundreds of engineering hours of manual compliance preparation and ensuring audit readiness across all Webex for Government footprints."
-      short_text: "Engineered Python tools parsing raw STIG XCCDF (XML) data with the Qualys API to generate audit-ready checklists, eliminating hundreds of manual audit hours."
-      linkedin_text: "Engineered Python tools parsing raw STIG XCCDF (XML) data and Qualys APIs to automate audit-ready checklists, saving hundreds of manual audit hours."
+      title: "DevSecOps & Compliance Automation (STIG XCCDF/XML & Qualys API)"
+      long_text: "Engineered custom Python automation querying the Qualys API to ingest raw compliance assessment results and correlate them with parsed DISA STIG XCCDF (XML) benchmark data, mapping running Linux server configurations directly to federal controls. Streamlined data handoffs for formal checklist generation, eliminating hundreds of engineering hours of manual compliance data correlation across all Webex for Government footprints."
+      short_text: "Engineered Python tools querying the Qualys API to extract compliance results and map them to parsed STIG XCCDF (XML) benchmark data, eliminating hundreds of manual correlation hours."
+      linkedin_text: "Engineered Python tools querying Qualys APIs to extract compliance results and map them directly to parsed STIG XCCDF data, eliminating hundreds of manual correlation hours."
       skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt", "solutions_architecture"]
 
     - id: cisco_tl_mentorship
