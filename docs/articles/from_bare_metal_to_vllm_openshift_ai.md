@@ -25,7 +25,7 @@ When models fail to serve, clusters lose quorum, or inference latencies spike, t
 - Memory fragmentation in GPU VRAM (KV cache) causing out-of-memory cascades.
 - Host kernel mutex deadlocks during dynamic PCIe accelerator rebinding.
 
-To explore these technologies deeply and apply my 30-year foundation in bare-metal compute, hypervisors, and distributed systems to modern accelerator stacks, I designed and built an enterprise-grade AI infrastructure testbed from scratch.
+To explore these technologies deeply and apply my deep foundational background in bare-metal compute, hypervisors, and distributed systems to modern accelerator stacks, I designed and built an enterprise-grade AI infrastructure testbed from scratch.
 
 Here is the architectural breakdown of how I designed it, why I made specific trade-offs, and what I learned along the way.
 

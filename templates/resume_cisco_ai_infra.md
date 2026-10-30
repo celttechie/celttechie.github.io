@@ -11,7 +11,7 @@
 
 ## Professional Summary
 
-Systems Engineering Technical Leader and Solutions Architect with a 30-year foundational background in bare-metal compute, Linux systems administration, enterprise virtualization, and Site Reliability Engineering (SRE)—including 7+ years of technical leadership at Cisco in the Webex FedRAMP environment on Cisco UCS/FIC, VMWare and OpenStack platforms. A methodical problem-solver who approaches infrastructure from first principles, favoring deterministic, consistent, and predictable automation to eliminate repetitive tasks, ensuring secure and stable platform operations across 6,000+ production systems.
+Systems Engineering Technical Leader and Solutions Architect with 15+ years of enterprise platform leadership in bare-metal compute, Linux systems administration, enterprise virtualization, and Site Reliability Engineering (SRE)—including 7+ years of technical leadership at Cisco in the Webex FedRAMP environment on Cisco UCS/FIC, VMWare and OpenStack platforms. A methodical problem-solver who approaches infrastructure from first principles, favoring deterministic, consistent, and predictable automation to eliminate repetitive tasks, ensuring secure and stable platform operations across 6,000+ production systems.
 
 Proactively expanding on this deep systems foundation through hands-on technical research and lab engineering: built dedicated testbeds exploring Single-Node OpenShift (SNO 4.16+), host PCIe VFIO GPU passthrough, the NVIDIA GPU Operator lifecycle, high-throughput vLLM model serving, and Day-2 SRE operational recovery runbooks. Combines proven enterprise compute operations with an active drive to understand, explore, and operationalize emerging accelerated AI infrastructure.
 
@@ -103,8 +103,8 @@ Proactively expanding on this deep systems foundation through hands-on technical
 
 *   **Infrastructure Modernization & Networking:** Modernized enterprise systems, deploying district-wide Cisco CallManager, thin-client computing, and high-speed Ruckus wireless bridges (+6,500% bandwidth). Built custom Python/Flask automation syncing databases with Active Directory.
 
-### **Foundational Experience | Systems Engineering, Software QA & Avionics**
-**1991 – 2002 (Various)**
+### **Foundational Systems & Testing Experience | Systems Engineering, Software QA & Avionics**
+**Prior Systems Foundations (Various)**
 
 *   **Solutions Engineer/Software QA Lead (StorageSoft/Phoenix Tech):** Software QA testing workflows for ImageCast disk cloning tools; designed test lab environments.  Managed tech support and testing departments. 
 *   **Airborne Radar Journeyman (U.S. Air Force):** Repaired high-power microwave systems, high-voltage circuits, and digital/analog systems on AWACS aircraft.

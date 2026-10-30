@@ -138,9 +138,15 @@ class ResumeDatabase:
                             f'<a href="#bullet-{b["id"]}" class="proof-link">{b.get("title")}</a>'
                             for b in matching_bullets
                         ])
-                        proofs.append(f"**{exp['company']}** ({exp['dates_display']}): {b_links}")
+                        if exp.get("id") == "foundational":
+                            proofs.append(f"**{exp['company']}**: {b_links}")
+                        else:
+                            proofs.append(f"**{exp['company']}** ({exp['dates_display']}): {b_links}")
                     elif sk_id in exp.get("skills", []):
-                        proofs.append(f"**{exp['company']}** ({exp['dates_display']})")
+                        if exp.get("id") == "foundational":
+                            proofs.append(f"**{exp['company']}**")
+                        else:
+                            proofs.append(f"**{exp['company']}** ({exp['dates_display']})")
 
                 # Find lab / community occurrences
                 for item in self.lab_and_community:

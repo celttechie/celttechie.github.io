@@ -294,12 +294,12 @@
       skills: ["network_security", "identity_rbac"]
 
 - id: foundational
-  company: "Foundational Experience"
+  company: "Foundational Systems & Testing Experience"
   role: "Systems Engineering, Software QA & Avionics Foundations"
   location: "Various"
-  dates_display: "1991 – 2002"
-  start_date: "1991"
-  end_date: "2002"
+  dates_display: "Prior Systems Foundations"
+  start_date: null
+  end_date: null
   summary: >-
     Established a lifelong technical foundation by translating a low-level understanding
     of hardware, networking, and software into rigorous testing and validation methodologies.

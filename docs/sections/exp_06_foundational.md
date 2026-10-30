@@ -1,5 +1,5 @@
-### **Foundational Experience | Systems Engineering, Software QA & Avionics Foundations**
-**1991 – 2002 (Various)**
+### **Foundational Systems & Testing Experience | Systems Engineering, Software QA & Avionics Foundations**
+**Prior Systems Foundations (Various)**
 
 Established a lifelong technical foundation by translating a low-level understanding of hardware, networking, and software into rigorous testing and validation methodologies. This ground-up engineering approach ensures comprehensive diagnostics and root-cause analysis at every layer of the stack.
 
