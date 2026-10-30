@@ -32,10 +32,10 @@
       skills: ["ansible_salt", "qualys_secops", "fedramp_stig", "linux_systems", "technical_leadership", "root_cause_diagnostics"]
 
     - id: cisco_tl_data_platform
-      title: "Vulnerability Data Platform & Fleet UI Architecture (FastAPI, PostgreSQL, Tableau)"
-      long_text: "Designed and maintained an internal FastAPI + PostgreSQL vulnerability portal (fed by automated Jira ETL) used by multiple engineering teams to triage and plan remediation, and by leadership to track and report fleet-wide status across the Webex FedRAMP environment. Resolved operational alert fatigue caused by fragmented 1:1 server-to-ticket reporting by condensing issues into actionable fleet views. Extended the platform with Tableau dashboards segmented by team and SLA severity, empowering leadership to drive continuous SLA adherence."
-      short_text: "Designed and maintained an internal FastAPI + PostgreSQL vulnerability portal (fed by automated Jira ETL) used by engineering teams to triage issues and by leadership to track fleet status across the FedRAMP footprint. Extended platform with Tableau dashboards tracking SLA severity."
-      linkedin_text: "Designed and maintained an internal FastAPI + PostgreSQL vulnerability portal and Tableau dashboards tracking SLA compliance across thousands of nodes, giving engineering teams and leadership actionable visibility."
+      title: "Vulnerability Governance Platform & SRE Error Budget Architecture (Python, PostgreSQL, Tableau)"
+      long_text: "Architected and operated an enterprise-wide FedRAMP vulnerability governance platform protecting 6,000+ operational bare-metal and cloud systems across hybrid VMware ESXi and AWS GovCloud boundaries. Eliminated operational alert fatigue caused by fragmented 1:1 host ticketing by engineering a normalized PostgreSQL warehouse, consolidating thousands of host-level findings into unified fleet remediation tasks, and developing dynamic REST-to-Ansible inventory endpoints that cut High-severity remediation time by over 40%. Pioneered the SRE \"Error Budget\" framework for federal compliance in direct partnership with the Director of Security, designing mathematical risk algorithms (Severity Weight × Host Blast Radius × Time Decay) with automated variance credits (operational requirements, vendor dependencies) that scaled monthly remediation throughput by roughly 10x and drove overdue backlogs down by more than 90% across cloud infrastructure. Extended the platform with custom Plotly heatmaps and Tableau Server integrations (TabPy) for executive sprint governance."
+      short_text: "Architected FedRAMP governance platform protecting 6,000+ operational bare-metal and cloud systems. Pioneered SRE \"Error Budget\" algorithm (Severity × Blast Radius × Time Decay) with automated variance credits; scaled monthly resolution throughput roughly 10x, cut High-severity remediation time by over 40%, and drove overdue backlogs down by more than 90% in cloud infrastructure using dynamic Ansible inventory patching and executive scorecards."
+      linkedin_text: "Architected FedRAMP vulnerability governance platform and SRE error budget algorithms across 6,000+ systems, cutting High-severity dwell time by over 40% and scaling remediation velocity by 10x."
       skills: ["python", "etl_pipelines", "databases", "solutions_architecture", "qualys_secops", "technical_leadership"]
 
     - id: cisco_tl_cross_discipline
@@ -113,10 +113,10 @@
       skills: ["virtualization", "cisco_ucs", "qualys_secops", "fedramp_stig"]
 
     - id: cisco_ce_vuln_mgmt
-      title: "Compute Security & Vulnerability Remediation"
-      long_text: "Led security patch remediation and hardening efforts for compute services and bastion hosts in highly regulated federal environments. Researched and validated system security patches, advised engineering teams on remediation strategies, and managed Qualys vulnerability scanners to ensure continuous FedRAMP compliance."
-      short_text: "Hardened VMware vSphere clusters, Cisco UCS bare metal, and FedRAMP bastion environments, driving continuous vulnerability remediation under strict federal uptime and security SLAs."
-      linkedin_text: "Led security patch remediation and hardening for compute services and bastion hosts in FedRAMP environments. Validated security patches, guided remediation strategies, and managed Qualys scanners to ensure continuous compliance."
+      title: "Compute Security, Tooling Initiative & Vulnerability Remediation"
+      long_text: "Transitioned a reactive vulnerability management process into a proactive engineering capability by gaining direct access to the isolated FedRAMP tracking boundary. Initiated the Python REST ingestion pipelines and dynamic Ansible inventory automation that collapsed 1:1 host ticket deluges into unified cluster playbooks, establishing the foundation for what scaled into the enterprise-wide vulnerability governance platform."
+      short_text: "Transitioned reactive vulnerability tracking into a proactive engineering platform by accessing isolated FedRAMP systems, creating custom Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges."
+      linkedin_text: "Transitioned reactive vulnerability tracking into a proactive engineering platform by accessing isolated FedRAMP systems, creating custom Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges."
       skills: ["qualys_secops", "fedramp_stig", "linux_systems"]
 
     - id: cisco_ce_access_infra
