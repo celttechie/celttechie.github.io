@@ -1,5 +1,5 @@
 name: "Brian Jarrett"
-title: "Solutions Architecture & Technical Leadership | Systems Automation, Robotics Design & Subsystem Testing"
+title: "Platform Engineering & Technical Leadership | Systems SRE, Declarative Infrastructure & Federal Compliance"
 location: "Grove, OK"
 email: "celttechie@gmail.com"
 site_url: "https://celttechie.github.io/"
@@ -9,20 +9,29 @@ linkedin_certifications_url: "https://www.linkedin.com/in/bjarrett/details/certi
 
 # Approved Executive Summary (Anchored to Traceability Rules)
 executive_summary: >-
-  Hands-on Technical Leader and Solutions Architect with 15+ years of enterprise
+  Hands-on Platform Engineering Technical Leader and Systems SRE with 15+ years of enterprise
   platform leadership spanning bare-metal compute, private cloud infrastructure, and federal
-  compliance, alongside over a decade designing competitive robotic systems and authoring
-  real-time Python software controlling swerve drive kinematics, articulated mechanisms, and vision
-  targeting. A practical problem-solver who understands systems from the ground up, verifies
-  data directly at the source, and approaches platforms with rigorous testing and automation
-  discipline—from foundational software QA leadership and enterprise cloud orchestration
-  testing to Hardware-in-the-Loop (HIL) subsystem validation and tournament diagnostics. Proven
-  track record of entering unfamiliar technical ecosystems, rapidly deconstructing complex
-  architectures, and translating intricate enterprise and federal requirements (FedRAMP / STIGs)
-  into reliable, automated platforms. Demonstrated leadership directing enterprise zero-day
-  incident response across 6,000+ nodes to defend FedRAMP ATO with the HHS PMO, building
-  custom vulnerability data platforms, and serving as the technical bridge across multidisciplinary
-  software, networking, and platform teams.
+  compliance automation. Proven track record directing enterprise zero-day incident response across
+  6,000+ nodes to defend FedRAMP ATO with the HHS PMO, pioneering SRE error budget frameworks that
+  scaled remediation throughput 10x, and engineering self-service vulnerability data platforms.
+  Approaches platforms with deep first-principles systems discipline—combining enterprise cloud
+  orchestration and software QA leadership with over a decade of Hardware-in-the-Loop (HIL)
+  subsystem validation, real-time Python controls, and tournament diagnostics. Skilled at entering
+  unfamiliar technical ecosystems, eliminating operational toil through declarative automation (GitOps,
+  Ansible, OpenTofu), and translating complex federal mandates (FedRAMP / DISA STIGs) into reliable,
+  production-grade platforms while serving as the technical bridge across software, networking,
+  and platform engineering teams.
+
+# Hero Platform & SRE Impact Highlights
+selected_impact:
+  - title: "Enterprise Zero-Day Leadership & ATO Defense (Log4j / 6,000+ Nodes)"
+    description: "Spearheaded technical incident response across 6,000+ bare-metal and cloud systems under HHS PMO FedRAMP ATO governance; engineered custom inspection automation discovering nested dependencies and compiled technical audit packages defending continuous platform ATO."
+  - title: "SRE Error Budget & Vulnerability Governance Platform (FastAPI, PostgreSQL, Tableau)"
+    description: "Architected centralized vulnerability data warehouse and self-service engineering console; pioneered SRE \"Error Budget\" mathematical scoring (Severity × Blast Radius × Time Decay) that scaled monthly remediation throughput ~10x and eliminated >90% of overdue cloud backlogs."
+  - title: "Compliance-as-Code & SRE Toil Elimination (STIG XCCDF & Qualys API)"
+    description: "Automated DISA STIG continuous compliance auditing by engineering Python pipelines parsing XCCDF (XML) benchmarks against live Qualys scans, eliminating hundreds of manual engineering audit hours across federal cloud boundaries."
+  - title: "Cloud-Native AI Infrastructure & Air-Gapped Packaging (Lab Systems SRE)"
+    description: "Engineered Single-Node OpenShift (SNO 4.16+) and immutable Talos/eBPF Cilium platforms with PCIe VFIO GPU passthrough, NVIDIA GPU Operator, and vLLM serving, backed by Day-2 SRE operational runbooks and air-gapped Defense Unicorns Zarf/UDS/Lula OSCAL packaging."
 
 # Strategic ATS / Recruiter Keywords
 keywords:

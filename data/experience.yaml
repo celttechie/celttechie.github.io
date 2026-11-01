@@ -6,8 +6,7 @@
   start_date: "2019-08"
   end_date: "2026-07"
   summary: >-
-    Managed FedRAMP Moderate operations, backend data systems, and compliance automation for the Webex for Government platform,
-    providing technical leadership across corporate Webex and SecOps systems.
+    Directed platform reliability, compliance automation, and vulnerability engineering across 6,000+ bare-metal and cloud systems for the Webex for Government FedRAMP Moderate platform—defending federal ATO governance, eliminating operational toil, and scaling remediation throughput 10x.
   skills_display: "Python (FastAPI, Pandas, SQLAlchemy), PostgreSQL, Jira API ETL, Qualys API, Tableau, DISA STIGs (XCCDF/XML), Federal ATO Governance (HHS PMO), Ansible, RHEL/Ubuntu, Cisco UCS, FedRAMP Moderate."
   skills_display_short: "Python (FastAPI, Pandas), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate, Federal ATO Governance."
   skills:
@@ -25,53 +24,53 @@
     - rapid_adaptation_sme
   bullets:
     - id: cisco_tl_ato_log4j
-      title: "Federal ATO Governance & Enterprise Log4j Response (HHS PMO)"
-      long_text: "Played an integral technical role in the enterprise Log4j response affecting 6,000+ operational bare-metal and cloud systems under the HHS PMO’s FedRAMP ATO governance. Built custom Ansible and Python deep-inspection tooling to locate nested/embedded Java libraries missed by commercial scanners, delivered actionable findings to engineering teams and directors, verified remediation, and helped compile the evidence packages used in PMO reporting that defended the platform’s ATO."
-      short_text: "Played an integral technical role in the enterprise Log4j response across 6,000+ systems for the HHS PMO (governing FedRAMP ATO). Built custom Ansible/Python inspection tooling locating nested libraries missed by commercial scanners, verified remediation, and compiled PMO evidence packages defending the ATO."
-      linkedin_text: "Played an integral technical role in the enterprise Log4j response across 6,000+ systems under HHS PMO FedRAMP ATO governance. Built custom Ansible/Python audit tools to locate nested libraries, verify remediation, and compile ATO evidence packages."
+      title: "Enterprise Zero-Day Incident Response & Federal ATO Defense (Log4j / 6,000+ Nodes)"
+      long_text: "Defended continuous FedRAMP ATO under HHS PMO governance across 6,000+ operational bare-metal and cloud systems during the enterprise Log4j zero-day crisis. Engineered custom Ansible inspection playbooks and Python tooling to rapidly identify nested and shaded Java libraries missed by commercial scanners, delivered actionable remediation datasets to engineering teams and directors, verified remediation, and compiled the technical evidence packages that successfully validated compliance under strict federal deadlines."
+      short_text: "Defended FedRAMP ATO under HHS PMO governance across 6,000+ operational systems during Log4j. Built custom Ansible/Python inspection tooling locating nested libraries missed by commercial scanners, verified remediation, and compiled technical evidence packages validating compliance."
+      linkedin_text: "Spearheaded technical incident response across 6,000+ operational systems under HHS PMO FedRAMP ATO governance during Log4j. Built custom Ansible/Python tooling locating nested libraries, verified remediation, and compiled evidence packages defending continuous ATO."
       skills: ["ansible_salt", "qualys_secops", "fedramp_stig", "linux_systems", "technical_leadership", "root_cause_diagnostics"]
 
     - id: cisco_tl_data_platform
       title: "Vulnerability Governance Platform & SRE Error Budget Architecture (Python, PostgreSQL, Tableau)"
-      long_text: "Architected and operated an enterprise-wide FedRAMP vulnerability governance platform protecting 6,000+ operational bare-metal and cloud systems across hybrid VMware ESXi and AWS GovCloud boundaries. Eliminated operational alert fatigue caused by fragmented 1:1 host ticketing by engineering a normalized PostgreSQL warehouse, consolidating thousands of host-level findings into unified fleet remediation tasks, and developing dynamic REST-to-Ansible inventory endpoints that cut High-severity remediation time by over 40%. Pioneered the SRE \"Error Budget\" framework for federal compliance in direct partnership with the Director of Security, designing mathematical risk algorithms (Severity Weight × Host Blast Radius × Time Decay) with automated variance credits (operational requirements, vendor dependencies) that scaled monthly remediation throughput by roughly 10x and drove overdue backlogs down by more than 90% across cloud infrastructure. Extended the platform with custom Plotly heatmaps and Tableau Server integrations (TabPy) for executive sprint governance."
-      short_text: "Architected FedRAMP governance platform protecting 6,000+ operational bare-metal and cloud systems. Pioneered SRE \"Error Budget\" algorithm (Severity × Blast Radius × Time Decay) with automated variance credits; scaled monthly resolution throughput roughly 10x, cut High-severity remediation time by over 40%, and drove overdue backlogs down by more than 90% in cloud infrastructure using dynamic Ansible inventory patching and executive scorecards."
-      linkedin_text: "Architected FedRAMP vulnerability governance platform and SRE error budget algorithms across 6,000+ systems, cutting High-severity dwell time by over 40% and scaling remediation velocity by 10x."
+      long_text: "Scaled monthly remediation throughput ~10x, cut High-severity remediation time by over 40%, and drove overdue backlogs down by more than 90% across cloud infrastructure by architecting an enterprise-wide FedRAMP vulnerability governance platform protecting 6,000+ operational bare-metal and cloud systems. Eliminated operational toil and alert fatigue caused by fragmented 1:1 host ticketing by engineering a normalized PostgreSQL warehouse, consolidating thousands of host findings into unified fleet remediation tasks, and developing dynamic REST-to-Ansible inventory endpoints. Pioneered the SRE \"Error Budget\" framework for federal compliance in direct partnership with the Director of Security, designing mathematical risk algorithms (Severity Weight × Host Blast Radius × Time Decay) with automated variance credits (operational requirements, vendor dependencies) to govern federal vulnerability SLAs. Extended the self-service platform with custom Plotly heatmaps and Tableau Server integrations (TabPy) for executive sprint governance."
+      short_text: "Scaled monthly resolution throughput ~10x, cut High-severity remediation time >40%, and drove overdue backlogs down >90% across 6,000+ systems by architecting a FedRAMP governance platform. Pioneered SRE \"Error Budget\" algorithms (Severity × Blast Radius × Time Decay) with automated variance credits, dynamic Ansible inventory patching, and executive scorecards."
+      linkedin_text: "Architected enterprise FedRAMP vulnerability governance platform and SRE error budget algorithms across 6,000+ systems, cutting High-severity dwell time >40% and scaling monthly resolution velocity 10x."
       skills: ["python", "etl_pipelines", "databases", "solutions_architecture", "qualys_secops", "technical_leadership"]
 
     - id: cisco_tl_cross_discipline
-      title: "Cross-Discipline Technical Translation & Federal Deviation Authority"
-      long_text: "Served as the technical bridge between software developers, storage engineers, and networking teams, demystifying abstract CVEs, kernel vulnerabilities, and DISA STIG benchmarks into actionable code and configuration remediation paths tailored to each stack. Researched root causes, evaluated production risk, and authored formal technical compliance deviation and risk justification packages submitted to the federal PMO for false positives and acceptable operational risks."
-      short_text: "Served as technical bridge across software, storage, and networking teams, translating complex CVEs and DISA STIGs into actionable remediation paths. Authored formal technical compliance deviation and risk justification packages submitted to the federal PMO."
-      linkedin_text: "Bridged software, storage, and networking teams, translating complex CVEs and STIGs into actionable remediation paths and authoring formal compliance deviation packages for the federal PMO."
+      title: "Cross-Discipline Systems Translation & Root Cause Analysis (RCA)"
+      long_text: "Accelerated remediation velocity and eliminated cross-team operational blockers by translating complex CVEs, kernel vulnerabilities, and DISA STIG benchmarks into actionable code and configuration playbooks tailored for software, storage, and networking teams. Conducted root-cause analysis (RCA) on complex system interactions, evaluated production risk, and authored formal technical compliance deviation and risk justification packages submitted to the federal PMO for false positives and acceptable operational risks."
+      short_text: "Accelerated remediation velocity across software, storage, and networking teams by translating complex CVEs and DISA STIGs into actionable remediation paths. Conducted root cause analyses and authored formal compliance deviation packages submitted to the federal PMO."
+      linkedin_text: "Bridged software, storage, and networking teams by translating complex CVEs and STIGs into actionable remediation playbooks and authoring formal compliance deviation packages for the federal PMO."
       skills: ["fedramp_stig", "qualys_secops", "technical_leadership", "solutions_architecture", "root_cause_diagnostics"]
 
     - id: cisco_tl_servicenow_modernization
-      title: "Enterprise Modernization & Qualys Grouping Taxonomy (ServiceNow Migration)"
-      long_text: "Served as lead technical consultant for the enterprise-wide modernization effort to retire the legacy Jira tracking system in favor of an automated ServiceNow integration. Partnered with the ServiceNow ETL engineering team to architect asset tagging taxonomies, dynamic grouping structures, and metadata classification rules inside Qualys, ensuring vulnerability and compliance findings were accurately classified and dynamically routed to the appropriate engineering owners."
-      short_text: "Architected Qualys asset grouping and tagging taxonomy for enterprise ETL migration to ServiceNow, ensuring automated classification and routing of compliance findings across engineering teams."
-      linkedin_text: "Architected Qualys asset grouping and tagging taxonomy for enterprise ETL migration to ServiceNow, automating classification and routing of compliance findings."
+      title: "Enterprise Fleet Classification & Automated Workload Routing (ServiceNow / Qualys)"
+      long_text: "Led technical taxonomy architecture for the enterprise-wide modernization migrating legacy Jira ticketing to an automated ServiceNow integration. Partnered with the ServiceNow ETL engineering team to design asset tagging taxonomies, dynamic grouping structures, and metadata classification rules inside Qualys, ensuring vulnerability and compliance findings were accurately classified and dynamically routed to responsible engineering owners with zero manual triage toil."
+      short_text: "Architected Qualys asset grouping and tagging taxonomy for enterprise ETL migration to ServiceNow, automating classification and routing of compliance findings across engineering teams to eliminate manual triage toil."
+      linkedin_text: "Architected Qualys asset grouping and tagging taxonomy for enterprise ETL migration to ServiceNow, automating classification and routing of compliance findings across engineering teams."
       skills: ["qualys_secops", "solutions_architecture", "etl_pipelines"]
 
     - id: cisco_tl_devsecops
-      title: "DevSecOps & Compliance Automation (STIG XCCDF/XML & Qualys API)"
-      long_text: "Engineered custom Python automation querying the Qualys API to ingest raw compliance assessment results and correlate them with parsed DISA STIG XCCDF (XML) benchmark data, mapping running Linux server configurations directly to federal controls. Streamlined data handoffs for formal checklist generation, eliminating hundreds of engineering hours of manual compliance data correlation across all Webex for Government footprints."
-      short_text: "Engineered Python tools querying the Qualys API to extract compliance results and map them to parsed STIG XCCDF (XML) benchmark data, eliminating hundreds of manual correlation hours."
-      linkedin_text: "Engineered Python tools querying Qualys APIs to extract compliance results and map them directly to parsed STIG XCCDF data, eliminating hundreds of manual correlation hours."
+      title: "Compliance-as-Code & SRE Toil Elimination (STIG XCCDF/XML & Qualys API)"
+      long_text: "Eliminated hundreds of engineering hours of manual compliance auditing by building automated Python pipelines that ingested Qualys API results, parsed DISA STIG XCCDF (XML) benchmarks, and correlated running Linux server configurations directly to federal controls. Streamlined automated data handoffs for formal checklist generation, replacing repetitive manual verification with continuous compliance validation across all Webex for Government footprints."
+      short_text: "Eliminated hundreds of engineering hours of manual compliance auditing by developing automated Python pipelines querying Qualys APIs and parsing DISA STIG XCCDF (XML) benchmarks to validate running Linux configurations directly against federal controls."
+      linkedin_text: "Eliminated hundreds of manual compliance auditing hours by developing automated Python pipelines querying Qualys APIs and parsing DISA STIG XCCDF benchmarks against live Linux configurations."
       skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt", "solutions_architecture"]
 
     - id: cisco_tl_mentorship
-      title: "Engineering Mentorship & Technical Guidance"
-      long_text: "Mentored junior and mid-level engineers (up to three concurrent early in the role; later one-at-a-time onboarding) on Linux diagnostics, root-cause troubleshooting, and operational practices. Supported the hiring process through interviewing and structured onboarding of new team members across distributed remote teams, while providing ongoing technical guidance on complex remediation under federal SLAs."
-      short_text: "Mentored junior and mid-level engineers on Linux diagnostics, root-cause troubleshooting, and operational practices. Supported hiring through technical interviewing and structured onboarding across distributed remote teams."
-      linkedin_text: "Mentored engineers on Linux diagnostics and root-cause troubleshooting. Supported hiring through technical interviewing and structured onboarding across distributed teams."
+      title: "Engineering Mentorship & Structured Operational Handover"
+      long_text: "Accelerated team autonomy by instituting a structured, two-phase onboarding model for new engineers: teaching underlying system mechanics, training on custom automation tooling, and co-piloting live recurring workflows in Month 1 to transition full operational ownership by Month 2. Supported organizational growth through technical hiring and guided engineers through high-stakes federal remediation workflows under strict SLAs."
+      short_text: "Accelerated team autonomy by instituting a phased onboarding model: teaching system fundamentals, training on custom automation, and co-piloting workflows in Month 1 to transition full operational process ownership by Month 2."
+      linkedin_text: "Accelerated team autonomy by instituting a phased onboarding model: teaching system fundamentals, training on custom automation, and co-piloting workflows in Month 1 to transition full operational ownership by Month 2."
       skills: ["technical_leadership", "root_cause_diagnostics", "linux_systems"]
 
     - id: cisco_tl_inventory
-      title: "Inventory Analytics & Infrastructure Operations"
-      long_text: "Leveraged Pandas for large-scale data manipulation, merging disparate inventory reports and datasets into actionable operational insights across Cisco UCS bare-metal hardware and cloud compute. Transformed manual Excel-based tracking into automated trend analysis for monthly executive reporting."
-      short_text: null
-      linkedin_text: "Leveraged Pandas to merge disparate inventory datasets across Cisco UCS bare-metal and cloud compute into automated trend analysis for executive reporting."
-      skills: ["python", "cisco_ucs"]
+      title: "FedRAMP Continuous Monitoring (ConMon) Inventory Reconciliation & Toil Reduction"
+      long_text: "Eliminated 12–15 hours of monthly manual \"stare and compare\" audits across the SecOps team by engineering Python and Pandas automation to validate monthly FedRAMP ConMon inventories. Reconciled massive 80,000-record datasets against ServiceNow CMDB and live Qualys API telemetry—instantly isolating added/decommissioned assets, tracking OS upgrades, and enforcing automated validation rules that eliminated human error, missed checks, and manual editing inconsistencies to deliver trustworthy, audit-ready submissions."
+      short_text: "Eliminated 12–15 monthly audit hours by engineering Python/Pandas automation reconciling 80,000-record FedRAMP ConMon inventories against ServiceNow CMDB and Qualys APIs, eliminating human error and manual editing inconsistencies."
+      linkedin_text: "Engineered Python/Pandas data pipelines reconciling 80,000-record monthly FedRAMP ConMon inventories against ServiceNow CMDB and Qualys API data, eliminating 12-15 hours of manual audit toil and human error."
+      skills: ["python", "etl_pipelines", "qualys_secops", "fedramp_stig", "cisco_ucs"]
 
 - id: cisco_ce
   company: "Cisco Systems"
@@ -81,9 +80,7 @@
   start_date: "2017-01"
   end_date: "2019-08"
   summary: >-
-    Served as Lead Compute Engineer managing compute, identity, and bastion infrastructure across Webex Commercial
-    and FedRAMP Moderate footprints. Collaborated closely with Networking, Storage, and Security Operations Center (SOC)
-    teams to guarantee zero-downtime availability, fine-grained access control, and continuous security hardening.
+    Directed compute platform reliability, high-availability identity architecture, and bastion security across Webex Commercial and FedRAMP Moderate footprints—partnering with Networking, Storage, and SOC teams to guarantee zero-downtime SLA availability and enforce zero-trust access controls across 2,000+ hosts.
   skills_display: "Ansible, FreeIPA (HA/HBAC), OpenStack, VMware vSphere, Cisco UCS, RHEL/CentOS, Windows Server, RBAC/HBAC, Qualys, FedRAMP Compliance."
   skills_display_short: "Ansible, FreeIPA (HA/HBAC), OpenStack, VMware vSphere, Cisco UCS, RHEL/CentOS, Windows Server, RBAC/HBAC, Qualys, FedRAMP Compliance."
   skills:
@@ -99,32 +96,32 @@
     - technical_leadership
   bullets:
     - id: cisco_ce_freeipa
-      title: "Enterprise Identity Architecture & SOC Collaboration (FreeIPA/HBAC)"
-      long_text: "Architected and deployed a High-Availability (HA) FreeIPA cluster in OpenStack using Ansible to replace a legacy, high-overhead 389 Directory Server environment. Partnered directly with the Security Operations Center (SOC) to architect and define Host-Based Access Control (HBAC) rule sets—introducing net-new zero-trust access control capabilities—while guiding disparate application engineering teams on service account permissions and access policies across 2,000+ Linux/Windows servers and network appliances."
-      short_text: "Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack via Ansible to replace legacy 389 DS. Partnered with the SOC to establish fine-grained Host-Based Access Control (HBAC) policies, guiding application teams on service permissions and standardizing access control across 2,000+ hosts."
+      title: "High-Availability Enterprise Identity & SOC Collaboration (FreeIPA/HBAC)"
+      long_text: "Eliminated single-point-of-failure identity risks and established zero-trust access controls across 2,000+ Linux/Windows hosts by architecting and deploying a High-Availability (HA) FreeIPA cluster in OpenStack using Ansible to replace a legacy, high-overhead 389 Directory Server environment. Partnered directly with the Security Operations Center (SOC) to architect and define Host-Based Access Control (HBAC) rule sets—introducing net-new zero-trust access control capabilities—while establishing self-service permission patterns for application engineering teams."
+      short_text: "Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack via Ansible to replace legacy 389 DS. Partnered with the SOC to establish fine-grained Host-Based Access Control (HBAC) policies, standardizing zero-trust identity across 2,000+ hosts."
       linkedin_text: "Architected and deployed an HA FreeIPA cluster in OpenStack using Ansible to replace legacy 389 Directory Server. Partnered with the SOC to establish Host-Based Access Control (HBAC) rule sets, standardizing zero-trust identity across 2,000+ Linux/Windows hosts and appliances."
       skills: ["identity_rbac", "ha_clustering", "openstack", "ansible_salt", "linux_systems", "technical_leadership"]
 
     - id: cisco_ce_compute_ops
-      title: "Lead Compute Engineering & Virtualization Operations"
-      long_text: "Managed large-scale compute services and bastion host environments using VMware vSphere on Cisco UCS bare-metal hardware across commercial and FedRAMP data centers. Served as lead compute engineer resolving complex virtualization performance bottlenecks, ensuring high availability, maintaining strict adherence to federal uptime SLAs, and supporting SAN storage fabric operations including Cisco MDS Fibre Channel switches and zoning."
-      short_text: "Managed enterprise virtualization clusters on VMware vSphere and Cisco UCS bare metal, serving as lead compute engineer maintaining high availability, strict federal SLAs, and supporting Cisco MDS Fibre Channel SAN switch fabrics."
-      linkedin_text: "Managed VMware vSphere clusters on Cisco UCS bare metal across commercial and FedRAMP data centers. Resolved virtualization bottlenecks, maintained strict federal uptime SLAs, and supported Cisco MDS Fibre Channel SAN fabric operations."
-      skills: ["virtualization", "cisco_ucs", "qualys_secops", "fedramp_stig"]
+      title: "Virtualization Lifecycle Engineering & Bare-Metal Platform Maintenance"
+      long_text: "Maintained high availability and continuous federal SLA compliance across Cisco UCS bare-metal and VMware vSphere environments by executing rolling, zero-downtime ESXi upgrades for vulnerability remediation. Managed Cisco UCS Fabric Interconnects and CIMC firmware baselines, and reconfigured Cisco MDS Fibre Channel SAN switch zoning to onboard high-performance storage arrays (Pure Storage) and expand enterprise capacity."
+      short_text: "Maintained high availability and federal SLAs across Cisco UCS and VMware vSphere clusters by executing rolling zero-downtime ESXi upgrades for CVE remediation, managing UCS firmware, and reconfiguring Cisco MDS SAN fabrics for Pure Storage arrays."
+      linkedin_text: "Maintained high availability and federal SLAs across Cisco UCS bare metal and VMware vSphere environments, executing rolling ESXi vulnerability upgrades, managing UCS firmware, and reconfiguring Cisco MDS SAN fabrics for Pure Storage migrations."
+      skills: ["virtualization", "cisco_ucs", "distributed_storage", "fedramp_stig"]
 
     - id: cisco_ce_vuln_mgmt
-      title: "Compute Security, Tooling Initiative & Vulnerability Remediation"
-      long_text: "Transitioned a reactive vulnerability management process into a proactive engineering capability by gaining direct access to the isolated FedRAMP tracking boundary. Initiated the Python REST ingestion pipelines and dynamic Ansible inventory automation that collapsed 1:1 host ticket deluges into unified cluster playbooks, establishing the foundation for what scaled into the enterprise-wide vulnerability governance platform."
+      title: "Compute Security, Fleet Remediation & Automated Patching"
+      long_text: "Replaced reactive vulnerability patching with a proactive engineering pipeline by securing direct access to the isolated FedRAMP tracking boundary. Developed Python REST ingestion pipelines and dynamic Ansible inventory automation that collapsed 1:1 host ticket deluges into automated, cluster-wide remediation playbooks, establishing the architectural foundation for what scaled into the enterprise-wide vulnerability governance platform."
       short_text: "Transitioned reactive vulnerability tracking into a proactive engineering platform by accessing isolated FedRAMP systems, creating custom Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges."
       linkedin_text: "Transitioned reactive vulnerability tracking into a proactive engineering platform by accessing isolated FedRAMP systems, creating custom Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges."
       skills: ["qualys_secops", "fedramp_stig", "linux_systems"]
 
     - id: cisco_ce_access_infra
-      title: "Secure Access & Bastion Infrastructure (Bastions, LDAP, Active Directory)"
-      long_text: "Architected and maintained the secure access infrastructure across Webex commercial and FedRAMP footprints, managing hardened Linux bastion hosts, Active Directory domain controllers, and LDAP directory services to enforce zero-trust access control and secure remote administrative access across 2,000+ systems."
-      short_text: "Architected and maintained secure access infrastructure across Webex commercial and FedRAMP footprints, managing hardened Linux bastion hosts, Active Directory domain controllers, and LDAP directory services across 2,000+ systems."
-      linkedin_text: "Architected and maintained secure access infrastructure across Webex commercial and FedRAMP environments, managing hardened Linux bastion hosts, Active Directory domain controllers, and LDAP services to enforce zero-trust access control across 2,000+ systems."
-      skills: ["identity_rbac", "linux_systems", "network_security", "technical_leadership"]
+      title: "FedRAMP Audit Defense & Automated Evidence Collection"
+      long_text: "Defended federal secure access controls across multiple annual FedRAMP audits, serving as primary engineering SME for bastion jump hosts, Active Directory domain controllers, and LDAP/FreeIPA identity platforms. Authored custom Ansible playbooks and shell scripts to automate evidence gathering across 2,000+ systems, eliminating hours of manual console demonstrations and screenshot taking while ensuring flawless compliance validation."
+      short_text: "Defended secure access controls across annual FedRAMP audits for bastion hosts, Active Directory, and LDAP/FreeIPA. Built Ansible playbooks to automate security evidence gathering across 2,000+ systems, eliminating manual console audit toil."
+      linkedin_text: "Defended federal secure access controls across annual FedRAMP audits, building Ansible playbooks to automate evidence collection across 2,000+ systems and eliminating manual console demonstration toil."
+      skills: ["identity_rbac", "fedramp_stig", "ansible_salt", "linux_systems", "technical_leadership"]
 
 - id: cisco_contract1
   company: "Select Group @ Cisco"
@@ -134,10 +131,9 @@
   start_date: "2016-02"
   end_date: "2017-01"
   summary: >-
-    Provided specialized DevOps and QA engineering support for Cisco's OpenStack-based
-    Public Cloud (InterCloud Services) running an OpenStack-on-OpenStack environment on Cisco UCS bare metal.
-    Focused on Nova scheduler performance optimization, automated configuration management, and stability
-    engineering for large-scale cloud deployments.
+    Provided specialized DevOps and Systems SRE support for Cisco's OpenStack-based
+    Public Cloud (InterCloud Services) running an OpenStack-on-OpenStack environment on Cisco UCS bare metal,
+    focusing on Nova scheduler latency optimization, bare-metal PXE automation, and cloud orchestration reliability.
   skills_display: "OpenStack (Nova, Heat, Neutron, Glance), Ansible, Python, Bash, RHUI, Proxmox, Linux/Windows Administration, Performance Tuning, Cloud QA."
   skills_display_short: "OpenStack, Ansible, Python, Bash, RHUI, Proxmox, CentOS/RHEL/Windows, Performance Tuning, Cloud QA."
   skills:
@@ -151,33 +147,30 @@
     - rapid_adaptation_sme
   bullets:
     - id: cisco_contract_perf
-      title: "Performance Optimization"
-      long_text: "Identified and removed redundant **Nova Scheduler** filters, reducing instance scheduling time for 700 nodes from 20 seconds to 5 seconds—a **75% improvement** in orchestration speed."
+      title: "Scheduler Latency Optimization & Cloud Orchestration (OpenStack Nova)"
+      long_text: "Eliminated cloud provisioning bottlenecks by identifying and removing redundant **Nova Scheduler** filters, reducing instance scheduling time for 700 nodes from 20 seconds to 5 seconds—a **75% improvement** in orchestration speed."
       short_text: "Identified and removed redundant **Nova Scheduler** filters in **OpenStack**, reducing instance scheduling time for 700 nodes from 20 seconds to 5 seconds (a **75% improvement** in orchestration speed)."
       skills: ["openstack", "root_cause_diagnostics"]
 
     - id: cisco_contract_iac
-      title: "Bare-Metal PXE Provisioning & Automation at Scale"
-      long_text: "Engineered automated bare-metal deployment and provisioning workflows using **PXE boot** and **Ansible** playbooks across hundreds of production servers within Cisco's InterCloud Services. Automated ongoing configuration management and system maintenance via **lights-out management (LOM)** interfaces and scheduled orchestration tasks, eliminating manual intervention and ensuring consistent, repeatable hardware baselines across large-scale cloud footprints."
-      short_text: "Automated bare-metal server deployment and configuration via **PXE boot** and **Ansible** using lights-out management (LOM) interfaces across hundreds of production servers."
+      title: "Bare-Metal Provisioning, Infrastructure as Code & Platform Evaluation"
+      long_text: "Eliminated repetitive manual deployment toil by engineering automated bare-metal PXE boot and Ansible provisioning workflows across hundreds of production Cisco UCS servers in Cisco InterCloud Services. Automated ongoing configuration baselines via lights-out management (LOM) interfaces, and evaluated next-generation platform substrates—prototyping local Red Hat Update Infrastructure (RHUI) for secure, zero-egress internal package distribution and benchmarking Proxmox hypervisor clusters."
+      short_text: "Automated bare-metal server deployment via PXE boot and Ansible using LOM interfaces across hundreds of Cisco UCS servers, and evaluated local RHUI package repositories and Proxmox hypervisors."
+      linkedin_text: "Automated bare-metal server deployment via PXE boot and Ansible across hundreds of Cisco UCS servers in Cisco InterCloud Services, and evaluated local RHUI package repositories and Proxmox hypervisors."
       skills: ["ansible_salt", "linux_systems", "virtualization", "openstack"]
 
-    - id: cisco_contract_eval
-      title: "Cloud Infrastructure Evaluation"
-      long_text: "Stood up **RHUI (Red Hat Update Infrastructure)** and **Proxmox** clusters for **Proof-of-Concept (PoC)** assessments to determine viability for integration with Cisco InterCloud Services."
-      short_text: null
-      skills: ["virtualization", "linux_systems"]
-
     - id: cisco_contract_stability
-      title: "Stability Engineering"
-      long_text: "Diagnosed and resolved a critical race condition involving cloudbase-init on Windows 2008/2012 images within **OpenStack**, eliminating intermittent reboots during initial instance setup."
-      short_text: null
-      skills: ["openstack", "root_cause_diagnostics"]
+      title: "Cloud Stability Engineering & Windows Provisioning RCA (cloudbase-init)"
+      long_text: "Eliminated persistent deployment failures and infinite reboot loops across Windows Server cloud instances by diagnosing a complex race condition in cloudbase-init. Isolated the contention between the unattended Sysprep specialize phase and the premature startup of the Windows service, implementing the fix to achieve 100% reliable first-boot provisioning across the OpenStack cloud fleet."
+      short_text: "Eliminated persistent VM reboot loops on Windows cloud instances by resolving a race condition between Sysprep specialize and cloudbase-init in OpenStack, achieving 100% reliable first-boot provisioning."
+      linkedin_text: "Eliminated persistent VM reboot loops on Windows cloud instances by resolving a complex race condition in cloudbase-init in OpenStack, achieving 100% reliable first-boot provisioning."
+      skills: ["openstack", "root_cause_diagnostics", "virtualization"]
 
     - id: cisco_contract_qa
-      title: "Cloud QA & Orchestration"
-      long_text: "Managed global test cycles for Compute and Heat components during major cloud upgrades. Developed **Python** and **Bash** scripts coupled with Ansible to perform comprehensive orchestration tests."
-      short_text: "Managed global test cycles for Compute and Heat components during cloud upgrades. Developed **Python**, **Bash**, and **Ansible** scripts to perform comprehensive automated orchestration tests."
+      title: "Blue/Green Upgrade Verification & Cloud Orchestration QA"
+      long_text: "Served as the final verification gate for major OpenStack-on-OpenStack cloud upgrades, executing end-to-end automated test suites across newly provisioned greenfield environments prior to live traffic cutover. Developed Python, Bash, and Ansible orchestration test scripts targeting Nova Compute and Heat templates, identifying critical regressions in staging to guarantee zero-downtime production cutovers."
+      short_text: "Served as final verification gate for major OpenStack-on-OpenStack blue/green upgrades, building Python/Bash/Ansible test suites for Nova and Heat to guarantee zero-downtime traffic cutovers."
+      linkedin_text: "Served as final verification gate for major OpenStack-on-OpenStack blue/green upgrades, developing automated test suites for Nova Compute and Heat to guarantee zero-downtime traffic cutovers."
       skills: ["validation_qa", "python", "ansible_salt", "openstack"]
 
 - id: als
@@ -212,16 +205,18 @@
       skills: ["distributed_storage", "virtualization", "databases", "validation_qa"]
 
     - id: als_automation
-      title: "Infrastructure Automation"
-      long_text: "Implemented **SaltStack** to manage Linux virtual environments and automate the configuration and rapid provisioning of new **Ceph** storage nodes and virtual machine resources."
-      short_text: "Wrote custom **Python (SQLAlchemy)** verification scripts to audit SQL foreign keys during data migration. Implemented **SaltStack** to automate Linux VM and Ceph node provisioning."
-      skills: ["ansible_salt", "distributed_storage", "linux_systems"]
+      title: "Resilient Storage Architecture & Automated Provisioning (Ceph / SaltStack)"
+      long_text: "Architected a cost-effective high-availability storage and compute platform across commodity Dell rackmount servers, using Ceph distributed block storage to protect virtual machine disks against physical host failures. Validated fault tolerance in an executive demonstration by maintaining uninterrupted data access while systematically failing two of three storage nodes; leveraged SaltStack to automate rapid VM provisioning and cluster configuration."
+      short_text: "Architected cost-effective HA platform using Ceph block storage on commodity Dell servers, maintaining uninterrupted data access during a live 2-node failure demonstration and automating VM provisioning via SaltStack."
+      linkedin_text: "Architected cost-effective HA platform using Ceph block storage on commodity Dell servers, maintaining uninterrupted data access during a live 2-node failure demonstration and automating VM provisioning via SaltStack."
+      skills: ["distributed_storage", "ansible_salt", "ha_clustering", "linux_systems", "virtualization"]
 
     - id: als_data_integrity
-      title: "Database & Data Integrity"
-      long_text: "Wrote custom **Python (SQLAlchemy)** verification scripts to check for missing SQL foreign keys and ensure data integrity during major migrations. Configured replication and backups of production **MySQL** databases using **LVM snapshots** and **rsync**."
-      short_text: null
-      skills: ["python", "etl_pipelines", "databases"]
+      title: "Data Integrity Engineering & Enterprise Replatforming (Python / SQLAlchemy)"
+      long_text: "Unblocked a mission-critical enterprise software migration to a modern .NET architecture by resolving years of accumulated legacy database corruption. Engineered custom Python (SQLAlchemy) audit scripts to validate relational schema transformations, detect orphan records, and reconcile broken foreign key relationships prior to ingestion; established automated MySQL replication and LVM snapshots to ensure zero data loss during cutover."
+      short_text: "Unblocked enterprise migration to modern .NET architecture by engineering Python/SQLAlchemy audit scripts to cleanse legacy database corruption, verify foreign keys, and ensure zero data loss."
+      linkedin_text: "Unblocked enterprise software migration to a modern .NET architecture by engineering Python (SQLAlchemy) audit scripts to cleanse corrupted legacy data and verify relational foreign keys."
+      skills: ["python", "etl_pipelines", "databases", "validation_qa"]
 
     - id: als_monitoring
       title: "System Stability & Monitoring"
@@ -266,18 +261,18 @@
       skills: ["python", "databases", "identity_rbac", "etl_pipelines"]
 
     - id: garfield_modernization
-      title: "Enterprise Modernization & Development"
-      long_text: "Spearheaded the replacement of a legacy, fragmented student information system with a web-based, centralized platform, eliminating manual data syncing between schools. Streamlined state compliance reporting by developing custom **PHP** generation scripts interfacing with the **PostgreSQL** database."
-      short_text: "Replaced legacy databases with centralized PostgreSQL platforms, and automated state compliance reporting via custom PHP scripts."
-      linkedin_text: "Spearheaded replacing legacy SIS with centralized platforms, automating state compliance reporting via custom PHP scripts and PostgreSQL."
-      skills: ["databases", "etl_pipelines"]
+      title: "District-Wide Data Centralization & State Compliance Automation (PostgreSQL / PHP)"
+      long_text: "Unified student records across the grade school, middle school, and high school by replacing siloed, individual database servers with a centralized PostgreSQL student information platform. Developed custom PHP ETL scripts to automate Colorado state funding compliance reporting (\"October Count\") in minutes instead of days, eliminating annual manual data re-entry between facilities and ensuring audit-ready data accuracy."
+      short_text: "Centralized district-wide student data onto PostgreSQL and developed automated PHP ETL scripts for Colorado state compliance reporting (\"October Count\"), cutting reporting time from days to minutes."
+      linkedin_text: "Unified district student data onto a centralized PostgreSQL platform and automated Colorado state compliance reporting (\"October Count\") via PHP scripts, slashing reporting time from days to minutes."
+      skills: ["databases", "etl_pipelines", "solutions_architecture"]
 
     - id: garfield_virtualization
-      title: "Infrastructure & Systems Virtualization"
-      long_text: "Designed and administered virtualized host environments using **Citrix XenServer** and **VirtualBox** to run critical Windows Server 2008 and Ubuntu Linux servers. Supervised low-voltage cabling and hardware installation contractors for new facilities to ensure strict specification compliance."
-      short_text: "Centralized desktop computing with **Windows Terminal Servers** and **HP Thin Clients** for 6 labs, saving **$60k+** in CAPEX."
-      linkedin_text: "Administered virtualized host environments using Citrix XenServer and VirtualBox for Windows Server and Ubuntu. Supervised facility low-voltage cabling and hardware installation."
-      skills: ["virtualization", "linux_systems"]
+      title: "High-Density Virtualization & Site-Resilient Infrastructure (Citrix XenServer)"
+      long_text: "Consolidated district-wide server sprawl into high-density Citrix XenServer clusters, maximizing hardware efficiency while cutting power and rack space. Architected resilient, distributed services by deploying virtualized Active Directory domain controllers locally within each school building—ensuring autonomous operational continuity during inter-building network outages—and enabling zero-downtime daytime hardware maintenance via VM migration."
+      short_text: "Consolidated server sprawl onto Citrix XenServer clusters, deploying local building domain controllers for network outage resiliency and enabling zero-downtime daytime host maintenance."
+      linkedin_text: "Consolidated server sprawl onto Citrix XenServer clusters, deploying local building domain controllers for network outage resiliency and enabling zero-downtime daytime host maintenance."
+      skills: ["virtualization", "linux_systems", "ha_clustering", "identity_rbac"]
 
     - id: garfield_networking
       title: "Network Engineering"
@@ -328,32 +323,25 @@
       skills: ["root_cause_diagnostics", "validation_qa"]
 
     - id: foundational_sales_eng
-      title: "Sales Engineering & Systems Integration"
-      long_text: "Tested **ImageCast** software integrations with systems management suites including **SMS**, **CA Unicenter**, and **Desktop DNA**. Defined customer software requirements, submitted feature change requests, and conducted technical product demonstrations and training for enterprise clients such as **HP**, **Target**, and **NEC**. Helped answer technical questions at trade shows."
-      short_text: null
-      linkedin_text: "Tested ImageCast integrations with enterprise suites (SMS, CA Unicenter). Conducted technical demos and customer training for HP, Target, and NEC."
+      title: "Solutions Engineering & Enterprise Interoperability (ImageCast)"
+      long_text: "Expanded market readiness for ImageCast disk cloning software by engineering and validating integrations with leading enterprise systems management platforms (Microsoft SMS, CA Unicenter, Desktop DNA). Delivered technical demonstrations, proof-of-concept testing, and administrator training for corporate IT evaluators at enterprise accounts including HP, Target, and NEC; translated customer operational requirements into core engineering feature specifications."
+      short_text: "Engineered enterprise software integrations with Microsoft SMS and CA Unicenter, delivering technical demos and training to corporate IT evaluators at HP, Target, and NEC."
+      linkedin_text: "Expanded enterprise readiness for ImageCast by validating integrations with Microsoft SMS and CA Unicenter, delivering technical demonstrations and training for corporate evaluators at HP, Target, and NEC."
       skills: ["solutions_architecture", "validation_qa", "technical_leadership"]
 
     - id: foundational_lab_mgmt
-      title: "Technical Services & Test Lab Management"
-      long_text: "Merged and managed QA testing with the technical support department, hiring and mentoring technicians on networking topologies and structured testing methodologies. Designed test cases, executed testing plans, and managed the lab's **Windows** and **Linux** servers and test networks across diverse hardware. Redesigned, built out, and managed the company's network, labs, and server infrastructure following a corporate split."
-      short_text: null
-      linkedin_text: "Merged and managed QA testing and tech support departments. Designed test plans and managed heterogeneous Windows/Linux server labs and network testbeds."
-      skills: ["validation_qa", "linux_systems", "technical_leadership"]
+      title: "Engineering Operations & Greenfield Lab Buildout"
+      long_text: "Architected and built out the company's server room, internal network, and multi-OS test lab from scratch following a corporate spin-off, including telco T1 demarc extensions. Reorganized QA and technical support into a unified, 10-person rotating team: technicians alternated between hands-on lab validation (testing diverse drive controllers, NICs, PXE boot, and multicast routing across Windows, Linux, and NetWare) and customer support, enabling agents to directly reproduce complex customer issues on lab hardware and drastically cutting time to resolution."
+      short_text: "Built out server room and test lab infrastructure following a spin-off, and reorganized QA/support into a 10-person rotating team enabling direct lab reproduction of customer issues."
+      linkedin_text: "Architected server room and test labs following a spin-off, reorganizing QA and support into a 10-person rotation enabling technicians to reproduce customer issues directly on lab hardware."
+      skills: ["validation_qa", "linux_systems", "technical_leadership", "root_cause_diagnostics"]
 
     - id: foundational_qa_leadership
-      title: "Software QA & Testing Leadership"
-      long_text: "Promoted from contractor to QA Lead, managing all testing operations for **ImageCast** and **DrivePro** products. Structured software testing workflows by implementing the company's first bug-tracking system, drafting comprehensive test plans, and maintaining lab hardware and network infrastructure."
-      short_text: null
-      linkedin_text: "Promoted to QA Lead managing testing operations for ImageCast and DrivePro disk cloning utilities, implementing bug tracking and structured test workflows."
+      title: "Quality Engineering Foundations & Defect Governance (ImageCast / DrivePro)"
+      long_text: "Promoted from contractor to QA Lead, transforming ad-hoc testing into a standardized quality engineering lifecycle across ImageCast and DrivePro disk cloning products. Replaced informal email chains and handwritten notepad notes by deploying the company's first centralized bug-tracking system and structured test matrices, ensuring software defects had documented reproduction steps and preventing unverified regressions from reaching commercial releases."
+      short_text: "Promoted to QA Lead, establishing the company's first centralized bug-tracking system and structured test matrices for ImageCast and DrivePro disk cloning tools."
+      linkedin_text: "Promoted to QA Lead, establishing the company's first centralized bug-tracking system and structured test matrices to eliminate defect escapes across ImageCast and DrivePro releases."
       skills: ["validation_qa", "root_cause_diagnostics"]
-
-    - id: foundational_training
-      title: "Training & Team Optimization"
-      long_text: "Boosted support staff effectiveness and QA productivity by rotating tech support personnel through active lab testing scenarios. Trained technicians on networking topologies, testing methodologies, and product architecture to improve time-to-resolution for support issues."
-      short_text: null
-      linkedin_text: "Trained support technicians on network topologies and structured testing methodologies to improve issue resolution times."
-      skills: ["technical_leadership", "validation_qa"]
 
     - id: foundational_hardware
       title: "Hardware Assembly & Diagnostics"
@@ -363,8 +351,8 @@
       skills: ["root_cause_diagnostics"]
 
     - id: foundational_awacs
-      title: "Airborne Radar & Electronics Engineering (U.S. Air Force)"
-      long_text: "Served as an Airborne Warning and Control Radar Journeyman (AWACS), repairing high-power microwave systems, high-voltage circuits, and analog/digital electronics."
-      short_text: null
-      linkedin_text: "Served as an Airborne Warning and Control Radar Journeyman (AWACS), repairing high-power microwave transmitters, high-voltage power supplies, and digital/analog electronics."
+      title: "Mission-Critical Avionics SRE & Flightline Radar Readiness (U.S. Air Force)"
+      long_text: "Directly guaranteed operational mission readiness for E-3 Sentry (AWACS) airborne radar surveillance platforms—where radar reliability determined aircraft flight clearance. Conducted post-mission aircrew debriefs on the flightline to isolate in-flight anomalies, performing component-level diagnostics and repairs across high-power microwave transmitters, high-voltage power supplies, and digital signal processors under strict turn-around operational deadlines."
+      short_text: "Directly guaranteed mission readiness for E-3 Sentry (AWACS) aircraft, debriefing aircrews and repairing high-power microwave transmitters and digital signal processors on the flightline."
+      linkedin_text: "Guaranteed flightline mission readiness for E-3 Sentry (AWACS) radar platforms, debriefing aircrews and performing component-level diagnostics and repairs across high-power microwave transmitters and digital processors."
       skills: ["root_cause_diagnostics", "validation_qa"]

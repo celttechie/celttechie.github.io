@@ -152,7 +152,7 @@ class ResumeDatabase:
                 for item in self.lab_and_community:
                     matching_projects = [
                         p for p in item.get("projects", [])
-                        if sk_id in p.get("skills", []) or sk_id in item.get("skills", [])
+                        if sk_id in p.get("skills", [])
                     ]
                     if matching_projects:
                         p_links = ", ".join([
@@ -160,6 +160,8 @@ class ResumeDatabase:
                             for p in matching_projects
                         ])
                         proofs.append(f"**{item['title']}**: {p_links}")
+                    elif sk_id in item.get("skills", []):
+                        proofs.append(f"**{item['title']}**")
 
                 proof_str = "<br/>".join([f"• {p}" for p in proofs]) if proofs else "Foundation & Continuous Production Application"
                 lines.append(f'    | <a id="skill-{sk_id}"></a>**{sk["name"]}**<br/><small style="color: #64748b;">{sk.get("description", "")}</small> | {proof_str} |')
@@ -192,7 +194,21 @@ class ResumeDatabase:
         with open(os.path.join(SECTIONS_DIR, "summary_executive.md"), "w", encoding="utf-8") as f:
             f.write(p["executive_summary"] + "\n")
 
-        # 3. keywords.md
+        # 3. selected_impact.md
+        if "selected_impact" in p:
+            impact_lines = [
+                "## Selected Platform & SRE Impact Highlights\n",
+                '<div class="grid cards" markdown>'
+            ]
+            for imp in p["selected_impact"]:
+                impact_lines.append(f"-   **{imp['title']}**\n")
+                impact_lines.append("    ---\n")
+                impact_lines.append(f"    {imp['description']}\n")
+            impact_lines.append("</div>\n")
+            with open(os.path.join(SECTIONS_DIR, "selected_impact.md"), "w", encoding="utf-8") as f:
+                f.write("\n".join(impact_lines))
+
+        # 4. keywords.md
         kw_content = "## Strategic Core Competencies\n\n" + ", ".join([f"**{kw}**" for kw in p.get("keywords", [])]) + "\n"
         with open(os.path.join(SECTIONS_DIR, "keywords.md"), "w", encoding="utf-8") as f:
             f.write(kw_content)
@@ -335,6 +351,8 @@ class ResumeDatabase:
             '',
             '--8<-- "docs/sections/summary_executive.md"',
             '',
+            '--8<-- "docs/sections/selected_impact.md"',
+            '',
             '---',
             '',
             self.build_traceability_matrix_markdown(),
@@ -378,7 +396,7 @@ class ResumeDatabase:
         out.append("\n" + "#" * 40)
         out.append("1. HEADLINE (Limit: 220 chars)")
         out.append("#" * 40)
-        headline = "Senior Backend & Platform Engineer | FedRAMP & Cloud SecOps | Data Platforms (Python/Pandas/PostgreSQL) | Infrastructure-as-Code & Identity (Ansible/FreeIPA) | FIRST Robotics Mentor"
+        headline = "Platform Engineer & Technical Leader | FedRAMP & Systems SRE | Data Platforms (Python/Pandas/PostgreSQL) | Declarative Infrastructure & Identity (Ansible/FreeIPA) | FIRST Robotics Mentor"
         out.append(f"{headline}  [{len(headline)} / 220 chars]\n")
 
         out.append("#" * 40)
