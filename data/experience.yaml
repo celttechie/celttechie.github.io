@@ -104,9 +104,9 @@
 
     - id: cisco_ce_compute_ops
       title: "Virtualization Lifecycle Engineering & Bare-Metal Platform Maintenance"
-      long_text: "Maintained high availability and continuous federal SLA compliance across Cisco UCS bare-metal and VMware vSphere environments by executing rolling, zero-downtime ESXi upgrades for vulnerability remediation. Managed Cisco UCS Fabric Interconnects and CIMC firmware baselines, and reconfigured Cisco MDS Fibre Channel SAN switch zoning to onboard high-performance storage arrays (Pure Storage) and expand enterprise capacity."
-      short_text: "Maintained high availability and federal SLAs across Cisco UCS and VMware vSphere clusters by executing rolling zero-downtime ESXi upgrades for CVE remediation, managing UCS firmware, and reconfiguring Cisco MDS SAN fabrics for Pure Storage arrays."
-      linkedin_text: "Maintained high availability and federal SLAs across Cisco UCS bare metal and VMware vSphere environments, executing rolling ESXi vulnerability upgrades, managing UCS firmware, and reconfiguring Cisco MDS SAN fabrics for Pure Storage migrations."
+      long_text: "Upheld continuous federal SLA compliance and high availability across Cisco UCS bare-metal and VMware vSphere environments by executing rolling, zero-downtime ESXi upgrades for vulnerability remediation. Standardized Cisco UCS Fabric Interconnects and CIMC firmware baselines, and reconfigured Cisco MDS Fibre Channel SAN switch zoning to onboard high-performance storage arrays (Pure Storage) and expand enterprise capacity."
+      short_text: "Upheld high availability and federal SLAs across Cisco UCS and VMware vSphere clusters by executing rolling zero-downtime ESXi upgrades for CVE remediation, standardizing UCS firmware baselines, and reconfiguring Cisco MDS SAN fabrics for Pure Storage arrays."
+      linkedin_text: "Upheld high availability and federal SLAs across Cisco UCS bare metal and VMware vSphere environments, executing rolling ESXi vulnerability upgrades, standardizing UCS firmware baselines, and reconfiguring Cisco MDS SAN fabrics for Pure Storage migrations."
       skills: ["virtualization", "cisco_ucs", "distributed_storage", "fedramp_stig"]
 
     - id: cisco_ce_vuln_mgmt
@@ -168,9 +168,9 @@
 
     - id: cisco_contract_qa
       title: "Blue/Green Upgrade Verification & Cloud Orchestration QA"
-      long_text: "Served as the final verification gate for major OpenStack-on-OpenStack cloud upgrades, executing end-to-end automated test suites across newly provisioned greenfield environments prior to live traffic cutover. Developed Python, Bash, and Ansible orchestration test scripts targeting Nova Compute and Heat templates, identifying critical regressions in staging to guarantee zero-downtime production cutovers."
-      short_text: "Served as final verification gate for major OpenStack-on-OpenStack blue/green upgrades, building Python/Bash/Ansible test suites for Nova and Heat to guarantee zero-downtime traffic cutovers."
-      linkedin_text: "Served as final verification gate for major OpenStack-on-OpenStack blue/green upgrades, developing automated test suites for Nova Compute and Heat to guarantee zero-downtime traffic cutovers."
+      long_text: "Guaranteed zero-downtime production cutovers for major OpenStack-on-OpenStack cloud upgrades as the final verification gate, executing end-to-end automated test suites across newly provisioned greenfield environments prior to live traffic cutover. Developed Python, Bash, and Ansible orchestration test scripts targeting Nova Compute and Heat templates to intercept critical regressions before production rollout."
+      short_text: "Guaranteed zero-downtime production cutovers for major OpenStack-on-OpenStack blue/green upgrades as the final verification gate, building Python/Bash/Ansible test suites for Nova and Heat to intercept regressions before traffic migration."
+      linkedin_text: "Guaranteed zero-downtime production cutovers for major OpenStack-on-OpenStack blue/green upgrades as final verification gate, developing automated test suites for Nova Compute and Heat to intercept regressions prior to traffic migration."
       skills: ["validation_qa", "python", "ansible_salt", "openstack"]
 
 - id: als

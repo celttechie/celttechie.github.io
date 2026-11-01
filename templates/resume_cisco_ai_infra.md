@@ -77,13 +77,13 @@ Proactively expanding on this deep systems foundation through hands-on technical
 
 *   **Federal ATO Governance & Enterprise Log4j Response (HHS PMO):** Played a central technical role in the enterprise Log4j response across 6,000+ bare-metal and cloud systems under HHS PMO FedRAMP ATO governance. Built custom Ansible/Python inspection tooling locating nested libraries missed by commercial scanners, verified remediation, and compiled PMO evidence packages defending the ATO.
 *   **Vulnerability Data Platform & Fleet UI Architecture (FastAPI, PostgreSQL, Tableau):** Designed and maintained an internal FastAPI + PostgreSQL vulnerability portal (fed by automated Jira ETL) used by engineering teams to triage issues and by leadership to track fleet status across the FedRAMP footprint; extended with Tableau dashboards tracking SLA severity.
-*   **Cross-Discipline Technical Translation & Federal Deviation Authority:** Served as technical bridge across software, storage, and networking teams, translating complex CVEs and DISA STIGs into actionable remediation paths. Authored formal technical compliance deviation and risk justification packages submitted to the federal PMO.
+*   **Cross-Discipline Technical Translation & Federal Deviation Authority:** Accelerated remediation velocity across software, storage, and networking teams, translating complex CVEs and DISA STIGs into actionable remediation paths. Authored formal technical compliance deviation and risk justification packages submitted to the federal PMO.
 *   **Engineering Mentorship & Technical Guidance:** Mentored junior and mid-level engineers on Linux diagnostics, root-cause troubleshooting, and operational practices. Supported hiring through technical interviewing and structured onboarding across distributed remote teams.
 
 ### **Cisco Systems | Cloud Systems Engineer & Lead Compute Engineer**
 **Jan 2017 – Aug 2019 (Remote)**
 
-*   **Lead Compute Engineering & Virtualization Operations:** Managed enterprise virtualization clusters on VMware vSphere and Cisco UCS bare metal, serving as lead compute engineer maintaining high availability, strict federal SLAs, and supporting Cisco MDS Fibre Channel SAN switch fabrics.
+*   **Lead Compute Engineering & Virtualization Operations:** Upheld continuous federal SLA compliance and high availability across enterprise VMware vSphere clusters and Cisco UCS bare metal, resolving hypervisor performance bottlenecks and supporting Cisco MDS Fibre Channel SAN switch fabrics.
 *   **Enterprise Identity Architecture & SOC Collaboration (FreeIPA/HBAC):** Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack via Ansible to replace legacy 389 DS. Partnered with the SOC to establish fine-grained Host-Based Access Control (HBAC) policies, guiding application teams on service permissions and standardizing access control across 2,000+ hosts.
 
 ### **Select Group @ Cisco | Cloud DevOps/QA Engineer (Contract)**
@@ -91,7 +91,7 @@ Proactively expanding on this deep systems foundation through hands-on technical
 
 *   **Nova Scheduler Performance Optimization:** Identified and removed redundant Nova Scheduler filters in OpenStack for Cisco's InterCloud Services (OpenStack-on-OpenStack on Cisco UCS bare metal), reducing instance scheduling time for 700 nodes from 20s to 5s—a **75% improvement** in orchestration speed.
 *   **Infrastructure Evaluation & Bare-Metal Automation:** Configured and evaluated RHUI (Red Hat Update Infrastructure) and Proxmox clusters for InterCloud PoC assessments. Automated bare-metal server configuration using Ansible via lights-out management (LOM) interfaces. Troubleshot and resolved a critical OpenStack `cloudbase-init` race condition.
-*   **Cloud QA & Orchestration:** Managed global test cycles for Compute and Heat components during cloud upgrades; developed Python, Bash, and Ansible scripts for automated orchestration test suites.
+*   **Cloud QA & Orchestration:** Guaranteed zero-downtime production cutovers for major OpenStack upgrades as the final verification gate; developed Python, Bash, and Ansible test suites for Compute and Heat orchestration.
 
 ### **Australian Laboratory Services | Senior Systems & Storage Administrator**
 **Sep 2014 – Jan 2016 (Grand Junction, CO)**
@@ -106,8 +106,8 @@ Proactively expanding on this deep systems foundation through hands-on technical
 ### **Foundational Systems & Testing Experience | Systems Engineering, Software QA & Avionics**
 **Prior Systems Foundations (Various)**
 
-*   **Solutions Engineer/Software QA Lead (StorageSoft/Phoenix Tech):** Software QA testing workflows for ImageCast disk cloning tools; designed test lab environments.  Managed tech support and testing departments. 
-*   **Airborne Radar Journeyman (U.S. Air Force):** Repaired high-power microwave systems, high-voltage circuits, and digital/analog systems on AWACS aircraft.
+*   **Solutions Engineer/Software QA Lead (StorageSoft/Phoenix Tech):** Standardized QA testing lifecycles and defect tracking for ImageCast disk cloning tools; designed test lab environments and directed technical support operations.
+*   **Airborne Radar Journeyman (U.S. Air Force):** Directly guaranteed flightline mission readiness for AWACS aircraft, repairing high-power microwave transmitters, high-voltage circuits, and digital signal processors under strict operational turnaround deadlines.
 
 ## Education & Certifications
 --8<-- "docs/sections/education.md"
