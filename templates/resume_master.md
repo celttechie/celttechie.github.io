@@ -34,23 +34,24 @@ U.S. Air Force veteran actively engineering open-source defense and cloud-native
 
 ## Professional Experience
 
-### **Cisco Systems** | Cloud Engineering Technical Leader
+### **Cisco Systems** | Cloud Engineering Technical Leader (Staff Platform / Systems SRE)
 *Aug 2019 – July 2026 | Remote (USA)*
 
 * **Enterprise Zero-Day Incident Response & Federal ATO Defense (Log4j / 6,000+ Nodes):** Defended continuous FedRAMP ATO under HHS PMO governance across 6,000+ operational bare-metal and cloud systems during the enterprise Log4j zero-day crisis. Engineered custom Ansible inspection playbooks and Python tooling to rapidly identify nested and shaded Java libraries missed by commercial scanners, delivered actionable remediation datasets to engineering teams and directors, verified remediation, and compiled technical evidence packages validating compliance under strict federal deadlines.
 * **Vulnerability Governance Platform & SRE Error Budget Architecture (Python, PostgreSQL, Tableau):** Scaled monthly remediation throughput ~10x, cut High-severity remediation time >40%, and drove overdue backlogs down >90% across 6,000+ systems by architecting a FedRAMP governance platform. Pioneered SRE "Error Budget" mathematical algorithms (Severity × Blast Radius × Time Decay) with automated variance credits, dynamic Ansible inventory patching, and executive scorecards.
+* **FedRAMP Continuous Monitoring (ConMon) Inventory Reconciliation:** Eliminated 12–15 hours of monthly manual "stare and compare" audits across the SecOps team by engineering Python and Pandas automation reconciling 80,000-record ConMon inventories against ServiceNow CMDB and Qualys APIs, eliminating human error and manual editing inconsistencies.
 * **Cross-Discipline Systems Translation & Root Cause Analysis (RCA):** Accelerated remediation velocity and eliminated cross-team blockers by translating complex CVEs, kernel vulnerabilities, and DISA STIG benchmarks into actionable remediation paths for software, storage, and networking teams. Conducted root-cause analysis (RCA) and authored formal compliance deviation packages submitted to the federal PMO.
 * **Compliance-as-Code & SRE Toil Elimination (STIG XCCDF/XML & Qualys API):** Eliminated hundreds of engineering hours of manual compliance auditing by building automated Python pipelines that ingested Qualys API results, parsed DISA STIG XCCDF (XML) benchmarks, and correlated running Linux server configurations directly to federal controls.
-* **Engineering Mentorship & Technical Guidance:** Mentored junior and mid-level engineers on Linux diagnostics, root-cause troubleshooting, and operational practices. Supported hiring through technical interviewing and structured onboarding across distributed remote teams.
+* **Engineering Mentorship & Structured Operational Handover:** Accelerated team autonomy by instituting a two-phase onboarding model: teaching underlying system mechanics, training on custom automation tooling, and co-piloting live recurring workflows in Month 1 to transition full operational ownership by Month 2 under federal SLAs.
 
-### **Cisco Systems** | Cloud Systems Engineer & Lead Compute Engineer
+### **Cisco Systems** | Cloud Systems Engineer & Lead Compute Engineer (Senior SRE / Infrastructure)
 *Jan 2017 – Aug 2019 | Remote (USA)*
 
 * **Lead Compute Engineering, Virtualization & SAN Fabric Operations:** Maintained high availability and strict federal SLAs across enterprise VMware vSphere clusters and Cisco UCS bare metal, resolving virtualization performance bottlenecks and supporting Cisco MDS Fibre Channel SAN switch fabrics and zoning.
 * **High-Availability Enterprise Identity & SOC Collaboration (FreeIPA/HBAC):** Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack using Ansible to replace a legacy 389 Directory Server environment. Partnered with the Security Operations Center (SOC) to establish fine-grained Host-Based Access Control (HBAC) rule sets, standardizing zero-trust identity across 2,000+ hosts.
-* **Compute Security, Fleet Remediation & Bastion Infrastructure:** Developed Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges. Hardened VMware vSphere clusters, Cisco UCS bare metal, and managed secure access infrastructure including Linux bastion hosts, Active Directory, and LDAP directory services across 2,000+ systems.
+* **FedRAMP Audit Defense & Automated Evidence Collection:** Defended federal secure access controls across multiple annual FedRAMP audits, serving as primary engineering SME for bastion jump hosts, Active Directory domain controllers, and LDAP/FreeIPA identity platforms. Authored custom Ansible playbooks and shell scripts to automate evidence gathering across 2,000+ systems, eliminating manual console audit toil.
 
-### **Select Group @ Cisco** | Cloud DevOps/QA Engineer (Contract)
+### **Select Group @ Cisco** | Cloud DevOps/QA Engineer (Cloud Systems SRE)
 *Feb 2016 – Jan 2017 | Remote (USA)*
 
 * **Scheduler Latency Optimization & Cloud Orchestration (OpenStack Nova):** Eliminated cloud provisioning bottlenecks by identifying and removing redundant Nova Scheduler filters in OpenStack for Cisco's InterCloud Services (OpenStack-on-OpenStack on Cisco UCS bare metal), reducing instance scheduling time for 700 nodes from 20 seconds to 5 seconds—a **75% improvement** in orchestration speed.
