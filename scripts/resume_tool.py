@@ -396,7 +396,7 @@ class ResumeDatabase:
         out.append("\n" + "#" * 40)
         out.append("1. HEADLINE (Limit: 220 chars)")
         out.append("#" * 40)
-        headline = "Platform Engineer & Technical Leader | FedRAMP & Systems SRE | Data Platforms (Python/Pandas/PostgreSQL) | Declarative Infrastructure & Identity (Ansible/FreeIPA) | FIRST Robotics Mentor"
+        headline = "Staff Platform Engineer | Python, Ansible, Linux, VMware | FedRAMP ATO & Systems SRE Across 6,000+ Nodes"
         out.append(f"{headline}  [{len(headline)} / 220 chars]\n")
 
         out.append("#" * 40)
