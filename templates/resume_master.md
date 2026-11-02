@@ -66,12 +66,6 @@ Rooted in first-principles systems discipline from a U.S. Air Force AWACS radar 
 * **Resilient Storage Architecture & Automated Provisioning (Ceph / SaltStack):** Architected a cost-effective high-availability storage and compute platform across commodity Dell rackmount servers, using Ceph distributed block storage to protect virtual machine disks against physical host failures. Validated fault tolerance in an executive demonstration by maintaining uninterrupted data access while systematically failing two of three storage nodes; leveraged SaltStack to automate rapid VM provisioning and cluster configuration.
 * **System Telemetry & Network Reliability:** Integrated proactive telemetry checks into Nagios and Observium to monitor production systems, decreasing service restarts from weekly to quarterly. Diagnosed WAN/VPN bottlenecks and upgraded gateway hardware to double network throughput.
 
-### **Foundational Systems, Infrastructure & Testing Experience**
-*Prior Systems Foundations (StorageSoft / Phoenix Technologies)*
-
-* **Engineering Operations & Greenfield Lab Buildout:** Built out corporate server and network infrastructure from scratch following a spin-off. Reorganized QA and support into a 10-person rotating team: technicians alternated between hands-on lab validation (drive controllers, NICs, PXE boot, multicast routing) and customer support, enabling direct lab reproduction of field issues and accelerating resolution times.
-* **Quality Engineering Foundations & Defect Governance:** Promoted from contractor to QA Lead, transforming ad-hoc testing into a standardized quality engineering lifecycle. Replaced informal email chains and handwritten notepads with the company's first centralized bug-tracking system and structured multi-OS test matrices, eliminating defect escapes in commercial releases.
-
 ## Systems Leadership & Robotics Mentorship
 
 ### **FIRST Robotics Team 3160 (F.R.O.G.)** | Lead Engineering & Systems Mentor
