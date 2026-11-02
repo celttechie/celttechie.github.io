@@ -1,0 +1,194 @@
+:root {
+  /* Light Mode Palette: Slate & Nordic Teal */
+  --md-primary-fg-color: #1e293b;
+  --md-primary-fg-color--dark: #0f172a;
+  --md-accent-fg-color: #0d9488;
+  --md-accent-fg-color--transparent: rgba(13, 148, 136, 0.1);
+  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-md-color-scheme="slate"] {
+  /* Dark Mode Palette: Slate & Nordic Teal */
+  --md-primary-fg-color: #0f172a;
+  --md-primary-fg-color--dark: #020617;
+  --md-accent-fg-color: #0d9488;
+  --md-accent-fg-color--transparent: rgba(13, 148, 136, 0.15);
+  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Custom premium styling tweaks */
+.md-header {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom rounded corners for code blocks */
+.highlight {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-md-color-scheme="slate"] .highlight {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Make links look clean and smooth */
+.md-content a {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.2s, color 0.2s;
+}
+
+.md-content a:hover {
+  border-bottom-color: var(--md-accent-fg-color);
+}
+
+/* Resume Header Styling for MkDocs */
+.resume-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--md-accent-fg-color);
+  padding-bottom: 1rem;
+}
+
+.resume-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.resume-header .subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--md-accent-fg-color);
+  margin-bottom: 0.8rem;
+}
+
+.resume-header .contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Skills grid styling for MkDocs web view */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-grid h3 {
+  margin-top: 0.5rem;
+}
+
+.print-only {
+  display: none !important;
+}
+
+/* Smooth scrolling for anchor jumps */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Pulse animation when jumping to any section or bullet anchor */
+:target,
+.target-pulse-active {
+  animation: target-pulse 2.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes target-pulse {
+  0% {
+    background-color: rgba(13, 148, 136, 0.28);
+    border-radius: 6px;
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
+  }
+  70% {
+    background-color: rgba(13, 148, 136, 0.12);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+/* Skill Tags in Experience and Lab Bullets */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.78rem;
+}
+
+.skill-tags a {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(13, 148, 136, 0.08);
+  color: var(--md-accent-fg-color);
+  padding: 2px 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.skill-tags a:hover {
+  background: var(--md-accent-fg-color);
+  color: #ffffff;
+  border-color: var(--md-accent-fg-color);
+  transform: translateY(-1px);
+}
+
+.skill-tags a.back-to-matrix {
+  background: rgba(30, 41, 59, 0.08);
+  color: #475569;
+  border-color: rgba(30, 41, 59, 0.25);
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .skill-tags a.back-to-matrix {
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-tags a.back-to-matrix:hover {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+}
+
+[data-md-color-scheme="slate"] .skill-tags a.back-to-matrix:hover {
+  background: #38bdf8;
+  color: #0f172a;
+  border-color: #38bdf8;
+}
+
+/* Matrix Table Enhancements */
+.matrix-table table {
+  width: 100%;
+}
+
+.matrix-table td a.proof-link {
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+  border-bottom: 1px dashed var(--md-accent-fg-color);
+}
+
+.matrix-table td a.proof-link:hover {
+  border-bottom-style: solid;
+}
+
