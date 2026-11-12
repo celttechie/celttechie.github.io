@@ -53,7 +53,7 @@ categories:
       - id: virtualization
         name: "Virtualization (vSphere/ESXi, XenServer, Proxmox/KVM, VirtualBox)"
         short_name: "vSphere / ESXi / Proxmox"
-        description: "High-density enterprise virtualization, clustering, and VM lifecycle automation."
+        description: "High-density enterprise virtualization, KubeVirt cloud-native VM lifecycle, clustering, and hypervisor automation."
       - id: distributed_storage
         name: "Distributed Storage (Ceph RBD, iSCSI)"
         short_name: "Ceph Block Storage (RBD)"

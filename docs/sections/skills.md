@@ -14,7 +14,7 @@
 *   **AI Serving & SRE Runbooks:** High-throughput model serving (vLLM, continuous batching, PagedAttention), Prometheus telemetry, PCIe GPU recovery runbooks, and post-mortem RCAs.
 *   **Cisco UCS Hardware:** Enterprise bare-metal compute and fabric interconnect administration.
 *   **OpenStack:** Public/private cloud orchestration, scheduler tuning, and infrastructure verification.
-*   **vSphere / ESXi / Proxmox:** High-density enterprise virtualization, clustering, and VM lifecycle automation.
+*   **vSphere / ESXi / Proxmox:** High-density enterprise virtualization, KubeVirt cloud-native VM lifecycle, clustering, and hypervisor automation.
 *   **Ceph Block Storage (RBD):** High-availability distributed storage clusters, snapshot management, and performance benchmarking.
 *   **HA Clustering:** Designing failover systems and fault-tolerant identity/compute clusters.
 *   **Low-SWaP Edge Devices:** Deploying and stress-testing containerized workloads across low-power ARM64 single-board computers and air-gapped testbeds.

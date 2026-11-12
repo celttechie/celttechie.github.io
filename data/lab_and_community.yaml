@@ -7,6 +7,7 @@
     air-gapped delivery platforms, sovereign AI orchestration, and data pipeline engineering on dedicated
     workstation infrastructure.
   skills:
+    - virtualization
     - gpu_ai_infra
     - k8s_openshift_platform
     - ai_serving_sre
@@ -18,7 +19,33 @@
     - fedramp_stig
     - ha_clustering
     - root_cause_diagnostics
+    - solutions_architecture
+    - cicd
   projects:
+    - id: uds_vm_operator
+      title: "Cloud-Native Virtualization Operator & Upstream KubeVirt CDI Contribution (uds-vm-operator)"
+      description: "Air-gap ready reference implementation and contribution-ready Kubernetes operator declaratively managing secure, NIST SP 800-53 compliant virtual machines on KubeVirt and Containerized Data Importer (CDI) within Defense Unicorns UDS environments. Authored upstream PR ([#4340](https://github.com/kubevirt/containerized-data-importer/pull/4340)) in `kubevirt/containerized-data-importer` adding cryptographic checksum validation (algorithm:hash) for DataVolume uploads ([Issue #4104](https://github.com/kubevirt/containerized-data-importer/issues/4104)). Followed a two-stage architecture prototyping reconciliation in Python (`kopf`) before compiling a high-performance Go operator (`controller-runtime`) and CLI (`uds-vmctl`), packaged as an offline Zarf bundle with continuous compliance validation via Lula (OSCAL)."
+      skills:
+        [
+          "virtualization",
+          "k8s_openshift_platform",
+          "linux_systems",
+          "fedramp_stig",
+          "cicd",
+          "solutions_architecture",
+        ]
+
+    - id: kubevirt_dev_platform
+      title: "Cloud-Native Virtualization Dev & Test Platform (kubevirt-dev-platform)"
+      description: "Dedicated cloud-native virtualization development and testing platform running on bare-metal NVMe. Features nested KVM hypervisor virtual machines with snapshot baseline trees to develop, test, and validate CNCF KubeVirt, CDI, and UDS VM operator workloads in an isolated, reproducible testbed."
+      skills:
+        [
+          "virtualization",
+          "linux_systems",
+          "ha_clustering",
+          "root_cause_diagnostics",
+        ]
+
     - id: openshift_ai_infra
       title: "OpenShift & Kubernetes AI Infrastructure (openshift-ai-infrastructure)"
       description: "Hands-on research and applied SRE platform for enterprise AI stacks, bridging bare-metal hardware and Kubernetes. Engineered host PCIe VFIO passthrough and IOMMU isolation for NVIDIA GPU acceleration, deployed the NVIDIA GPU Operator with CRI-O Container Device Interface (CDI) and time-slicing multi-tenancy, and orchestrated production OpenAI-compatible vLLM inference (PagedAttention, continuous batching) alongside KServe/RHOAI declarative overlays. Formulated Day-2 SRE operational runbooks (PCIe bus reset, node drain), DCGM/Prometheus alerting for KV-cache and P95 latency, and incident post-mortems."

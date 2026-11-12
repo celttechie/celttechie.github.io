@@ -19,6 +19,12 @@
 
     Automated DISA STIG continuous compliance auditing by engineering Python pipelines parsing XCCDF (XML) benchmarks against live Qualys scans, eliminating hundreds of manual engineering audit hours across federal cloud boundaries.
 
+-   **Upstream CNCF Contribution & Cloud-Native Virtualization (KubeVirt / CDI / UDS)**
+
+    ---
+
+    Authored upstream pull request (#4340) in CNCF KubeVirt Containerized Data Importer (CDI) implementing cryptographic checksum validation for DataVolume uploads; engineered declarative `uds-vm-operator` with automated Lula OSCAL cATO continuous compliance and Zarf air-gapped packaging.
+
 -   **Cloud-Native AI Infrastructure & Air-Gapped Packaging (Lab Systems SRE)**
 
     ---

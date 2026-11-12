@@ -1,0 +1,121 @@
+# Canonical Voice, Framing, Role Archetypes, and Application Q&A Playbook
+# Single Source of Truth for tone, positioning, and application synthesis
+
+voice_rules:
+  tenure_standard: "15+ years of enterprise platform, systems SRE, and infrastructure engineering leadership"
+  de_aging_rules:
+    - "Never write 20+, 25+, or 30+ years in resumes, cover letters, or answers."
+    - "Do not display dates prior to 2014 on resumes; collapse earlier foundations into an undated 'Prior Systems & Testing Foundations' summary."
+    - "Frame foundational military (USAF AWACS) and testing experience as rigorous systems SRE and quality engineering roots without exposing graduation or military exit dates."
+  tone_principles:
+    - "Authentic, first-person technical leadership: speaking engineer-to-engineer and technical leader-to-hiring manager."
+    - "Metric-anchored accomplishments: follow Google's X-Y-Z formula ('Accomplished [X] as measured by [Y], by doing [Z]') with senior ownership verbs (Architected, Spearheaded, Eliminated, Engineered, Defended)."
+    - "No fluff or buzzword soup: avoid empty corporate buzzwords ('results-driven visionary', 'synergistic paradigm'). Let concrete architectures, node counts, and percentages demonstrate mastery."
+    - "Zero meta-commentary: never mention resume formulas, Jeff Su, Farah Sharghi, ex-Google recruiters, or the literal phrase 'safe pair of hands' in generated text."
+  technical_mental_models:
+    first_principles_learning:
+      - "Deconstruct invariants: strip away marketing hype to understand kernel, hardware, and network primitives (e.g., eBPF bypasses iptables, IOMMU DMA isolation, etcd fsync <10ms direct I/O)."
+      - "Author Architecture Decision Records (ADRs) first: document context, trade-offs, and failure modes before code."
+      - "Build isolated sandbox substrates: use local KVM/Libvirt/OpenTofu topologies to replicate cloud networks without cloud spend."
+      - "Iterate with rapid feedback loops: automated preflight checks (doctor.py) and stage verification test harnesses."
+    security_and_determinism:
+      - "Zero-trust determinism over shortcuts: never disable security (e.g., never use StrictHostKeyChecking=no); engineer deterministic Ed25519 key pinning."
+      - "Immutability eliminates drift: headless, read-only rootfs (Talos Linux, RHCOS CoreOS) with API-managed declarative state."
+      - "Compliance as executable code: continuous compliance using Lula and OSCAL validating NIST/FedRAMP controls live against clusters, replacing manual paperwork."
+      - "Failure modes must be engineered and practiced: automated fault-injection, PCIe bus reset runbooks (/sys/bus/pci/devices/.../reset), and blameless post-mortems."
+
+skill_bridges:
+  kubernetes_and_cloud_native:
+    positioning: "Honest, credible bridge: deep foundational systems, virtualization, and bare-metal mastery actively applied to cloud-native platforms."
+    narrative: >-
+      I have extensive foundational mastery across large-scale bare metal (Cisco UCS, PXE), enterprise virtualization (KVM, VMware ESXi, OpenStack), and Linux systems. Over the past several years, I have actively directed that experience into cloud-native and Kubernetes platforms—engineering declarative Single-Node OpenShift (SNO 4.16+) with PCIe VFIO GPU acceleration, immutable Talos Linux with eBPF Cilium networking, and air-gapped container delivery using Defense Unicorns Zarf/UDS and Lula (OSCAL). I understand the entire stack from the physical PCIe bus and storage IOPS up to container runtimes (CRI-O, containerd) and declarative GitOps, enabling me to ramp up rapidly and operate production Kubernetes clusters with operational discipline.
+  aws_and_public_cloud:
+    positioning: "Private cloud and automation foundation accelerating public cloud operational excellence."
+    narrative: >-
+      Having engineered and automated multi-tenant private clouds (OpenStack on Cisco UCS, VMware vSphere) across thousands of nodes and authored declarative IaC (Ansible, OpenTofu), I approach public cloud (AWS, GovCloud) from foundational networking, compute, and security primitives. My background leading FedRAMP Moderate compliance across hybrid footprints enables me to architect secure, cost-effective AWS landing zones, VPC topologies, and IAM policies without steep learning curves.
+
+role_archetypes:
+  bare_metal_cloud_infra:
+    name: "Bare-Metal Cloud & Systems Infrastructure"
+    target_companies: ["Render", "Equinix Metal", "CoreWeave", "Crusoe", "Nebius"]
+    primary_themes:
+      - "Full bare-metal lifecycle automation: PXE boot, IPMI/LOM lights-out management, Cisco UCS, Ansible, and automated OS deployment."
+      - "Cloud orchestration performance: OpenStack Nova scheduler latency optimization (75% speedup across 700 nodes)."
+      - "High-availability distributed storage: Ceph distributed block storage (RBD) fault tolerance across commodity Dell servers (2-node failure resilience)."
+      - "Bare-metal hypervisor substrates: KVM/Libvirt, direct I/O NVMe tuning (cache=none, io=threads) for sub-10ms etcd fsync latency."
+      - "Modern bare-metal Kubernetes: Talos Linux immutable read-only rootfs, eBPF Cilium networking, L2 BGP load balancing."
+    tone_guidelines:
+      - "Lead with hardware-aware systems engineering, performance, storage throughput, and bare-metal automation."
+      - "De-emphasize federal compliance paperwork and DoD acronyms; focus on cost efficiency, orchestration scale, and eliminating manual datacenter toil."
+
+  platform_security_fedramp_ai:
+    name: "Platform Engineering, FedRAMP & AI/HPC Infrastructure"
+    target_companies: ["Quilter", "Defense Unicorns", "Horizon3.ai", "TurbineOne", "Pantheon Data"]
+    primary_themes:
+      - "Enterprise federal compliance at scale: 6,000+ bare-metal and cloud systems under HHS PMO FedRAMP Moderate ATO governance."
+      - "Zero-day incident response: Log4j crisis response with custom Python/Ansible tooling locating nested libraries missed by commercial scanners."
+      - "SRE Error Budget vulnerability governance: mathematical scoring (Severity × Blast Radius × Time Decay) scaling remediation velocity 10x."
+      - "Compliance-as-Code: DISA STIG XCCDF and Qualys API Python pipelines eliminating hundreds of hours of manual audit toil."
+      - "Air-gapped and restricted-network delivery: Defense Unicorns Zarf/UDS packaging and continuous Lula (OSCAL) validation for cATO."
+      - "AI/HPC platform infrastructure: OpenShift SNO, PCIe VFIO GPU passthrough, NVIDIA GPU Operator (CDI), and vLLM inference serving."
+    tone_guidelines:
+      - "Emphasize security compliance as an engineering accelerator rather than a blocker."
+      - "Highlight immediate readiness for security clearance sponsorship (USAF veteran, U.S. citizen, 7+ years in FedRAMP boundaries)."
+      - "Demonstrate ability to bring order, auditability, and automated rigor to fast-moving AI/defense platforms."
+
+  sre_reliability_production:
+    name: "Site Reliability Engineering (SRE) & Production Operations"
+    target_companies: ["NVIDIA DGX Cloud", "Datadog", "CrowdStrike", "ServiceNow"]
+    primary_themes:
+      - "Quantitative SRE governance: Error budgets applied to compliance and vulnerability management, turning binary friction into objective risk spend."
+      - "Fleet observability and reconciliation: Python/Pandas automation reconciling 80,000-record inventories across ServiceNow CMDB and Qualys telemetry."
+      - "Mission-critical reliability: USAF AWACS radar flightline diagnostics, zero-downtime rolling ESXi upgrades, and 100% reliable cloudbase-init first boot."
+      - "Hardware/accelerator SRE: DCGM/Prometheus alerting, KV-cache latency monitoring, PCIe bus reset runbooks, and blameless post-mortems."
+    tone_guidelines:
+      - "Focus on proactive reliability, MTTR reduction, blameless engineering culture, and root-cause problem solving."
+
+application_qa_bank:
+  - id: why_company_bare_metal
+    archetype: bare_metal_cloud_infra
+    question: "Why do you want to join our bare-metal infrastructure team?"
+    approved_answer: >-
+      I have spent the core of my career operating where software meets physical hardware—from maintaining radar electronics on AWACS aircraft in the Air Force to automating bare-metal server lifecycles across hundreds of Cisco UCS servers and tuning NVMe storage pools for sub-10ms etcd fsync latency. Most cloud platforms today are abstractions built on top of hyperscalers. What excites me about your mission is that you are building the modern cloud from the metal up. That requires deep respect for physical hardware primitives, kernel drivers, PCIe busses, and storage fabrics, combined with modern declarative automation. I want to bring my 15+ years of bare-metal automation, Linux systems mastery, and hypervisor engineering to help scale your physical infrastructure fleet reliably and cost-effectively.
+
+  - id: why_company_security_ai
+    archetype: platform_security_fedramp_ai
+    question: "Why are you interested in our Platform / Security Engineering team?"
+    approved_answer: >-
+      Your team is tackling the critical intersection of high-velocity engineering, complex computing workloads, and rigorous security and compliance. In my 7+ years directing platform reliability across 6,000+ FedRAMP-governed nodes at Cisco, I learned that security cannot be an afterthought or a mountain of static paperwork—it has to be automated, declarative code integrated directly into developer workflows. I was drawn to your mission because you need an experienced technical leader who can establish robust, auditable infrastructure and compliance-as-code from Day 1 without slowing down product innovation.
+
+  - id: complex_production_rca
+    archetype: general
+    question: "Describe a complex production or infrastructure problem you diagnosed and resolved."
+    approved_answer: >-
+      In our OpenStack private cloud fleet, we were hit with an intermittent, highly disruptive issue: Windows Server virtual machines were entering infinite reboot loops during initial provisioning. Because it occurred during boot, standard OS-level logging was unavailable.
+
+      I dug into the boot sequencing from first principles, tracing interactions between cloud-init, the Windows Sysprep specialize pass, and hypervisor provisioning. I discovered a subtle race condition in cloudbase-init: on fast bare-metal nodes, the cloudbase-init service started prematurely while the unattended Sysprep specialization was still rewriting machine configuration, causing Sysprep to detect unauthorized process execution and force a reboot loop.
+
+      I engineered an orchestration fix that synchronized the service dependency tree, ensuring cloudbase-init remained dormant until Sysprep completed cleanly. This resolved the contention and delivered 100% deterministic first-boot provisioning across the entire cloud fleet.
+
+  - id: sre_error_budget_initiative
+    archetype: sre_reliability_production
+    question: "Tell me about a time you introduced a new engineering process or platform that significantly improved operational efficiency."
+    approved_answer: >-
+      At Cisco, vulnerability management had become a major source of friction across 6,000+ bare-metal and cloud systems. Upstream scanning automation created a separate Jira ticket for every single host affected by a CVE ('1 host, 1 ticket'), deluging engineers with thousands of disconnected tickets. Furthermore, compliance was treated as a binary pass/fail, creating constant contention between security teams and product engineering.
+
+      I took the initiative to invert the architecture: I built a Python ETL daemon to ingest open findings past the FedRAMP boundary into a centralized PostgreSQL warehouse, aggregating findings by CVE and system cluster. I built dynamic REST endpoints that formatted live vulnerable hosts directly into automated Ansible inventories (/ansible/inventory/<poam_id>), allowing an engineer to remediate an entire cluster with a single playbook run.
+
+      Then, in partnership with our Director of Security, I designed mathematical algorithms for an SRE 'Error Budget' for compliance (Severity × Blast Radius × Time Decay) with automated variance credits. This gave engineering teams an objective risk budget to manage, cut High-severity remediation time by over 40%, scaled monthly resolution throughput ~10x, and eliminated >90% of overdue compliance backlogs.
+
+  - id: approach_to_rapid_learning
+    archetype: general
+    question: "How do you approach learning and mastering an unfamiliar technology stack?"
+    approved_answer: >-
+      I use a disciplined 4-step framework based on first principles:
+
+      1. Deconstruct the Invariants: I strip away the vendor marketing and understand the foundational primitives—whether that's how eBPF kernel hooks bypass iptables or how NVMe direct I/O isolates disk writes from hypervisor CPU contention.
+      2. Document with Architecture Decision Records (ADRs): Before writing code, I author formal ADRs outlining the context, trade-offs, and failure modes. Across my recent lab projects, I've authored over 30 ADRs.
+      3. Build Isolated Sandbox Substrates: I use local KVM/Libvirt and OpenTofu to construct layered sandboxes that mirror production topologies (isolated subnets, jump hosts, dual NICs) without incurring cloud costs or host pollution.
+      4. Iterate with Automated Feedback Loops: I write preflight validation scripts and stage test harnesses from Day 1 to verify functionality deterministically.
+
+      This approach allows me to move from zero knowledge to architecting resilient, production-grade platforms in weeks rather than months.

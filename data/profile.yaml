@@ -15,7 +15,7 @@ executive_summary: |
 
   At Cisco I spent more than seven years leading platform reliability, compliance automation, and systems architecture across 6,000+ bare-metal and cloud nodes supporting Webex FedRAMP Moderate platforms. During the Log4j zero-day I directed technical incident response across the fleet, writing custom Ansible and Python tooling that uncovered nested libraries missed by commercial scanners and helped defend continuous ATO with the PMO. I also designed an enterprise vulnerability data platform and introduced mathematical SRE Error Budget scoring that increased monthly remediation throughput roughly 10x and cleared more than 90% of overdue compliance backlogs.
 
-  Today my active engineering focus is cloud-native edge and AI platforms. I design and build open-source architectures that include containerized SD-WAN dataplanes, asynchronous Python edge telemetry gateways (MAVLink/ROS2 to TAK/CoT), and bare-metal Red Hat OpenShift testbeds with PCIe VFIO GPU passthrough and high-throughput vLLM model serving.
+  Today my active engineering focus is cloud-native platforms and systems architecture. I design and build open-source reference platforms bridging bare-metal hypervisors and modern Kubernetes—including cloud-native virtualization (KubeVirt, upstream CDI contribution, and declarative VM operators), containerized SD-WAN dataplanes, and bare-metal Red Hat OpenShift testbeds with PCIe VFIO GPU passthrough and high-throughput vLLM model serving.
 
   I am targeting Staff Platform Engineer and Lead Systems SRE roles where I can architect declarative, secure infrastructure platforms, remove engineering friction through deterministic automation (Python, Ansible, Linux, and related tooling), and lead high-stakes systems reliability at enterprise scale.
 
@@ -27,12 +27,18 @@ selected_impact:
     description: "Architected centralized vulnerability data warehouse and self-service engineering console; pioneered SRE \"Error Budget\" mathematical scoring (Severity × Blast Radius × Time Decay) that scaled monthly remediation throughput ~10x and eliminated >90% of overdue cloud backlogs."
   - title: "Compliance-as-Code & SRE Toil Elimination (STIG XCCDF & Qualys API)"
     description: "Automated DISA STIG continuous compliance auditing by engineering Python pipelines parsing XCCDF (XML) benchmarks against live Qualys scans, eliminating hundreds of manual engineering audit hours across federal cloud boundaries."
+  - title: "Upstream CNCF Contribution & Cloud-Native Virtualization (KubeVirt / CDI / UDS)"
+    description: "Authored upstream pull request (#4340) in CNCF KubeVirt Containerized Data Importer (CDI) implementing cryptographic checksum validation for DataVolume uploads; engineered declarative `uds-vm-operator` with automated Lula OSCAL cATO continuous compliance and Zarf air-gapped packaging."
   - title: "Cloud-Native AI Infrastructure & Air-Gapped Packaging (Lab Systems SRE)"
     description: "Engineered Single-Node OpenShift (SNO 4.16+) and immutable Talos/eBPF Cilium platforms with PCIe VFIO GPU passthrough, NVIDIA GPU Operator, and vLLM serving, backed by Day-2 SRE operational runbooks and air-gapped Defense Unicorns Zarf/UDS/Lula OSCAL packaging."
 
 # Strategic ATS / Recruiter Keywords
 keywords:
   - "Solutions Architecture & Systems Integration"
+  - "Upstream CNCF Open-Source Contribution"
+  - "KubeVirt & Cloud-Native Virtualization"
+  - "Containerized Data Importer (CDI)"
+  - "Kubernetes Operators (controller-runtime)"
   - "Robotics Design & Subsystem Testing"
   - "Real-Time Embedded Controls & HIL Testing"
   - "Swerve Drive Kinematics & Vision Tracking (FROGlib)"

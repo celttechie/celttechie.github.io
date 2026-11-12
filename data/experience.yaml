@@ -206,9 +206,9 @@
 
     - id: als_automation
       title: "Resilient Storage Architecture & Automated Provisioning (Ceph / SaltStack)"
-      long_text: "Architected a cost-effective high-availability storage and compute platform across commodity Dell rackmount servers, using Ceph distributed block storage to protect virtual machine disks against physical host failures. Validated fault tolerance in an executive demonstration by maintaining uninterrupted data access while systematically failing two of three storage nodes; leveraged SaltStack to automate rapid VM provisioning and cluster configuration."
-      short_text: "Architected cost-effective HA platform using Ceph block storage on commodity Dell servers, maintaining uninterrupted data access during a live 2-node failure demonstration and automating VM provisioning via SaltStack."
-      linkedin_text: "Architected cost-effective HA platform using Ceph block storage on commodity Dell servers, maintaining uninterrupted data access during a live 2-node failure demonstration and automating VM provisioning via SaltStack."
+      long_text: "Eliminated slow, manual host-to-host VM disk copy migrations by architecting a high-availability Ceph distributed block storage platform across commodity Dell rackmount servers in a Denver colocation facility. Decoupled compute from storage across hypervisors, enabling virtual machine disks to attach and spin up instantly on alternate bare-metal servers without copying underlying data. Validated fault tolerance in an executive demonstration by maintaining uninterrupted data access while systematically failing two of three storage nodes; leveraged SaltStack to automate rapid VM provisioning and cluster configuration."
+      short_text: "Eliminated slow VM disk copies by architecting a Ceph distributed block storage cluster on Dell servers in Denver colo; enabled instant VM spin-up across alternate bare-metal hosts and proved 2-node failure tolerance."
+      linkedin_text: "Eliminated slow VM disk copies by architecting a Ceph distributed block storage cluster on Dell servers in Denver colo; enabled instant VM spin-up across alternate bare-metal hosts and proved 2-node failure tolerance."
       skills: ["distributed_storage", "ansible_salt", "ha_clustering", "linux_systems", "virtualization"]
 
     - id: als_data_integrity

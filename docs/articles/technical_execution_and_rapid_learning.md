@@ -16,7 +16,7 @@ tags:
 
 When entering an unfamiliar technology stack, what separates a superficial implementation from an enterprise-grade platform?
 
-Over the past several months, I immersed myself in modern systems and cloud-native technologies: **OpenTofu**, **Talos Linux**, **eBPF (Cilium)**, **GitOps (ArgoCD)**, **Air-Gapped Delivery (Defense Unicorns Zarf/UDS)**, **Compliance-as-Code (Lula/OSCAL)**, **Red Hat OpenShift (SNO 4.16+)**, **PCIe VFIO GPU Passthrough**, **NVIDIA GPU Operator (CDI)**, and **high-throughput vLLM model serving**. 
+Over the past several months, I immersed myself in modern systems and cloud-native technologies: **OpenTofu**, **Talos Linux**, **eBPF (Cilium)**, **GitOps (ArgoCD)**, **Air-Gapped Delivery (Defense Unicorns Zarf/UDS)**, **Compliance-as-Code (Lula/OSCAL)**, **Cloud-Native Virtualization (KubeVirt)**, **Containerized Data Importer (CDI)**, **Kubernetes Operators (Go / controller-runtime)**, **Red Hat OpenShift (SNO 4.16+)**, **PCIe VFIO GPU Passthrough**, **NVIDIA GPU Operator**, and **high-throughput vLLM model serving**. 
 
 I didn’t just follow "getting started" guides. I built complete, verifiable, self-healing platforms from first principles.
 
@@ -58,8 +58,17 @@ When exploring enterprise OpenShift and AI infrastructure, the initial temptatio
 I rejected that anti-pattern and architected a strict separation of concerns:
 - **[`openshift-sno-lab`](https://github.com/celttechie/openshift-sno-lab)** handles the declarative platform substrate: OpenTofu, KVM/libvirt, isolated networking (`virbr-ocp`), and NVMe storage latency tuning (<10ms etcd fsync).
 - **[`openshift-ai-infrastructure`](https://github.com/celttechie/openshift-ai-infrastructure)** handles the accelerator and workload plane: host PCIe VFIO binding, the NVIDIA GPU Operator (CDI), and OpenAI-compatible vLLM inference serving.
-
+ 
 By isolating the substrate lifecycle from the workload lifecycle, either layer can be upgraded, tested, or rebuilt without destabilizing the other.
+
+### Example: Two-Stage Operator Prototyping & Upstream KubeVirt CDI Contribution
+When engineering a Kubernetes operator to manage secure virtual machines in disconnected environments ([`uds-vm-operator`](https://github.com/celttechie/uds-vm-operator)), starting directly in compiled Go can slow initial exploratory validation.
+
+I enforced a **two-stage architecture**:
+1. **Rapid Python Prototyping (`kopf`)**: Validated Custom Resource Definitions (CRDs), spec semantics, and status reconciliation loops against live KubeVirt and CDI APIs in hours.
+2. **Production Go Implementation (`controller-runtime`)**: Once the mechanics were battle-tested, transitioned the architecture into an idiomatic, high-performance Go operator and dedicated CLI tool (`uds-vmctl`) with strict admission validation and Lula OSCAL continuous compliance checks.
+
+During end-to-end air-gap testing, I identified an upstream gap: CDI lacked cryptographic checksum validation for DataVolume upload streams, exposing disconnected deployments to corrupted or unverified VM images. Rather than hacking a local workaround, I traced CDI internals, identified upstream [Issue #4104](https://github.com/kubevirt/containerized-data-importer/issues/4104), and authored upstream pull request [**CDI PR #4340**](https://github.com/kubevirt/containerized-data-importer/pull/4340) in `kubevirt/containerized-data-importer`—implementing `algorithm:hash` validation, admission webhooks, streaming upload hashing, and comprehensive unit tests.
 
 ---
 
