@@ -12,6 +12,10 @@ voice_rules:
     - "Metric-anchored accomplishments: follow Google's X-Y-Z formula ('Accomplished [X] as measured by [Y], by doing [Z]') with senior ownership verbs (Architected, Spearheaded, Eliminated, Engineered, Defended)."
     - "No fluff or buzzword soup: avoid empty corporate buzzwords ('results-driven visionary', 'synergistic paradigm'). Let concrete architectures, node counts, and percentages demonstrate mastery."
     - "Zero meta-commentary: never mention resume formulas, Jeff Su, Farah Sharghi, ex-Google recruiters, or the literal phrase 'safe pair of hands' in generated text."
+  anti_overstatement_rules:
+    - "Never claim multi-year enterprise production tenure in technologies explored during recent lab research (e.g. KubeVirt, Go, HugePages, VFIO, Zarf, Lula/cATO). Always frame them honestly as rapid immersion, first-principles evaluation, and hands-on lab prototyping in the Innovation Lab."
+    - "Avoid hyper-dramatic AI phrasing like 'I instrumented the boot sequencing from first principles' or 'synchronized the service dependency tree' when describing routine root-cause troubleshooting. State the actual diagnostic actions taken (e.g. watching console boot, inspecting Sysprep passes, checking Event Viewer and dmesg)."
+    - "Never claim architecture of public cloud landing zones (AWS, GCP) without having led that in production. Frame public cloud through the lens of strong private cloud foundations (OpenStack, Cisco UCS, VMware) accelerating rapid cloud adoption."
   technical_mental_models:
     first_principles_learning:
       - "Deconstruct invariants: strip away marketing hype to understand kernel, hardware, and network primitives (e.g., eBPF bypasses iptables, IOMMU DMA isolation, etcd fsync <10ms direct I/O)."
@@ -28,11 +32,11 @@ skill_bridges:
   kubernetes_and_cloud_native:
     positioning: "Honest, credible bridge: deep foundational systems, virtualization, and bare-metal mastery actively applied to cloud-native platforms."
     narrative: >-
-      I have extensive foundational mastery across large-scale bare metal (Cisco UCS, PXE), enterprise virtualization (KVM, VMware ESXi, OpenStack), and Linux systems. Over the past several years, I have actively directed that experience into cloud-native and Kubernetes platforms—engineering declarative Single-Node OpenShift (SNO 4.16+) with PCIe VFIO GPU acceleration, immutable Talos Linux with eBPF Cilium networking, and air-gapped container delivery using Defense Unicorns Zarf/UDS and Lula (OSCAL). I understand the entire stack from the physical PCIe bus and storage IOPS up to container runtimes (CRI-O, containerd) and declarative GitOps, enabling me to ramp up rapidly and operate production Kubernetes clusters with operational discipline.
+      Having built deep foundational mastery across large-scale bare metal (Cisco UCS, PXE), enterprise virtualization (KVM, VMware ESXi, OpenStack), and Linux systems, I have actively directed that experience into cloud-native and Kubernetes platforms over the past several months in the lab. I treat Kubernetes from the physical hardware up—engineering declarative Single-Node OpenShift (SNO 4.16+) with PCIe VFIO GPU acceleration, immutable Talos Linux with eBPF Cilium networking, cloud-native virtualization with KubeVirt, and air-gapped delivery using Defense Unicorns Zarf/UDS and Lula (OSCAL). My understanding of the underlying hypervisor, storage IOPS, and container runtimes enables me to ramp up rapidly and troubleshoot platforms from first principles.
   aws_and_public_cloud:
     positioning: "Private cloud and automation foundation accelerating public cloud operational excellence."
     narrative: >-
-      Having engineered and automated multi-tenant private clouds (OpenStack on Cisco UCS, VMware vSphere) across thousands of nodes and authored declarative IaC (Ansible, OpenTofu), I approach public cloud (AWS, GovCloud) from foundational networking, compute, and security primitives. My background leading FedRAMP Moderate compliance across hybrid footprints enables me to architect secure, cost-effective AWS landing zones, VPC topologies, and IAM policies without steep learning curves.
+      Having engineered and automated multi-tenant private clouds (OpenStack on Cisco UCS, VMware vSphere) across thousands of nodes and authored declarative IaC (Ansible, OpenTofu), I approach public cloud (AWS, GovCloud) from foundational networking, compute, and security primitives. My background with FedRAMP Moderate compliance across hybrid environments enables me to quickly navigate VPC topologies, IAM security baselines, and cloud infrastructure without steep learning curves.
 
 role_archetypes:
   bare_metal_cloud_infra:
@@ -91,11 +95,7 @@ application_qa_bank:
     archetype: general
     question: "Describe a complex production or infrastructure problem you diagnosed and resolved."
     approved_answer: >-
-      In our OpenStack private cloud fleet, we were hit with an intermittent, highly disruptive issue: Windows Server virtual machines were entering infinite reboot loops during initial provisioning. Because it occurred during boot, standard OS-level logging was unavailable.
-
-      I dug into the boot sequencing from first principles, tracing interactions between cloud-init, the Windows Sysprep specialize pass, and hypervisor provisioning. I discovered a subtle race condition in cloudbase-init: on fast bare-metal nodes, the cloudbase-init service started prematurely while the unattended Sysprep specialization was still rewriting machine configuration, causing Sysprep to detect unauthorized process execution and force a reboot loop.
-
-      I engineered an orchestration fix that synchronized the service dependency tree, ensuring cloudbase-init remained dormant until Sysprep completed cleanly. This resolved the contention and delivered 100% deterministic first-boot provisioning across the entire cloud fleet.
+      In our OpenStack private cloud on Cisco UCS bare metal, Windows Server virtual machines were intermittently failing during initial deployment and getting stuck in an infinite reboot loop. Because standard Windows event logs weren't accessible during early boot, I watched the boot sequence through the VM console to see exactly where it was hanging. I noticed that the failure and reboot always happened while Windows Sysprep was in its `specialize` pass. After doing some research, I found that we were hitting a timing race condition: on our fast bare-metal servers, the `cloudbase-init` service was starting up before Sysprep had finished specializing the system and configuring drivers, which corrupted the setup process and triggered Windows to reboot. To fix it, I updated our image configuration to keep the `cloudbase-init` service dormant during setup, using the built-in Windows `SetupComplete.cmd` script to enable and start the service only after Sysprep had fully completed. This eliminated the reboot loops across our cloud fleet.
 
   - id: sre_error_budget_initiative
     archetype: sre_reliability_production
@@ -119,3 +119,25 @@ application_qa_bank:
       4. Iterate with Automated Feedback Loops: I write preflight validation scripts and stage test harnesses from Day 1 to verify functionality deterministically.
 
       This approach allows me to move from zero knowledge to architecting resilient, production-grade platforms in weeks rather than months.
+
+  - id: vm_migration_distributed_storage
+    archetype: bare_metal_cloud_infra
+    question: "Describe a project involving virtual machine images (creating, converting, importing, migrating, or updating them)."
+    approved_answer: >-
+      At Australian Laboratory Services (ALS), we needed to migrate virtual machines between bare-metal VMware ESXi servers to perform hardware upgrades and routine maintenance. Because our ESXi servers relied on local storage, moving virtual machines between standalone hosts meant copying full VMDK disk files over the network. Copying entire disk images across the network took a long time for each machine, stretching out maintenance windows.
+
+      To eliminate the need to copy disk images between servers every time we shifted VMs around, I architected and deployed an Ubuntu-based Ceph distributed block storage cluster connected to our VMware ESXi environment. By presenting shared distributed block storage to all our hypervisors, the VMDK disks lived on shared Ceph storage rather than local host drives. When a bare-metal server needed maintenance, another ESXi host could immediately mount the shared VM disk and start running it while the first server shut down.
+
+      We verified the setup at both storage and guest levels: validating that Ceph remained operational and served active files while deliberately failing storage nodes during an executive demonstration, and inspecting Windows Event Viewer and Linux dmesg/syslog to confirm disks mounted cleanly with zero filesystem corruption or I/O errors.
+
+  - id: using_ai_in_engineering
+    archetype: general
+    question: "Tell us about a recent time you used AI to better understand a complex technical concept or automate away a piece of tedious tech debt."
+    approved_answer: >-
+      While researching KubeVirt and contributing an upstream feature to KubeVirt’s Containerized Data Importer (CDI PR #4340), I used an agentic AI pair-programming environment. As a systems engineer whose development background has primarily been in Python and Linux automation, I used the AI to help me explore and navigate a large, unfamiliar Go codebase.
+
+      What worked best was using the AI as an interactive collaborator that I could direct and question as we went—asking it to explain how CDI components interacted, scaffold tests, and bounce ideas off it. When exploring Kubernetes operator concepts, I directed the AI to prototype initial reconciliation logic in Python (kopf) so I could iterate quickly and understand behavior against a live cluster before translating it into Go.
+
+      What does not work is letting an AI agent run autonomously. Left unguided, agents make poor architectural choices, gloss over edge cases, and push ahead blindly.
+
+      AI is only effective when you maintain strict human-in-the-loop discipline: plan first, implement incrementally, question every assumption, and test at each stage. AI is a fantastic accelerator for typing and explanations, but the engineer must remain firmly in the driver's seat.

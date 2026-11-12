@@ -161,9 +161,9 @@
 
     - id: cisco_contract_stability
       title: "Cloud Stability Engineering & Windows Provisioning RCA (cloudbase-init)"
-      long_text: "Eliminated persistent deployment failures and infinite reboot loops across Windows Server cloud instances by diagnosing a complex race condition in cloudbase-init. Isolated the contention between the unattended Sysprep specialize phase and the premature startup of the Windows service, implementing the fix to achieve 100% reliable first-boot provisioning across the OpenStack cloud fleet."
-      short_text: "Eliminated persistent VM reboot loops on Windows cloud instances by resolving a race condition between Sysprep specialize and cloudbase-init in OpenStack, achieving 100% reliable first-boot provisioning."
-      linkedin_text: "Eliminated persistent VM reboot loops on Windows cloud instances by resolving a complex race condition in cloudbase-init in OpenStack, achieving 100% reliable first-boot provisioning."
+      long_text: "Eliminated persistent deployment failures and reboot loops across Windows Server cloud instances in OpenStack by diagnosing a race condition during early boot. Observed the VM console hanging during the Sysprep specialize pass, identified that cloudbase-init was starting prematurely on bare-metal compute, and reconfigured the provisioning sequence via SetupComplete.cmd to start the service only after Sysprep specialization completed cleanly."
+      short_text: "Eliminated persistent VM reboot loops on Windows cloud instances in OpenStack by resolving a timing contention between Sysprep specialize and cloudbase-init using SetupComplete.cmd."
+      linkedin_text: "Eliminated persistent VM reboot loops on Windows cloud instances in OpenStack by resolving a timing contention between Sysprep specialize and cloudbase-init using SetupComplete.cmd."
       skills: ["openstack", "root_cause_diagnostics", "virtualization"]
 
     - id: cisco_contract_qa
