@@ -310,18 +310,6 @@
     - technical_leadership
     - rapid_adaptation_sme
   bullets:
-    - id: foundational_qa_lead_short
-      title: "Manager of QA Testing & Solutions Engineering (StorageSoft/Phoenix Tech)"
-      long_text: null
-      short_text: "Merged and managed QA testing with technical support for **ImageCast** disk cloning tools; hired and trained technicians, structured automated testing workflows across heterogeneous Windows/Linux labs, and acted as systems integration engineer for enterprise clients."
-      skills: ["solutions_architecture", "validation_qa", "technical_leadership", "root_cause_diagnostics"]
-
-    - id: foundational_usaf_short
-      title: "Airborne Radar Journeyman (U.S. Air Force)"
-      long_text: null
-      short_text: "Repaired high-power microwave systems, high-voltage circuits, and analog/digital systems on AWACS aircraft."
-      skills: ["root_cause_diagnostics", "validation_qa"]
-
     - id: foundational_sales_eng
       title: "Solutions Engineering & Enterprise Interoperability (ImageCast)"
       long_text: "Expanded market readiness for ImageCast disk cloning software by engineering and validating integrations with leading enterprise systems management platforms (Microsoft SMS, CA Unicenter, Desktop DNA). Delivered technical demonstrations, proof-of-concept testing, and administrator training for corporate IT evaluators at enterprise accounts including HP, Target, and NEC; translated customer operational requirements into core engineering feature specifications."

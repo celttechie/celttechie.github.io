@@ -131,7 +131,7 @@ class ResumeDatabase:
                 for exp in self.experience:
                     matching_bullets = [
                         b for b in exp.get("bullets", [])
-                        if sk_id in b.get("skills", [])
+                        if sk_id in b.get("skills", []) and b.get("long_text")
                     ]
                     if matching_bullets:
                         b_links = ", ".join([
