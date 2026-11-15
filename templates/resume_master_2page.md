@@ -16,9 +16,9 @@
 
 --8<-- "docs/sections/exp_04_als_short.md"
 
---8<-- "docs/sections/exp_05_garfield_short.md"
+--8<-- "docs/sections/exp_05_foundational_short.md"
 
---8<-- "docs/sections/exp_06_foundational_short.md"
+--8<-- "docs/sections/exp_06_usaf_short.md"
 
 ## Education & Certifications
 --8<-- "docs/sections/education.md"

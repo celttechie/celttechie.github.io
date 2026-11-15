@@ -2,11 +2,11 @@
 # Single Source of Truth for tone, positioning, and application synthesis
 
 voice_rules:
-  tenure_standard: "15+ years of enterprise platform, systems SRE, and infrastructure engineering leadership"
-  de_aging_rules:
-    - "Never write 20+, 25+, or 30+ years in resumes, cover letters, or answers."
-    - "Do not display dates prior to 2014 on resumes; collapse earlier foundations into an undated 'Prior Systems & Testing Foundations' summary."
-    - "Frame foundational military (USAF AWACS) and testing experience as rigorous systems SRE and quality engineering roots without exposing graduation or military exit dates."
+  tenure_standard: "Nearly 30 years of broad technology, systems engineering, software development, and infrastructure leadership"
+  career_framing_rules:
+    - "Own the full ~30-year arc (1991–Present) as a deep technological generalist who has worked across hardware, OS internals, software engineering, networking, virtualization, and FedRAMP/cloud-native platforms."
+    - "Highlight concrete pre-2014 engineering depth where relevant: pre-Sysprep Windows NT Machine SID registry work on ImageCast IC3 (StorageSoft, 1997–2002), commercial PHP/Python software engineering on Centre/SIS (Glenn Abbey Software, 2006–2014), and full-stack district infrastructure (Garfield County SD 16, 2002–2014)."
+    - "Keep USAF AWACS (Jul 1991 – Jul 1995, Honor Graduate 99%, Senior Airman Below-the-Zone) as a distinct military foundation demonstrating first-principles diagnostics and defense readiness."
   tone_principles:
     - "Authentic, first-person technical leadership: speaking engineer-to-engineer and technical leader-to-hiring manager."
     - "Metric-anchored accomplishments: follow Google's X-Y-Z formula ('Accomplished [X] as measured by [Y], by doing [Z]') with senior ownership verbs (Architected, Spearheaded, Eliminated, Engineered, Defended)."
@@ -83,7 +83,7 @@ application_qa_bank:
     archetype: bare_metal_cloud_infra
     question: "Why do you want to join our bare-metal infrastructure team?"
     approved_answer: >-
-      I have spent the core of my career operating where software meets physical hardware—from maintaining radar electronics on AWACS aircraft in the Air Force to automating bare-metal server lifecycles across hundreds of Cisco UCS servers and tuning NVMe storage pools for sub-10ms etcd fsync latency. Most cloud platforms today are abstractions built on top of hyperscalers. What excites me about your mission is that you are building the modern cloud from the metal up. That requires deep respect for physical hardware primitives, kernel drivers, PCIe busses, and storage fabrics, combined with modern declarative automation. I want to bring my 15+ years of bare-metal automation, Linux systems mastery, and hypervisor engineering to help scale your physical infrastructure fleet reliably and cost-effectively.
+      I have spent the core of my career operating where software meets physical hardware—from maintaining radar electronics on AWACS aircraft in the Air Force to automating bare-metal server lifecycles across hundreds of Cisco UCS servers and tuning NVMe storage pools for sub-10ms etcd fsync latency. Most cloud platforms today are abstractions built on top of hyperscalers. What excites me about your mission is that you are building the modern cloud from the metal up. That requires deep respect for physical hardware primitives, kernel drivers, PCIe busses, and storage fabrics, combined with modern declarative automation. I want to bring my nearly 30 years of hands-on systems, hardware, and bare-metal engineering to help scale your physical infrastructure fleet reliably and cost-effectively.
 
   - id: why_company_security_ai
     archetype: platform_security_fedramp_ai

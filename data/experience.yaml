@@ -230,20 +230,21 @@
       short_text: null
       skills: ["network_security", "root_cause_diagnostics"]
 
-- id: garfield
-  company: "Garfield County School District 16"
-  role: "Senior Systems/Network Administrator"
-  location: "Parachute, CO"
-  dates_display: "Oct 2002 – Jun 2014"
-  start_date: "2002-10"
+- id: foundational
+  company: "Foundational Systems, Software & QA Engineering"
+  role: "Garfield County SD 16 | Glenn Abbey Software | StorageSoft / Phoenix Technologies"
+  location: "Colorado (Parachute, Boulder, Louisville) & Remote"
+  dates_display: "Sep 1997 – Jun 2014"
+  start_date: "1997-09"
   end_date: "2014-06"
   summary: >-
-    Managed and modernized the district-wide enterprise network, systems, and core
-    educational platform infrastructure. Led high-impact IT modernization projects,
-    automated administrative processes, and engineered cost-effective systems that
-    dramatically reduced operational costs and IT support overhead.
-  skills_display: "Python, Flask, SQLAlchemy, PHP, PostgreSQL, Ubuntu, Windows Terminal Server, Windows AD, Citrix XenServer, VirtualBox, Cisco CallManager/Unity, Cisco Routers & Switches, PIX, Ruckus Wireless Bridges/APs, HP Thin Clients, Google Apps, Smoothwall, Active Directory."
-  skills_display_short: "Python, Flask, SQLAlchemy, PHP, PostgreSQL, XenServer, VirtualBox, Cisco Routers/Switches/PIX, Cisco CallManager, Ruckus Wireless."
+    Consolidated foundational career spanning Senior Systems/Network Administration at
+    Garfield County School District 16 (2002–2014), contract Software Engineering for the
+    open-source Centre/SIS platform at Glenn Abbey Software (2006–2014), and QA Lead,
+    Technical Services Manager, and Sales/Field Engineering at MicroHouse International /
+    StorageSoft / Phoenix Technologies (1997–2002).
+  skills_display: "Python, Flask, SQLAlchemy, PHP (Centre/SIS), PostgreSQL, Ubuntu, Windows NT/Server/AD, Citrix XenServer, Cisco CallManager/Routers/Switches/PIX, Ruckus Wireless, Disk Cloning (ImageCast IC3, DrivePro), PXE/Multicast, Microsoft SMS, CA Unicenter, Software QA."
+  skills_display_short: "Python (Flask, SQLAlchemy), PHP (Centre/SIS), PostgreSQL, XenServer, Cisco Networking, ImageCast IC3, Software QA."
   skills:
     - python
     - databases
@@ -251,96 +252,62 @@
     - virtualization
     - identity_rbac
     - network_security
-    - root_cause_diagnostics
-  bullets:
-    - id: garfield_integration
-      title: "Systems Integration & Automation"
-      long_text: "Developed a custom **Flask (SQLAlchemy)** web application that synchronized the centralized Student Information System (SIS) with **Active Directory** and **Google Apps**. Built self-service password reset and status tools for teachers, resulting in a **97% reduction in recurring support calls** to the helpdesk."
-      short_text: "Programmed a custom **Flask (SQLAlchemy)** app syncing Student Info Systems with **Active Directory** and **Google Apps**, reducing account helpdesk tickets by **97%**."
-      linkedin_text: "Developed a custom Flask (SQLAlchemy) app syncing Student Info Systems with Active Directory and Google Apps, reducing recurring support calls by 97%."
-      skills: ["python", "databases", "identity_rbac", "etl_pipelines"]
-
-    - id: garfield_modernization
-      title: "District-Wide Data Centralization & State Compliance Automation (PostgreSQL / PHP)"
-      long_text: "Unified student records across the grade school, middle school, and high school by replacing siloed, individual database servers with a centralized PostgreSQL student information platform. Developed custom PHP ETL scripts to automate Colorado state funding compliance reporting (\"October Count\") in minutes instead of days, eliminating annual manual data re-entry between facilities and ensuring audit-ready data accuracy."
-      short_text: "Centralized district-wide student data onto PostgreSQL and developed automated PHP ETL scripts for Colorado state compliance reporting (\"October Count\"), cutting reporting time from days to minutes."
-      linkedin_text: "Unified district student data onto a centralized PostgreSQL platform and automated Colorado state compliance reporting (\"October Count\") via PHP scripts, slashing reporting time from days to minutes."
-      skills: ["databases", "etl_pipelines", "solutions_architecture"]
-
-    - id: garfield_virtualization
-      title: "High-Density Virtualization & Site-Resilient Infrastructure (Citrix XenServer)"
-      long_text: "Consolidated district-wide server sprawl into high-density Citrix XenServer clusters, maximizing hardware efficiency while cutting power and rack space. Architected resilient, distributed services by deploying virtualized Active Directory domain controllers locally within each school building—ensuring autonomous operational continuity during inter-building network outages—and enabling zero-downtime daytime hardware maintenance via VM migration."
-      short_text: "Consolidated server sprawl onto Citrix XenServer clusters, deploying local building domain controllers for network outage resiliency and enabling zero-downtime daytime host maintenance."
-      linkedin_text: "Consolidated server sprawl onto Citrix XenServer clusters, deploying local building domain controllers for network outage resiliency and enabling zero-downtime daytime host maintenance."
-      skills: ["virtualization", "linux_systems", "ha_clustering", "identity_rbac"]
-
-    - id: garfield_networking
-      title: "Network Engineering"
-      long_text: "Engineered a high-speed WAN connection between district buildings using **Ruckus wireless bridges**, increasing bandwidth by **6,500%** (1.5Mbps to 100+ Mbps) with zero ongoing monthly service costs. Managed core networking infrastructure including **Cisco Routers, Switches, PIX Firewalls**, and **Smoothwall** web filters."
-      short_text: "Designed a high-speed WAN using **Ruckus wireless bridges**, increasing bandwidth by **6,500%** (1.5Mbps to 100+ Mbps) with zero monthly service costs. Deployed district-wide Cisco CallManager."
-      linkedin_text: "Engineered high-speed WAN across district facilities using Ruckus wireless bridges (+6,500% bandwidth, $0 monthly carrier cost). Administered Cisco routers, switches, and PIX firewalls."
-      skills: ["network_security", "root_cause_diagnostics"]
-
-    - id: garfield_voip_desktop
-      title: "Unified Communications & End-User Compute"
-      long_text: "Deployed **Cisco CallManager** and **Cisco Unity** voice systems district-wide. Architected a centralized desktop computing solution using **Windows Terminal Servers** and **HP Thin Clients** for 6 computer labs, saving the district over **$60,000** in capital expenditure and simplifying end-user support."
-      short_text: null
-      linkedin_text: "Deployed district-wide Cisco CallManager and centralized desktop computing using Windows Terminal Servers and HP Thin Clients, saving over $60,000 in CAPEX."
-      skills: ["network_security", "identity_rbac"]
-
-- id: foundational
-  company: "Foundational Systems & Testing Experience"
-  role: "Systems Engineering, Software QA & Avionics Foundations"
-  location: "Various"
-  dates_display: "Prior Systems Foundations"
-  start_date: null
-  end_date: null
-  summary: >-
-    Established a lifelong technical foundation by translating a low-level understanding
-    of hardware, networking, and software into rigorous testing and validation methodologies.
-    This ground-up engineering approach ensures comprehensive diagnostics and root-cause
-    analysis at every layer of the stack.
-  skills_display: "Analog & Digital Electronics, Circuit Analysis, System Diagnostics (Binary/Hex), PC Architecture, Disk Cloning (ImageCast, DrivePro), Software QA & Test Automation, Bug-Tracking Systems, Network Design, Windows/Linux Lab Administration, Technical Training, Requirements Engineering, Systems Management (SMS, CA Unicenter, Desktop DNA)."
-  skills_display_short: "Analog & Digital Diagnostics, PC Architecture, Disk Cloning (ImageCast), Software QA, Network Design, Technical Training."
-  skills:
     - validation_qa
     - root_cause_diagnostics
     - linux_systems
-    - network_security
     - technical_leadership
-    - rapid_adaptation_sme
+    - solutions_architecture
   bullets:
-    - id: foundational_sales_eng
-      title: "Solutions Engineering & Enterprise Interoperability (ImageCast)"
-      long_text: "Expanded market readiness for ImageCast disk cloning software by engineering and validating integrations with leading enterprise systems management platforms (Microsoft SMS, CA Unicenter, Desktop DNA). Delivered technical demonstrations, proof-of-concept testing, and administrator training for corporate IT evaluators at enterprise accounts including HP, Target, and NEC; translated customer operational requirements into core engineering feature specifications."
-      short_text: "Engineered enterprise software integrations with Microsoft SMS and CA Unicenter, delivering technical demos and training to corporate IT evaluators at HP, Target, and NEC."
-      linkedin_text: "Expanded enterprise readiness for ImageCast by validating integrations with Microsoft SMS and CA Unicenter, delivering technical demonstrations and training for corporate evaluators at HP, Target, and NEC."
-      skills: ["solutions_architecture", "validation_qa", "technical_leadership"]
+    - id: foundational_sis_software
+      title: "Software Engineering & Commercial SIS Development (Centre/SIS, Glenn Abbey & Garfield County SD 16)"
+      long_text: "Developed a custom **Python (Flask, SQLAlchemy)** web application synchronizing Student Information Systems (SIS) with **Active Directory** and **Google Apps**, reducing recurring account support calls by **97%**. Contracted by **Glenn Abbey Software** (`2006–2014`) to engineer core **PHP** features and bug fixes for the open-source **Centre/SIS** platform across school districts in multiple states—redesigning the core grading/GPA calculation (`CalcGPA.php`) and transcript engine, performing database migrations, and building a custom **Python** ETL importer for Arkansas state reporting (**APSCN**). Unified Garfield County student data onto centralized **PostgreSQL** and automated Colorado state compliance reporting (\"October Count\") in minutes instead of days."
+      short_text: "Built a **Python (Flask/SQLAlchemy)** SIS-to-AD/Google Apps sync app (**97%** fewer support calls); contracted by **Glenn Abbey Software** for core **PHP** development on **Centre/SIS** (`CalcGPA.php` GPA/transcript redesign) and **Python** APSCN ETL, plus PostgreSQL state reporting automation."
+      linkedin_text: "Developed a custom Python (Flask, SQLAlchemy) web application synchronizing Student Information Systems (SIS) with Active Directory and Google Apps, reducing account support calls by 97%. Contracted by Glenn Abbey Software to engineer core PHP features and bug fixes for Centre/SIS across multiple states—redesigning the grading/GPA (CalcGPA.php) and transcript engine, automating Colorado (\"October Count\") and Arkansas (APSCN via Python) state reporting, and centralizing district databases on PostgreSQL."
+      skills: ["python", "databases", "etl_pipelines", "identity_rbac", "solutions_architecture"]
 
-    - id: foundational_lab_mgmt
-      title: "Engineering Operations & Greenfield Lab Buildout"
-      long_text: "Architected and built out the company's server room, internal network, and multi-OS test lab from scratch following a corporate spin-off, including telco T1 demarc extensions. Reorganized QA and technical support into a unified, 10-person rotating team: technicians alternated between hands-on lab validation (testing diverse drive controllers, NICs, PXE boot, and multicast routing across Windows, Linux, and NetWare) and customer support, enabling agents to directly reproduce complex customer issues on lab hardware and drastically cutting time to resolution."
-      short_text: "Built out server room and test lab infrastructure following a spin-off, and reorganized QA/support into a 10-person rotating team enabling direct lab reproduction of customer issues."
-      linkedin_text: "Architected server room and test labs following a spin-off, reorganizing QA and support into a 10-person rotation enabling technicians to reproduce customer issues directly on lab hardware."
+    - id: foundational_infra_virt
+      title: "Virtualization, Networking & Site-Resilient Infrastructure (Garfield County SD 16)"
+      long_text: "Consolidated district-wide server sprawl onto high-density **Citrix XenServer** clusters, deploying virtualized **Active Directory** domain controllers locally in each school building for network-outage resiliency and zero-downtime daytime maintenance via VM migration. Engineered a **100+ Mbps Ruckus wireless WAN** across facilities (**+6,500% bandwidth** at **$0 monthly carrier cost**), managed **Cisco routers, switches, PIX firewalls, and CallManager/Unity VoIP**, and deployed **Windows Terminal Servers** with **HP Thin Clients** across 6 labs (saving **$60,000+ CAPEX**)."
+      short_text: "Consolidated server sprawl onto **Citrix XenServer** clusters with local building AD domain controllers; engineered a **100+ Mbps Ruckus wireless WAN** (**+6,500%** bandwidth, $0 monthly cost) and deployed Cisco VoIP and thin-client labs (**$60K+ CAPEX saved**)."
+      linkedin_text: "Consolidated server sprawl onto high-density Citrix XenServer clusters with local building Active Directory domain controllers for network-outage resiliency and zero-downtime daytime maintenance. Engineered a 100+ Mbps Ruckus wireless WAN across facilities (+6,500% bandwidth at $0 monthly carrier cost) and deployed Cisco CallManager/Unity VoIP and thin-client labs (saving $60,000+ CAPEX)."
+      skills: ["virtualization", "linux_systems", "ha_clustering", "identity_rbac", "network_security"]
+
+    - id: foundational_imagecast_sid
+      title: "Pre-Sysprep Disk Cloning, Windows Internals & Enterprise Interoperability (StorageSoft / MicroHouse)"
+      long_text: "Served as QA Lead, Technical Services Manager, and Sales/Field Engineer for **ImageCast IC3** and **DrivePro** disk cloning software. Diagnosed the fundamental Windows NT domain cloning failure caused by duplicate **Machine Security Identifiers (SIDs)** and collaborated directly with developers to analyze Windows registry structures and build programmatic routines generating unique Machine SIDs on first boot—predating Microsoft's standardized **Sysprep** release. Engineered and validated integrations with **Microsoft SMS, CA Unicenter, and Desktop DNA**, delivering technical demos and administrator training for enterprise evaluators including **HP, Target, and NEC**."
+      short_text: "QA Lead, Technical Services Manager, and Sales Engineer for **ImageCast IC3**; solved duplicate Windows NT **Machine SIDs** in the registry before Microsoft Sysprep existed, and integrated ImageCast with Microsoft SMS and CA Unicenter for HP, Target, and NEC."
+      linkedin_text: "Served as QA Lead, Technical Services Manager, and Sales Engineer for ImageCast IC3 and DrivePro disk cloning software. Diagnosed duplicate Windows NT Machine Security Identifiers (SIDs) breaking domain trust and collaborated with developers on registry-modification routines to generate unique Machine SIDs on first boot—predating Microsoft's Sysprep release. Built multi-OS PXE/multicast test labs and validated enterprise integrations (Microsoft SMS, CA Unicenter) for HP, Target, and NEC."
+      skills: ["solutions_architecture", "validation_qa", "root_cause_diagnostics", "technical_leadership"]
+
+    - id: foundational_lab_qa
+      title: "Quality Engineering Foundations & Greenfield Lab Buildout (StorageSoft / MicroHouse)"
+      long_text: "Promoted from contractor to QA Lead and Technical Services Manager; architected the company's server room, telco T1 demarc, and multi-OS PXE/multicast test lab (Windows, Linux, NetWare) from scratch following a corporate spin-off. Deployed the company's first centralized bug-tracking system and structured test matrices, and reorganized QA and support into a unified **10-person rotating team** enabling technicians to reproduce complex customer issues directly on lab hardware."
+      short_text: "Built greenfield server room and multi-OS PXE/multicast test lab; established centralized bug tracking and reorganized QA/support into a 10-person rotating team."
+      linkedin_text: "Built greenfield server room and multi-OS PXE/multicast test labs following a spin-off, established centralized bug tracking, and reorganized QA/support into a 10-person rotation."
       skills: ["validation_qa", "linux_systems", "technical_leadership", "root_cause_diagnostics"]
 
-    - id: foundational_qa_leadership
-      title: "Quality Engineering Foundations & Defect Governance (ImageCast / DrivePro)"
-      long_text: "Promoted from contractor to QA Lead, transforming ad-hoc testing into a standardized quality engineering lifecycle across ImageCast and DrivePro disk cloning products. Replaced informal email chains and handwritten notepad notes by deploying the company's first centralized bug-tracking system and structured test matrices, ensuring software defects had documented reproduction steps and preventing unverified regressions from reaching commercial releases."
-      short_text: "Promoted to QA Lead, establishing the company's first centralized bug-tracking system and structured test matrices for ImageCast and DrivePro disk cloning tools."
-      linkedin_text: "Promoted to QA Lead, establishing the company's first centralized bug-tracking system and structured test matrices to eliminate defect escapes across ImageCast and DrivePro releases."
-      skills: ["validation_qa", "root_cause_diagnostics"]
-
-    - id: foundational_hardware
-      title: "Hardware Assembly & Diagnostics"
-      long_text: "Built custom computers, performed component-level hardware and peripheral repairs, and conducted software troubleshooting. Developed quotes for client builds and mastered motherboard/component compatibility."
-      short_text: null
-      linkedin_text: "Built custom PC hardware, performed component-level diagnostics and board repairs, and resolved low-level software compatibility issues."
-      skills: ["root_cause_diagnostics"]
-
-    - id: foundational_awacs
-      title: "Mission-Critical Avionics SRE & Flightline Radar Readiness (U.S. Air Force)"
-      long_text: "Directly guaranteed operational mission readiness for E-3 Sentry (AWACS) airborne radar surveillance platforms—where radar reliability determined aircraft flight clearance. Conducted post-mission aircrew debriefs on the flightline to isolate in-flight anomalies, performing component-level diagnostics and repairs across high-power microwave transmitters, high-voltage power supplies, and digital signal processors under strict turn-around operational deadlines."
-      short_text: "Directly guaranteed mission readiness for E-3 Sentry (AWACS) aircraft, debriefing aircrews and repairing high-power microwave transmitters and digital signal processors on the flightline."
-      linkedin_text: "Guaranteed flightline mission readiness for E-3 Sentry (AWACS) radar platforms, debriefing aircrews and performing component-level diagnostics and repairs across high-power microwave transmitters and digital processors."
+- id: usaf
+  company: "United States Air Force"
+  role: "Avionics Specialist – Airborne Warning & Control Radar (AWACS)"
+  location: "Tinker AFB, OK"
+  dates_display: "Jul 1991 – Jul 1995"
+  start_date: "1991-07"
+  end_date: "1995-07"
+  summary: >-
+    Maintained mission-critical E-3 Sentry (AWACS) airborne radar surveillance platforms on
+    the flightline, establishing a lifelong foundation in first-principles systems diagnostics.
+    Honor Graduate (99% academic test average) in Electronics and AWACS RADAR Systems
+    (Keesler AFB, MS) and awarded Senior Airman Below-the-Zone (BTZ). Honorable Discharge.
+  skills_display: "Analog & Digital Electronics, High-Power Microwave Transmitters, High-Voltage Power Supplies, Digital Signal Processors, Flightline System Diagnostics, Mission-Critical Readiness."
+  skills_display_short: "Avionics & RADAR Diagnostics, Digital Signal Processors, High-Voltage Systems, Flightline Readiness."
+  skills:
+    - root_cause_diagnostics
+    - validation_qa
+    - rapid_adaptation_sme
+  bullets:
+    - id: usaf_awacs
+      title: "Mission-Critical Avionics SRE & Flightline Radar Readiness (E-3 Sentry AWACS)"
+      long_text: "Directly guaranteed operational mission readiness for **E-3 Sentry (AWACS)** airborne radar surveillance platforms—where radar reliability determined aircraft flight clearance. Conducted post-mission aircrew debriefs on the flightline to isolate in-flight anomalies, performing component-level diagnostics and repairs across high-power microwave transmitters, high-voltage power supplies, and digital signal processors under strict turn-around operational deadlines. **Honor Graduate (99% academic test average)** and awarded **Senior Airman Below-the-Zone (BTZ)**."
+      short_text: "Guaranteed flightline mission readiness for **E-3 Sentry (AWACS)** radar platforms; debriefed aircrews and repaired high-power microwave transmitters and digital signal processors under strict deadlines. **Honor Graduate (99%)** & **Senior Airman Below-the-Zone**."
+      linkedin_text: "Guaranteed operational flightline mission readiness for E-3 Sentry (AWACS) airborne radar surveillance platforms—performing post-mission aircrew debriefs and component-level diagnostics across high-power microwave transmitters, high-voltage power supplies, and digital signal processors under strict turn-around deadlines. Honor Graduate (99% academic test average) and awarded Senior Airman Below-the-Zone (BTZ)."
       skills: ["root_cause_diagnostics", "validation_qa"]
