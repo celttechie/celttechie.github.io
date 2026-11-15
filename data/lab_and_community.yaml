@@ -78,7 +78,7 @@
 
     - id: tactical_edge_sdn
       title: "Tactical Edge Software-Defined Networking (tactical-edge-sdn)"
-      description: "Engineered a cloud-native software-defined networking reference architecture modernizing edge and shipboard tactical routing across simulated radio links and low-SWaP ARM64 hardware (Orange Pi 5). Features an autonomous Python/C++ SD-WAN controller that evaluates latency and packet loss, mutating Linux Netlink kernel routes dynamically with zero dropped sessions, packaged with containerized FRRouting and WireGuard as Zarf packages."
+      description: "Engineered a cloud-native software-defined networking reference architecture modernizing edge and shipboard tactical routing across simulated radio links and low-SWaP ARM64 hardware (Orange Pi 5). Features an autonomous Python SD-WAN controller that evaluates latency and packet loss, mutating Linux Netlink kernel routes dynamically with zero dropped sessions, packaged with containerized FRRouting and WireGuard as Zarf packages."
       skills: ["network_security", "linux_systems", "ha_clustering", "python", "edge_hardware"]
 
     - id: airgap_defense_unicorns
@@ -106,16 +106,6 @@
       description: "Implemented a **RAG (Retrieval-Augmented Generation)** pipeline utilizing **Qdrant** as a vector database to enable natural language querying across a multi-terabyte technical knowledge base."
       skills: ["ai_rag_mlops", "etl_pipelines"]
 
-    - id: graph_analytics
-      title: "Graph Analytics & Entity Mapping"
-      description: "Utilizing **Graphifyy** to engineer complex network graphs for relationship mapping, entity extraction, and knowledge discovery."
-      skills: ["ai_rag_mlops", "python"]
-
-    - id: clustering_research
-      title: "Statistical Research & Graph Clustering"
-      description: "Exploring advanced community detection and data clustering using the **Leiden algorithm** to derive structural insights from unstructured datasets."
-      skills: ["ai_rag_mlops", "python"]
-
 - id: first_robotics
   category: "Community Leadership & STEM Mentoring"
   title: "FIRST Robotics Mentorship"
@@ -141,7 +131,7 @@
 
     - id: froglib_package
       title: "FROGlib: Open-Source Python Hardware Abstraction & Kinematics Library"
-      description: "Architected and maintain [`FROGlib`](https://github.com/FROG3160/FROGLib), an installable Python package (`pyproject.toml`) modularizing swerve drive kinematics, motor controller wrappers, PID closed-loop control, and vision targeting. Engineered automated GitHub Actions CI/CD test workflows to guarantee code reuse, modularity, and deterministic testing across competition seasons."
+      description: "Architected and maintain [`FROGlib`](https://github.com/FROG3160/FROGLib), an installable Python package (`pyproject.toml`) modularizing swerve drive kinematics, motor controller wrappers, PID closed-loop control, CTRE Phoenix 6 motor simulation capabilities, and vision targeting. Engineered automated GitHub Actions CI/CD test workflows to guarantee code reuse, modularity, and deterministic testing across competition seasons."
       skills: ["robotics_mentoring", "python", "validation_qa", "solutions_architecture", "cicd"]
 
     - id: robotics_diagnostics

@@ -3,7 +3,7 @@
         <strong>Solutions & Data Engineering:</strong>
         <ul>
             <li>Solutions Architecture & Prototyping</li>
-            <li>Python (FastAPI, Pandas, SQLAlchemy)</li>
+            <li>Python (Flask, FastAPI, Pandas, SQLAlchemy)</li>
             <li>Robotics Design & Subsystem Testing</li>
             <li>Validation & QA Testing (HIL)</li>
             <li>ETL Pipelines & PostgreSQL</li>

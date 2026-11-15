@@ -11,7 +11,7 @@ linkedin_certifications_url: "https://www.linkedin.com/in/bjarrett/details/certi
 executive_summary: |
   I began my technical career on the flightline as a U.S. Air Force AWACS radar specialist, troubleshooting high-voltage microwave transmitters and digital signal processors under zero-margin mission deadlines. That experience established a lasting engineering discipline: treat systems from first principles and isolate root causes before changing anything.
 
-  That mindset carried into enterprise infrastructure. After years of building multi-OS QA labs, diagnosing bare-metal hypervisor contention, and engineering Ceph high-availability storage, I realized that manual systems work does not scale. Reliability comes from moving operational knowledge into code—using deep Linux systems mastery and deterministic automation to eliminate toil.
+  That mindset carried into enterprise infrastructure. After years of building multi-OS QA labs, managing enterprise hypervisor lifecycles, and engineering Ceph high-availability storage, I realized that manual systems work does not scale. Reliability comes from moving operational knowledge into code—using deep Linux systems mastery and deterministic automation to eliminate toil.
 
   At Cisco I spent more than seven years leading platform reliability, compliance automation, and systems architecture across 6,000+ bare-metal and cloud nodes supporting Webex FedRAMP Moderate platforms. During the Log4j zero-day I directed technical incident response across the fleet, writing custom Ansible and Python tooling that uncovered nested libraries missed by commercial scanners and helped defend continuous ATO with the PMO. I also designed an enterprise vulnerability data platform and introduced mathematical SRE Error Budget scoring that increased monthly remediation throughput roughly 10x and cleared more than 90% of overdue compliance backlogs.
 
@@ -23,8 +23,8 @@ executive_summary: |
 selected_impact:
   - title: "Enterprise Zero-Day Leadership & ATO Defense (Log4j / 6,000+ Nodes)"
     description: "Spearheaded technical incident response across 6,000+ bare-metal and cloud systems under HHS PMO FedRAMP ATO governance; engineered custom inspection automation discovering nested dependencies and compiled technical audit packages defending continuous platform ATO."
-  - title: "SRE Error Budget & Vulnerability Governance Platform (FastAPI, PostgreSQL, Tableau)"
-    description: "Architected centralized vulnerability data warehouse and self-service engineering console; pioneered SRE \"Error Budget\" mathematical scoring (Severity × Blast Radius × Time Decay) that scaled monthly remediation throughput ~10x and eliminated >90% of overdue cloud backlogs."
+  - title: "SRE Error Budget & Vulnerability Governance Platform (Flask, Plotly Dash, PostgreSQL, Tableau)"
+    description: "Architected centralized vulnerability data warehouse and self-service engineering console (Python Flask, Plotly Dash, SQLAlchemy, TabPy); pioneered SRE \"Error Budget\" mathematical scoring (Severity × Blast Radius × Time Decay) that scaled monthly remediation throughput ~10x and eliminated >90% of overdue cloud backlogs."
   - title: "Compliance-as-Code & SRE Toil Elimination (STIG XCCDF & Qualys API)"
     description: "Automated DISA STIG continuous compliance auditing by engineering Python pipelines parsing XCCDF (XML) benchmarks against live Qualys scans, eliminating hundreds of manual engineering audit hours across federal cloud boundaries."
   - title: "Upstream CNCF Contribution & Cloud-Native Virtualization (KubeVirt / CDI / UDS)"
@@ -57,7 +57,7 @@ keywords:
   - "Root Cause Analysis & Diagnostics"
   - "FedRAMP Moderate & STIG Compliance"
   - "Zero-Day Incident Leadership (Log4j)"
-  - "FastAPI & Interactive Data Consoles"
+  - "Flask, Plotly Dash & Interactive Data Consoles"
   - "Tableau Executive Dashboards & SLA Governance"
   - "Infrastructure-as-Code (Ansible, OpenTofu, SaltStack)"
   - "High Availability (HA) Clustering"
@@ -66,7 +66,6 @@ keywords:
   - "Defense Unicorns Zarf, UDS & Lula"
   - "Autonomous Edge Systems & Telemetry (MAVLink, ROS2, TAK/CoT)"
   - "Multi-Agent AI Orchestration & RAG Pipelines"
-  - "Graph Analytics & Leiden Clustering"
   - "Linux Systems (RHEL, Ubuntu, CentOS)"
   - "Enterprise Identity (FreeIPA, RBAC/HBAC)"
   - "Distributed Storage (Ceph RBD, iSCSI)"

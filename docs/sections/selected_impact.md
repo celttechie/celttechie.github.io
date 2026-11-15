@@ -7,11 +7,11 @@
 
     Spearheaded technical incident response across 6,000+ bare-metal and cloud systems under HHS PMO FedRAMP ATO governance; engineered custom inspection automation discovering nested dependencies and compiled technical audit packages defending continuous platform ATO.
 
--   **SRE Error Budget & Vulnerability Governance Platform (FastAPI, PostgreSQL, Tableau)**
+-   **SRE Error Budget & Vulnerability Governance Platform (Flask, Plotly Dash, PostgreSQL, Tableau)**
 
     ---
 
-    Architected centralized vulnerability data warehouse and self-service engineering console; pioneered SRE "Error Budget" mathematical scoring (Severity × Blast Radius × Time Decay) that scaled monthly remediation throughput ~10x and eliminated >90% of overdue cloud backlogs.
+    Architected centralized vulnerability data warehouse and self-service engineering console (Python Flask, Plotly Dash, SQLAlchemy, TabPy); pioneered SRE "Error Budget" mathematical scoring (Severity × Blast Radius × Time Decay) that scaled monthly remediation throughput ~10x and eliminated >90% of overdue cloud backlogs.
 
 -   **Compliance-as-Code & SRE Toil Elimination (STIG XCCDF & Qualys API)**
 

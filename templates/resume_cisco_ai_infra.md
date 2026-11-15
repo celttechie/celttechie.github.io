@@ -76,15 +76,15 @@ Proactively expanding on this deep systems foundation through hands-on technical
 **Aug 2019 – July 2026 (Remote)**
 
 *   **Federal ATO Governance & Enterprise Log4j Response (HHS PMO):** Played a central technical role in the enterprise Log4j response across 6,000+ bare-metal and cloud systems under HHS PMO FedRAMP ATO governance. Built custom Ansible/Python inspection tooling locating nested libraries missed by commercial scanners, verified remediation, and compiled PMO evidence packages defending the ATO.
-*   **Vulnerability Data Platform & Fleet UI Architecture (FastAPI, PostgreSQL, Tableau):** Designed and maintained an internal FastAPI + PostgreSQL vulnerability portal (fed by automated Jira ETL) used by engineering teams to triage issues and by leadership to track fleet status across the FedRAMP footprint; extended with Tableau dashboards tracking SLA severity.
+*   **Vulnerability Data Platform & Fleet UI Architecture (Flask, Plotly Dash, PostgreSQL, Tableau):** Designed and maintained an internal Flask + Plotly Dash + PostgreSQL vulnerability portal (fed by automated Jira ETL) used by engineering teams to triage issues and by leadership to track fleet status across the FedRAMP footprint; extended with TabPy and Tableau dashboards tracking SLA severity.
 *   **Cross-Discipline Technical Translation & Federal Deviation Authority:** Accelerated remediation velocity across software, storage, and networking teams, translating complex CVEs and DISA STIGs into actionable remediation paths. Authored formal technical compliance deviation and risk justification packages submitted to the federal PMO.
-*   **Engineering Mentorship & Technical Guidance:** Mentored junior and mid-level engineers on Linux diagnostics, root-cause troubleshooting, and operational practices. Supported hiring through technical interviewing and structured onboarding across distributed remote teams.
+*   **Engineering Mentorship & Technical Guidance:** Mentored junior and mid-level engineers on Linux diagnostics, root-cause troubleshooting, and operational practices. Supported hiring through technical interviewing and hands-on operational onboarding across distributed remote teams.
 
 ### **Cisco Systems | Cloud Systems Engineer & Lead Compute Engineer**
 **Jan 2017 – Aug 2019 (Remote)**
 
-*   **Lead Compute Engineering & Virtualization Operations:** Upheld continuous federal SLA compliance and high availability across enterprise VMware vSphere clusters and Cisco UCS bare metal, resolving hypervisor performance bottlenecks and supporting Cisco MDS Fibre Channel SAN switch fabrics.
-*   **Enterprise Identity Architecture & SOC Collaboration (FreeIPA/HBAC):** Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack via Ansible to replace legacy 389 DS. Partnered with the SOC to establish fine-grained Host-Based Access Control (HBAC) policies, guiding application teams on service permissions and standardizing access control across 2,000+ hosts.
+*   **Lead Compute Engineering & Virtualization Operations:** Upheld continuous federal SLA compliance and high availability across enterprise VMware vSphere clusters and Cisco UCS bare metal, executing rolling zero-downtime ESXi upgrades, maintaining internal FedRAMP package repositories to replace unvalidated custom Puppet packages, and supporting Cisco MDS Fibre Channel SAN switch fabrics.
+*   **Enterprise Identity Architecture & SOC Collaboration (FreeIPA/HBAC):** Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack via Ansible to replace legacy 389 DS. Partnered with the SOC to establish fine-grained Host-Based Access Control (HBAC) policies, advising application teams on service permissions and standardizing access control across 2,000+ hosts.
 
 ### **Select Group @ Cisco | Cloud DevOps/QA Engineer (Contract)**
 **Feb 2016 – Jan 2017 (Remote)**

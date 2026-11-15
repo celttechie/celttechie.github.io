@@ -7,8 +7,8 @@
   end_date: "2026-07"
   summary: >-
     Directed platform reliability, compliance automation, and vulnerability engineering across 6,000+ bare-metal and cloud systems for the Webex for Government FedRAMP Moderate platform—defending federal ATO governance, eliminating operational toil, and scaling remediation throughput 10x.
-  skills_display: "Python (FastAPI, Pandas, SQLAlchemy), PostgreSQL, Jira API ETL, Qualys API, Tableau, DISA STIGs (XCCDF/XML), Federal ATO Governance (HHS PMO), Ansible, RHEL/Ubuntu, Cisco UCS, FedRAMP Moderate."
-  skills_display_short: "Python (FastAPI, Pandas), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau, Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate, Federal ATO Governance."
+  skills_display: "Python (Flask, Plotly Dash, Pandas, SQLAlchemy), PostgreSQL, Jira API ETL, Qualys API, Tableau (TabPy), DISA STIGs (XCCDF/XML), Federal ATO Governance (HHS PMO), Ansible, RHEL/Ubuntu, Cisco UCS, FedRAMP Moderate."
+  skills_display_short: "Python (Flask, Plotly Dash, Pandas), PostgreSQL, REST APIs (Jira, Qualys), ETL Pipelines, Tableau (TabPy), Ansible, RHEL/Ubuntu, Cisco UCS, STIG/FedRAMP Moderate, Federal ATO Governance."
   skills:
     - python
     - etl_pipelines
@@ -31,10 +31,10 @@
       skills: ["ansible_salt", "qualys_secops", "fedramp_stig", "linux_systems", "technical_leadership", "root_cause_diagnostics"]
 
     - id: cisco_tl_data_platform
-      title: "Vulnerability Governance Platform & SRE Error Budget Architecture (Python, PostgreSQL, Tableau)"
-      long_text: "Scaled monthly remediation throughput ~10x, cut High-severity remediation time by over 40%, and drove overdue backlogs down by more than 90% across cloud infrastructure by architecting an enterprise-wide FedRAMP vulnerability governance platform protecting 6,000+ operational bare-metal and cloud systems. Eliminated operational toil and alert fatigue caused by fragmented 1:1 host ticketing by engineering a normalized PostgreSQL warehouse, consolidating thousands of host findings into unified fleet remediation tasks, and developing dynamic REST-to-Ansible inventory endpoints. Pioneered the SRE \"Error Budget\" framework for federal compliance in direct partnership with the Director of Security, designing mathematical risk algorithms (Severity Weight × Host Blast Radius × Time Decay) with automated variance credits (operational requirements, vendor dependencies) to govern federal vulnerability SLAs. Extended the self-service platform with custom Plotly heatmaps and Tableau Server integrations (TabPy) for executive sprint governance."
-      short_text: "Scaled monthly resolution throughput ~10x, cut High-severity remediation time >40%, and drove overdue backlogs down >90% across 6,000+ systems by architecting a FedRAMP governance platform. Pioneered SRE \"Error Budget\" algorithms (Severity × Blast Radius × Time Decay) with automated variance credits, dynamic Ansible inventory patching, and executive scorecards."
-      linkedin_text: "Architected enterprise FedRAMP vulnerability governance platform and SRE error budget algorithms across 6,000+ systems, cutting High-severity dwell time >40% and scaling monthly resolution velocity 10x."
+      title: "Vulnerability Governance Platform & SRE Error Budget Architecture (Flask, PostgreSQL, Tableau)"
+      long_text: "Scaled monthly remediation throughput ~10x, cut High-severity remediation time by over 40%, and drove overdue backlogs down by more than 90% across cloud infrastructure by architecting an enterprise-wide FedRAMP vulnerability governance platform (Python Flask, SQLAlchemy, Plotly Dash, PostgreSQL) protecting 6,000+ operational bare-metal and cloud systems. Eliminated operational toil and alert fatigue caused by fragmented 1:1 host ticketing by engineering a normalized PostgreSQL warehouse, consolidating thousands of host findings into unified fleet remediation tasks, and developing dynamic REST-to-Ansible inventory endpoints. Pioneered the SRE \"Error Budget\" framework for federal compliance in direct partnership with the Director of Security, designing mathematical risk algorithms (Severity Weight × Host Blast Radius × Time Decay) with automated variance credits (operational requirements, vendor dependencies) to govern federal vulnerability SLAs. Extended the self-service platform with custom Plotly Dash heatmaps and Tableau Server integrations (TabPy) for executive sprint governance."
+      short_text: "Scaled monthly resolution throughput ~10x, cut High-severity remediation time >40%, and drove overdue backlogs down >90% across 6,000+ systems by architecting a FedRAMP governance platform (Flask, Plotly Dash, PostgreSQL, TabPy). Pioneered SRE \"Error Budget\" algorithms (Severity × Blast Radius × Time Decay) with automated variance credits, dynamic Ansible inventory patching, and executive scorecards."
+      linkedin_text: "Architected enterprise FedRAMP vulnerability governance platform (Flask, Plotly Dash, PostgreSQL, TabPy) and SRE error budget algorithms across 6,000+ systems, cutting High-severity dwell time >40% and scaling monthly resolution velocity 10x."
       skills: ["python", "etl_pipelines", "databases", "solutions_architecture", "qualys_secops", "technical_leadership"]
 
     - id: cisco_tl_cross_discipline
@@ -59,10 +59,10 @@
       skills: ["qualys_secops", "fedramp_stig", "python", "ansible_salt", "solutions_architecture"]
 
     - id: cisco_tl_mentorship
-      title: "Engineering Mentorship & Structured Operational Handover"
-      long_text: "Accelerated team autonomy by instituting a structured, two-phase onboarding model for new engineers: teaching underlying system mechanics, training on custom automation tooling, and co-piloting live recurring workflows in Month 1 to transition full operational ownership by Month 2. Supported organizational growth through technical hiring and guided engineers through high-stakes federal remediation workflows under strict SLAs."
-      short_text: "Accelerated team autonomy by instituting a phased onboarding model: teaching system fundamentals, training on custom automation, and co-piloting workflows in Month 1 to transition full operational process ownership by Month 2."
-      linkedin_text: "Accelerated team autonomy by instituting a phased onboarding model: teaching system fundamentals, training on custom automation, and co-piloting workflows in Month 1 to transition full operational ownership by Month 2."
+      title: "Engineering Mentorship & Operational Handover"
+      long_text: "Accelerated team autonomy during engineer onboarding through a practical apprentice-style handover: walking new engineers through the underlying systems and demonstrating the custom automation and scripting used for recurring monthly compliance tasks, then verifying their execution as they ran the workflows the following month before transitioning full operational ownership. Supported organizational growth through technical interviewing and guided engineers through high-stakes federal remediation workflows under strict SLAs."
+      short_text: "Accelerated team autonomy during onboarding by demonstrating custom monthly compliance automation and system mechanics in the first cycle, then verifying engineer execution in the next cycle to transition full operational ownership."
+      linkedin_text: "Accelerated team autonomy during onboarding by walking engineers through custom compliance automation and system mechanics, then verifying their execution on the next monthly cycle to transition full operational ownership."
       skills: ["technical_leadership", "root_cause_diagnostics", "linux_systems"]
 
     - id: cisco_tl_inventory
@@ -97,9 +97,9 @@
   bullets:
     - id: cisco_ce_freeipa
       title: "High-Availability Enterprise Identity & SOC Collaboration (FreeIPA/HBAC)"
-      long_text: "Eliminated single-point-of-failure identity risks and established zero-trust access controls across 2,000+ Linux/Windows hosts by architecting and deploying a High-Availability (HA) FreeIPA cluster in OpenStack using Ansible to replace a legacy, high-overhead 389 Directory Server environment. Partnered directly with the Security Operations Center (SOC) to architect and define Host-Based Access Control (HBAC) rule sets—introducing net-new zero-trust access control capabilities—while establishing self-service permission patterns for application engineering teams."
-      short_text: "Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack via Ansible to replace legacy 389 DS. Partnered with the SOC to establish fine-grained Host-Based Access Control (HBAC) policies, standardizing zero-trust identity across 2,000+ hosts."
-      linkedin_text: "Architected and deployed an HA FreeIPA cluster in OpenStack using Ansible to replace legacy 389 Directory Server. Partnered with the SOC to establish Host-Based Access Control (HBAC) rule sets, standardizing zero-trust identity across 2,000+ Linux/Windows hosts and appliances."
+      long_text: "Eliminated single-point-of-failure identity risks and established zero-trust access controls across 2,000+ Linux/Windows hosts by architecting and deploying a High-Availability (HA) FreeIPA cluster in OpenStack using Ansible to replace a legacy, high-overhead 389 Directory Server environment. Partnered directly with the Security Operations Center (SOC) to architect and define Host-Based Access Control (HBAC) rule sets—introducing net-new zero-trust access control capabilities—while advising application engineering teams on service permissions."
+      short_text: "Architected and deployed an automated, high-availability FreeIPA cluster in OpenStack via Ansible to replace legacy 389 DS. Partnered with the SOC to establish fine-grained Host-Based Access Control (HBAC) policies and advised application teams on service permissions across 2,000+ hosts."
+      linkedin_text: "Architected and deployed an HA FreeIPA cluster in OpenStack using Ansible to replace legacy 389 Directory Server. Partnered with the SOC to establish Host-Based Access Control (HBAC) rule sets and advised application teams on service permissions across 2,000+ Linux/Windows hosts and appliances."
       skills: ["identity_rbac", "ha_clustering", "openstack", "ansible_salt", "linux_systems", "technical_leadership"]
 
     - id: cisco_ce_compute_ops
@@ -110,10 +110,10 @@
       skills: ["virtualization", "cisco_ucs", "distributed_storage", "fedramp_stig"]
 
     - id: cisco_ce_vuln_mgmt
-      title: "Compute Security, Fleet Remediation & Automated Patching"
-      long_text: "Replaced reactive vulnerability patching with a proactive engineering pipeline by securing direct access to the isolated FedRAMP tracking boundary. Developed Python REST ingestion pipelines and dynamic Ansible inventory automation that collapsed 1:1 host ticket deluges into automated, cluster-wide remediation playbooks, establishing the architectural foundation for what scaled into the enterprise-wide vulnerability governance platform."
-      short_text: "Transitioned reactive vulnerability tracking into a proactive engineering platform by accessing isolated FedRAMP systems, creating custom Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges."
-      linkedin_text: "Transitioned reactive vulnerability tracking into a proactive engineering platform by accessing isolated FedRAMP systems, creating custom Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges."
+      title: "Compute Security, Package Repository Governance & Automated Patching"
+      long_text: "Replaced reactive vulnerability patching with a proactive engineering pipeline by securing direct access to the isolated FedRAMP tracking boundary. Developed Python REST ingestion pipelines and dynamic Ansible inventory automation that collapsed 1:1 host ticket deluges into automated, cluster-wide remediation playbooks, establishing the architectural foundation for what scaled into the enterprise-wide vulnerability governance platform. Maintained internal package repositories inside the FedRAMP boundary to replace unvalidated custom Puppet packages built by engineering teams, ensuring chain-of-custody validation for system updates."
+      short_text: "Transitioned reactive vulnerability tracking into a proactive engineering pipeline by accessing isolated FedRAMP systems, creating custom Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges, and maintaining internal FedRAMP package repositories to replace unvalidated custom Puppet packages."
+      linkedin_text: "Transitioned reactive vulnerability tracking into a proactive engineering pipeline by creating custom Python REST ETL and dynamic Ansible inventory automation to eliminate 1:1 host ticket deluges, and maintaining internal FedRAMP package repositories to replace unvalidated custom Puppet packages."
       skills: ["qualys_secops", "fedramp_stig", "linux_systems"]
 
     - id: cisco_ce_access_infra
@@ -154,9 +154,9 @@
 
     - id: cisco_contract_iac
       title: "Bare-Metal Provisioning, Infrastructure as Code & Platform Evaluation"
-      long_text: "Eliminated repetitive manual deployment toil by engineering automated bare-metal PXE boot and Ansible provisioning workflows across hundreds of production Cisco UCS servers in Cisco InterCloud Services. Automated ongoing configuration baselines via lights-out management (LOM) interfaces, and evaluated next-generation platform substrates—prototyping local Red Hat Update Infrastructure (RHUI) for secure, zero-egress internal package distribution and benchmarking Proxmox hypervisor clusters."
-      short_text: "Automated bare-metal server deployment via PXE boot and Ansible using LOM interfaces across hundreds of Cisco UCS servers, and evaluated local RHUI package repositories and Proxmox hypervisors."
-      linkedin_text: "Automated bare-metal server deployment via PXE boot and Ansible across hundreds of Cisco UCS servers in Cisco InterCloud Services, and evaluated local RHUI package repositories and Proxmox hypervisors."
+      long_text: "Eliminated repetitive manual deployment toil by engineering automated bare-metal PXE boot and Ansible provisioning workflows across hundreds of production Cisco UCS servers in Cisco InterCloud Services. Automated ongoing configuration baselines via lights-out management (LOM) interfaces, and conducted proof-of-concept (PoC) evaluations of local Red Hat Update Infrastructure (RHUI) repositories and Proxmox hypervisor clusters."
+      short_text: "Automated bare-metal server deployment via PXE boot and Ansible using LOM interfaces across hundreds of Cisco UCS servers, and conducted PoC evaluations of local RHUI package repositories and Proxmox hypervisors."
+      linkedin_text: "Automated bare-metal server deployment via PXE boot and Ansible across hundreds of Cisco UCS servers in Cisco InterCloud Services, and conducted PoC evaluations of local RHUI package repositories and Proxmox hypervisors."
       skills: ["ansible_salt", "linux_systems", "virtualization", "openstack"]
 
     - id: cisco_contract_stability
