@@ -5,7 +5,7 @@
 
     ---
 
-    Spearheaded technical incident response across 6,000+ bare-metal and cloud systems under HHS PMO FedRAMP ATO governance; engineered custom inspection automation discovering nested dependencies and compiled technical audit packages defending continuous platform ATO.
+    Spearheaded technical incident response across 6,000+ bare-metal and cloud systems under HHS PMO FedRAMP ATO governance; engineered custom inspection automation discovering nested dependencies and compiled technical audit packages defending the platform's FedRAMP ATO.
 
 -   **SRE Error Budget & Vulnerability Governance Platform (Flask, Plotly Dash, PostgreSQL, Tableau)**
 

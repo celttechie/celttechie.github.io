@@ -25,9 +25,9 @@
   bullets:
     - id: cisco_tl_ato_log4j
       title: "Enterprise Zero-Day Incident Response & Federal ATO Defense (Log4j / 6,000+ Nodes)"
-      long_text: "Defended continuous FedRAMP ATO under HHS PMO governance across 6,000+ operational bare-metal and cloud systems during the enterprise Log4j zero-day crisis. Engineered custom Ansible inspection playbooks and Python tooling to rapidly identify nested and shaded Java libraries missed by commercial scanners, delivered actionable remediation datasets to engineering teams and directors, verified remediation, and compiled the technical evidence packages that successfully validated compliance under strict federal deadlines."
+      long_text: "Maintained and defended the FedRAMP ATO under HHS PMO governance across 6,000+ operational bare-metal and cloud systems during the enterprise Log4j zero-day crisis. Engineered custom Ansible inspection playbooks and Python tooling to rapidly identify nested and shaded Java libraries missed by commercial scanners, delivered actionable remediation datasets to engineering teams and directors, verified remediation, and compiled the technical evidence packages that successfully validated compliance under strict federal deadlines."
       short_text: "Defended FedRAMP ATO under HHS PMO governance across 6,000+ operational systems during Log4j. Built custom Ansible/Python inspection tooling locating nested libraries missed by commercial scanners, verified remediation, and compiled technical evidence packages validating compliance."
-      linkedin_text: "Spearheaded technical incident response across 6,000+ operational systems under HHS PMO FedRAMP ATO governance during Log4j. Built custom Ansible/Python tooling locating nested libraries, verified remediation, and compiled evidence packages defending continuous ATO."
+      linkedin_text: "Spearheaded technical incident response across 6,000+ operational systems under HHS PMO FedRAMP ATO governance during Log4j. Built custom Ansible/Python tooling locating nested libraries, verified remediation, and compiled evidence packages defending the FedRAMP ATO."
       skills: ["ansible_salt", "qualys_secops", "fedramp_stig", "linux_systems", "technical_leadership", "root_cause_diagnostics"]
 
     - id: cisco_tl_data_platform
